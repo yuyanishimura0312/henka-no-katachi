@@ -17,18 +17,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@300;400;500;600;700;900&family=Judson:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg:           #0F0D0C;
-  --bg-soft:      #16140F;
-  --bg-tint:      #1C1A18;
-  --ink:          #ECEAE6;
-  --ink-soft:     #BFBBB5;
-  --ink-mute:     #888480;
-  --ink-faint:    #5A5752;
+  --bg:           #14110F;
+  --bg-soft:      #1E1B19;
+  --bg-tint:      #25221F;
+  --ink:          #FFFFFF;
+  --ink-soft:     #D8D5D1;
+  --ink-mute:     #8E8A86;
+  --ink-faint:    #5C5854;
   --accent:       #FF3644;
-  --accent-deep:  #FF6B7A;
-  --accent-soft:  rgba(255, 54, 68, 0.12);
-  --accent-tint:  rgba(255, 54, 68, 0.24);
-  --line:         #2A2725;
+  --accent-deep:  #FF5560;
+  --accent-soft:  rgba(255, 54, 68, 0.10);
+  --accent-tint:  rgba(255, 54, 68, 0.22);
+  --line:         #2D2A27;
   --line-soft:    #1F1D1B;
   --serif:   "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "Plantin MT Pro", Georgia, serif;
   --sans:    "Noto Sans JP", "Hiragino Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -53,7 +53,7 @@ a:hover { color: var(--accent-deep); }
 .read-progress-bar { height: 100%; width: 0%; background: var(--accent); transition: width .1s linear; }
 
 .site-header-strip { display: none; }
-.site-header { position: sticky; top: 0; z-index: 100; background: rgba(15, 13, 12, 0.92); backdrop-filter: saturate(160%) blur(10px); -webkit-backdrop-filter: saturate(160%) blur(10px); border-bottom: 1px solid var(--line); }
+.site-header { position: sticky; top: 0; z-index: 100; background: rgba(20, 17, 15, 0.92); backdrop-filter: saturate(160%) blur(10px); -webkit-backdrop-filter: saturate(160%) blur(10px); border-bottom: 1px solid var(--line); }
 .site-header-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .site-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .site-brand-mark { width: 30px; height: 30px; flex-shrink: 0; }
@@ -174,20 +174,20 @@ a:hover { color: var(--accent-deep); }
 .newsletter-inner { max-width: 720px; margin: 0 auto; text-align: left; }
 .newsletter-eyebrow { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.32em; color: var(--accent); font-weight: 700; margin-bottom: 14px; }
 .newsletter-title { font-family: var(--serif); font-weight: 700; font-size: 26px; line-height: 1.6; letter-spacing: 0.04em; color: var(--bg); margin-bottom: 14px; }
-.newsletter-desc { font-family: var(--serif); font-size: 14.5px; line-height: 2; color: rgba(15, 13, 12, 0.74); margin-bottom: 28px; }
+.newsletter-desc { font-family: var(--serif); font-size: 14.5px; line-height: 2; color: rgba(20, 17, 15, 0.74); margin-bottom: 28px; }
 .nl-form { display: flex; flex-direction: column; gap: 12px; max-width: 460px; }
 .nl-step { display: none; flex-direction: column; gap: 12px; }
 .nl-step.active { display: flex; }
 .nl-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.nl-field input { width: 100%; font-family: var(--serif); font-size: 14px; background: rgba(15, 13, 12, 0.04); border: 1px solid rgba(15, 13, 12, 0.18); color: var(--bg); padding: 12px 14px; letter-spacing: 0.04em; outline: none; transition: border-color .15s, background .15s; }
-.nl-field input::placeholder { color: rgba(15, 13, 12, 0.42); }
-.nl-field input:focus { border-color: var(--accent); background: rgba(15, 13, 12, 0.06); }
-.nl-consent { font-family: var(--sans); font-size: 11.5px; color: rgba(15, 13, 12, 0.7); line-height: 1.7; display: flex; align-items: flex-start; gap: 8px; }
+.nl-field input { width: 100%; font-family: var(--serif); font-size: 14px; background: rgba(20, 17, 15, 0.04); border: 1px solid rgba(20, 17, 15, 0.18); color: var(--bg); padding: 12px 14px; letter-spacing: 0.04em; outline: none; transition: border-color .15s, background .15s; }
+.nl-field input::placeholder { color: rgba(20, 17, 15, 0.42); }
+.nl-field input:focus { border-color: var(--accent); background: rgba(20, 17, 15, 0.06); }
+.nl-consent { font-family: var(--sans); font-size: 11.5px; color: rgba(20, 17, 15, 0.7); line-height: 1.7; display: flex; align-items: flex-start; gap: 8px; }
 .nl-consent input { margin-top: 4px; flex-shrink: 0; }
 .nl-btn { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #FFFFFF; background: var(--accent); border: none; padding: 14px 26px; cursor: pointer; transition: background .15s; }
 .nl-btn:hover { background: var(--accent-deep); }
 .nl-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-.nl-trust { font-family: var(--sans); font-size: 11px; color: rgba(15, 13, 12, 0.5); letter-spacing: 0.04em; }
+.nl-trust { font-family: var(--sans); font-size: 11px; color: rgba(20, 17, 15, 0.5); letter-spacing: 0.04em; }
 .nl-done { display: none; padding: 22px 0; font-family: var(--serif); font-size: 16px; color: var(--bg); line-height: 1.9; }
 .nl-done.show { display: block; }
 .nl-form.hide { display: none; }
@@ -249,7 +249,7 @@ a:hover { color: var(--accent-deep); }
 }
 
 /* EDITOR */
-.editor-toggle { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 44px; height: 44px; border-radius: 50%; background: rgba(236, 234, 230, 0.14); color: var(--ink); border: 1px solid rgba(236, 234, 230, 0.22); cursor: pointer; font-size: 18px; opacity: 0.5; transition: opacity .15s, background .15s; box-shadow: 0 4px 14px rgba(0,0,0,0.4); }
+.editor-toggle { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 44px; height: 44px; border-radius: 50%; background: rgba(255, 255, 255, 0.14); color: var(--ink); border: 1px solid rgba(255, 255, 255, 0.22); cursor: pointer; font-size: 18px; opacity: 0.5; transition: opacity .15s, background .15s; box-shadow: 0 4px 14px rgba(0,0,0,0.4); }
 .editor-toggle:hover { opacity: 1; background: var(--accent); border-color: var(--accent); color: #FFFFFF; }
 .editor-bar { position: fixed; top: 78px; left: 50%; transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 10px 16px; border-radius: 28px; z-index: 1000; display: none; gap: 10px; align-items: center; font-family: var(--sans); font-size: 12px; letter-spacing: 0.08em; box-shadow: 0 8px 30px rgba(0,0,0,0.4); }
 .editor-bar.show { display: flex; }
@@ -258,9 +258,9 @@ a:hover { color: var(--accent-deep); }
 .editor-bar button.save-btn { background: var(--accent); color: #FFFFFF; }
 .editor-bar button.save-btn:hover { background: var(--accent-deep); }
 .editor-bar button.save-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-.editor-bar button.cancel-btn { background: transparent; color: var(--bg); border: 1px solid rgba(15, 13, 12, 0.3); }
-.editor-bar button.cancel-btn:hover { background: rgba(15, 13, 12, 0.08); }
-.editor-bar button.reset-btn { background: transparent; color: rgba(15, 13, 12, 0.5); border: 1px solid rgba(15, 13, 12, 0.15); font-size: 10px; padding: 5px 10px; }
+.editor-bar button.cancel-btn { background: transparent; color: var(--bg); border: 1px solid rgba(20, 17, 15, 0.3); }
+.editor-bar button.cancel-btn:hover { background: rgba(20, 17, 15, 0.08); }
+.editor-bar button.reset-btn { background: transparent; color: rgba(20, 17, 15, 0.5); border: 1px solid rgba(20, 17, 15, 0.15); font-size: 10px; padding: 5px 10px; }
 .editor-bar button.reset-btn:hover { color: var(--bg); }
 [contenteditable="true"] { outline: 1px dashed var(--accent); outline-offset: 4px; background: var(--accent-soft); cursor: text; }
 [contenteditable="true"]:focus { outline: 2px solid var(--accent); background: rgba(255, 54, 68, 0.18); }
