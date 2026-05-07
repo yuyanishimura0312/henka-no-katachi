@@ -84,12 +84,17 @@ a:hover { color: var(--accent-deep); }
 
 /* FIVE FORMS */
 .forms-section { background: var(--bg-soft); }
-.forms-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 44px; }
-.form-card { background: var(--bg); padding: 28px 26px; border: 1px solid var(--line); border-top: 3px solid var(--accent); transition: transform .15s, border-color .15s; }
-.form-card:hover { transform: translateY(-2px); border-color: var(--accent); }
-.form-card-num { font-family: var(--display); font-weight: 700; font-size: 28px; color: var(--accent); margin-bottom: 8px; line-height: 1; }
-.form-card-title { font-family: var(--serif); font-weight: 700; font-size: 17px; color: var(--ink); letter-spacing: 0.05em; margin-bottom: 14px; line-height: 1.5; }
+.forms-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-top: 48px; }
+.form-card { position: relative; background: var(--bg); padding: 36px 28px 32px; border: 1px solid var(--line); border-top: 3px solid var(--accent); transition: transform .2s, border-color .2s, background .2s; overflow: hidden; }
+.form-card:hover { transform: translateY(-3px); border-color: var(--accent); background: var(--bg-tint); }
+.form-card-num { font-family: var(--display); font-weight: 700; font-size: 56px; color: var(--accent); margin-bottom: 12px; line-height: 0.92; letter-spacing: -0.02em; opacity: 0.95; }
+.form-card-title { font-family: var(--serif); font-weight: 700; font-size: 18px; color: var(--ink); letter-spacing: 0.05em; margin-bottom: 16px; line-height: 1.5; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
 .form-card-text { font-family: var(--serif); font-size: 13.5px; color: var(--ink-soft); line-height: 1.95; }
+
+/* SECTION DIVIDER */
+.section-divider { display: flex; align-items: center; gap: 16px; max-width: 760px; margin: 0 auto; padding: 0 24px; opacity: 0.5; }
+.section-divider::before, .section-divider::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.section-divider-mark { font-family: var(--display); font-weight: 700; font-size: 14px; color: var(--accent); letter-spacing: 0.4em; padding-right: 0.4em; }
 
 /* LATEST */
 .latest-section { background: var(--bg); border-top: 1px solid var(--line); }
@@ -221,6 +226,8 @@ a:hover { color: var(--accent-deep); }
   </div>
 </section>
 
+<div class="section-divider" aria-hidden="true"><span class="section-divider-mark">◆ ◇ ◆</span></div>
+
 <section class="section forms-section">
   <div class="section-inner">
     <div class="section-label">FIVE FORMS</div>
@@ -228,11 +235,11 @@ a:hover { color: var(--accent-deep); }
     <p class="section-lead">前作六十回と本連載百回の通底にあるのは、領域や時代を超えて繰り返し立ち上がる五つの動きです。本連載はこの五つを軸に、関連する偉人や思想、歴史や経営学の知恵を交差させて進みます。</p>
 
     <div class="forms-grid">
-      <div class="form-card"><div class="form-card-num">I</div><div class="form-card-title">場のかたち</div><div class="form-card-text">強制ではなく「いやすさ」を設計することで、人が自然に集まり、対話し、何かが生まれる。</div></div>
-      <div class="form-card"><div class="form-card-num">II</div><div class="form-card-title">媒介のかたち</div><div class="form-card-text">専門家を増やすのではなく、つなぎ手を増やす。市民の中に媒介者を立ち上げる。</div></div>
-      <div class="form-card"><div class="form-card-num">III</div><div class="form-card-title">物語のかたち</div><div class="form-card-text">同じ素材でも、物語と文脈が変わると価値は反転する。当事者を主体に戻す。</div></div>
-      <div class="form-card"><div class="form-card-num">IV</div><div class="form-card-title">支えのかたち</div><div class="form-card-text">切手、時計、上下水道、規格、コモンズ。社会を支えるのは見えない基盤と共通の物差し。</div></div>
-      <div class="form-card"><div class="form-card-num">V</div><div class="form-card-title">開きのかたち</div><div class="form-card-text">これまで一部の人にしか届かなかった何かを、複製可能な技術と新しい流通で多くの人に開く。</div></div>
+      <div class="form-card"><div class="form-card-num">I.</div><div class="form-card-title">場のかたち</div><div class="form-card-text">強制ではなく「いやすさ」を設計することで、人が自然に集まり、対話し、何かが生まれる。</div></div>
+      <div class="form-card"><div class="form-card-num">II.</div><div class="form-card-title">媒介のかたち</div><div class="form-card-text">専門家を増やすのではなく、つなぎ手を増やす。市民の中に媒介者を立ち上げる。</div></div>
+      <div class="form-card"><div class="form-card-num">III.</div><div class="form-card-title">物語のかたち</div><div class="form-card-text">同じ素材でも、物語と文脈が変わると価値は反転する。当事者を主体に戻す。</div></div>
+      <div class="form-card"><div class="form-card-num">IV.</div><div class="form-card-title">支えのかたち</div><div class="form-card-text">切手、時計、上下水道、規格、コモンズ。社会を支えるのは見えない基盤と共通の物差し。</div></div>
+      <div class="form-card"><div class="form-card-num">V.</div><div class="form-card-title">開きのかたち</div><div class="form-card-text">これまで一部の人にしか届かなかった何かを、複製可能な技術と新しい流通で多くの人に開く。</div></div>
     </div>
   </div>
 </section>
