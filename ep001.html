@@ -539,9 +539,77 @@ a:hover { color: var(--accent-warm); }
   .site-footer-cols { grid-template-columns: 1fr; gap: 28px; }
 }
 
+/* ─────── EDITOR (編集長専用) ─────── */
+.editor-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(74,31,24,0.5);
+  color: var(--paper);
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  opacity: 0.4;
+  transition: opacity .15s, background .15s;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+}
+.editor-toggle:hover { opacity: 1; background: var(--accent-deep); }
+.editor-bar {
+  position: fixed;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-deep);
+  color: var(--paper);
+  padding: 10px 16px;
+  border-radius: 28px;
+  z-index: 1000;
+  display: none;
+  gap: 10px;
+  align-items: center;
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+.editor-bar.show { display: flex; }
+.editor-bar-label { padding: 0 8px; color: var(--accent-peach); font-weight: 700; }
+.editor-bar button {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 7px 14px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: opacity .15s, background .15s;
+}
+.editor-bar button.save-btn { background: var(--accent-peach); color: var(--accent-deep); }
+.editor-bar button.save-btn:hover { background: var(--accent-sand); }
+.editor-bar button.save-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.editor-bar button.cancel-btn { background: transparent; color: var(--paper); border: 1px solid rgba(255,255,255,0.3); }
+.editor-bar button.cancel-btn:hover { background: rgba(255,255,255,0.1); }
+.editor-bar button.reset-btn { background: transparent; color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.15); font-size: 10px; padding: 5px 10px; }
+.editor-bar button.reset-btn:hover { color: var(--paper); }
+[contenteditable="true"] {
+  outline: 1px dashed var(--accent-warm);
+  outline-offset: 4px;
+  background: rgba(244,228,212,0.4);
+  cursor: text;
+}
+[contenteditable="true"]:focus {
+  outline: 2px solid var(--accent-warm);
+  background: rgba(244,228,212,0.7);
+}
+
 /* ─────── PRINT (point users to print version) ─────── */
 @media print {
-  .site-header, .site-header-strip, .ep-nav, .feedback-section, .newsletter, .site-footer { display: none; }
+  .site-header, .site-header-strip, .ep-nav, .feedback-section, .newsletter, .site-footer, .editor-toggle, .editor-bar { display: none; }
   body { background: #FFFFFF; }
   .ep-hero { background: #FFFFFF; color: var(--ink); padding: 24px 0; }
   .ep-hero-num, .ep-hero-title, .ep-hero-en, .ep-hero-eyebrow { color: var(--ink) !important; }
@@ -623,20 +691,16 @@ a:hover { color: var(--accent-warm); }
   </div>
 </nav>
 
-<!-- ─────── EDIT FEEDBACK ─────── -->
-<section class="feedback-section" id="feedback">
+<!-- ─────── COMMENTS ─────── -->
+<section class="feedback-section" id="comments">
   <div class="feedback-inner">
-    <div class="feedback-label">FEEDBACK ・ 修正案・感想</div>
-    <h2 class="feedback-title">この記事に修正案やコメントを送る</h2>
-    <p class="feedback-desc">気になった一文、加えたほうがよい視点、誤りの指摘、感想――どのようなものでも歓迎します。著者に直接届きます。</p>
+    <div class="feedback-label">COMMENTS ・ 感想・コメント</div>
+    <h2 class="feedback-title">この話に感想を送る</h2>
+    <p class="feedback-desc">読んで感じたこと、気になった一文、ご質問、関連する話題――どのようなものでも歓迎します。編集長（西村）に直接届きます。</p>
 
     <form class="feedback-form" id="fbForm" onsubmit="return false;">
       <div class="feedback-field">
-        <label for="fbTarget">対象（任意）<span style="font-weight:400;color:var(--ink-mute);">― 段落番号や引用箇所など</span></label>
-        <input type="text" id="fbTarget" placeholder="例：第3段落「アレグザンダーの…」の箇所">
-      </div>
-      <div class="feedback-field">
-        <label for="fbSuggestion">修正案・コメント <span style="color:var(--accent-warm);">*</span></label>
+        <label for="fbSuggestion">コメント <span style="color:var(--accent-warm);">*</span></label>
         <textarea id="fbSuggestion" placeholder="ご自由にお書きください" required></textarea>
       </div>
       <div class="feedback-row">
@@ -652,7 +716,7 @@ a:hover { color: var(--accent-warm); }
       <button type="button" class="feedback-submit" id="fbSubmit" onclick="submitFeedback()">送信する</button>
     </form>
     <div class="feedback-done" id="fbDone">
-      ありがとうございました。コメントを受け取りました。今後の改稿の参考にさせていただきます。
+      ありがとうございました。コメントを受け取りました。
     </div>
   </div>
 </section>
@@ -702,7 +766,7 @@ a:hover { color: var(--accent-warm); }
           <li><a href="index.html">ホーム</a></li>
           <li><a href="articles.html">全100話 一覧</a></li>
           <li><a href="#newsletter">メルマガ登録</a></li>
-          <li><a href="#feedback">記事に修正案を送る</a></li>
+          <li><a href="#comments">この話にコメント</a></li>
         </ul>
       </div>
       <div class="site-footer-col">
@@ -727,7 +791,6 @@ const EPISODE_ID = 'ep001';
 const EPISODE_TITLE = '第1話 ― なぜいま「型」でソーシャルイノベーションを読むのか';
 
 async function submitFeedback() {
-  const target = document.getElementById('fbTarget').value.trim();
   const suggestion = document.getElementById('fbSuggestion').value.trim();
   const name = document.getElementById('fbName').value.trim();
   const email = document.getElementById('fbEmail').value.trim();
@@ -746,7 +809,7 @@ async function submitFeedback() {
       body: JSON.stringify({
         source: 'henka-no-katachi',
         episode: EPISODE_ID + ' ' + EPISODE_TITLE,
-        target, suggestion, name, email,
+        suggestion, name, email,
       }),
     });
     if (!res.ok) throw new Error('failed');
@@ -796,7 +859,132 @@ async function submitNl() {
     btn.textContent = '登録する';
   }
 }
+
+/* ─────── 編集機能（編集長専用・GitHub Contents API経由） ─────── */
+const EDITOR_REPO = 'yuyanishimura0312/henka-no-katachi';
+const PAT_KEY = 'gh_pat_henka_no_katachi';
+const EDITABLE_SELECTOR = '.ep-body p, .ep-body dd';
+let editingNow = false;
+
+function getPAT() {
+  let pat = localStorage.getItem(PAT_KEY);
+  if (!pat) {
+    pat = prompt(
+      '編集長モードに入ります。\n\nGitHub Personal Access Token を入力してください。\n（fine-grained PAT、henka-no-katachi リポジトリの Contents: Read and Write 権限）\n\n作成方法はこちら:\nhttps://github.com/settings/personal-access-tokens/new'
+    );
+    if (pat) {
+      pat = pat.trim();
+      localStorage.setItem(PAT_KEY, pat);
+    } else {
+      return null;
+    }
+  }
+  return pat;
+}
+
+function startEdit() {
+  if (editingNow) return;
+  const pat = getPAT();
+  if (!pat) return;
+  document.querySelectorAll(EDITABLE_SELECTOR).forEach(el => {
+    el.contentEditable = 'true';
+  });
+  document.getElementById('editorBar').classList.add('show');
+  document.getElementById('editorToggle').style.display = 'none';
+  editingNow = true;
+  // Scroll first editable element into view
+  document.querySelector(EDITABLE_SELECTOR)?.focus();
+}
+
+function cancelEdit() {
+  if (!editingNow) return;
+  if (confirm('編集中の内容を破棄してもよろしいですか？')) {
+    location.reload();
+  }
+}
+
+function resetPAT() {
+  if (confirm('保存されたGitHub Tokenをリセットします。次回の編集時に再入力が必要になります。')) {
+    localStorage.removeItem(PAT_KEY);
+    alert('Tokenをリセットしました。');
+  }
+}
+
+async function saveEdit() {
+  const pat = localStorage.getItem(PAT_KEY);
+  if (!pat) { alert('Tokenが見つかりません'); return; }
+  const saveBtn = document.querySelector('.editor-bar .save-btn');
+  const cancelBtn = document.querySelector('.editor-bar .cancel-btn');
+  saveBtn.disabled = true;
+  cancelBtn.disabled = true;
+  saveBtn.textContent = '保存中…';
+
+  try {
+    const path = (location.pathname.split('/').pop() || 'index.html').split('?')[0] || 'index.html';
+    const url = `https://api.github.com/repos/${EDITOR_REPO}/contents/${path}`;
+
+    // 1. Fetch current file
+    const resGet = await fetch(url, {
+      headers: { 'Authorization': `Bearer ${pat}`, 'Accept': 'application/vnd.github+json' }
+    });
+    if (!resGet.ok) {
+      if (resGet.status === 401) throw new Error('認証失敗（Token無効）。Tokenをリセットしてください。');
+      throw new Error('ファイル取得失敗 (' + resGet.status + ')');
+    }
+    const data = await resGet.json();
+    const sha = data.sha;
+    const oldContent = decodeURIComponent(escape(atob(data.content.replace(/\n/g, ''))));
+
+    // 2. Build new article HTML from current edited DOM
+    const articleClone = document.querySelector('.ep-body').cloneNode(true);
+    articleClone.querySelectorAll('[contenteditable]').forEach(el => {
+      el.removeAttribute('contenteditable');
+    });
+    const newArticleHTML = articleClone.outerHTML;
+
+    // 3. Replace article in source HTML
+    const articleRegex = /<article class="ep-body">[\s\S]*?<\/article>/;
+    if (!articleRegex.test(oldContent)) throw new Error('元HTMLに記事タグが見つかりません');
+    const newContent = oldContent.replace(articleRegex, newArticleHTML);
+
+    // 4. Base64 encode (UTF-8 safe)
+    const newB64 = btoa(unescape(encodeURIComponent(newContent)));
+
+    // 5. PUT
+    const ts = new Date().toISOString().slice(0,16).replace('T',' ');
+    const resPut = await fetch(url, {
+      method: 'PUT',
+      headers: { 'Authorization': `Bearer ${pat}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        message: `Edit ${path} via inline editor (${ts})`,
+        content: newB64,
+        sha,
+      }),
+    });
+    if (!resPut.ok) {
+      const errText = await resPut.text();
+      throw new Error('保存失敗 (' + resPut.status + '): ' + errText.slice(0,120));
+    }
+
+    saveBtn.textContent = '✓ 保存完了 (30秒で公開)';
+    setTimeout(() => location.reload(), 3000);
+  } catch (e) {
+    alert('保存失敗: ' + e.message);
+    saveBtn.disabled = false;
+    cancelBtn.disabled = false;
+    saveBtn.textContent = '保存';
+  }
+}
 </script>
+
+<!-- 編集長専用: 編集ボタン -->
+<button id="editorToggle" class="editor-toggle" onclick="startEdit()" title="編集（編集長専用）" aria-label="編集">✏️</button>
+<div id="editorBar" class="editor-bar">
+  <span class="editor-bar-label">編集中</span>
+  <button class="save-btn" onclick="saveEdit()">保存</button>
+  <button class="cancel-btn" onclick="cancelEdit()">キャンセル</button>
+  <button class="reset-btn" onclick="resetPAT()">Token更新</button>
+</div>
 
 </body>
 </html>
