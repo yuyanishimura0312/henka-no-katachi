@@ -16,19 +16,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@300;400;500;600;700;900&family=Judson:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg:           #FFFFFF;
-  --bg-soft:      #FAFAFA;
-  --bg-tint:      #F5F5F4;
-  --ink:          #14110F;
-  --ink-soft:     #3A3633;
-  --ink-mute:     #6B6661;
-  --ink-faint:    #9C9692;
+  --bg:           #0F0D0C;
+  --bg-soft:      #16140F;
+  --bg-tint:      #1C1A18;
+  --ink:          #ECEAE6;
+  --ink-soft:     #BFBBB5;
+  --ink-mute:     #888480;
+  --ink-faint:    #5A5752;
   --accent:       #FF3644;
-  --accent-deep:  #D4202E;
-  --accent-soft:  rgba(255, 54, 68, 0.08);
-  --accent-tint:  rgba(255, 54, 68, 0.18);
-  --line:         #E8E5E1;
-  --line-soft:    #F0EDE9;
+  --accent-deep:  #FF6B7A;
+  --accent-soft:  rgba(255, 54, 68, 0.12);
+  --accent-tint:  rgba(255, 54, 68, 0.24);
+  --line:         #2A2725;
+  --line-soft:    #1F1D1B;
   --serif:   "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "Plantin MT Pro", Georgia, serif;
   --sans:    "Noto Sans JP", "Hiragino Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --display: "Judson", "Noto Serif JP", Georgia, serif;
@@ -41,7 +41,7 @@ a { color: var(--accent); text-decoration: none; transition: color .15s; }
 a:hover { color: var(--accent-deep); }
 
 /* ─── HEADER ─── */
-.site-header { position: sticky; top: 0; z-index: 100; background: rgba(255, 255, 255, 0.96); backdrop-filter: saturate(160%) blur(8px); -webkit-backdrop-filter: saturate(160%) blur(8px); border-bottom: 1px solid var(--line); }
+.site-header { position: sticky; top: 0; z-index: 100; background: rgba(15, 13, 12, 0.92); backdrop-filter: saturate(160%) blur(10px); -webkit-backdrop-filter: saturate(160%) blur(10px); border-bottom: 1px solid var(--line); }
 .site-header-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .site-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .site-brand-mark { width: 30px; height: 30px; flex-shrink: 0; }
@@ -110,27 +110,27 @@ a:hover { color: var(--accent-deep); }
 .ep-title a { color: var(--ink); font-weight: 600; }
 .ep-title a:hover { color: var(--accent); }
 .ep-status { font-family: var(--sans); font-size: 9.5px; letter-spacing: 0.18em; color: var(--ink-faint); text-align: right; white-space: nowrap; font-weight: 600; }
-.ep-status.published { color: var(--bg); background: var(--accent); padding: 4px 10px; font-weight: 700; }
+.ep-status.published { color: #FFFFFF; background: var(--accent); padding: 4px 10px; font-weight: 700; }
 
-/* ─── NEWSLETTER ─── */
+/* ─── NEWSLETTER — inverse callout ─── */
 .newsletter { background: var(--ink); color: var(--bg); padding: 64px 24px 64px; }
 .newsletter-inner { max-width: 720px; margin: 0 auto; }
 .newsletter-eyebrow { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.32em; color: var(--accent); font-weight: 700; margin-bottom: 14px; }
 .newsletter-title { font-family: var(--serif); font-weight: 700; font-size: 26px; line-height: 1.6; letter-spacing: 0.04em; color: var(--bg); margin-bottom: 14px; }
-.newsletter-desc { font-family: var(--serif); font-size: 14.5px; line-height: 2; color: rgba(255,255,255,0.78); margin-bottom: 28px; }
+.newsletter-desc { font-family: var(--serif); font-size: 14.5px; line-height: 2; color: rgba(15, 13, 12, 0.74); margin-bottom: 28px; }
 .nl-form { display: flex; flex-direction: column; gap: 12px; max-width: 460px; }
 .nl-step { display: none; flex-direction: column; gap: 12px; }
 .nl-step.active { display: flex; }
 .nl-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.nl-field input { width: 100%; font-family: var(--serif); font-size: 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); color: var(--bg); padding: 12px 14px; letter-spacing: 0.04em; outline: none; transition: border-color .15s, background .15s; }
-.nl-field input::placeholder { color: rgba(255,255,255,0.45); }
-.nl-field input:focus { border-color: var(--accent); background: rgba(255,255,255,0.14); }
-.nl-consent { font-family: var(--sans); font-size: 11.5px; color: rgba(255,255,255,0.72); line-height: 1.7; display: flex; align-items: flex-start; gap: 8px; }
+.nl-field input { width: 100%; font-family: var(--serif); font-size: 14px; background: rgba(15, 13, 12, 0.04); border: 1px solid rgba(15, 13, 12, 0.18); color: var(--bg); padding: 12px 14px; letter-spacing: 0.04em; outline: none; transition: border-color .15s, background .15s; }
+.nl-field input::placeholder { color: rgba(15, 13, 12, 0.42); }
+.nl-field input:focus { border-color: var(--accent); background: rgba(15, 13, 12, 0.06); }
+.nl-consent { font-family: var(--sans); font-size: 11.5px; color: rgba(15, 13, 12, 0.7); line-height: 1.7; display: flex; align-items: flex-start; gap: 8px; }
 .nl-consent input { margin-top: 4px; flex-shrink: 0; }
-.nl-btn { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--bg); background: var(--accent); border: none; padding: 14px 26px; cursor: pointer; transition: background .15s; }
+.nl-btn { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #FFFFFF; background: var(--accent); border: none; padding: 14px 26px; cursor: pointer; transition: background .15s; }
 .nl-btn:hover { background: var(--accent-deep); }
 .nl-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-.nl-trust { font-family: var(--sans); font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: 0.04em; }
+.nl-trust { font-family: var(--sans); font-size: 11px; color: rgba(15, 13, 12, 0.5); letter-spacing: 0.04em; }
 .nl-done { display: none; padding: 22px 0; font-family: var(--serif); font-size: 16px; color: var(--bg); line-height: 1.9; }
 .nl-done.show { display: block; }
 .nl-form.hide { display: none; }
