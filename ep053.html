@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第53話 ― ローカルナレッジ ― ギアツの厚い記述 | 変化のかたち</title>
+<meta name="description" content="変化のかたち第53話。ローカルナレッジ ― ギアツの厚い記述。">
+<meta property="og:title" content="第53話 ― ローカルナレッジ ― ギアツの厚い記述">
+<meta property="og:description" content="変化のかたち第53話。ローカルナレッジ ― ギアツの厚い記述。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yuyanishimura0312.github.io/henka-no-katachi/ep053.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://yuyanishimura0312.github.io/henka-no-katachi/ep053.html">
+<link rel="icon" href="https://esse-sense.com/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #FAF6F1;
+  --paper-soft: #F5EFE7;
+  --paper-mgt: #FCF5EE;
+  --paper-aca: #F5EEE3;
+  --ink: #2A1A14;
+  --ink-soft: #5A4238;
+  --ink-mute: #7A6358;
+  --accent-deep: #4A1F18;
+  --accent: #7A2E1F;
+  --accent-warm: #C46545;
+  --accent-coral: #E0824A;
+  --accent-peach: #F0A671;
+  --accent-sand: #F8CDAC;
+  --accent-cream: #F5E8DC;
+  --line: #E5D9CC;
+  --line-soft: #EFE4D6;
+  --serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+  --sans: "Noto Sans JP", "Hiragino Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --display: "Cormorant Garamond", "Noto Serif JP", Georgia, serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  font-family: var(--serif);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.95;
+  letter-spacing: 0.04em;
+  font-feature-settings: "palt";
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; transition: color .15s; }
+a:hover { color: var(--accent-warm); }
+
+.site-header-strip { height: 3px; background: var(--accent-deep); }
+.site-header { position: sticky; top: 0; z-index: 100; background: rgba(250,246,241,0.96); backdrop-filter: saturate(160%) blur(8px); -webkit-backdrop-filter: saturate(160%) blur(8px); border-bottom: 1px solid var(--line); }
+.site-header-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.site-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.site-brand-mark { width: 28px; height: 28px; flex-shrink: 0; }
+.site-brand-mark img { width: 100%; height: auto; display: block; }
+.site-brand-text { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; color: var(--accent); line-height: 1.3; }
+.site-brand-text small { display: block; font-size: 9.5px; letter-spacing: 0.14em; color: var(--ink-mute); font-weight: 500; margin-top: 2px; }
+.site-nav { display: flex; gap: 22px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.1em; }
+.site-nav a { color: var(--ink-soft); font-weight: 500; padding: 6px 0; border-bottom: 2px solid transparent; }
+.site-nav a:hover { color: var(--accent-warm); border-bottom-color: var(--accent-warm); }
+
+.ep-hero {
+  background: linear-gradient(170deg, #4A1F18 0%, #6B2A1E 60%, #7A2E1F 100%);
+  color: var(--paper);
+  padding: 80px 24px 64px;
+  position: relative;
+  overflow: hidden;
+}
+.ep-hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 2; }
+.ep-hero-mark { position: absolute; right: -40px; top: 30px; width: 200px; opacity: 0.18; z-index: 1; }
+.ep-hero-eyebrow { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.3em; color: var(--accent-peach); font-weight: 700; display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.ep-hero-eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--accent-peach); }
+.ep-hero-num { font-family: var(--display); font-style: italic; font-size: 64px; color: var(--accent-peach); line-height: 1; margin-bottom: 8px; letter-spacing: 0.02em; }
+.ep-hero-title { font-family: var(--serif); font-weight: 500; font-size: 28px; line-height: 1.55; letter-spacing: 0.04em; color: var(--paper); margin-bottom: 14px; }
+.ep-hero-en { font-family: var(--display); font-style: italic; font-size: 15px; color: #F5DDC4; letter-spacing: 0.02em; margin-bottom: 32px; }
+.ep-hero-meta { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-family: var(--sans); font-size: 11.5px; letter-spacing: 0.1em; color: #E5C9B5; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.18); }
+.ep-hero-meta strong { color: var(--paper); font-weight: 500; }
+
+.layer-section { padding: 56px 24px; border-bottom: 1px solid var(--line); }
+.layer-honbun { background: var(--paper); }
+.layer-mgt { background: var(--paper-mgt); }
+.layer-aca { background: var(--paper-aca); }
+.layer-inner { max-width: 680px; margin: 0 auto; }
+.layer-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: inline-block;
+  padding: 5px 12px;
+  border: 1px solid var(--accent-warm);
+  color: var(--accent-warm);
+}
+.layer-honbun .layer-label { display: none; }
+.layer-title-jp {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--accent-deep);
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+.layer-title-en {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink-mute);
+  margin-bottom: 28px;
+}
+.layer-section p {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 2.05;
+  color: var(--ink);
+  margin-bottom: 26px;
+  text-indent: 1em;
+  letter-spacing: 0.04em;
+}
+.layer-section p:first-of-type { text-indent: 0; }
+.layer-section p strong { font-weight: 700; color: var(--accent-deep); }
+
+.ep-meta-block {
+  margin: 0 auto;
+  max-width: 680px;
+  padding: 28px 30px;
+  background: #FFFFFF;
+  border-top: 3px solid var(--accent-warm);
+  border-bottom: 1px solid var(--line);
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.ep-meta-block dt {
+  font-family: var(--sans);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-top: 14px;
+  margin-bottom: 6px;
+}
+.ep-meta-block dt:first-child { margin-top: 0; }
+.ep-meta-block dd {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  line-height: 1.85;
+  color: var(--ink-soft);
+}
+
+.ep-nav { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.ep-nav-inner { max-width: 720px; margin: 0 auto; padding: 28px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.ep-nav-link { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; background: #FFFFFF; border: 1px solid var(--line); text-decoration: none; transition: border-color .15s; }
+.ep-nav-link:hover { border-color: var(--accent-warm); text-decoration: none; }
+.ep-nav-label { font-family: var(--sans); font-size: 10px; letter-spacing: 0.18em; color: var(--accent-warm); font-weight: 700; }
+.ep-nav-link.next { text-align: right; }
+.ep-nav-title { font-family: var(--serif); font-size: 13.5px; color: var(--accent-deep); line-height: 1.6; letter-spacing: 0.04em; }
+
+.newsletter { background: linear-gradient(140deg, #4A1F18 0%, #6B2A1E 100%); color: var(--paper); padding: 52px 24px 56px; }
+.newsletter-inner { max-width: 680px; margin: 0 auto; }
+.newsletter-eyebrow { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.3em; color: var(--accent-peach); font-weight: 700; margin-bottom: 14px; }
+.newsletter-title { font-family: var(--serif); font-weight: 500; font-size: 24px; line-height: 1.6; letter-spacing: 0.04em; color: var(--paper); margin-bottom: 14px; }
+.newsletter-desc { font-family: var(--serif); font-size: 14px; line-height: 1.9; color: #E5C9B5; margin-bottom: 26px; }
+.nl-form { display: flex; flex-direction: column; gap: 12px; max-width: 460px; }
+.nl-step { display: none; flex-direction: column; gap: 12px; }
+.nl-step.active { display: flex; }
+.nl-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.nl-field input { width: 100%; font-family: var(--serif); font-size: 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); color: var(--paper); padding: 12px 14px; outline: none; }
+.nl-field input::placeholder { color: rgba(255,255,255,0.45); }
+.nl-field input:focus { border-color: var(--accent-peach); background: rgba(255,255,255,0.12); }
+.nl-consent { font-family: var(--sans); font-size: 11.5px; color: #E5C9B5; line-height: 1.7; display: flex; align-items: flex-start; gap: 8px; }
+.nl-btn { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--accent-deep); background: var(--accent-peach); border: none; padding: 14px 24px; cursor: pointer; }
+.nl-btn:hover { background: var(--accent-sand); }
+.nl-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.nl-trust { font-family: var(--sans); font-size: 11px; color: rgba(229,201,181,0.7); }
+.nl-done { display: none; padding: 22px 0; font-family: var(--serif); font-size: 16px; color: var(--paper); line-height: 1.9; }
+.nl-done.show { display: block; }
+.nl-form.hide { display: none; }
+
+.feedback-section { background: var(--paper-soft); padding: 48px 24px 56px; border-top: 1px solid var(--line); }
+.feedback-inner { max-width: 680px; margin: 0 auto; }
+.feedback-label { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; color: var(--accent-warm); font-weight: 700; margin-bottom: 8px; }
+.feedback-title { font-family: var(--serif); font-weight: 600; font-size: 22px; color: var(--accent-deep); letter-spacing: 0.06em; margin-bottom: 10px; }
+.feedback-desc { font-family: var(--serif); font-size: 14.5px; color: var(--ink-soft); line-height: 1.95; margin-bottom: 22px; }
+.feedback-form { display: flex; flex-direction: column; gap: 14px; }
+.feedback-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.feedback-field input, .feedback-field textarea { width: 100%; font-family: var(--serif); font-size: 14px; color: var(--ink); background: #FFFFFF; border: 1px solid var(--line); padding: 14px 16px; outline: none; }
+.feedback-field textarea { resize: vertical; min-height: 140px; line-height: 1.85; }
+.feedback-field label { display: block; font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; color: var(--ink-mute); margin-bottom: 6px; }
+.feedback-submit { align-self: flex-start; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--paper); background: var(--accent); border: none; padding: 14px 28px; cursor: pointer; margin-top: 4px; }
+.feedback-done { display: none; background: var(--accent-cream); border-left: 3px solid var(--accent-warm); padding: 18px 22px; font-family: var(--serif); font-size: 14.5px; color: var(--accent-deep); line-height: 1.85; }
+.feedback-done.show { display: block; }
+.feedback-form.hide { display: none; }
+
+.site-footer { background: var(--paper-soft); padding: 48px 24px 28px; border-top: 1px solid var(--line); }
+.site-footer-inner { max-width: 1080px; margin: 0 auto; }
+.site-footer-cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 36px; padding-bottom: 32px; border-bottom: 1px solid var(--line); }
+.site-footer-col h4 { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 14px; }
+.site-footer-col p, .site-footer-col a { font-family: var(--serif); font-size: 13px; line-height: 1.95; color: var(--ink-soft); }
+.site-footer-col ul { list-style: none; }
+.site-footer-col li { margin-bottom: 8px; }
+.site-footer-bottom { padding-top: 22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; font-family: var(--sans); font-size: 11px; color: var(--ink-mute); }
+
+@media (max-width: 760px) {
+  .site-nav { gap: 14px; font-size: 11px; }
+  .site-brand-text small { display: none; }
+  .ep-hero { padding: 56px 22px 44px; }
+  .ep-hero-num { font-size: 48px; }
+  .ep-hero-title { font-size: 22px; }
+  .layer-section { padding: 40px 22px; }
+  .layer-section p { font-size: 15.5px; line-height: 2.05; }
+  .ep-nav-inner { grid-template-columns: 1fr; padding: 22px 22px; }
+  .ep-nav-link.next { text-align: left; }
+  .nl-row, .feedback-row { grid-template-columns: 1fr; }
+  .site-footer-cols { grid-template-columns: 1fr; gap: 28px; }
+}
+</style>
+</head>
+<body>
+
+<div class="site-header-strip"></div>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="site-brand">
+      <div class="site-brand-mark"><img src="assets/miratuku-mark.png" alt="ミラツク"></div>
+      <div class="site-brand-text">変化のかたち<small>MIRA TUKU / 未来をつくる100の型</small></div>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">ホーム</a>
+      <a href="articles.html">全100話</a>
+      <a href="#newsletter">メルマガ</a>
+    </nav>
+  </div>
+</header>
+
+<section class="ep-hero">
+  <img class="ep-hero-mark" src="assets/miratuku-mark.png" alt="">
+  <div class="ep-hero-inner">
+    <div class="ep-hero-eyebrow">PART III — 第III部 第8章 物語循環</div>
+    <div class="ep-hero-num">53.</div>
+    <h1 class="ep-hero-title">ローカルナレッジ<br>― ギアツの厚い記述</h1>
+    <p class="ep-hero-en">Local Knowledge: Geertz's Thick Description</p>
+    <div class="ep-hero-meta">
+      <span><strong>西村 勇也</strong>（NPO法人ミラツク 代表理事）</span>
+      <span>2026年5月8日</span>
+    </div>
+  </div>
+</section>
+
+<section class="layer-section layer-honbun">
+  <article class="layer-inner">
+    <p class="lead">ブルデューが文化資本の再生産を、ホブズボームが伝統の再構築を理論化したのと同時期、人類学の側から、もう一つの大きな仕事が立ち上がっていました。米国の人類学者**クリフォード・ギアツ**（1926-2006）の「**解釈人類学（interpretive anthropology）**」です。</p>
+
+      <p class="lead">ギアツは、ハーバード大学で社会関係学を学んだあと、1950年代にインドネシアのジャワ島・バリ島・モロッコでフィールドワークを重ねます。1960年代以降、プリンストン高等研究所教授として活躍し、20世紀後半の人類学に革命をもたらしました。</p>
+
+      <p class="lead">彼の主著『**文化の解釈学（The Interpretation of Cultures）**』（1973年）の冒頭論文「**深い記述：解釈の文化理論に向けて**」（厚い記述、Thick Description）は、人類学方法論の決定的な再定義でした。</p>
+
+      <p class="lead">ギアツが分析哲学者**ギルバート・ライル**から借用した「**厚い記述**」の概念は、簡単な例で説明されます。誰かが片目をピクッと動かす行為を、外側から観察すると、すべて同じ「まばたき」に見えます。けれども、それぞれの行為の意味は完全に違う：（1）単なる生理的なまばたき、（2）友人への合図、（3）友人の合図のからかい、（4）友人の合図のからかいの練習、など。同じ身体動作の意味は、それを取り囲む**文化的文脈の網の目**のなかではじめて決まります。</p>
+
+      <p class="lead">ギアツは、この洞察を人類学に持ち込みました。文化を理解することは、行動を観察することではなく、**行動の背後にある意味の網の目を読み取ること**である、と。彼の有名な主張：「**人間は自分自身が紡いだ意味の網のなかに吊るされている動物である**」。</p>
+
+      <p class="lead">1972年の論文「**バリ島の闘鶏 ― ディープ・プレイの記述（Deep Play: Notes on the Balinese Cockfight）**」は、彼の方法論の代表作になります。バリ島の闘鶏は、表面的には鳥同士の戦いに見えます。けれども、ギアツが厚く記述すると、闘鶏はバリ社会の階級・友情・敵対・名誉・男性性・植民地経験のすべてが凝縮された**文化的テクスト**であることが見えてきます。</p>
+
+      <p class="lead">1983年、ギアツは続編『**ローカル・ノレッジ（Local Knowledge）**』を出版します。ここで彼は、各地の文化が持つ**固有の知**――法律・芸術・宗教・政治――は、他の地域の知に翻訳されきらない**ローカルな構造**を持つ、と論じました。これは、グローバル化の時代に重要な問題提起です。</p>
+
+      <p class="lead">注目すべきは、ギアツの仕事が、ホブズボームの「創られた伝統」と補完関係にあることです。ホブズボームは、伝統が**外側から見ると新しい構築物**であることを示しました。ギアツは、同じ伝統が**内側から見ると意味の厚い網の目**であることを示しました。両者は、「**物語の循環は、外側からは構築、内側からは継承**」という両面性を、別の角度から記述したのです。</p>
+
+      <p class="lead">物語循環は、この**外側と内側の二重性**のなかで存続します。</p>
+  </article>
+</section>
+
+<section class="layer-section layer-mgt">
+  <div class="layer-inner">
+    <span class="layer-label">FOR MANAGEMENT</span>
+    <h2 class="layer-title-jp">経営学的に読み解きたいあなたへ</h2>
+    <p class="layer-title-en">For readers approaching this through Management Studies</p>
+    <p class="lead">ギアツの厚い記述・ローカル・ノレッジの発想は、現代経営の「**地域市場理解**」「**文化適応**」「**組織エスノグラフィー**」に深く応用されています。</p>
+
+      <p class="lead">**第一に、「現地化（localization）」を超えた「ローカル・ノレッジ」の経営**。グローバル企業の現地展開で、表面的な現地化（言語翻訳、現地素材使用）と、深層の現地化（地域の意味の網の目への参加）は別物です。スターバックスが日本進出（1996年）で行った京都・寺町二条店、東京ミッドタウン店などの地域固有の店舗デザインや、ユニクロが米国・欧州・中国で各地のファッション意味体系を学んだ過程は、ギアツ的なローカル・ノレッジの経営的応用です。</p>
+
+      <p class="lead">**第二に、「組織エスノグラフィー」の活用**。社員一人ひとりの行動を観察するのではなく、社員たちが共有する**意味の網の目**を理解する組織研究は、過去20年で急速に進展しました。Ed Schein "Organizational Culture and Leadership"（1985年/2017年第5版）、John Van Maanen "Tales of the Field"（1988年/2011年）が代表テキスト。Microsoft、Google、IBM、Toyota が社内のエスノグラファーを採用し、組織の暗黙の文化を読み解いています。</p>
+
+      <p class="lead">**第三に、ユーザー・リサーチの「厚い記述」**。デザインリサーチ、UXリサーチ、ジョブ理論（Christensen "Competing Against Luck"、2016年）の方法論は、表面的な購買動機ではなく、ユーザーが商品・サービスに付与している**意味の網の目**を読み解く実践です。IDEO、Frog、IDEU、Ziba――これらの世界的デザインコンサルティング会社の方法論的核心に、ギアツの厚い記述があります。</p>
+
+      <p class="lead">組織も市場も社会も、薄く観察するのと厚く解釈するのとでは、見える景色がまるで違います。</p>
+  </div>
+</section>
+
+<section class="layer-section layer-aca">
+  <div class="layer-inner">
+    <span class="layer-label">FOR ACADEMIA</span>
+    <h2 class="layer-title-jp">学術的に読み解きたいあなたへ</h2>
+    <p class="layer-title-en">For readers approaching this through Academic study</p>
+    <p class="lead">ギアツ研究の中核文献は、Clifford Geertz "The Interpretation of Cultures: Selected Essays"（Basic Books, 1973、邦訳『文化の解釈学』I・II、岩波現代選書 1987、吉田禎吾・柳川啓一・中牧弘允・板橋作美訳）。"Local Knowledge: Further Essays in Interpretive Anthropology"（Basic Books, 1983、邦訳『ローカル・ノレッジ』岩波書店 1991、梶原景昭・小泉潤二・山下晋司・山下淑美訳）。</p>
+
+      <p class="lead">ギアツの初期フィールド研究は、"The Religion of Java"（Free Press, 1960、邦訳『ジャワの宗教』みすず書房 1986）、"Agricultural Involution"（Univ. of California Press, 1963）、"Negara: The Theatre State in Nineteenth-Century Bali"（Princeton UP, 1980、邦訳『ヌガラ：19世紀バリの劇場国家』みすず書房 1990）。</p>
+
+      <p class="lead">「闘鶏」論文の正式名は、"Deep Play: Notes on the Balinese Cockfight"（Daedalus 101(1), 1972）、後に『文化の解釈学』に収録。</p>
+
+      <p class="lead">ギアツ自身による方法論的反省は、"After the Fact: Two Countries, Four Decades, One Anthropologist"（Harvard UP, 1995、邦訳『記憶のかたち』みすず書房 1999）、"Available Light: Anthropological Reflections on Philosophical Topics"（Princeton UP, 2000）。</p>
+
+      <p class="lead">「厚い記述」の哲学的源流は、Gilbert Ryle "The Thinking of Thoughts: What Is 'Le Penseur' Doing?"（University Lectures, 18, Univ. of Saskatchewan, 1968）、"Collected Papers, Vol. 2"（Hutchinson, 1971）。</p>
+
+      <p class="lead">ギアツ批判の代表は、James Clifford & George Marcus eds. "Writing Culture: The Poetics and Politics of Ethnography"（Univ. of California Press, 1986、邦訳『文化を書く』紀伊國屋書店 1996）。Vincent Crapanzano "Hermes' Dilemma: The Masking of Subversion in Ethnographic Description"（in *Writing Culture*）が、ギアツの「他者を語る権威」の問題を提起。Talal Asad "Genealogies of Religion"（Johns Hopkins UP, 1993）が、ギアツの宗教定義への批判。</p>
+
+      <p class="lead">解釈人類学の系譜は、Victor Turner "The Forest of Symbols"（Cornell UP, 1967、邦訳『象徴と社会』紀伊國屋書店 1981）、"The Ritual Process"（Aldine, 1969、邦訳『儀礼の過程』思索社 1976）が並走。Mary Douglas "Purity and Danger"（Routledge, 1966、邦訳『汚穢と禁忌』思潮社 1972/ちくま学芸文庫 2009）。</p>
+
+      <p class="lead">日本では、山口昌男『文化と両義性』（岩波書店, 1975/岩波現代文庫 2000）、青木保『文化の翻訳』（東京大学出版会, 1978）、浜本満『差別の民俗誌』（人文書院, 2014）、太田好信『民族誌的近代への介入』（人文書院, 2001/2010）がギアツ系譜の日本の標準。船曳建夫『岩波講座 文化人類学』全13巻（岩波書店, 1996-1998）。</p>
+
+      <p class="lead">組織研究への応用は、John Van Maanen "Tales of the Field"（Univ. of Chicago Press, 1988/2011）、Marietta Baba "Anthropology and Business"（in *21st Century Anthropology*, 2010）。</p>
+
+      <p class="lead">連載第III部第8章は、本話のギアツから、ep54のノラ『記憶の場』へ、集合的記憶の物質的・物語的編成へと展開します。</p>
+  </div>
+</section>
+
+<dl class="ep-meta-block">
+  <dt>今回つかったデータベース</dt>
+  <dd>人類学概念DB ／ 学術知識DB ／ 哲学概念DB ／ SIDB v9</dd>
+  <dt>今回登場した思想家・概念</dt>
+  <dd>クリフォード・ギアツ(1926-2006)『文化の解釈学』(1973)『ローカル・ノレッジ』(1983) ／ 厚い記述（thick description、Ryle由来） ／ バリ島闘鶏「ディープ・プレイ」(1972) ／ 「人間は意味の網のなかに吊るされている」 ／ Writing Culture批判(1986) ／ 山口昌男・青木保日本人類学 ／ 組織エスノグラフィー応用</dd>
+  <dt>次回</dt>
+  <dd>第54話「記憶の場 ― ピエール・ノラ」</dd>
+</dl>
+
+<nav class="ep-nav">
+  <div class="ep-nav-inner">
+    <a class="ep-nav-link" href="ep052.html">
+      <span class="ep-nav-label">← PREV</span>
+      <span class="ep-nav-title">第52話「伝統の発明 ― ホブズボームの反転」</span>
+    </a>
+    <a class="ep-nav-link next" href="ep054.html">
+      <span class="ep-nav-label">NEXT →</span>
+      <span class="ep-nav-title">第54話「記憶の場 ― ピエール・ノラ」</span>
+    </a>
+  </div>
+</nav>
+
+<section class="feedback-section" id="comments">
+  <div class="feedback-inner">
+    <div class="feedback-label">COMMENTS ・ 感想・コメント</div>
+    <h2 class="feedback-title">この話に感想を送る</h2>
+    <p class="feedback-desc">読んで感じたこと、気になった一文、ご質問、関連する話題――どのようなものでも歓迎します。編集長（西村）に直接届きます。</p>
+
+    <form class="feedback-form" id="fbForm" onsubmit="return false;">
+      <div class="feedback-field">
+        <label for="fbSuggestion">コメント <span style="color:var(--accent-warm);">*</span></label>
+        <textarea id="fbSuggestion" placeholder="ご自由にお書きください" required></textarea>
+      </div>
+      <div class="feedback-row">
+        <div class="feedback-field">
+          <label for="fbName">お名前（任意）</label>
+          <input type="text" id="fbName" autocomplete="name" placeholder="匿名でも構いません">
+        </div>
+        <div class="feedback-field">
+          <label for="fbEmail">メール（任意）</label>
+          <input type="email" id="fbEmail" autocomplete="email" placeholder="返信不要なら空欄で">
+        </div>
+      </div>
+      <button type="button" class="feedback-submit" id="fbSubmit" onclick="submitFeedback()">送信する</button>
+    </form>
+    <div class="feedback-done" id="fbDone">ありがとうございました。コメントを受け取りました。</div>
+  </div>
+</section>
+
+<section class="newsletter" id="newsletter">
+  <div class="newsletter-inner">
+    <div class="newsletter-eyebrow">EMERGING FUTURE NEWSLETTER</div>
+    <h2 class="newsletter-title">新しい話の公開を、まずメールで。</h2>
+    <p class="newsletter-desc">本連載「変化のかたち」の更新通知、ミラツクの未来洞察・ソーシャルイノベーション関連の最新情報をお届けします。配信停止はいつでも可能です。</p>
+
+    <form class="nl-form" id="nlForm" onsubmit="return false;">
+      <div class="nl-step active" id="nlStep1">
+        <div class="nl-field"><input type="email" id="nlEmail" placeholder="メールアドレス" autocomplete="email"></div>
+        <button type="button" class="nl-btn" onclick="nlNext()">次へ →</button>
+        <div class="nl-trust">連載更新・実践事例・関連トピックをお届けします</div>
+      </div>
+      <div class="nl-step" id="nlStep2">
+        <div class="nl-row">
+          <div class="nl-field"><input type="text" id="nlName" placeholder="お名前" autocomplete="name"></div>
+          <div class="nl-field"><input type="text" id="nlOrg" placeholder="所属（任意）" autocomplete="organization"></div>
+        </div>
+        <label class="nl-consent"><input type="checkbox" id="nlConsent" checked> メールマガジン配信に同意します。配信停止はいつでも可能です。</label>
+        <button type="button" class="nl-btn" id="nlBtn" onclick="submitNl()">登録する</button>
+      </div>
+    </form>
+    <div class="nl-done" id="nlDone">ようこそ。確認メールをお送りしました。<br>これから一緒に「変化のかたち」を読み解いていきましょう。</div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-cols">
+      <div class="site-footer-col">
+        <h4>ABOUT</h4>
+        <p><strong>変化のかたち ― 未来をつくる100の型</strong></p>
+        <p style="margin-top:8px;color:var(--ink-mute);">ソーシャルイノベーションの新しい読み方。NPO法人ミラツク代表理事・西村勇也が、社会変容の奥にある「かたち」を、人類史と知の系譜のなかで読み解く全100回連載。</p>
+      </div>
+      <div class="site-footer-col">
+        <h4>NAVIGATION</h4>
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="articles.html">全100話 一覧</a></li>
+          <li><a href="ep001.html">第1話を読む</a></li>
+          <li><a href="#newsletter">メルマガ登録</a></li>
+        </ul>
+      </div>
+      <div class="site-footer-col">
+        <h4>MIRA TUKU</h4>
+        <ul>
+          <li><a href="https://emerging-future.org/" target="_blank" rel="noopener">emerging-future.org</a></li>
+          <li><a href="https://github.com/yuyanishimura0312/henka-no-katachi" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <span>© 2026 NPO法人ミラツク</span>
+      <span>変化のかたち ― 未来をつくる100の型</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const FEEDBACK_API = 'https://claude-code-manual-app.vercel.app/api/feedback';
+const NEWSLETTER_API = 'https://claude-code-manual-app.vercel.app/api/community';
+const EPISODE_ID = 'ep53';
+const EPISODE_TITLE = '第53話 ― ローカルナレッジ ― ギアツの厚い記述';
+
+async function submitFeedback() {
+  const suggestion = document.getElementById('fbSuggestion').value.trim();
+  const name = document.getElementById('fbName').value.trim();
+  const email = document.getElementById('fbEmail').value.trim();
+  const btn = document.getElementById('fbSubmit');
+  if (!suggestion) { document.getElementById('fbSuggestion').focus(); return; }
+  btn.disabled = true; btn.textContent = '送信中…';
+  try {
+    const res = await fetch(FEEDBACK_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ source: 'henka-no-katachi', episode: EPISODE_ID + ' ' + EPISODE_TITLE, suggestion, name, email })
+    });
+    if (!res.ok) throw new Error('failed');
+    document.getElementById('fbForm').classList.add('hide');
+    document.getElementById('fbDone').classList.add('show');
+  } catch(e) { alert('送信に失敗しました'); btn.disabled = false; btn.textContent = '送信する'; }
+}
+
+function nlNext() {
+  const v = document.getElementById('nlEmail').value.trim();
+  if (!v || !v.includes('@')) { document.getElementById('nlEmail').focus(); return; }
+  document.getElementById('nlStep1').classList.remove('active');
+  document.getElementById('nlStep2').classList.add('active');
+  document.getElementById('nlName').focus();
+}
+
+async function submitNl() {
+  const name = document.getElementById('nlName').value.trim();
+  const org = document.getElementById('nlOrg').value.trim();
+  const email = document.getElementById('nlEmail').value.trim();
+  const consent = document.getElementById('nlConsent').checked;
+  const btn = document.getElementById('nlBtn');
+  if (!name) { document.getElementById('nlName').focus(); return; }
+  if (!consent) { alert('メルマガ配信への同意が必要です'); return; }
+  btn.disabled = true; btn.textContent = '登録中…';
+  try {
+    const res = await fetch(NEWSLETTER_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, org, email })
+    });
+    if (!res.ok) throw new Error('failed');
+    document.getElementById('nlForm').classList.add('hide');
+    document.getElementById('nlDone').classList.add('show');
+  } catch(e) { alert('登録に失敗しました'); btn.disabled = false; btn.textContent = '登録する'; }
+}
+</script>
+
+</body>
+</html>
