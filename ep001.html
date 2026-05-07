@@ -644,8 +644,8 @@ a:hover { color: var(--accent-warm); }
     <h1 class="ep-hero-title">なぜいま「型」で<br>ソーシャルイノベーションを読むのか</h1>
     <p class="ep-hero-en">Why we read Social Innovation through Patterns</p>
     <div class="ep-hero-meta">
-      <span><strong>西村 勇也</strong>（NPO法人ミラツク 代表理事）</span>
-      <span>2026年5月</span>
+      <span class="ep-hero-author"><strong>西村 勇也</strong>（NPO法人ミラツク 代表理事）</span>
+      <span class="ep-hero-date">2026年5月7日</span>
       <a class="pdf-btn" href="ep001-print.html" target="_blank" rel="noopener">📄 PDF版で読む</a>
     </div>
   </div>
@@ -863,7 +863,7 @@ async function submitNl() {
 /* ─────── 編集機能（編集長専用・GitHub Contents API経由） ─────── */
 const EDITOR_REPO = 'yuyanishimura0312/henka-no-katachi';
 const PAT_KEY = 'gh_pat_henka_no_katachi';
-const EDITABLE_SELECTOR = '.ep-body p, .ep-body dd';
+const EDITABLE_SELECTOR = '.ep-hero-eyebrow, .ep-hero-num, .ep-hero-title, .ep-hero-en, .ep-hero-author, .ep-hero-date, .ep-body p, .ep-body dd';
 let editingNow = false;
 
 function sanitizePAT(raw) {
@@ -953,17 +953,22 @@ async function saveEdit() {
     const sha = data.sha;
     const oldContent = decodeURIComponent(escape(atob(data.content.replace(/\n/g, ''))));
 
-    // 2. Build new article HTML from current edited DOM
-    const articleClone = document.querySelector('.ep-body').cloneNode(true);
-    articleClone.querySelectorAll('[contenteditable]').forEach(el => {
-      el.removeAttribute('contenteditable');
-    });
-    const newArticleHTML = articleClone.outerHTML;
+    // 2. Build new article HTML and hero HTML from current edited DOM
+    const cleanClone = (sel) => {
+      const c = document.querySelector(sel).cloneNode(true);
+      c.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
+      return c.outerHTML;
+    };
+    const newArticleHTML = cleanClone('.ep-body');
+    const newHeroHTML = cleanClone('.ep-hero');
 
-    // 3. Replace article in source HTML
+    // 3. Replace hero and article in source HTML
     const articleRegex = /<article class="ep-body">[\s\S]*?<\/article>/;
+    const heroRegex = /<section class="ep-hero">[\s\S]*?<\/section>/;
     if (!articleRegex.test(oldContent)) throw new Error('元HTMLに記事タグが見つかりません');
-    const newContent = oldContent.replace(articleRegex, newArticleHTML);
+    if (!heroRegex.test(oldContent)) throw new Error('元HTMLにヒーロー部が見つかりません');
+    let newContent = oldContent.replace(heroRegex, newHeroHTML);
+    newContent = newContent.replace(articleRegex, newArticleHTML);
 
     // 4. Base64 encode (UTF-8 safe)
     const newB64 = btoa(unescape(encodeURIComponent(newContent)));
