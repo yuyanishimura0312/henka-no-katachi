@@ -14,25 +14,29 @@
 <link rel="icon" href="https://esse-sense.com/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --paper: #FAF6F1;
-  --paper-soft: #F5EFE7;
-  --ink: #2A1A14;
-  --ink-soft: #5A4238;
-  --ink-mute: #7A6358;
-  --accent-deep: #4A1F18;
-  --accent: #7A2E1F;
-  --accent-warm: #C46545;
+  --paper:        #FAF6F1;
+  --paper-soft:   #F5EFE7;
+  --paper-deep:   #EDE3D5;
+  --ink:          #2A1A14;
+  --ink-soft:     #5A4238;
+  --ink-mute:     #7A6358;
+  --ink-faint:    #A89485;
+  --accent-deep:  #4A1F18;
+  --accent:       #7A2E1F;
+  --accent-warm:  #C46545;
   --accent-coral: #E0824A;
   --accent-peach: #F0A671;
-  --accent-sand: #F8CDAC;
+  --accent-sand:  #F8CDAC;
   --accent-cream: #F5E8DC;
-  --line: #E5D9CC;
-  --line-soft: #EFE4D6;
-  --serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
-  --sans: "Noto Sans JP", "Hiragino Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --highlight:    #E0824A;
+  --line:         #E5D9CC;
+  --line-soft:    #EFE4D6;
+  --line-faint:   #F5EBDD;
+  --serif:   "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+  --sans:    "Noto Sans JP", "Hiragino Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   --display: "Cormorant Garamond", "Noto Serif JP", Georgia, serif;
 }
 
@@ -50,488 +54,188 @@ body {
 a { color: var(--accent); text-decoration: none; transition: color .15s; }
 a:hover { color: var(--accent-warm); }
 
-/* ─────── HEADER ─────── */
-.site-header-strip { height: 3px; background: var(--accent-deep); }
+.read-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; background: transparent; z-index: 200; pointer-events: none; }
+.read-progress-bar { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent-warm), var(--accent-coral)); transition: width .1s linear; }
 
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(250, 246, 241, 0.96);
-  backdrop-filter: saturate(160%) blur(8px);
-  -webkit-backdrop-filter: saturate(160%) blur(8px);
-  border-bottom: 1px solid var(--line);
-}
-.site-header-inner {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 0 24px;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-.site-brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-}
+.site-header-strip { height: 3px; background: var(--accent-deep); }
+.site-header { position: sticky; top: 0; z-index: 100; background: rgba(250, 246, 241, 0.96); backdrop-filter: saturate(160%) blur(8px); -webkit-backdrop-filter: saturate(160%) blur(8px); border-bottom: 1px solid var(--line); }
+.site-header-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.site-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .site-brand-mark { width: 28px; height: 28px; flex-shrink: 0; }
 .site-brand-mark img { width: 100%; height: auto; display: block; }
-.site-brand-text {
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  color: var(--accent);
-  line-height: 1.3;
-}
-.site-brand-text small {
-  display: block;
-  font-size: 9.5px;
-  letter-spacing: 0.14em;
-  color: var(--ink-mute);
-  font-weight: 500;
-  margin-top: 2px;
-}
-.site-nav {
-  display: flex;
-  gap: 22px;
-  font-family: var(--sans);
-  font-size: 12px;
-  letter-spacing: 0.1em;
-}
-.site-nav a {
-  color: var(--ink-soft);
-  font-weight: 500;
-  padding: 6px 0;
-  border-bottom: 2px solid transparent;
-}
+.site-brand-text { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; color: var(--accent); line-height: 1.3; }
+.site-brand-text small { display: block; font-size: 9.5px; letter-spacing: 0.14em; color: var(--ink-mute); font-weight: 500; margin-top: 2px; }
+.site-nav { display: flex; gap: 22px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.1em; }
+.site-nav a { color: var(--ink-soft); font-weight: 500; padding: 6px 0; border-bottom: 2px solid transparent; }
 .site-nav a:hover { color: var(--accent-warm); border-bottom-color: var(--accent-warm); }
 .site-nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
 
-/* ─────── EPISODE HERO ─────── */
-.ep-hero {
-  background: linear-gradient(170deg, #4A1F18 0%, #6B2A1E 60%, #7A2E1F 100%);
-  color: var(--paper);
-  padding: 80px 24px 64px;
-  position: relative;
-  overflow: hidden;
-}
-.ep-hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 2; }
-.ep-hero-mark {
-  position: absolute;
-  right: -40px;
-  top: 30px;
-  width: 200px;
-  opacity: 0.18;
-  z-index: 1;
-}
-.ep-hero-eyebrow {
-  font-family: var(--sans);
-  font-size: 10.5px;
-  letter-spacing: 0.3em;
-  color: var(--accent-peach);
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-.ep-hero-eyebrow::before {
-  content: "";
-  width: 28px;
-  height: 1px;
-  background: var(--accent-peach);
-}
-.ep-hero-num {
-  font-family: var(--display);
-  font-style: italic;
-  font-size: 64px;
-  color: var(--accent-peach);
-  line-height: 1;
-  margin-bottom: 8px;
-  letter-spacing: 0.02em;
-}
-.ep-hero-title {
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: 28px;
-  line-height: 1.55;
-  letter-spacing: 0.04em;
-  color: var(--paper);
-  margin-bottom: 14px;
-}
-.ep-hero-en {
-  font-family: var(--display);
-  font-style: italic;
-  font-size: 15px;
-  color: #F5DDC4;
-  letter-spacing: 0.02em;
-  margin-bottom: 32px;
-}
-.ep-hero-meta {
-  display: flex;
-  gap: 22px;
-  flex-wrap: wrap;
-  align-items: center;
-  font-family: var(--sans);
-  font-size: 11.5px;
-  letter-spacing: 0.1em;
-  color: #E5C9B5;
-  padding-top: 24px;
-  border-top: 1px solid rgba(255,255,255,0.18);
-}
-.ep-hero-meta strong {
-  color: var(--paper);
-  font-weight: 500;
-}
-.ep-hero-meta .pdf-btn {
-  margin-left: auto;
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--accent-deep);
-  background: var(--accent-peach);
-  padding: 9px 18px;
-  border-radius: 22px;
-  text-decoration: none;
-  transition: background .15s, transform .15s;
-}
+.ep-hero { background: linear-gradient(170deg, #4A1F18 0%, #6B2A1E 60%, #7A2E1F 100%); color: var(--paper); padding: 96px 24px 80px; position: relative; overflow: hidden; }
+.ep-hero-mark { position: absolute; right: -40px; top: 30px; width: 220px; opacity: 0.16; z-index: 1; }
+.ep-hero-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 2; }
+.ep-hero-eyebrow { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.3em; color: var(--accent-peach); font-weight: 700; display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.ep-hero-eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--accent-peach); }
+.ep-hero-num { font-family: var(--display); font-style: italic; font-size: 92px; color: var(--accent-peach); line-height: 0.95; margin-bottom: 4px; letter-spacing: 0.02em; display: flex; align-items: baseline; gap: 10px; }
+.ep-hero-num-total { font-family: var(--display); font-style: italic; font-size: 22px; color: rgba(245, 221, 196, 0.6); font-weight: 400; }
+.ep-hero-title { font-family: var(--serif); font-weight: 500; font-size: 30px; line-height: 1.55; letter-spacing: 0.04em; color: var(--paper); margin-bottom: 14px; }
+.ep-hero-en { font-family: var(--display); font-style: italic; font-size: 16px; color: #F5DDC4; letter-spacing: 0.02em; margin-bottom: 28px; }
+.ep-hero-lead { font-family: var(--serif); font-size: 15.5px; font-weight: 300; line-height: 2; color: #F0D9C0; letter-spacing: 0.06em; max-width: 600px; margin-bottom: 32px; padding-left: 16px; border-left: 2px solid rgba(240, 166, 113, 0.5); }
+.ep-hero-meta { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-family: var(--sans); font-size: 11.5px; letter-spacing: 0.1em; color: #E5C9B5; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.18); }
+.ep-hero-meta strong { color: var(--paper); font-weight: 500; }
+.ep-hero-meta .read-time { display: inline-flex; align-items: center; gap: 6px; color: #F0D9C0; }
+.ep-hero-meta .read-time::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent-peach); }
+.ep-hero-meta .pdf-btn { margin-left: auto; font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: var(--accent-deep); background: var(--accent-peach); padding: 9px 18px; border-radius: 22px; text-decoration: none; transition: background .15s, transform .15s; }
 .ep-hero-meta .pdf-btn:hover { background: var(--accent-sand); transform: translateY(-1px); text-decoration: none; }
 
-/* ─────── ARTICLE ─────── */
-.ep-body {
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 64px 24px 80px;
-}
-.ep-body p {
-  font-family: var(--serif);
-  font-size: 16.5px;
-  line-height: 2.1;
-  color: var(--ink);
-  margin-bottom: 28px;
-  text-indent: 1em;
-  letter-spacing: 0.04em;
-}
+.ep-layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); max-width: 1180px; margin: 0 auto; gap: 40px; padding: 0 24px; align-items: start; }
+.toc-sidebar { position: sticky; top: 76px; padding: 56px 0 80px; font-family: var(--sans); font-size: 12px; align-self: start; max-height: calc(100vh - 76px); overflow-y: auto; }
+.toc-label { font-size: 10px; letter-spacing: 0.24em; color: var(--accent-warm); font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+.toc-section { margin-bottom: 18px; }
+.toc-part { display: block; font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.16em; color: var(--accent); margin-bottom: 6px; text-decoration: none; }
+.toc-part:hover { color: var(--accent-warm); }
+.toc-part-title { display: block; font-family: var(--serif); font-size: 13px; color: var(--ink-soft); line-height: 1.55; letter-spacing: 0.04em; text-decoration: none; margin-bottom: 4px; }
+.toc-part-title:hover { color: var(--accent-warm); }
+.toc-current { display: block; font-family: var(--sans); font-size: 11.5px; color: var(--accent-deep); font-weight: 700; background: var(--accent-cream); border-left: 3px solid var(--accent-warm); padding: 8px 10px; letter-spacing: 0.04em; line-height: 1.55; margin-top: 6px; }
+.toc-current::before { content: "● 現在地"; display: block; font-size: 9px; letter-spacing: 0.18em; color: var(--accent-warm); margin-bottom: 4px; font-weight: 700; }
+
+.ep-body { max-width: 720px; margin: 0 auto; padding: 56px 0 96px; }
+.ep-body p { font-family: var(--serif); font-size: 17px; line-height: 2.05; color: var(--ink); margin-bottom: 30px; text-indent: 1em; letter-spacing: 0.04em; }
 .ep-body p:first-of-type { text-indent: 0; }
+.ep-body p:first-of-type::first-letter { font-family: var(--display); font-style: italic; font-size: 4.6em; float: left; line-height: 0.92; margin: 0.06em 0.12em 0 0; color: var(--accent-deep); font-weight: 500; }
 .ep-body p strong { font-weight: 700; color: var(--accent-deep); }
 
-.ep-meta-block {
-  margin-top: 48px;
-  padding: 28px 30px;
-  background: #FFFFFF;
-  border-top: 3px solid var(--accent-warm);
-  border-bottom: 1px solid var(--line);
-}
-.ep-meta-block dt {
-  font-family: var(--sans);
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--accent);
-  margin-top: 14px;
-  margin-bottom: 6px;
-}
-.ep-meta-block dt:first-child { margin-top: 0; }
-.ep-meta-block dd {
-  font-family: var(--sans);
-  font-size: 12.5px;
-  line-height: 1.85;
-  color: var(--ink-soft);
-}
+.ep-body p .hl, .ep-body p span.hl { background-image: linear-gradient(transparent 60%, rgba(224, 130, 74, 0.32) 60%); padding: 0 1px; }
+::selection { background: rgba(224, 130, 74, 0.35); color: var(--ink); }
 
-/* ─────── EDIT FEEDBACK ─────── */
-.feedback-section {
-  background: var(--paper-soft);
-  padding: 48px 24px 56px;
-  border-top: 1px solid var(--line);
-}
-.feedback-inner { max-width: 680px; margin: 0 auto; }
-.feedback-label {
-  font-family: var(--sans);
-  font-size: 10.5px;
-  letter-spacing: 0.22em;
-  color: var(--accent-warm);
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-.feedback-title {
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: 22px;
-  color: var(--accent-deep);
-  letter-spacing: 0.06em;
-  margin-bottom: 10px;
-}
-.feedback-desc {
-  font-family: var(--serif);
-  font-size: 14.5px;
-  color: var(--ink-soft);
-  line-height: 1.95;
-  margin-bottom: 22px;
-}
+.ep-pullquote { margin: 48px 0; padding: 28px 0 28px 28px; border-left: 3px solid var(--accent-warm); font-family: var(--serif); font-size: 19px; line-height: 2; color: var(--accent-deep); letter-spacing: 0.06em; font-weight: 500; font-feature-settings: "palt"; position: relative; }
+.ep-pullquote::before { content: "\201C"; position: absolute; top: -8px; left: 8px; font-family: var(--display); font-style: italic; font-size: 56px; color: var(--accent-peach); line-height: 1; opacity: 0.6; }
+
+.cite-section { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--line); }
+.cite-section-label { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.24em; color: var(--accent-warm); margin-bottom: 6px; }
+.cite-section-title { font-family: var(--serif); font-size: 18px; color: var(--accent-deep); letter-spacing: 0.06em; margin-bottom: 22px; font-weight: 500; }
+.cite-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+.cite-card { background: #FFFFFF; border: 1px solid var(--line); border-top: 2px solid var(--accent-warm); padding: 18px 20px 20px; transition: transform .15s, border-top-color .15s; }
+.cite-card:hover { transform: translateY(-2px); border-top-color: var(--accent-coral); }
+.cite-card-name { font-family: var(--serif); font-size: 14.5px; font-weight: 700; color: var(--accent-deep); letter-spacing: 0.04em; margin-bottom: 4px; }
+.cite-card-en { font-family: var(--display); font-style: italic; font-size: 12.5px; color: var(--ink-mute); margin-bottom: 8px; letter-spacing: 0.02em; }
+.cite-card-life { font-family: var(--sans); font-size: 10px; letter-spacing: 0.14em; color: var(--accent); font-weight: 500; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px dotted var(--line); }
+.cite-card-concept { font-family: var(--serif); font-size: 12.5px; color: var(--ink-soft); line-height: 1.75; letter-spacing: 0.03em; }
+.cite-card-concept strong { display: block; font-family: var(--sans); font-size: 9.5px; font-weight: 700; letter-spacing: 0.18em; color: var(--accent-warm); margin-bottom: 4px; }
+
+.db-list { margin-top: 28px; padding: 18px 22px; background: var(--paper-soft); border-left: 3px solid var(--accent-coral); }
+.db-list-label { font-family: var(--sans); font-size: 10px; font-weight: 700; letter-spacing: 0.18em; color: var(--accent-warm); margin-bottom: 8px; }
+.db-list-items { font-family: var(--sans); font-size: 12px; color: var(--ink-soft); line-height: 1.85; letter-spacing: 0.04em; }
+
+.ep-question { margin-top: 56px; padding: 32px 30px 30px; background: linear-gradient(155deg, #F8EDE0 0%, #F5E8DC 100%); border-top: 3px solid var(--accent-warm); position: relative; }
+.ep-question-label { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.24em; color: var(--accent-warm); margin-bottom: 10px; }
+.ep-question-q { font-family: var(--serif); font-size: 17px; font-weight: 500; color: var(--accent-deep); line-height: 1.85; letter-spacing: 0.06em; margin-bottom: 20px; }
+.ep-question-next { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding-top: 16px; border-top: 1px solid rgba(196, 101, 69, 0.3); }
+.ep-question-next-meta { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.18em; color: var(--accent-warm); }
+.ep-question-next-title { font-family: var(--serif); font-size: 14px; color: var(--accent-deep); letter-spacing: 0.04em; font-weight: 500; }
+.ep-question-next-link { font-family: var(--sans); font-size: 11.5px; font-weight: 700; letter-spacing: 0.16em; color: var(--accent-deep); background: var(--accent-peach); padding: 8px 16px; border-radius: 18px; text-decoration: none; transition: background .15s; }
+.ep-question-next-link:hover { background: var(--accent-sand); text-decoration: none; }
+
+.ep-actions { background: var(--paper-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 36px 24px; }
+.ep-actions-inner { max-width: 720px; margin: 0 auto; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; align-items: center; }
+.ep-action-btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.14em; padding: 12px 22px; border: 1px solid var(--accent-warm); color: var(--accent-deep); background: #FFFFFF; text-decoration: none; transition: background .15s, color .15s; }
+.ep-action-btn:hover { background: var(--accent-warm); color: var(--paper); text-decoration: none; }
+.ep-action-btn.primary { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+.ep-action-btn.primary:hover { background: var(--accent-deep); color: var(--paper); }
+
+.feedback-section { background: var(--paper); padding: 56px 24px 64px; }
+.feedback-inner { max-width: 720px; margin: 0 auto; }
+.feedback-label { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; color: var(--accent-warm); font-weight: 700; margin-bottom: 8px; }
+.feedback-title { font-family: var(--serif); font-weight: 600; font-size: 22px; color: var(--accent-deep); letter-spacing: 0.06em; margin-bottom: 10px; }
+.feedback-desc { font-family: var(--serif); font-size: 14.5px; color: var(--ink-soft); line-height: 1.95; margin-bottom: 22px; }
 .feedback-form { display: flex; flex-direction: column; gap: 14px; }
-.feedback-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
+.feedback-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .feedback-field { position: relative; }
-.feedback-field input,
-.feedback-field textarea,
-.feedback-field select {
-  width: 100%;
-  font-family: var(--serif);
-  font-size: 14px;
-  color: var(--ink);
-  background: #FFFFFF;
-  border: 1px solid var(--line);
-  border-radius: 0;
-  padding: 14px 16px;
-  letter-spacing: 0.04em;
-  outline: none;
-  transition: border-color .15s;
-}
+.feedback-field input, .feedback-field textarea, .feedback-field select { width: 100%; font-family: var(--serif); font-size: 14px; color: var(--ink); background: #FFFFFF; border: 1px solid var(--line); border-radius: 0; padding: 14px 16px; letter-spacing: 0.04em; outline: none; transition: border-color .15s; }
 .feedback-field textarea { resize: vertical; min-height: 140px; line-height: 1.85; }
-.feedback-field input:focus,
-.feedback-field textarea:focus,
-.feedback-field select:focus { border-color: var(--accent-warm); }
-.feedback-field label {
-  display: block;
-  font-family: var(--sans);
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--ink-mute);
-  margin-bottom: 6px;
-}
-.feedback-submit {
-  align-self: flex-start;
-  font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  color: var(--paper);
-  background: var(--accent);
-  border: none;
-  padding: 14px 28px;
-  cursor: pointer;
-  transition: background .15s;
-  margin-top: 4px;
-}
+.feedback-field input:focus, .feedback-field textarea:focus, .feedback-field select:focus { border-color: var(--accent-warm); }
+.feedback-field label { display: block; font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; color: var(--ink-mute); margin-bottom: 6px; }
+.feedback-submit { align-self: flex-start; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--paper); background: var(--accent); border: none; padding: 14px 28px; cursor: pointer; transition: background .15s; margin-top: 4px; }
 .feedback-submit:hover { background: var(--accent-deep); }
 .feedback-submit:disabled { background: var(--ink-mute); cursor: not-allowed; }
-.feedback-done {
-  display: none;
-  background: var(--accent-cream);
-  border-left: 3px solid var(--accent-warm);
-  padding: 18px 22px;
-  font-family: var(--serif);
-  font-size: 14.5px;
-  color: var(--accent-deep);
-  line-height: 1.85;
-}
+.feedback-done { display: none; background: var(--accent-cream); border-left: 3px solid var(--accent-warm); padding: 18px 22px; font-family: var(--serif); font-size: 14.5px; color: var(--accent-deep); line-height: 1.85; }
 .feedback-done.show { display: block; }
 .feedback-form.hide { display: none; }
 
-/* ─────── PREV/NEXT NAV ─────── */
-.ep-nav {
-  background: var(--paper);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-.ep-nav-inner {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 28px 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-}
-.ep-nav-link {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 16px 18px;
-  background: #FFFFFF;
-  border: 1px solid var(--line);
-  text-decoration: none;
-  transition: border-color .15s;
-}
+.ep-nav { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.ep-nav-inner { max-width: 760px; margin: 0 auto; padding: 28px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.ep-nav-link { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; background: #FFFFFF; border: 1px solid var(--line); text-decoration: none; transition: border-color .15s; }
 .ep-nav-link:hover { border-color: var(--accent-warm); text-decoration: none; }
 .ep-nav-link.disabled { opacity: 0.5; pointer-events: none; background: var(--paper-soft); }
-.ep-nav-label {
-  font-family: var(--sans);
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  color: var(--accent-warm);
-  font-weight: 700;
-}
+.ep-nav-label { font-family: var(--sans); font-size: 10px; letter-spacing: 0.18em; color: var(--accent-warm); font-weight: 700; }
 .ep-nav-link.next { text-align: right; }
-.ep-nav-title {
-  font-family: var(--serif);
-  font-size: 13.5px;
-  color: var(--accent-deep);
-  line-height: 1.6;
-  letter-spacing: 0.04em;
-}
+.ep-nav-title { font-family: var(--serif); font-size: 13.5px; color: var(--accent-deep); line-height: 1.6; letter-spacing: 0.04em; }
 
-/* ─────── NEWSLETTER ─────── */
-.newsletter {
-  background: linear-gradient(140deg, #4A1F18 0%, #6B2A1E 100%);
-  color: var(--paper);
-  padding: 52px 24px 56px;
-}
-.newsletter-inner {
-  max-width: 680px;
-  margin: 0 auto;
-  text-align: left;
-}
-.newsletter-eyebrow {
-  font-family: var(--sans);
-  font-size: 10.5px;
-  letter-spacing: 0.3em;
-  color: var(--accent-peach);
-  font-weight: 700;
-  margin-bottom: 14px;
-}
-.newsletter-title {
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 1.6;
-  letter-spacing: 0.04em;
-  color: var(--paper);
-  margin-bottom: 14px;
-}
-.newsletter-desc {
-  font-family: var(--serif);
-  font-size: 14px;
-  line-height: 1.9;
-  color: #E5C9B5;
-  margin-bottom: 26px;
-}
+.newsletter { background: linear-gradient(140deg, #4A1F18 0%, #6B2A1E 100%); color: var(--paper); padding: 52px 24px 56px; }
+.newsletter-inner { max-width: 720px; margin: 0 auto; text-align: left; }
+.newsletter-eyebrow { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.3em; color: var(--accent-peach); font-weight: 700; margin-bottom: 14px; }
+.newsletter-title { font-family: var(--serif); font-weight: 500; font-size: 24px; line-height: 1.6; letter-spacing: 0.04em; color: var(--paper); margin-bottom: 14px; }
+.newsletter-desc { font-family: var(--serif); font-size: 14px; line-height: 1.9; color: #E5C9B5; margin-bottom: 26px; }
 .nl-form { display: flex; flex-direction: column; gap: 12px; max-width: 460px; }
 .nl-step { display: none; flex-direction: column; gap: 12px; }
 .nl-step.active { display: flex; }
 .nl-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.nl-field input {
-  width: 100%;
-  font-family: var(--serif);
-  font-size: 14px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.22);
-  color: var(--paper);
-  padding: 12px 14px;
-  letter-spacing: 0.04em;
-  outline: none;
-  transition: border-color .15s, background .15s;
-}
+.nl-field input { width: 100%; font-family: var(--serif); font-size: 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); color: var(--paper); padding: 12px 14px; letter-spacing: 0.04em; outline: none; transition: border-color .15s, background .15s; }
 .nl-field input::placeholder { color: rgba(255,255,255,0.45); }
 .nl-field input:focus { border-color: var(--accent-peach); background: rgba(255,255,255,0.12); }
-.nl-consent {
-  font-family: var(--sans);
-  font-size: 11.5px;
-  color: #E5C9B5;
-  line-height: 1.7;
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-}
+.nl-consent { font-family: var(--sans); font-size: 11.5px; color: #E5C9B5; line-height: 1.7; display: flex; align-items: flex-start; gap: 8px; }
 .nl-consent input { margin-top: 4px; flex-shrink: 0; }
-.nl-btn {
-  font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  color: var(--accent-deep);
-  background: var(--accent-peach);
-  border: none;
-  padding: 14px 24px;
-  cursor: pointer;
-  transition: background .15s;
-}
+.nl-btn { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--accent-deep); background: var(--accent-peach); border: none; padding: 14px 24px; cursor: pointer; transition: background .15s; }
 .nl-btn:hover { background: var(--accent-sand); }
 .nl-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-.nl-trust {
-  font-family: var(--sans);
-  font-size: 11px;
-  color: rgba(229,201,181,0.7);
-  letter-spacing: 0.04em;
-}
-.nl-done {
-  display: none;
-  padding: 22px 0;
-  font-family: var(--serif);
-  font-size: 16px;
-  color: var(--paper);
-  line-height: 1.9;
-}
+.nl-trust { font-family: var(--sans); font-size: 11px; color: rgba(229,201,181,0.7); letter-spacing: 0.04em; }
+.nl-done { display: none; padding: 22px 0; font-family: var(--serif); font-size: 16px; color: var(--paper); line-height: 1.9; }
 .nl-done.show { display: block; }
 .nl-form.hide { display: none; }
 
-/* ─────── FOOTER ─────── */
-.site-footer {
-  background: var(--paper-soft);
-  padding: 48px 24px 28px;
-  border-top: 1px solid var(--line);
-}
-.site-footer-inner { max-width: 1080px; margin: 0 auto; }
-.site-footer-cols {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 36px;
-  padding-bottom: 32px;
-  border-bottom: 1px solid var(--line);
-}
-.site-footer-col h4 {
-  font-family: var(--sans);
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: var(--accent);
-  margin-bottom: 14px;
-}
-.site-footer-col p,
-.site-footer-col a {
-  font-family: var(--serif);
-  font-size: 13px;
-  line-height: 1.95;
-  color: var(--ink-soft);
-}
+.site-footer { background: var(--paper-soft); padding: 48px 24px 28px; border-top: 1px solid var(--line); }
+.site-footer-inner { max-width: 1180px; margin: 0 auto; }
+.site-footer-cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 36px; padding-bottom: 32px; border-bottom: 1px solid var(--line); }
+.site-footer-col h4 { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 14px; }
+.site-footer-col p, .site-footer-col a { font-family: var(--serif); font-size: 13px; line-height: 1.95; color: var(--ink-soft); }
 .site-footer-col ul { list-style: none; }
 .site-footer-col li { margin-bottom: 8px; }
 .site-footer-col a:hover { color: var(--accent-warm); }
-.site-footer-bottom {
-  padding-top: 22px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 14px;
-  font-family: var(--sans);
-  font-size: 11px;
-  color: var(--ink-mute);
-  letter-spacing: 0.06em;
-}
+.site-footer-bottom { padding-top: 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; font-family: var(--sans); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.06em; }
 
-/* ─────── RESPONSIVE ─────── */
+.toc-fab { display: none; position: fixed; bottom: 88px; right: 24px; z-index: 80; width: 48px; height: 48px; border-radius: 50%; background: var(--accent); color: var(--paper); border: none; cursor: pointer; font-family: var(--sans); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; box-shadow: 0 4px 14px rgba(74, 31, 24, 0.3); transition: background .15s, transform .15s; }
+.toc-fab:hover { background: var(--accent-deep); transform: translateY(-2px); }
+.toc-drawer { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; background: var(--paper); border-top: 3px solid var(--accent-warm); padding: 28px 24px 32px; max-height: 80vh; overflow-y: auto; box-shadow: 0 -8px 30px rgba(74, 31, 24, 0.18); transform: translateY(100%); transition: transform .25s ease; }
+.toc-drawer.show { display: block; transform: translateY(0); }
+.toc-drawer-close { position: absolute; top: 14px; right: 14px; background: transparent; border: none; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: var(--ink-mute); cursor: pointer; padding: 6px 10px; }
+.toc-drawer .toc-label { margin-top: 4px; }
+
+@media (max-width: 1080px) {
+  .ep-layout { grid-template-columns: 1fr; gap: 0; padding: 0; }
+  .toc-sidebar { display: none; }
+  .ep-body { padding: 56px 24px 64px; }
+  .toc-fab { display: flex; align-items: center; justify-content: center; }
+}
 @media (max-width: 760px) {
   .site-nav { gap: 14px; font-size: 11px; }
   .site-brand-text small { display: none; }
-  .ep-hero { padding: 56px 22px 44px; }
-  .ep-hero-num { font-size: 48px; }
-  .ep-hero-title { font-size: 22px; }
-  .ep-hero-en { font-size: 13px; }
+  .ep-hero { padding: 64px 22px 56px; }
+  .ep-hero-num { font-size: 64px; }
+  .ep-hero-num-total { font-size: 18px; }
+  .ep-hero-title { font-size: 23px; }
+  .ep-hero-en { font-size: 14px; }
+  .ep-hero-lead { font-size: 14.5px; padding-left: 14px; }
   .ep-hero-mark { width: 150px; right: -30px; }
   .ep-hero-meta .pdf-btn { margin-left: 0; }
-  .ep-body { padding: 44px 22px 60px; }
-  .ep-body p { font-size: 15.5px; line-height: 2.05; }
+  .ep-body { padding: 40px 22px 60px; }
+  .ep-body p { font-size: 15.5px; line-height: 2.0; margin-bottom: 26px; }
+  .ep-body p:first-of-type::first-letter { font-size: 4em; }
+  .ep-pullquote { font-size: 16px; padding: 20px 0 20px 20px; }
+  .cite-grid { grid-template-columns: 1fr; }
+  .ep-question { padding: 24px 22px; }
+  .ep-question-q { font-size: 15.5px; }
+  .ep-question-next { flex-direction: column; align-items: flex-start; }
+  .ep-actions-inner { flex-direction: column; }
+  .ep-action-btn { width: 100%; justify-content: center; }
   .feedback-row { grid-template-columns: 1fr; }
   .ep-nav-inner { grid-template-columns: 1fr; padding: 22px 22px; }
   .ep-nav-link.next { text-align: left; }
@@ -539,56 +243,12 @@ a:hover { color: var(--accent-warm); }
   .site-footer-cols { grid-template-columns: 1fr; gap: 28px; }
 }
 
-/* ─────── EDITOR (編集長専用) ─────── */
-.editor-toggle {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 999;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(74,31,24,0.5);
-  color: var(--paper);
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
-  opacity: 0.4;
-  transition: opacity .15s, background .15s;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
-}
+.editor-toggle { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 44px; height: 44px; border-radius: 50%; background: rgba(74,31,24,0.5); color: var(--paper); border: none; cursor: pointer; font-size: 18px; opacity: 0.4; transition: opacity .15s, background .15s; box-shadow: 0 4px 14px rgba(0,0,0,0.18); }
 .editor-toggle:hover { opacity: 1; background: var(--accent-deep); }
-.editor-bar {
-  position: fixed;
-  top: 70px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--accent-deep);
-  color: var(--paper);
-  padding: 10px 16px;
-  border-radius: 28px;
-  z-index: 1000;
-  display: none;
-  gap: 10px;
-  align-items: center;
-  font-family: var(--sans);
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-}
+.editor-bar { position: fixed; top: 70px; left: 50%; transform: translateX(-50%); background: var(--accent-deep); color: var(--paper); padding: 10px 16px; border-radius: 28px; z-index: 1000; display: none; gap: 10px; align-items: center; font-family: var(--sans); font-size: 12px; letter-spacing: 0.08em; box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
 .editor-bar.show { display: flex; }
 .editor-bar-label { padding: 0 8px; color: var(--accent-peach); font-weight: 700; }
-.editor-bar button {
-  font-family: var(--sans);
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  padding: 7px 14px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: opacity .15s, background .15s;
-}
+.editor-bar button { font-family: var(--sans); font-size: 11.5px; font-weight: 700; letter-spacing: 0.12em; padding: 7px 14px; border: none; border-radius: 20px; cursor: pointer; transition: opacity .15s, background .15s; }
 .editor-bar button.save-btn { background: var(--accent-peach); color: var(--accent-deep); }
 .editor-bar button.save-btn:hover { background: var(--accent-sand); }
 .editor-bar button.save-btn:disabled { opacity: 0.5; cursor: not-allowed; }
@@ -596,29 +256,26 @@ a:hover { color: var(--accent-warm); }
 .editor-bar button.cancel-btn:hover { background: rgba(255,255,255,0.1); }
 .editor-bar button.reset-btn { background: transparent; color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.15); font-size: 10px; padding: 5px 10px; }
 .editor-bar button.reset-btn:hover { color: var(--paper); }
-[contenteditable="true"] {
-  outline: 1px dashed var(--accent-warm);
-  outline-offset: 4px;
-  background: rgba(244,228,212,0.4);
-  cursor: text;
-}
-[contenteditable="true"]:focus {
-  outline: 2px solid var(--accent-warm);
-  background: rgba(244,228,212,0.7);
-}
+[contenteditable="true"] { outline: 1px dashed var(--accent-warm); outline-offset: 4px; background: rgba(244,228,212,0.4); cursor: text; }
+[contenteditable="true"]:focus { outline: 2px solid var(--accent-warm); background: rgba(244,228,212,0.7); }
 
-/* ─────── PRINT (point users to print version) ─────── */
 @media print {
-  .site-header, .site-header-strip, .ep-nav, .feedback-section, .newsletter, .site-footer, .editor-toggle, .editor-bar { display: none; }
+  .read-progress, .site-header, .site-header-strip, .toc-sidebar, .toc-fab, .toc-drawer, .ep-actions, .ep-nav, .feedback-section, .newsletter, .site-footer, .editor-toggle, .editor-bar { display: none !important; }
   body { background: #FFFFFF; }
-  .ep-hero { background: #FFFFFF; color: var(--ink); padding: 24px 0; }
-  .ep-hero-num, .ep-hero-title, .ep-hero-en, .ep-hero-eyebrow { color: var(--ink) !important; }
+  .ep-hero { background: #FFFFFF; color: var(--ink); padding: 24px 0; page-break-after: avoid; }
+  .ep-hero-num, .ep-hero-title, .ep-hero-en, .ep-hero-eyebrow, .ep-hero-lead { color: var(--ink) !important; }
   .ep-hero-meta { color: var(--ink-mute); }
   .ep-hero-mark, .pdf-btn { display: none; }
+  .ep-layout { grid-template-columns: 1fr; padding: 0; }
+  .ep-body { padding: 0 24px; }
+  .ep-body p:first-of-type::first-letter { color: var(--ink); }
+  .ep-pullquote, .ep-question, .cite-card { page-break-inside: avoid; }
 }
 </style>
 </head>
 <body>
+
+<div class="read-progress" aria-hidden="true"><div class="read-progress-bar" id="readProgressBar"></div></div>
 
 <div class="site-header-strip"></div>
 <header class="site-header">
@@ -635,51 +292,152 @@ a:hover { color: var(--accent-warm); }
   </div>
 </header>
 
-<!-- ─────── EPISODE HERO ─────── -->
 <section class="ep-hero">
   <img class="ep-hero-mark" src="assets/miratuku-mark.png" alt="">
   <div class="ep-hero-inner">
     <div class="ep-hero-eyebrow">PROLOGUE — 序 章 第1話</div>
-    <div class="ep-hero-num">01.</div>
+    <div class="ep-hero-num">01.<span class="ep-hero-num-total">/ 100</span></div>
     <h1 class="ep-hero-title">なぜいま「型」で<br>ソーシャルイノベーションを読むのか</h1>
     <p class="ep-hero-en">Why we read Social Innovation through Patterns</p>
+    <p class="ep-hero-lead">アリストテレスの形相からアレグザンダーのパタン・ランゲージへ。古代ギリシャから二十一世紀まで、人びとは目の前の現象の奥に「型」を探しつづけてきた――その系譜を辿りながら、ソーシャルイノベーションを「型で読む」という方法を提案する、連載のはじまり。</p>
     <div class="ep-hero-meta">
       <span class="ep-hero-author"><strong>西村 勇也</strong>（NPO法人ミラツク 代表理事）</span>
       <span class="ep-hero-date">2026年5月7日</span>
-      <a class="pdf-btn" href="ep001-print.html" target="_blank" rel="noopener">📄 PDF版で読む</a>
+      <span class="read-time" id="readTime">推定読了 約9分</span>
+      <a class="pdf-btn" href="ep001-print.html" target="_blank" rel="noopener">PDF版で読む</a>
     </div>
   </div>
 </section>
 
-<!-- ─────── ARTICLE BODY ─────── -->
-<article class="ep-body">
+<div class="ep-layout">
 
-  <p>社会を少しでもよくしようとする小さな試み――ソーシャルイノベーション――について、これまでと少し違う角度から眺めてみたいと思います。事例を一つひとつ追いかけるのではなく、その奥にある「型」を取り出して読んでみる、というやり方です。型と聞くと固い印象があるかもしれませんが、案外、世界を見やすくしてくれる便利な道具です。本連載はその試みを、100回かけて続けていきます。</p>
+  <aside class="toc-sidebar" aria-label="連載目次">
+    <div class="toc-label">FULL SERIES — 全100話</div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#prologue">PROLOGUE — 序 章</a>
+      <span class="toc-current">第1話 ― なぜいま「型」で読むのか</span>
+    </div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#part-i">PART I</a>
+      <a class="toc-part-title" href="articles.html#part-i">場のかたち ― 集まりが価値を生む</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#part-ii">PART II</a>
+      <a class="toc-part-title" href="articles.html#part-ii">媒介のかたち ― つなぎ手が社会を変える</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#part-iii">PART III</a>
+      <a class="toc-part-title" href="articles.html#part-iii">物語のかたち ― 価値はどこに宿るか</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#part-iv">PART IV</a>
+      <a class="toc-part-title" href="articles.html#part-iv">支えのかたち ― 見えないものが社会を支える</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#part-v">PART V</a>
+      <a class="toc-part-title" href="articles.html#part-v">開きのかたち ― 特権を多くの人に開く</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#final">FINAL — 終 章</a>
+    </div>
+  </aside>
 
-  <p>人がパターンを「型」として残す営みには、長い歴史があります。古代ギリシャの哲学者アリストテレスは、目の前の事物のなかに「形相（エイドス）」というかたちが宿っていると考えました。事物はそれぞれ違って見えるけれど、その奥には共通する「かたち」がある、という発想です。社会学者のマックス・ヴェーバーは「理念型」を打ち出しました。複雑な社会現象を、いったん理想的なかたちに整え直して捉えなおそう、という方法論です。</p>
+  <article class="ep-body" id="articleBody">
 
-  <p>もう少し近いところでは、建築家のクリストファー・アレグザンダーが、街と建物のなかに繰り返し現れる253のパターンを取り出した『パタン・ランゲージ』を1977年に書きました。設計の知恵を共有可能なかたちに変えた仕事です。経営学者のピーター・ドラッカーは、革新の機会を7つの源泉に整理しました（1985年）。分野はずいぶん違いますが、彼らに共通するのは、目の前の現象の奥にある関係性をていねいに取り出すことが、知恵を世代を超えて手渡す方法だ、という確信のようです。</p>
+    <p>社会を少しでもよくしようとする小さな試み――ソーシャルイノベーション――について、これまでとはちょっと違う角度から眺めなおしてみたいと思います。具体的な事例を一つひとつ追いかけるのではなく、その奥にある「型」を取り出して読んでみる、というやり方です。型と聞くと、なんとなく固い印象があるかもしれませんが、案外、世界を見やすくしてくれる便利な道具なのです。本連載は、その道具を一つひとつ取り出してゆっくり眺めるための場として、百回にわたって続けていきます。</p>
 
-  <p>科学哲学者のトマス・クーンが「パラダイム」と呼んだものも、ある種の型と言えそうです。型は単なる仕分けではなく、ものごとをどう見るかという「見方の枠組み」を差し出してくれます。新しい型を手にしたとき、見えなかった現象が急に見えてくる、ということが起こります。経済学者シュンペーターの「新結合」――新しいものはゼロからではなく、すでにあるもの同士の組み合わせから生まれる、という見方――も、ソーシャルイノベーションを考えるうえで大切な型です。人類学者のレヴィ=ストロースが神話の奥に見た構造も、心理学者ユングが「アーキタイプ（元型）」と呼んだ、こころの底に繰り返し現れるイメージも、すべて型の探求と言えます。</p>
+    <p>人がパターンを見つけて「型」として残しておく営みは、想像以上に長い歴史があります。古代ギリシャの哲学者アリストテレスは、目の前の一つひとつの事物のなかに「形相（エイドス）」というものが宿っているのではないかと考えました。事物はそれぞれ違って見えるけれど、そのなかには共通する「かたち」があるのではないか、という発想です。時代を下って、社会学者のマックス・ヴェーバーは「理念型」という考え方を打ち出しました。複雑な社会現象を、いったんは理想的なかたちに整え直して捉えてみよう、という方法論です。</p>
 
-<p>「型」は、社会のかたちの外側だけでなく、人の内側にも見つかります。神経科学者カール・フリストンや哲学者アンディ・クラークが整理してきた「予測符号化」では、脳は世界を白紙で受け取るのではなく、すでに持っている見込みから先回りで予測し、現実とのズレを手がかりに自らを書き換える装置だ、とされています。新しい場面に出会ってもなお「いつもの読み筋」で世界を見てしまうのは、この内側の型がそれだけ強いからです。一方、科学哲学者カール・ポパーは1934年の『科学的発見の論理』で、ある考えが科学かどうかは、間違っていると示せるかたちに整っているかにかかる、と論じました。型は、内側でも外側でも、ほどくための手がかりがあって初めて動き出すようです。</p>
+    <p>もう少し近いところでは、建築家のクリストファー・アレグザンダーが、街と建物のなかに繰り返し現れる二五三のパターンを取り出した『パタン・ランゲージ』という本を一九七七年に書きました。設計の知恵を多くの人が共有できるかたちに変えた仕事です。経営学者のピーター・ドラッカーは、革新の機会を七つの源泉として整理しました（一九八五年）。分野はずいぶん違いますが、彼らに共通しているのは、目の前の現象に圧倒されず、その奥にある関係性をていねいに取り出すことが、知恵を分野や世代を超えて手渡す方法なのだ、という確信のようです。</p>
 
-  <p>本連載の出発点について少し触れておきます。2015年から2020年にかけて、雑誌『ソトコト』で「未来をつくるソーシャルイノベーション」という連載を60回続けました。日本各地のNPOや社会起業家、地域の取り組みを毎号取り上げ、現場の方々の言葉に耳を傾けた、約5年間の旅でした。連載を終え、60回ぶんを改めて通読してみると、領域も規模も違うはずの事例の奥に、繰り返し立ち上がる5つの動きが見えてきました。「場が生まれる」「媒介する人が立ち上がる」「物語と文脈が結び直される」「見えないインフラと規格が更新される」「特権が大衆へと開かれていく」――この5つです。本連載はこの5つを軸に、偉人や思想、歴史や経営学の知恵を交差させて旅をしていきます。事例を増やすためではなく、変わらない構造を取り出すために。</p>
+    <p>科学の世界に目を移すと、科学哲学者のトマス・クーンが「パラダイム」と呼んだものも、ある種の型と言えそうです。型というのは単なる仕分けの引き出しではなく、ものごとをどう見るかという「見方の枠組み」を差し出してくれます。だから、新しい型を手にしたとき、これまで見えなかった現象が急に見えるようになる、ということが起こります。経済学者のシュンペーターが残した「新結合」という言葉――新しいものは、ゼロから生まれるのではなく、すでにあるもの同士の組み合わせから生まれる、という考え方――も、ソーシャルイノベーションを考えるうえで大切な型のひとつです。人類学者のレヴィ=ストロースが世界の神話の奥に見た構造も、心理学者ユングが「アーキタイプ（元型）」と呼んだ、こころの底に繰り返し現れるイメージも、よく見ればすべて型の探求と言えます。</p>
 
-  <p>型は、世界をすこし遅く、しかし深く読むための装置です。教養としてのソーシャルイノベーションは、その「遅さ」から始まります。</p>
+    <p>本連載の出発点について、少し触れておきます。二〇一五年から二〇二〇年にかけて、雑誌『ソトコト』で「未来をつくるソーシャルイノベーション」という連載を六十回にわたって続けました。日本各地のNPOや社会起業家、地域の取り組みを毎号一つずつ取り上げ、現場の方々の言葉に耳を傾けてきた、約五年間の旅でした。連載を終えたあと、その六十回ぶんを改めて通読してみたところ、領域も規模もまったく異なるはずの事例の奥に、繰り返し立ち上がる五つの動きがあることに気づきました。「場が生まれる」「媒介する人が立ち上がる」「物語と文脈が結び直される」「見えないインフラと規格が更新される」「特権が大衆へと開かれていく」――この五つです。本連載は、この五つを軸に置きながら、関連する偉人や思想、歴史や経営学の知恵を交差させて、ゆっくりと旅をしていきます。事例を増やすためではなく、変わらない構造を取り出すために。</p>
 
-  <dl class="ep-meta-block">
-    <dt>今回つかったデータベース</dt>
-    <dd>歴史偉人データベース ／ 哲学概念データベース ／ イノベーション理論データベース ／ 人類学概念データベース ／ 認知科学・脳科学（参照）</dd>
-    <dt>今回登場した思想家・概念</dt>
-    <dd>アリストテレス（形相 ― エイドス） ／ マックス・ヴェーバー（理念型） ／ クリストファー・アレグザンダー（パタン・ランゲージ） ／ ピーター・ドラッカー（イノベーションの7源泉） ／ トマス・クーン（パラダイム） ／ ヨーゼフ・シュンペーター（新結合） ／ クロード・レヴィ=ストロース（神話の構造） ／ カール・ユング（アーキタイプ／元型） ／ カール・フリストン＆アンディ・クラーク（予測符号化） ／ カール・ポパー（反証可能性）</dd>
-    <dt>次回</dt>
-    <dd>第2話「『つくる』と『生まれる』― 創発の系譜」</dd>
-  </dl>
+    <blockquote class="ep-pullquote">型というのは、世界をすこし遅く、しかし深く読むための装置です。教養としてのソーシャルイノベーションは、その「遅さ」から始まります。</blockquote>
 
-</article>
+    <div class="db-list">
+      <div class="db-list-label">今回つかったデータベース</div>
+      <div class="db-list-items">歴史偉人データベース ／ 哲学概念データベース ／ イノベーション理論データベース ／ 人類学概念データベース</div>
+    </div>
 
-<!-- ─────── PREV / NEXT ─────── -->
+    <section class="cite-section">
+      <div class="cite-section-label">CITATIONS — 今回登場した思想家・概念</div>
+      <h2 class="cite-section-title">本話に登場した8人の思想家</h2>
+      <div class="cite-grid">
+        <div class="cite-card">
+          <div class="cite-card-name">アリストテレス</div>
+          <div class="cite-card-en">Aristotle</div>
+          <div class="cite-card-life">BC 384 – BC 322 ／ 古代ギリシャ</div>
+          <div class="cite-card-concept"><strong>形相 EIDOS</strong>事物のなかに宿る「共通のかたち」を見出す思想の出発点。</div>
+        </div>
+        <div class="cite-card">
+          <div class="cite-card-name">マックス・ヴェーバー</div>
+          <div class="cite-card-en">Max Weber</div>
+          <div class="cite-card-life">1864 – 1920 ／ ドイツ</div>
+          <div class="cite-card-concept"><strong>理念型</strong>複雑な社会現象を、いったん理想的なかたちに整理して捉える方法論。</div>
+        </div>
+        <div class="cite-card">
+          <div class="cite-card-name">クリストファー・アレグザンダー</div>
+          <div class="cite-card-en">Christopher Alexander</div>
+          <div class="cite-card-life">1936 – 2022 ／ 米・建築家</div>
+          <div class="cite-card-concept"><strong>パタン・ランゲージ</strong>1977年。街と建物に繰り返し現れる253のパターンを抽出。</div>
+        </div>
+        <div class="cite-card">
+          <div class="cite-card-name">ピーター・ドラッカー</div>
+          <div class="cite-card-en">Peter F. Drucker</div>
+          <div class="cite-card-life">1909 – 2005 ／ 米・経営学者</div>
+          <div class="cite-card-concept"><strong>イノベーションの七源泉</strong>1985年。革新の機会を七つの構造として整理。</div>
+        </div>
+        <div class="cite-card">
+          <div class="cite-card-name">トマス・クーン</div>
+          <div class="cite-card-en">Thomas S. Kuhn</div>
+          <div class="cite-card-life">1922 – 1996 ／ 米・科学哲学者</div>
+          <div class="cite-card-concept"><strong>パラダイム</strong>ものごとをどう見るかという「見方の枠組み」自体の交代を論じた。</div>
+        </div>
+        <div class="cite-card">
+          <div class="cite-card-name">ヨーゼフ・シュンペーター</div>
+          <div class="cite-card-en">Joseph A. Schumpeter</div>
+          <div class="cite-card-life">1883 – 1950 ／ オーストリア</div>
+          <div class="cite-card-concept"><strong>新結合</strong>新しいものは既にあるもの同士の組合せから生まれる、という思想。</div>
+        </div>
+        <div class="cite-card">
+          <div class="cite-card-name">クロード・レヴィ=ストロース</div>
+          <div class="cite-card-en">Claude Lévi-Strauss</div>
+          <div class="cite-card-life">1908 – 2009 ／ 仏・人類学者</div>
+          <div class="cite-card-concept"><strong>深層構造</strong>世界の神話の奥に共通する構造を見出した。</div>
+        </div>
+        <div class="cite-card">
+          <div class="cite-card-name">カール・ユング</div>
+          <div class="cite-card-en">Carl G. Jung</div>
+          <div class="cite-card-life">1875 – 1961 ／ スイス・心理学者</div>
+          <div class="cite-card-concept"><strong>アーキタイプ／元型</strong>こころの底に繰り返し現れるイメージの根。</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ep-question">
+      <div class="ep-question-label">QUESTION FOR NEXT — 次号への問い</div>
+      <p class="ep-question-q">「つくる」と「生まれる」は何が違うのでしょうか。意図して設計するイノベーションと、誰かの呼びかけから自ずと立ち上がってくるイノベーション――両者を分けるものは何なのか。次回はその境界線を「創発」という鍵で読み解いていきます。</p>
+      <div class="ep-question-next">
+        <span class="ep-question-next-meta">NEXT EPISODE</span>
+        <span class="ep-question-next-title">第2話「『つくる』と『生まれる』― 創発の系譜」</span>
+        <a class="ep-question-next-link" href="articles.html#ep002">公開を待つ →</a>
+      </div>
+    </section>
+
+  </article>
+</div>
+
+<section class="ep-actions" aria-label="読了後アクション">
+  <div class="ep-actions-inner">
+    <a class="ep-action-btn primary" href="#newsletter">メルマガで次話を受け取る</a>
+    <a class="ep-action-btn" href="#comments">この話に感想を送る</a>
+    <a class="ep-action-btn" href="ep001-print.html" target="_blank" rel="noopener">PDF版を読む</a>
+    <a class="ep-action-btn" href="articles.html">全100話の地図へ</a>
+  </div>
+</section>
+
 <nav class="ep-nav">
   <div class="ep-nav-inner">
     <a class="ep-nav-link disabled" href="#" aria-disabled="true">
@@ -693,7 +451,6 @@ a:hover { color: var(--accent-warm); }
   </div>
 </nav>
 
-<!-- ─────── COMMENTS ─────── -->
 <section class="feedback-section" id="comments">
   <div class="feedback-inner">
     <div class="feedback-label">COMMENTS ・ 感想・コメント</div>
@@ -723,7 +480,6 @@ a:hover { color: var(--accent-warm); }
   </div>
 </section>
 
-<!-- ─────── NEWSLETTER ─────── -->
 <section class="newsletter" id="newsletter">
   <div class="newsletter-inner">
     <div class="newsletter-eyebrow">EMERGING FUTURE NEWSLETTER</div>
@@ -753,7 +509,6 @@ a:hover { color: var(--accent-warm); }
   </div>
 </section>
 
-<!-- ─────── FOOTER ─────── -->
 <footer class="site-footer">
   <div class="site-footer-inner">
     <div class="site-footer-cols">
@@ -786,11 +541,75 @@ a:hover { color: var(--accent-warm); }
   </div>
 </footer>
 
+<button class="toc-fab" id="tocFab" onclick="toggleTocDrawer()" aria-label="目次を開く">目次</button>
+<div class="toc-drawer" id="tocDrawer" role="dialog" aria-label="連載目次">
+  <button class="toc-drawer-close" onclick="toggleTocDrawer()" aria-label="閉じる">閉じる</button>
+  <div class="toc-label">FULL SERIES — 全100話</div>
+  <div class="toc-section">
+    <a class="toc-part" href="articles.html#prologue">PROLOGUE — 序 章</a>
+    <span class="toc-current">第1話 ― なぜいま「型」で読むのか</span>
+  </div>
+  <div class="toc-section">
+    <a class="toc-part" href="articles.html#part-i">PART I</a>
+    <a class="toc-part-title" href="articles.html#part-i">場のかたち ― 集まりが価値を生む</a>
+  </div>
+  <div class="toc-section">
+    <a class="toc-part" href="articles.html#part-ii">PART II</a>
+    <a class="toc-part-title" href="articles.html#part-ii">媒介のかたち ― つなぎ手が社会を変える</a>
+  </div>
+  <div class="toc-section">
+    <a class="toc-part" href="articles.html#part-iii">PART III</a>
+    <a class="toc-part-title" href="articles.html#part-iii">物語のかたち ― 価値はどこに宿るか</a>
+  </div>
+  <div class="toc-section">
+    <a class="toc-part" href="articles.html#part-iv">PART IV</a>
+    <a class="toc-part-title" href="articles.html#part-iv">支えのかたち ― 見えないものが社会を支える</a>
+  </div>
+  <div class="toc-section">
+    <a class="toc-part" href="articles.html#part-v">PART V</a>
+    <a class="toc-part-title" href="articles.html#part-v">開きのかたち ― 特権を多くの人に開く</a>
+  </div>
+  <div class="toc-section">
+    <a class="toc-part" href="articles.html#final">FINAL — 終 章</a>
+  </div>
+</div>
+
 <script>
 const FEEDBACK_API = 'https://claude-code-manual-app.vercel.app/api/feedback';
 const NEWSLETTER_API = 'https://claude-code-manual-app.vercel.app/api/community';
 const EPISODE_ID = 'ep001';
 const EPISODE_TITLE = '第1話 ― なぜいま「型」でソーシャルイノベーションを読むのか';
+
+(function() {
+  const article = document.getElementById('articleBody');
+  const bar = document.getElementById('readProgressBar');
+  const readTimeEl = document.getElementById('readTime');
+
+  if (article && readTimeEl) {
+    const text = article.innerText || article.textContent || '';
+    const charCount = text.replace(/\s/g, '').length;
+    const minutes = Math.max(1, Math.round(charCount / 280));
+    readTimeEl.textContent = '推定読了 約' + minutes + '分';
+  }
+
+  if (article && bar) {
+    function updateProgress() {
+      const rect = article.getBoundingClientRect();
+      const total = article.offsetHeight - window.innerHeight;
+      const scrolled = -rect.top;
+      const pct = total > 0 ? Math.max(0, Math.min(100, (scrolled / total) * 100)) : 0;
+      bar.style.width = pct + '%';
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress, { passive: true });
+    updateProgress();
+  }
+})();
+
+function toggleTocDrawer() {
+  const d = document.getElementById('tocDrawer');
+  if (d) d.classList.toggle('show');
+}
 
 async function submitFeedback() {
   const suggestion = document.getElementById('fbSuggestion').value.trim();
@@ -862,15 +681,13 @@ async function submitNl() {
   }
 }
 
-/* ─────── 編集機能（編集長専用・GitHub Contents API経由） ─────── */
 const EDITOR_REPO = 'yuyanishimura0312/henka-no-katachi';
 const PAT_KEY = 'gh_pat_henka_no_katachi';
-const EDITABLE_SELECTOR = '.ep-hero-eyebrow, .ep-hero-num, .ep-hero-title, .ep-hero-en, .ep-hero-author, .ep-hero-date, .ep-body p, .ep-body dd';
+const EDITABLE_SELECTOR = '.ep-hero-eyebrow, .ep-hero-num, .ep-hero-title, .ep-hero-en, .ep-hero-lead, .ep-hero-author, .ep-hero-date, .ep-body p, .ep-body blockquote, .db-list-items, .ep-question-q, .cite-card-name, .cite-card-life, .cite-card-concept';
 let editingNow = false;
 
 function sanitizePAT(raw) {
   if (!raw) return '';
-  // Remove all whitespace, control chars, and non-ASCII (PATs are pure ASCII)
   return String(raw).replace(/[^\x21-\x7E]/g, '');
 }
 
@@ -903,7 +720,6 @@ function startEdit() {
   document.getElementById('editorBar').classList.add('show');
   document.getElementById('editorToggle').style.display = 'none';
   editingNow = true;
-  // Scroll first editable element into view
   document.querySelector(EDITABLE_SELECTOR)?.focus();
 }
 
@@ -940,7 +756,6 @@ async function saveEdit() {
     const url = `https://api.github.com/repos/${EDITOR_REPO}/contents/${path}`;
     console.log('[editor] PUT target:', url);
 
-    // 1. Fetch current file
     const headers = new Headers();
     headers.set('Authorization', 'Bearer ' + pat);
     headers.set('Accept', 'application/vnd.github+json');
@@ -955,7 +770,6 @@ async function saveEdit() {
     const sha = data.sha;
     const oldContent = decodeURIComponent(escape(atob(data.content.replace(/\n/g, ''))));
 
-    // 2. Build new article HTML and hero HTML from current edited DOM
     const cleanClone = (sel) => {
       const c = document.querySelector(sel).cloneNode(true);
       c.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
@@ -964,18 +778,15 @@ async function saveEdit() {
     const newArticleHTML = cleanClone('.ep-body');
     const newHeroHTML = cleanClone('.ep-hero');
 
-    // 3. Replace hero and article in source HTML
-    const articleRegex = /<article class="ep-body">[\s\S]*?<\/article>/;
+    const articleRegex = /<article class="ep-body"[^>]*>[\s\S]*?<\/article>/;
     const heroRegex = /<section class="ep-hero">[\s\S]*?<\/section>/;
     if (!articleRegex.test(oldContent)) throw new Error('元HTMLに記事タグが見つかりません');
     if (!heroRegex.test(oldContent)) throw new Error('元HTMLにヒーロー部が見つかりません');
     let newContent = oldContent.replace(heroRegex, newHeroHTML);
     newContent = newContent.replace(articleRegex, newArticleHTML);
 
-    // 4. Base64 encode (UTF-8 safe)
     const newB64 = btoa(unescape(encodeURIComponent(newContent)));
 
-    // 5. PUT
     const ts = new Date().toISOString().slice(0,16).replace('T',' ');
     const putHeaders = new Headers();
     putHeaders.set('Authorization', 'Bearer ' + pat);
@@ -1007,8 +818,7 @@ async function saveEdit() {
 }
 </script>
 
-<!-- 編集長専用: 編集ボタン -->
-<button id="editorToggle" class="editor-toggle" onclick="startEdit()" title="編集（編集長専用）" aria-label="編集">✏️</button>
+<button id="editorToggle" class="editor-toggle" onclick="startEdit()" title="編集（編集長専用）" aria-label="編集">✎</button>
 <div id="editorBar" class="editor-bar">
   <span class="editor-bar-label">編集中</span>
   <button class="save-btn" onclick="saveEdit()">保存</button>
