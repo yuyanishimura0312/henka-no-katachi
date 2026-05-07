@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>変化のかたち ― 未来をつくる100の型 | NPO法人ミラツク</title>
+<meta name="description" content="ソーシャルイノベーションの新しい読み方。NPO法人ミラツク代表理事・西村勇也による全100回連載。社会を少しでもよくする小さな試みの奥にある『かたち』を、人類史と知の系譜のなかで読み解きます。">
+<meta property="og:title" content="変化のかたち ― 未来をつくる100の型">
+<meta property="og:description" content="ソーシャルイノベーションの新しい読み方。全100回連載。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yuyanishimura0312.github.io/henka-no-katachi/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://yuyanishimura0312.github.io/henka-no-katachi/">
+<link rel="icon" href="https://esse-sense.com/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FFFFFF;
+  --paper: #FAF6F1;
+  --ink: #2A1A14;
+  --ink-soft: #5A4238;
+  --ink-mute: #7A6358;
+  --accent-deep: #4A1F18;
+  --accent: #7A2E1F;
+  --accent-warm: #C46545;
+  --accent-coral: #E0824A;
+  --accent-peach: #F0A671;
+  --accent-sand: #F8CDAC;
+  --accent-cream: #F5E8DC;
+  --line: #E5D9CC;
+  --line-soft: #EFE4D6;
+  --serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+  --sans: "Noto Sans JP", "Hiragino Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --display: "Cormorant Garamond", "Noto Serif JP", Georgia, serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 14px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--serif);
+  background: #EDE6DD;
+  color: var(--ink);
+  line-height: 1.85;
+  letter-spacing: 0.04em;
+  font-feature-settings: "palt";
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-warm); text-decoration: underline; }
+
+.document { max-width: 210mm; margin: 0 auto; }
+
+.page {
+  width: 210mm;
+  background: var(--paper);
+  margin: 24px auto;
+  padding: 26mm 22mm 22mm;
+  position: relative;
+  box-shadow: 0 8px 40px rgba(74, 31, 24, 0.12);
+}
+
+/* ─── COVER ─── */
+.cover {
+  background: linear-gradient(170deg, #4A1F18 0%, #6B2A1E 60%, #7A2E1F 100%);
+  color: var(--paper);
+  padding: 24mm 22mm;
+  min-height: 297mm;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.cover-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+  padding-bottom: 14px;
+  margin-bottom: 28px;
+}
+
+.cover-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cover-brand-mark { width: 32px; height: 32px; }
+.cover-brand-mark img { width: 100%; height: auto; }
+
+.cover-brand-name {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.28em;
+  color: var(--accent-sand);
+}
+
+.cover-doc-meta {
+  text-align: right;
+  font-family: var(--sans);
+  font-size: 10px;
+  color: #E5C9B5;
+  letter-spacing: 0.12em;
+  line-height: 1.7;
+}
+
+.cover-doc-meta .small-label {
+  display: inline-block;
+  background: var(--accent-coral);
+  color: var(--accent-deep);
+  padding: 2px 10px;
+  letter-spacing: 0.2em;
+  font-size: 9px;
+  margin-bottom: 6px;
+}
+
+.cover-eyebrow {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  color: var(--accent-peach);
+  margin-top: 64px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.cover-eyebrow::before {
+  content: "";
+  width: 36px;
+  height: 1px;
+  background: var(--accent-peach);
+}
+
+.cover-title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  margin-bottom: 22px;
+}
+.cover-title .accent { color: var(--accent-peach); }
+
+.cover-subtitle {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.5;
+  color: #F5DDC4;
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
+.cover-jp-sub {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: #F0D9C0;
+  letter-spacing: 0.12em;
+}
+
+.cover-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--accent-coral);
+  margin: 48px 0 24px;
+}
+
+.cover-tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--accent-sand);
+  line-height: 2;
+  margin-bottom: 60px;
+  letter-spacing: 0.06em;
+}
+
+.cover-from {
+  margin-top: auto;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.18);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-family: var(--sans);
+  font-size: 11px;
+  color: #E5C9B5;
+  letter-spacing: 0.18em;
+  line-height: 1.8;
+}
+
+.cover-from-block { text-align: right; }
+.cover-from-name {
+  font-family: var(--serif);
+  font-size: 14px;
+  color: var(--paper);
+  letter-spacing: 0.16em;
+  margin-bottom: 4px;
+}
+
+.cover-logo-hero {
+  position: absolute;
+  right: 18mm;
+  top: 58mm;
+  width: 180px;
+  opacity: 0.96;
+  filter: drop-shadow(0 4px 18px rgba(0,0,0,0.18));
+}
+
+/* ─── PAGE HEADER / FOOTER ─── */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 14px;
+  margin-bottom: 28px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand-mark { width: 28px; height: 28px; }
+.brand-mark img { width: 100%; height: auto; object-fit: contain; }
+.brand-name {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  color: var(--accent);
+}
+
+.doc-meta {
+  text-align: right;
+  font-family: var(--sans);
+  font-size: 10px;
+  color: var(--ink-mute);
+  letter-spacing: 0.12em;
+  line-height: 1.7;
+}
+
+.page-footer {
+  margin-top: 32px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--sans);
+  font-size: 10px;
+  color: var(--ink-mute);
+  letter-spacing: 0.14em;
+}
+
+/* ─── HEADINGS ─── */
+.section-num {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 38px;
+  color: var(--accent-warm);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--accent-deep);
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.section-en {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--accent-warm);
+  letter-spacing: 0.06em;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.subhead {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 14.5px;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  margin-top: 26px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.subhead .num {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--accent-warm);
+}
+
+/* ─── BODY TEXT ─── */
+.lead {
+  font-family: var(--serif);
+  font-size: 13.5px;
+  line-height: 2;
+  color: var(--ink);
+  margin-bottom: 18px;
+  text-indent: 1em;
+}
+.lead.no-indent { text-indent: 0; }
+
+.lead.intro {
+  background: var(--accent-cream);
+  border-left: 3px solid var(--accent-warm);
+  padding: 16px 20px;
+  text-indent: 0;
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+
+/* ─── 5 PILLARS ─── */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+.pillar {
+  background: #FFFFFF;
+  padding: 14px 12px;
+  border-top: 2px solid var(--accent-warm);
+  border-bottom: 1px solid var(--line);
+}
+.pillar .p-num {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--accent-coral);
+  margin-bottom: 4px;
+}
+.pillar .p-title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--accent-deep);
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+.pillar .p-text {
+  font-family: var(--sans);
+  font-size: 10px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+}
+
+/* ─── SUMMARY BOX ─── */
+.summary-box {
+  background: #FFFFFF;
+  border: 1px solid var(--line-soft);
+  border-top: 3px solid var(--accent-warm);
+  padding: 20px 24px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+.summary-box h4 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--accent);
+  letter-spacing: 0.16em;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.summary-box h4::before {
+  content: "";
+  width: 18px;
+  height: 1px;
+  background: var(--accent-warm);
+}
+
+.summary-table {
+  width: 100%;
+  font-family: var(--sans);
+  font-size: 11.5px;
+  border-collapse: collapse;
+  line-height: 1.7;
+}
+.summary-table th, .summary-table td {
+  text-align: left;
+  padding: 8px 0;
+  border-bottom: 1px dotted var(--line);
+  vertical-align: top;
+}
+.summary-table th {
+  width: 130px;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+.summary-table td { color: var(--ink-soft); }
+.summary-table tr:last-child th, .summary-table tr:last-child td { border-bottom: none; }
+
+/* ─── ROADMAP / EPISODE LIST ─── */
+.toc-part {
+  font-family: var(--sans);
+  font-size: 10.5px;
+  color: var(--accent);
+  letter-spacing: 0.22em;
+  margin-top: 26px;
+  margin-bottom: 8px;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--accent-warm);
+}
+.toc-part-jp {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--accent-deep);
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+  margin-top: 24px;
+}
+.toc-chap {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--accent-warm);
+  letter-spacing: 0.06em;
+  margin: 14px 0 6px 0;
+  padding-left: 4px;
+  border-left: 2px solid var(--accent-coral);
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.ep-list { list-style: none; }
+.ep-row {
+  display: grid;
+  grid-template-columns: 38px 1fr 70px;
+  gap: 12px;
+  padding: 7px 4px;
+  border-bottom: 1px dotted var(--line);
+  font-family: var(--sans);
+  font-size: 11px;
+  align-items: baseline;
+  line-height: 1.6;
+}
+.ep-row:last-child { border-bottom: none; }
+.ep-num {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 12px;
+  color: var(--accent-warm);
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+.ep-title { color: var(--ink); font-family: var(--serif); font-size: 11.5px; }
+.ep-title.published a { color: var(--accent-deep); font-weight: 500; }
+.ep-title.published a:hover { color: var(--accent-warm); text-decoration: none; }
+.ep-status {
+  font-family: var(--sans);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--ink-mute);
+  text-align: right;
+  white-space: nowrap;
+}
+.ep-status.published {
+  color: var(--paper);
+  background: var(--accent-warm);
+  padding: 2px 6px;
+  font-weight: 500;
+}
+
+/* ─── AUTHOR BLOCK ─── */
+.author-card {
+  background: var(--accent-cream);
+  border-left: 3px solid var(--accent-warm);
+  padding: 18px 22px;
+  margin-top: 18px;
+}
+.author-name {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--accent-deep);
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+.author-card p {
+  font-family: var(--serif);
+  font-size: 12px;
+  line-height: 1.95;
+  color: var(--ink-soft);
+  text-indent: 1em;
+}
+.author-card p:first-of-type { text-indent: 0; margin-bottom: 12px; }
+
+/* ─── BACK LINK ─── */
+.back-link-row {
+  text-align: center;
+  margin-top: 24px;
+  padding: 16px 0;
+}
+.back-link-row a {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--ink-mute);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 2px;
+}
+.back-link-row a:hover { color: var(--accent-warm); border-color: var(--accent-warm); text-decoration: none; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 800px) {
+  body { background: var(--paper); }
+  .document { max-width: 100%; }
+  .page {
+    width: 100%;
+    margin: 0;
+    padding: 24px 18px 30px;
+    box-shadow: none;
+    min-height: auto;
+  }
+  .cover { padding: 24px 18px; min-height: auto; }
+  .cover-title { font-size: 28px; }
+  .cover-subtitle { font-size: 17px; }
+  .cover-logo-hero { display: none; }
+  .pillars { grid-template-columns: 1fr; }
+  .ep-row { grid-template-columns: 32px 1fr; }
+  .ep-status { grid-column: 1 / -1; padding-left: 44px; text-align: left; margin-top: 2px; }
+  .summary-table th { width: 96px; }
+}
+
+@media print {
+  body { background: var(--paper); }
+  .page { box-shadow: none; margin: 0; padding: 18mm 16mm; }
+  .cover { padding: 24mm 22mm; }
+}
+</style>
+</head>
+<body>
+
+<div class="document">
+
+<!-- ─────── COVER ─────── -->
+<div class="page cover">
+  <div class="cover-header">
+    <div class="cover-brand">
+      <div class="cover-brand-mark"><img src="assets/miratuku-mark.png" alt="ミラツク"></div>
+      <div class="cover-brand-name">MIRA&nbsp;TUKU</div>
+    </div>
+    <div class="cover-doc-meta">
+      <div class="small-label">SERIES</div>
+      <div>Vol. 01 / 100</div>
+      <div>2026 — 連載中</div>
+    </div>
+  </div>
+
+  <img class="cover-logo-hero" src="assets/miratuku-mark.png" alt="">
+
+  <div class="cover-eyebrow">SOCIAL INNOVATION READING SERIES</div>
+
+  <h1 class="cover-title">変化の<span class="accent">かたち</span><br>― 未来をつくる100の型</h1>
+  <p class="cover-subtitle">Forms of Change<br><em>One Hundred Patterns Toward the Future</em></p>
+  <p class="cover-jp-sub">ソーシャルイノベーションの新しい読み方</p>
+
+  <div class="cover-divider"></div>
+
+  <p class="cover-tagline">社会が静かに変わるとき、<br>そこには「かたち」がある。</p>
+
+  <div class="cover-from">
+    <div>
+      A SERIES BY<br>
+      NPO法人ミラツク
+    </div>
+    <div class="cover-from-block">
+      <div class="cover-from-name">西村 勇也</div>
+      <div>NISHIMURA YUYA</div>
+      <div>NPO法人ミラツク 代表理事</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────── PAGE 1 ─────── -->
+<div class="page">
+  <div class="page-header">
+    <div class="brand">
+      <div class="brand-mark"><img src="assets/miratuku-mark.png" alt="ミラツク"></div>
+      <div class="brand-name">MIRA&nbsp;TUKU</div>
+    </div>
+    <div class="doc-meta">変化のかたち / Series Index<br>2026年5月</div>
+  </div>
+
+  <div class="section-num">i.</div>
+  <h2 class="section-title">この連載について</h2>
+  <p class="section-en">About this Series</p>
+
+  <p class="lead intro">社会が変わるとき、どこかで誰かが大きな号令を発していることはまれです。むしろ、ほとんどの変化は、一見小さな工夫の積み重ねから、いつの間にかかたちを得ていきます。本連載は、そうした「小さな変化のかたち」を、人類史の長い視野のなかで眺めなおしてみる試みです。</p>
+
+  <p class="lead">コーヒー店の片隅で交わされた会話が啓蒙思想を生み、被災地の片隅で生まれた小さなアクセサリーが世界に届き、見えない下水道が都市の生死を分ける。変化のはじまりは、いつも控えめです。</p>
+
+  <p class="lead">事例を増やすのではなく、事例の奥にある関係性を取り出すこと。事例ではなく「型」を読むこと。前作『未来をつくるソーシャルイノベーション』（雑誌『ソトコト』連載、二〇一五年三月号〜二〇二〇年六月号、全六十回）で出会った日本の現場の知恵を、今度は哲学・歴史・経営学・文学・技術発展・神話の知の系譜のなかに置き直していきます。</p>
+
+  <p class="lead">百回をかけて、五つの「変化のかたち」をめぐる旅をします。読み終わるころ、いまこの社会のあちこちで起きている小さな変化が、これまでとは違って見えているはずです。</p>
+
+  <div class="summary-box">
+    <h4>連載の三つの約束</h4>
+    <table class="summary-table">
+      <tr><th>フレーム起点</th><td>具体的な事例ではなく、型・概念・原則から始め、事例は控えめに添えます。</td></tr>
+      <tr><th>領域横断</th><td>一回につき必ず二つ以上の異なる領域から素材を引きます。</td></tr>
+      <tr><th>物語の縦軸</th><td>人類史の時間軸の上に各回を置き、読み進めるほど「いま」が見える設計です。</td></tr>
+    </table>
+  </div>
+
+  <div class="page-footer">
+    <span>変化のかたち ― 未来をつくる100の型</span>
+    <span>i</span>
+  </div>
+</div>
+
+<!-- ─────── PAGE 2 ─────── -->
+<div class="page">
+  <div class="page-header">
+    <div class="brand">
+      <div class="brand-mark"><img src="assets/miratuku-mark.png" alt="ミラツク"></div>
+      <div class="brand-name">MIRA&nbsp;TUKU</div>
+    </div>
+    <div class="doc-meta">変化のかたち / Five Forms<br>2026年5月</div>
+  </div>
+
+  <div class="section-num">ii.</div>
+  <h2 class="section-title">五つの「変化のかたち」</h2>
+  <p class="section-en">Five Forms of Change</p>
+
+  <p class="lead">前作六十回と本連載百回の通底にあるのは、領域や時代を超えて繰り返し立ち上がる五つの「動き」です。本連載はこの五つを軸に進みます。</p>
+
+  <div class="pillars">
+    <div class="pillar">
+      <div class="p-num">I.</div>
+      <div class="p-title">場のかたち</div>
+      <div class="p-text">強制ではなく「いやすさ」を設計することで、人が自然に集まり、対話し、何かが生まれる。コーヒーハウスからシェアオフィスまで。</div>
+    </div>
+    <div class="pillar">
+      <div class="p-num">II.</div>
+      <div class="p-title">媒介のかたち</div>
+      <div class="p-text">専門家を増やすのではなく、つなぎ手を増やす。市民の中に媒介者を立ち上げ、中間支援を厚くし、新しい職能を制度化する。</div>
+    </div>
+    <div class="pillar">
+      <div class="p-num">III.</div>
+      <div class="p-title">物語のかたち</div>
+      <div class="p-text">同じ素材でも、物語と文脈が変わると価値は反転する。古いものに新しい意味を結び、当事者を主体に戻す。</div>
+    </div>
+    <div class="pillar">
+      <div class="p-num">IV.</div>
+      <div class="p-title">支えのかたち</div>
+      <div class="p-text">切手、時計、上下水道、規格、コモンズ。社会を支えるのは派手な機能ではなく、見えない基盤と共通の物差し。</div>
+    </div>
+    <div class="pillar">
+      <div class="p-num">V.</div>
+      <div class="p-title">開きのかたち</div>
+      <div class="p-text">これまで一部の人にしか届かなかった何かを、複製可能な技術と新しい流通で多くの人に開く。印刷から可視化メディアへ。</div>
+    </div>
+  </div>
+
+  <div class="subhead"><span class="num">α</span>底にある三つの底流</div>
+  <p class="lead">五つのかたちの下には、さらに三つの底流が流れています。<br>
+    一に、<strong>「つくる」のではなく「生まれる」</strong>こと。強制ではなく自然発生する場・関係・価値を設計するという姿勢。<br>
+    二に、<strong>文脈と新結合</strong>。価値はモノに宿るのではなく、先行する文脈との結びつき方に宿るという認識。<br>
+    三に、<strong>見えない領域への投資</strong>。地味で測りにくい領域にこそ、社会を支える鍵があるという確信。
+  </p>
+
+  <div class="page-footer">
+    <span>変化のかたち ― 未来をつくる100の型</span>
+    <span>ii</span>
+  </div>
+</div>
+
+<!-- ─────── PAGE 3 — ROADMAP ─────── -->
+<div class="page">
+  <div class="page-header">
+    <div class="brand">
+      <div class="brand-mark"><img src="assets/miratuku-mark.png" alt="ミラツク"></div>
+      <div class="brand-name">MIRA&nbsp;TUKU</div>
+    </div>
+    <div class="doc-meta">変化のかたち / Roadmap<br>2026年5月</div>
+  </div>
+
+  <div class="section-num">iii.</div>
+  <h2 class="section-title">全百話 ロードマップ</h2>
+  <p class="section-en">Roadmap of One Hundred Episodes</p>
+
+  <p class="lead">序章五回、五部それぞれ十八回（三章×六話）、終章五回で構成します。十五章はそれぞれ、五つのかたちのサブパターンに対応しています。</p>
+
+  <ul class="ep-list">
+    <li class="toc-part">SERIES START — 序 章</li>
+    <li class="toc-part-jp">なぜ「かたち」で読むのか</li>
+    <li class="ep-row"><span class="ep-num">001</span><span class="ep-title published"><a href="ep001.html">なぜいま「型」でソーシャルイノベーションを読むのか</a></span><span class="ep-status published">公開中</span></li>
+    <li class="ep-row"><span class="ep-num">002</span><span class="ep-title">「つくる」と「生まれる」― 創発の系譜</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">003</span><span class="ep-title">文脈と新結合 ― シュンペーターの種</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">004</span><span class="ep-title">見えないものへの投資 ― 公共性の思想史</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">005</span><span class="ep-title">これからの旅の地図</span><span class="ep-status">予定</span></li>
+
+    <li class="toc-part">PART I — 第I部</li>
+    <li class="toc-part-jp">場のかたち ― 集まりが価値を生む</li>
+    <li class="toc-chap">第1章　自発交流 ― 強制せず、生まれる場</li>
+    <li class="ep-row"><span class="ep-num">006</span><span class="ep-title">アゴラから第三の場へ ― 集会の人類史</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">007</span><span class="ep-title">コーヒーハウスと啓蒙 ― 知識の流通装置</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">008</span><span class="ep-title">サードプレイスの社会学 ― オルデンバーグ再読</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">009</span><span class="ep-title">茶室の哲学 ― 一期一会と場の凝縮</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">010</span><span class="ep-title">銭湯と公共性 ― 日本的な開きの場</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">011</span><span class="ep-title">自発交流のかたち ― 第1章のまとめ</span><span class="ep-status">予定</span></li>
+    <li class="toc-chap">第2章　越境出会い ― 境界を渡る装置</li>
+    <li class="ep-row"><span class="ep-num">012</span><span class="ep-title">通過儀礼の文化人類学 ― ファン・ヘネップから</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">013</span><span class="ep-title">留学の系譜 ― 巡礼から現代の越境へ</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">014</span><span class="ep-title">大学キャンパスの偶然 ― 出会いの装置</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">015</span><span class="ep-title">オンラインの越境 ― DiscordからGitHubへ</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">016</span><span class="ep-title">フェスと祭りのなかの越境</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">017</span><span class="ep-title">越境のかたち ― 第2章のまとめ</span><span class="ep-status">予定</span></li>
+    <li class="toc-chap">第3章　余白確保 ― 何かのためでない時間と空間</li>
+    <li class="ep-row"><span class="ep-num">018</span><span class="ep-title">余暇の発明 ― 労働時間短縮の系譜</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">019</span><span class="ep-title">公園というユートピア ― オルムステッドの仕事</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">020</span><span class="ep-title">余白の経営学 ― DeMarcoのスラック</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">021</span><span class="ep-title">詩学と休符 ― 西脇順三郎の余韻</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">022</span><span class="ep-title">デフォルト・モード・ネットワーク ― 脳の余白</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">023</span><span class="ep-title">余白のかたち ― 第3章のまとめ</span><span class="ep-status">予定</span></li>
+
+    <li class="toc-part">PART II — 第II部</li>
+    <li class="toc-part-jp">媒介のかたち ― つなぎ手が社会を変える</li>
+    <li class="toc-chap">第4章　市民専門家 ― 専門と日常の架け橋</li>
+    <li class="ep-row"><span class="ep-num">024</span><span class="ep-title">媒介者の人類史 ― ヘルメスから現代のキュレーターへ</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">025</span><span class="ep-title">産婆の系譜 ― 古代から現代のドゥーラ概念へ</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">026</span><span class="ep-title">市民科学の100年 ― シチズンサイエンスの系譜</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">027</span><span class="ep-title">自助グループ運動 ― AAから現代へ</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">028</span><span class="ep-title">ピアサポートの倫理</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">029</span><span class="ep-title">市民専門家のかたち ― 第4章のまとめ</span><span class="ep-status">予定</span></li>
+    <li class="toc-chap">第5章　中間支援 ― 支援を支援する</li>
+    <li class="ep-row"><span class="ep-num">030</span><span class="ep-title">中間支援の系譜 ― 産業組合からNPO中間支援へ</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">031</span><span class="ep-title">賀川豊彦と日本の協同組合運動</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">032</span><span class="ep-title">ストラクチャル・ホール理論 ― バートの構造的空隙</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">033</span><span class="ep-title">弱い紐帯の強さ ― グラノヴェッターの衝撃</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">034</span><span class="ep-title">プラットフォーム経営論 ― 媒介者のビジネスモデル</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">035</span><span class="ep-title">中間支援のかたち ― 第5章のまとめ</span><span class="ep-status">予定</span></li>
+    <li class="toc-chap">第6章　学問領域創出 ― 媒介者を再生産する</li>
+    <li class="ep-row"><span class="ep-num">036</span><span class="ep-title">ナイチンゲールと看護学の創出</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">037</span><span class="ep-title">社会福祉学の誕生 ― リッチモンドの仕事</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">038</span><span class="ep-title">専門家批判の社会学 ― イリイチからフレイレへ</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">039</span><span class="ep-title">実践共同体（CoP）― ウェンガーとレイヴ</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">040</span><span class="ep-title">デザイン思考の制度化</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">041</span><span class="ep-title">学問領域創出のかたち ― 第6章のまとめ</span><span class="ep-status">予定</span></li>
+
+    <li class="toc-part">PART III — 第III部</li>
+    <li class="toc-part-jp">物語のかたち ― 価値はどこに宿るか</li>
+    <li class="toc-chap">第7章　物語付加 ― 物語が価値を立ち上げる</li>
+    <li class="ep-row"><span class="ep-num">042</span><span class="ep-title">物語経済学 ― ロバート・シラーの挑戦</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">043</span><span class="ep-title">ナラティブ・アイデンティティ ― リクールの自己論</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">044</span><span class="ep-title">ブランド・ナラティブの経営学</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">045</span><span class="ep-title">神話と原型 ― キャンベルの英雄の旅</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">046</span><span class="ep-title">ナラティブ・ベースド・メディスン</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">047</span><span class="ep-title">物語付加のかたち ― 第7章のまとめ</span><span class="ep-status">予定</span></li>
+    <li class="toc-chap">第8章　文脈再結合 ― 古いものに新しい意味を</li>
+    <li class="ep-row"><span class="ep-num">048</span><span class="ep-title">価値論の系譜 ― 効用説から関係説へ</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">049</span><span class="ep-title">シュンペーターの新結合再読</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">050</span><span class="ep-title">伝統の発明 ― ホブズボームの反転</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">051</span><span class="ep-title">ローカルナレッジ ― ギアツの厚い記述</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">052</span><span class="ep-title">ハイデガー的「物（Ding）」と意味の起こり</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">053</span><span class="ep-title">文脈再結合のかたち ― 第8章のまとめ</span><span class="ep-status">予定</span></li>
+    <li class="toc-chap">第9章　当事者主体回復 ― 受け手を主体に戻す</li>
+    <li class="ep-row"><span class="ep-num">054</span><span class="ep-title">当事者運動の系譜 ― 障害学から</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">055</span><span class="ep-title">ケアの倫理 ― ギリガンとノディングズ</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">056</span><span class="ep-title">文化盗用と文化転用 ― 価値の正当性</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">057</span><span class="ep-title">反専門家としての当事者</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">058</span><span class="ep-title">自己決定権の哲学</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">059</span><span class="ep-title">当事者主体回復のかたち ― 第9章のまとめ</span><span class="ep-status">予定</span></li>
+
+    <li class="toc-part">PART IV — 第IV部</li>
+    <li class="toc-part-jp">支えのかたち ― 見えないものが社会を支える</li>
+    <li class="toc-chap">第10章　規格・標準化 ― 共通の物差し</li>
+    <li class="ep-row"><span class="ep-num">060</span><span class="ep-title">規格戦争の経済史 ― QWERTYからUSB-Cまで</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">061</span><span class="ep-title">経路依存性とロックイン ― ポール・デイヴィッド</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">062</span><span class="ep-title">メートル法の革命 ― 計量の標準化</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">063</span><span class="ep-title">万国博覧会と標準化</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">064</span><span class="ep-title">ISO規格の人類学</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">065</span><span class="ep-title">規格・標準化のかたち ― 第10章のまとめ</span><span class="ep-status">予定</span></li>
+    <li class="toc-chap">第11章　見えないインフラ ― 地味な土台が世界を支える</li>
+    <li class="ep-row"><span class="ep-num">066</span><span class="ep-title">インフラの哲学 ― スーザン・リー・スター</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">067</span><span class="ep-title">公共財の経済学 ― オストロムのコモンズ論</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">068</span><span class="ep-title">上下水道の文明史</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">069</span><span class="ep-title">電力網の倫理学</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">070</span><span class="ep-title">インターネットというコモンズ</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">071</span><span class="ep-title">見えないインフラのかたち ― 第11章のまとめ</span><span class="ep-status">予定</span></li>
+    <li class="toc-chap">第12章　編集・並列化 ― 並べることで意味が立ち上がる</li>
+    <li class="ep-row"><span class="ep-num">072</span><span class="ep-title">メディア論の系譜 ― イニス、マクルーハン</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">073</span><span class="ep-title">編集の人類学 ― 並列化とは何か</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">074</span><span class="ep-title">図書館分類法の歴史</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">075</span><span class="ep-title">都市計画の系譜 ― ハワードからコールハースへ</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">076</span><span class="ep-title">データベースとアルゴリズム</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">077</span><span class="ep-title">編集・並列化のかたち ― 第12章のまとめ</span><span class="ep-status">予定</span></li>
+
+    <li class="toc-part">PART V — 第V部</li>
+    <li class="toc-part-jp">開きのかたち ― 特権を多くの人に開く</li>
+    <li class="toc-chap">第13章　複製・伝達 ― 複製可能なかたちにする</li>
+    <li class="ep-row"><span class="ep-num">078</span><span class="ep-title">活版印刷とグーテンベルク</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">079</span><span class="ep-title">複製技術時代 ― ベンヤミンと現代</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">080</span><span class="ep-title">オープンソース運動の哲学</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">081</span><span class="ep-title">クリエイティブ・コモンズの思想</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">082</span><span class="ep-title">オラリティとリテラシー ― オングの系譜</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">083</span><span class="ep-title">複製・伝達のかたち ― 第13章のまとめ</span><span class="ep-status">予定</span></li>
+    <li class="toc-chap">第14章　大衆化技術 ― 特権を全員に開く</li>
+    <li class="ep-row"><span class="ep-num">084</span><span class="ep-title">フォードと自動車の大衆化</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">085</span><span class="ep-title">民主化テクノロジーの系譜</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">086</span><span class="ep-title">ユニバーサルデザインの思想 ― ロン・メイス</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">087</span><span class="ep-title">アクセシビリティと包摂の倫理</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">088</span><span class="ep-title">シェアエコノミーの経営史</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">089</span><span class="ep-title">大衆化技術のかたち ― 第14章のまとめ</span><span class="ep-status">予定</span></li>
+    <li class="toc-chap">第15章　可視化メディア ― 見えなかったものを見せる</li>
+    <li class="ep-row"><span class="ep-num">090</span><span class="ep-title">可視化メディアの倫理 ― ソンタグから</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">091</span><span class="ep-title">報道写真の系譜 ― キャパからの100年</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">092</span><span class="ep-title">ジャーナリズムと社会変容</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">093</span><span class="ep-title">データジャーナリズムの登場</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">094</span><span class="ep-title">アクティビストとしての映像</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">095</span><span class="ep-title">可視化メディアのかたち ― 第15章のまとめ</span><span class="ep-status">予定</span></li>
+
+    <li class="toc-part">FINAL — 終 章</li>
+    <li class="toc-part-jp">これまでとこれから</li>
+    <li class="ep-row"><span class="ep-num">096</span><span class="ep-title">五つの「かたち」を編み直す ― 統合的視座</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">097</span><span class="ep-title">三つの底流が指し示す未来</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">098</span><span class="ep-title">フォーサイトと型 ― 未来は「つくる」もの</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">099</span><span class="ep-title">教養としてのソーシャルイノベーション</span><span class="ep-status">予定</span></li>
+    <li class="ep-row"><span class="ep-num">100</span><span class="ep-title">変化のかたち ― 連載を閉じて</span><span class="ep-status">予定</span></li>
+  </ul>
+
+  <div class="page-footer">
+    <span>変化のかたち ― 未来をつくる100の型</span>
+    <span>iii</span>
+  </div>
+</div>
+
+<!-- ─────── PAGE 4 — AUTHOR ─────── -->
+<div class="page">
+  <div class="page-header">
+    <div class="brand">
+      <div class="brand-mark"><img src="assets/miratuku-mark.png" alt="ミラツク"></div>
+      <div class="brand-name">MIRA&nbsp;TUKU</div>
+    </div>
+    <div class="doc-meta">変化のかたち / About<br>2026年5月</div>
+  </div>
+
+  <div class="section-num">iv.</div>
+  <h2 class="section-title">著者について</h2>
+  <p class="section-en">About the Author</p>
+
+  <div class="author-card">
+    <div class="author-name">西村 勇也（にしむら・ゆうや）</div>
+    <p>大阪大学大学院にて人間科学の修士を取得。人材育成企業、財団法人日本生産性本部を経て、二〇〇八年に開始したダイアログBARの活動を前身に、二〇一一年にNPO法人ミラツクを設立。「Emerging Future, we already have（既に在る未来の可能性を実現する）」をテーマに、社会起業家、企業、NPO、行政、大学など異なる立場の人たちが加わるセクター横断のソーシャルイノベーション・プラットフォームの構築と、未来潮流に基づいた新規事業創出のためのプロジェクト運営に取り組む。</p>
+    <p>二〇一五年三月号から二〇二〇年六月号まで、雑誌『ソトコト』にて連載「未来をつくるソーシャルイノベーション」を全六十回執筆。本連載「変化のかたち」はその姉妹編にあたる。</p>
+  </div>
+
+  <div class="back-link-row">
+    <a href="https://emerging-future.org/">← emerging-future.org に戻る</a>
+  </div>
+
+  <div class="page-footer">
+    <span>変化のかたち ― 未来をつくる100の型</span>
+    <span>iv</span>
+  </div>
+</div>
+
+</div><!-- /.document -->
+
+</body>
+</html>

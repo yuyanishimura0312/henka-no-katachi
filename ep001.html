@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第1話 ― なぜいま「型」でソーシャルイノベーションを読むのか | 変化のかたち</title>
+<meta name="description" content="変化のかたち第1話。ソーシャルイノベーションを「型」として読むという試み。アリストテレスの形相、ヴェーバーの理念型、アレグザンダーのパタン・ランゲージから、現代のソーシャルイノベーションへ。">
+<meta property="og:title" content="第1話 ― なぜいま「型」でソーシャルイノベーションを読むのか">
+<meta property="og:description" content="変化のかたち第1話。ソーシャルイノベーションを「型」として読むという試み。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yuyanishimura0312.github.io/henka-no-katachi/ep001.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://yuyanishimura0312.github.io/henka-no-katachi/ep001.html">
+<link rel="icon" href="https://esse-sense.com/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FFFFFF;
+  --paper: #FAF6F1;
+  --ink: #2A1A14;
+  --ink-soft: #5A4238;
+  --ink-mute: #7A6358;
+  --accent-deep: #4A1F18;
+  --accent: #7A2E1F;
+  --accent-warm: #C46545;
+  --accent-coral: #E0824A;
+  --accent-peach: #F0A671;
+  --accent-sand: #F8CDAC;
+  --accent-cream: #F5E8DC;
+  --line: #E5D9CC;
+  --line-soft: #EFE4D6;
+  --serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+  --sans: "Noto Sans JP", "Hiragino Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --display: "Cormorant Garamond", "Noto Serif JP", Georgia, serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 14px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--serif);
+  background: #EDE6DD;
+  color: var(--ink);
+  line-height: 1.85;
+  letter-spacing: 0.04em;
+  font-feature-settings: "palt";
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-warm); text-decoration: underline; }
+
+.document { max-width: 210mm; margin: 0 auto; }
+
+.page {
+  width: 210mm;
+  background: var(--paper);
+  margin: 24px auto;
+  padding: 26mm 22mm 22mm;
+  position: relative;
+  box-shadow: 0 8px 40px rgba(74, 31, 24, 0.12);
+}
+
+/* ─── EPISODE COVER ─── */
+.ep-cover {
+  background: linear-gradient(170deg, #4A1F18 0%, #6B2A1E 60%, #7A2E1F 100%);
+  color: var(--paper);
+  padding: 24mm 22mm;
+  min-height: 200mm;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.cover-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+  padding-bottom: 14px;
+  margin-bottom: 28px;
+}
+.cover-brand { display: flex; align-items: center; gap: 12px; }
+.cover-brand-mark { width: 32px; height: 32px; }
+.cover-brand-mark img { width: 100%; height: auto; }
+.cover-brand-name {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.28em;
+  color: var(--accent-sand);
+}
+.cover-doc-meta {
+  text-align: right;
+  font-family: var(--sans);
+  font-size: 10px;
+  color: #E5C9B5;
+  letter-spacing: 0.12em;
+  line-height: 1.7;
+}
+.cover-doc-meta .small-label {
+  display: inline-block;
+  background: var(--accent-coral);
+  color: var(--accent-deep);
+  padding: 2px 10px;
+  letter-spacing: 0.2em;
+  font-size: 9px;
+  margin-bottom: 6px;
+}
+
+.ep-cover-eyebrow {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  color: var(--accent-peach);
+  margin-top: 60px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.ep-cover-eyebrow::before {
+  content: "";
+  width: 36px;
+  height: 1px;
+  background: var(--accent-peach);
+}
+
+.ep-cover-num {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 76px;
+  color: var(--accent-peach);
+  line-height: 1;
+  margin-bottom: 14px;
+  letter-spacing: 0.02em;
+}
+
+.ep-cover-title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+  margin-bottom: 22px;
+  color: var(--paper);
+}
+
+.ep-cover-en {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #F5DDC4;
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
+.ep-cover-divider {
+  width: 50px;
+  height: 2px;
+  background: var(--accent-coral);
+  margin: 36px 0 24px;
+}
+
+.ep-cover-meta {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: #E5C9B5;
+  letter-spacing: 0.14em;
+  line-height: 2;
+  margin-bottom: 50px;
+}
+
+.ep-cover-from {
+  margin-top: auto;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.18);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-family: var(--sans);
+  font-size: 11px;
+  color: #E5C9B5;
+  letter-spacing: 0.18em;
+}
+.ep-cover-from-name {
+  font-family: var(--serif);
+  font-size: 14px;
+  color: var(--paper);
+  letter-spacing: 0.16em;
+  margin-bottom: 4px;
+}
+
+.ep-cover-mark-bg {
+  position: absolute;
+  right: 22mm;
+  top: 70mm;
+  width: 140px;
+  opacity: 0.7;
+  filter: drop-shadow(0 4px 18px rgba(0,0,0,0.18));
+}
+
+/* ─── PAGE HEADER / FOOTER ─── */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 14px;
+  margin-bottom: 28px;
+}
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-mark { width: 28px; height: 28px; }
+.brand-mark img { width: 100%; height: auto; }
+.brand-name {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  color: var(--accent);
+}
+.doc-meta {
+  text-align: right;
+  font-family: var(--sans);
+  font-size: 10px;
+  color: var(--ink-mute);
+  letter-spacing: 0.12em;
+  line-height: 1.7;
+}
+
+.page-footer {
+  margin-top: 32px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--sans);
+  font-size: 10px;
+  color: var(--ink-mute);
+  letter-spacing: 0.14em;
+}
+
+/* ─── HEADINGS ─── */
+.section-num {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 38px;
+  color: var(--accent-warm);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.section-title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--accent-deep);
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+.section-en {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--accent-warm);
+  letter-spacing: 0.06em;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+/* ─── BODY ─── */
+.lead {
+  font-family: var(--serif);
+  font-size: 14px;
+  line-height: 2.05;
+  color: var(--ink);
+  margin-bottom: 22px;
+  text-indent: 1em;
+}
+.lead.no-indent { text-indent: 0; }
+
+.lead.intro {
+  background: var(--accent-cream);
+  border-left: 3px solid var(--accent-warm);
+  padding: 16px 20px;
+  text-indent: 0;
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+
+/* ─── EPISODE FOOTER META ─── */
+.ep-footer-meta {
+  margin-top: 36px;
+  padding: 22px 24px;
+  background: #FFFFFF;
+  border-top: 3px solid var(--accent-warm);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--ink-soft);
+  line-height: 1.85;
+}
+.ep-footer-meta dt {
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  font-size: 10.5px;
+}
+.ep-footer-meta dt:first-child { margin-top: 0; }
+.ep-footer-meta dd { padding-left: 0; margin-bottom: 8px; }
+
+/* ─── PREV/NEXT NAV ─── */
+.ep-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 28px;
+  font-family: var(--sans);
+  font-size: 11px;
+}
+.ep-nav-link {
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s;
+}
+.ep-nav-link:hover {
+  border-color: var(--accent-warm);
+  color: var(--accent-deep);
+  text-decoration: none;
+}
+.ep-nav-link.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  background: var(--accent-cream);
+}
+.ep-nav-label {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: var(--accent-warm);
+  font-weight: 700;
+}
+.ep-nav-link.next { text-align: right; }
+.ep-nav-title {
+  font-family: var(--serif);
+  font-size: 12.5px;
+  color: var(--accent-deep);
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+}
+
+.center-link {
+  text-align: center;
+  margin-top: 24px;
+  padding: 16px 0;
+}
+.center-link a {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--ink-mute);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 2px;
+}
+.center-link a:hover { color: var(--accent-warm); border-color: var(--accent-warm); text-decoration: none; }
+
+@media (max-width: 800px) {
+  body { background: var(--paper); }
+  .document { max-width: 100%; }
+  .page {
+    width: 100%;
+    margin: 0;
+    padding: 24px 18px 30px;
+    box-shadow: none;
+  }
+  .ep-cover { padding: 24px 18px; min-height: auto; }
+  .ep-cover-num { font-size: 48px; }
+  .ep-cover-title { font-size: 22px; }
+  .ep-cover-en { font-size: 14px; }
+  .ep-cover-mark-bg { display: none; }
+  .ep-nav { grid-template-columns: 1fr; }
+}
+
+@media print {
+  body { background: var(--paper); }
+  .page { box-shadow: none; margin: 0; padding: 18mm 16mm; }
+  .ep-cover { padding: 24mm 22mm; }
+  .ep-nav, .center-link { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="document">
+
+<!-- ─── EPISODE COVER ─── -->
+<div class="page ep-cover">
+  <div class="cover-header">
+    <div class="cover-brand">
+      <div class="cover-brand-mark"><img src="assets/miratuku-mark.png" alt="ミラツク"></div>
+      <div class="cover-brand-name">MIRA&nbsp;TUKU</div>
+    </div>
+    <div class="cover-doc-meta">
+      <div class="small-label">EPISODE 001</div>
+      <div>変化のかたち / 序 章</div>
+      <div>2026年5月</div>
+    </div>
+  </div>
+
+  <img class="ep-cover-mark-bg" src="assets/miratuku-mark.png" alt="">
+
+  <div class="ep-cover-eyebrow">PROLOGUE — 序 章 第1話</div>
+  <div class="ep-cover-num">01.</div>
+  <h1 class="ep-cover-title">なぜいま「型」で<br>ソーシャルイノベーションを<br>読むのか</h1>
+  <p class="ep-cover-en">Why we read Social Innovation through Patterns</p>
+
+  <div class="ep-cover-divider"></div>
+
+  <div class="ep-cover-meta">
+    全100回連載「変化のかたち ― 未来をつくる100の型」<br>
+    第1話 / 序 章「なぜ『かたち』で読むのか」
+  </div>
+
+  <div class="ep-cover-from">
+    <div>
+      連載開始 ―<br>
+      二〇二六年五月
+    </div>
+    <div style="text-align: right;">
+      <div class="ep-cover-from-name">西村 勇也</div>
+      <div>NPO法人ミラツク 代表理事</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── BODY ─── -->
+<div class="page">
+  <div class="page-header">
+    <div class="brand">
+      <div class="brand-mark"><img src="assets/miratuku-mark.png" alt="ミラツク"></div>
+      <div class="brand-name">MIRA&nbsp;TUKU</div>
+    </div>
+    <div class="doc-meta">変化のかたち / 第1話<br>2026年5月</div>
+  </div>
+
+  <div class="section-num">01.</div>
+  <h2 class="section-title">なぜいま「型」でソーシャルイノベーションを読むのか</h2>
+  <p class="section-en">Why we read Social Innovation through Patterns</p>
+
+  <p class="lead">社会を少しでもよくしようとする小さな試み――ソーシャルイノベーション――について、これまでとはちょっと違う角度から眺めなおしてみたいと思います。具体的な事例を一つひとつ追いかけるのではなく、その奥にある「型」を取り出して読んでみる、というやり方です。型と聞くと、なんとなく固い印象があるかもしれませんが、案外、世界を見やすくしてくれる便利な道具なのです。本連載は、その道具を一つひとつ取り出してゆっくり眺めるための場として、百回にわたって続けていきます。</p>
+
+  <p class="lead">人がパターンを見つけて「型」として残しておく営みは、想像以上に長い歴史があります。古代ギリシャの哲学者アリストテレスは、目の前の一つひとつの事物のなかに「形相（エイドス）」というものが宿っているのではないかと考えました。事物はそれぞれ違って見えるけれど、そのなかには共通する「かたち」があるのではないか、という発想です。時代を下って、社会学者のマックス・ヴェーバーは「理念型」という考え方を打ち出しました。複雑な社会現象を、いったんは理想的なかたちに整え直して捉えてみよう、という方法論です。</p>
+
+  <p class="lead">もう少し近いところでは、建築家のクリストファー・アレグザンダーが、街と建物のなかに繰り返し現れる二五三のパターンを取り出した『パタン・ランゲージ』という本を一九七七年に書きました。設計の知恵を多くの人が共有できるかたちに変えた仕事です。経営学者のピーター・ドラッカーは、革新の機会を七つの源泉として整理しました（一九八五年）。分野はずいぶん違いますが、彼らに共通しているのは、目の前の現象に圧倒されず、その奥にある関係性をていねいに取り出すことが、知恵を分野や世代を超えて手渡す方法なのだ、という確信のようです。</p>
+
+  <p class="lead">科学の世界に目を移すと、科学哲学者のトマス・クーンが「パラダイム」と呼んだものも、ある種の型と言えそうです。型というのは単なる仕分けの引き出しではなく、ものごとをどう見るかという「見方の枠組み」を差し出してくれます。だから、新しい型を手にしたとき、これまで見えなかった現象が急に見えるようになる、ということが起こります。経済学者のシュンペーターが残した「新結合」という言葉――新しいものは、ゼロから生まれるのではなく、すでにあるもの同士の組み合わせから生まれる、という考え方――も、ソーシャルイノベーションを考えるうえで大切な型のひとつです。人類学者のレヴィ=ストロースが世界の神話の奥に見た構造も、心理学者ユングが「アーキタイプ（元型）」と呼んだ、こころの底に繰り返し現れるイメージも、よく見ればすべて型の探求と言えます。</p>
+
+  <p class="lead">本連載の出発点について、少し触れておきます。二〇一五年から二〇二〇年にかけて、雑誌『ソトコト』で「未来をつくるソーシャルイノベーション」という連載を六十回にわたって続けました。日本各地のNPOや社会起業家、地域の取り組みを毎号一つずつ取り上げ、現場の方々の言葉に耳を傾けてきた、約五年間の旅でした。連載を終えたあと、その六十回ぶんを改めて通読してみたところ、領域も規模もまったく異なるはずの事例の奥に、繰り返し立ち上がる五つの動きがあることに気づきました。「場が生まれる」「媒介する人が立ち上がる」「物語と文脈が結び直される」「見えないインフラと規格が更新される」「特権が大衆へと開かれていく」――この五つです。本連載は、この五つを軸に置きながら、関連する偉人や思想、歴史や経営学の知恵を交差させて、ゆっくりと旅をしていきます。事例を増やすためではなく、変わらない構造を取り出すために。</p>
+
+  <p class="lead">型というのは、世界をすこし遅く、しかし深く読むための装置です。教養としてのソーシャルイノベーションは、その「遅さ」から始まります。</p>
+
+  <dl class="ep-footer-meta">
+    <dt>今回つかったデータベース</dt>
+    <dd>歴史偉人データベース ／ 哲学概念データベース ／ イノベーション理論データベース ／ 人類学概念データベース</dd>
+    <dt>今回登場した思想家・概念</dt>
+    <dd>アリストテレス（形相 ― エイドス） ／ マックス・ヴェーバー（理念型） ／ クリストファー・アレグザンダー（パタン・ランゲージ） ／ ピーター・ドラッカー（イノベーションの七源泉） ／ トマス・クーン（パラダイム） ／ ヨーゼフ・シュンペーター（新結合） ／ クロード・レヴィ=ストロース（深層構造） ／ カール・ユング（アーキタイプ）</dd>
+    <dt>次回</dt>
+    <dd>第2話「『つくる』と『生まれる』― 創発の系譜」</dd>
+  </dl>
+
+  <nav class="ep-nav">
+    <a class="ep-nav-link disabled" href="#">
+      <span class="ep-nav-label">← PREV</span>
+      <span class="ep-nav-title">― 連載のはじまり ―</span>
+    </a>
+    <a class="ep-nav-link next" href="index.html#ep002">
+      <span class="ep-nav-label">NEXT →</span>
+      <span class="ep-nav-title">第2話「『つくる』と『生まれる』― 創発の系譜」（公開予定）</span>
+    </a>
+  </nav>
+
+  <div class="center-link">
+    <a href="index.html">変化のかたち ― 全100話の地図に戻る</a>
+  </div>
+
+  <div class="page-footer">
+    <span>変化のかたち ― 未来をつくる100の型 / 第1話</span>
+    <span>01</span>
+  </div>
+</div>
+
+</div><!-- /.document -->
+
+</body>
+</html>
