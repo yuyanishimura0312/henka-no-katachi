@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第67話 ― 公共財の経済学 ― オストロムのコモンズ論 | 変化のかたち</title>
+<meta name="description" content="変化のかたち第67話。公共財の経済学 ― オストロムのコモンズ論。">
+<meta property="og:title" content="第67話 ― 公共財の経済学 ― オストロムのコモンズ論">
+<meta property="og:description" content="変化のかたち第67話。公共財の経済学 ― オストロムのコモンズ論。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yuyanishimura0312.github.io/henka-no-katachi/ep067.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://yuyanishimura0312.github.io/henka-no-katachi/ep067.html">
+<link rel="icon" href="https://esse-sense.com/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #FAF6F1;
+  --paper-soft: #F5EFE7;
+  --paper-mgt: #FCF5EE;
+  --paper-aca: #F5EEE3;
+  --ink: #2A1A14;
+  --ink-soft: #5A4238;
+  --ink-mute: #7A6358;
+  --accent-deep: #4A1F18;
+  --accent: #7A2E1F;
+  --accent-warm: #C46545;
+  --accent-coral: #E0824A;
+  --accent-peach: #F0A671;
+  --accent-sand: #F8CDAC;
+  --accent-cream: #F5E8DC;
+  --line: #E5D9CC;
+  --line-soft: #EFE4D6;
+  --serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+  --sans: "Noto Sans JP", "Hiragino Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --display: "Cormorant Garamond", "Noto Serif JP", Georgia, serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  font-family: var(--serif);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.95;
+  letter-spacing: 0.04em;
+  font-feature-settings: "palt";
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; transition: color .15s; }
+a:hover { color: var(--accent-warm); }
+
+.site-header-strip { height: 3px; background: var(--accent-deep); }
+.site-header { position: sticky; top: 0; z-index: 100; background: rgba(250,246,241,0.96); backdrop-filter: saturate(160%) blur(8px); -webkit-backdrop-filter: saturate(160%) blur(8px); border-bottom: 1px solid var(--line); }
+.site-header-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.site-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.site-brand-mark { width: 28px; height: 28px; flex-shrink: 0; }
+.site-brand-mark img { width: 100%; height: auto; display: block; }
+.site-brand-text { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; color: var(--accent); line-height: 1.3; }
+.site-brand-text small { display: block; font-size: 9.5px; letter-spacing: 0.14em; color: var(--ink-mute); font-weight: 500; margin-top: 2px; }
+.site-nav { display: flex; gap: 22px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.1em; }
+.site-nav a { color: var(--ink-soft); font-weight: 500; padding: 6px 0; border-bottom: 2px solid transparent; }
+.site-nav a:hover { color: var(--accent-warm); border-bottom-color: var(--accent-warm); }
+
+.ep-hero {
+  background: linear-gradient(170deg, #4A1F18 0%, #6B2A1E 60%, #7A2E1F 100%);
+  color: var(--paper);
+  padding: 80px 24px 64px;
+  position: relative;
+  overflow: hidden;
+}
+.ep-hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 2; }
+.ep-hero-mark { position: absolute; right: -40px; top: 30px; width: 200px; opacity: 0.18; z-index: 1; }
+.ep-hero-eyebrow { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.3em; color: var(--accent-peach); font-weight: 700; display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.ep-hero-eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--accent-peach); }
+.ep-hero-num { font-family: var(--display); font-style: italic; font-size: 64px; color: var(--accent-peach); line-height: 1; margin-bottom: 8px; letter-spacing: 0.02em; }
+.ep-hero-title { font-family: var(--serif); font-weight: 500; font-size: 28px; line-height: 1.55; letter-spacing: 0.04em; color: var(--paper); margin-bottom: 14px; }
+.ep-hero-en { font-family: var(--display); font-style: italic; font-size: 15px; color: #F5DDC4; letter-spacing: 0.02em; margin-bottom: 32px; }
+.ep-hero-meta { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-family: var(--sans); font-size: 11.5px; letter-spacing: 0.1em; color: #E5C9B5; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.18); }
+.ep-hero-meta strong { color: var(--paper); font-weight: 500; }
+
+.layer-section { padding: 56px 24px; border-bottom: 1px solid var(--line); }
+.layer-honbun { background: var(--paper); }
+.layer-mgt { background: var(--paper-mgt); }
+.layer-aca { background: var(--paper-aca); }
+.layer-inner { max-width: 680px; margin: 0 auto; }
+.layer-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: inline-block;
+  padding: 5px 12px;
+  border: 1px solid var(--accent-warm);
+  color: var(--accent-warm);
+}
+.layer-honbun .layer-label { display: none; }
+.layer-title-jp {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--accent-deep);
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+.layer-title-en {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink-mute);
+  margin-bottom: 28px;
+}
+.layer-section p {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 2.05;
+  color: var(--ink);
+  margin-bottom: 26px;
+  text-indent: 1em;
+  letter-spacing: 0.04em;
+}
+.layer-section p:first-of-type { text-indent: 0; }
+.layer-section p strong { font-weight: 700; color: var(--accent-deep); }
+
+.ep-meta-block {
+  margin: 0 auto;
+  max-width: 680px;
+  padding: 28px 30px;
+  background: #FFFFFF;
+  border-top: 3px solid var(--accent-warm);
+  border-bottom: 1px solid var(--line);
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.ep-meta-block dt {
+  font-family: var(--sans);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-top: 14px;
+  margin-bottom: 6px;
+}
+.ep-meta-block dt:first-child { margin-top: 0; }
+.ep-meta-block dd {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  line-height: 1.85;
+  color: var(--ink-soft);
+}
+
+.ep-nav { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.ep-nav-inner { max-width: 720px; margin: 0 auto; padding: 28px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.ep-nav-link { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; background: #FFFFFF; border: 1px solid var(--line); text-decoration: none; transition: border-color .15s; }
+.ep-nav-link:hover { border-color: var(--accent-warm); text-decoration: none; }
+.ep-nav-label { font-family: var(--sans); font-size: 10px; letter-spacing: 0.18em; color: var(--accent-warm); font-weight: 700; }
+.ep-nav-link.next { text-align: right; }
+.ep-nav-title { font-family: var(--serif); font-size: 13.5px; color: var(--accent-deep); line-height: 1.6; letter-spacing: 0.04em; }
+
+.newsletter { background: linear-gradient(140deg, #4A1F18 0%, #6B2A1E 100%); color: var(--paper); padding: 52px 24px 56px; }
+.newsletter-inner { max-width: 680px; margin: 0 auto; }
+.newsletter-eyebrow { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.3em; color: var(--accent-peach); font-weight: 700; margin-bottom: 14px; }
+.newsletter-title { font-family: var(--serif); font-weight: 500; font-size: 24px; line-height: 1.6; letter-spacing: 0.04em; color: var(--paper); margin-bottom: 14px; }
+.newsletter-desc { font-family: var(--serif); font-size: 14px; line-height: 1.9; color: #E5C9B5; margin-bottom: 26px; }
+.nl-form { display: flex; flex-direction: column; gap: 12px; max-width: 460px; }
+.nl-step { display: none; flex-direction: column; gap: 12px; }
+.nl-step.active { display: flex; }
+.nl-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.nl-field input { width: 100%; font-family: var(--serif); font-size: 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); color: var(--paper); padding: 12px 14px; outline: none; }
+.nl-field input::placeholder { color: rgba(255,255,255,0.45); }
+.nl-field input:focus { border-color: var(--accent-peach); background: rgba(255,255,255,0.12); }
+.nl-consent { font-family: var(--sans); font-size: 11.5px; color: #E5C9B5; line-height: 1.7; display: flex; align-items: flex-start; gap: 8px; }
+.nl-btn { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--accent-deep); background: var(--accent-peach); border: none; padding: 14px 24px; cursor: pointer; }
+.nl-btn:hover { background: var(--accent-sand); }
+.nl-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.nl-trust { font-family: var(--sans); font-size: 11px; color: rgba(229,201,181,0.7); }
+.nl-done { display: none; padding: 22px 0; font-family: var(--serif); font-size: 16px; color: var(--paper); line-height: 1.9; }
+.nl-done.show { display: block; }
+.nl-form.hide { display: none; }
+
+.feedback-section { background: var(--paper-soft); padding: 48px 24px 56px; border-top: 1px solid var(--line); }
+.feedback-inner { max-width: 680px; margin: 0 auto; }
+.feedback-label { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; color: var(--accent-warm); font-weight: 700; margin-bottom: 8px; }
+.feedback-title { font-family: var(--serif); font-weight: 600; font-size: 22px; color: var(--accent-deep); letter-spacing: 0.06em; margin-bottom: 10px; }
+.feedback-desc { font-family: var(--serif); font-size: 14.5px; color: var(--ink-soft); line-height: 1.95; margin-bottom: 22px; }
+.feedback-form { display: flex; flex-direction: column; gap: 14px; }
+.feedback-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.feedback-field input, .feedback-field textarea { width: 100%; font-family: var(--serif); font-size: 14px; color: var(--ink); background: #FFFFFF; border: 1px solid var(--line); padding: 14px 16px; outline: none; }
+.feedback-field textarea { resize: vertical; min-height: 140px; line-height: 1.85; }
+.feedback-field label { display: block; font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; color: var(--ink-mute); margin-bottom: 6px; }
+.feedback-submit { align-self: flex-start; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--paper); background: var(--accent); border: none; padding: 14px 28px; cursor: pointer; margin-top: 4px; }
+.feedback-done { display: none; background: var(--accent-cream); border-left: 3px solid var(--accent-warm); padding: 18px 22px; font-family: var(--serif); font-size: 14.5px; color: var(--accent-deep); line-height: 1.85; }
+.feedback-done.show { display: block; }
+.feedback-form.hide { display: none; }
+
+.site-footer { background: var(--paper-soft); padding: 48px 24px 28px; border-top: 1px solid var(--line); }
+.site-footer-inner { max-width: 1080px; margin: 0 auto; }
+.site-footer-cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 36px; padding-bottom: 32px; border-bottom: 1px solid var(--line); }
+.site-footer-col h4 { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 14px; }
+.site-footer-col p, .site-footer-col a { font-family: var(--serif); font-size: 13px; line-height: 1.95; color: var(--ink-soft); }
+.site-footer-col ul { list-style: none; }
+.site-footer-col li { margin-bottom: 8px; }
+.site-footer-bottom { padding-top: 22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; font-family: var(--sans); font-size: 11px; color: var(--ink-mute); }
+
+@media (max-width: 760px) {
+  .site-nav { gap: 14px; font-size: 11px; }
+  .site-brand-text small { display: none; }
+  .ep-hero { padding: 56px 22px 44px; }
+  .ep-hero-num { font-size: 48px; }
+  .ep-hero-title { font-size: 22px; }
+  .layer-section { padding: 40px 22px; }
+  .layer-section p { font-size: 15.5px; line-height: 2.05; }
+  .ep-nav-inner { grid-template-columns: 1fr; padding: 22px 22px; }
+  .ep-nav-link.next { text-align: left; }
+  .nl-row, .feedback-row { grid-template-columns: 1fr; }
+  .site-footer-cols { grid-template-columns: 1fr; gap: 28px; }
+}
+</style>
+</head>
+<body>
+
+<div class="site-header-strip"></div>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="site-brand">
+      <div class="site-brand-mark"><img src="assets/miratuku-mark.png" alt="ミラツク"></div>
+      <div class="site-brand-text">変化のかたち<small>MIRA TUKU / 未来をつくる100の型</small></div>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">ホーム</a>
+      <a href="articles.html">全100話</a>
+      <a href="#newsletter">メルマガ</a>
+    </nav>
+  </div>
+</header>
+
+<section class="ep-hero">
+  <img class="ep-hero-mark" src="assets/miratuku-mark.png" alt="">
+  <div class="ep-hero-inner">
+    <div class="ep-hero-eyebrow">PART IV — 第IV部 第11章 見えないインフラ</div>
+    <div class="ep-hero-num">67.</div>
+    <h1 class="ep-hero-title">公共財の経済学<br>― オストロムのコモンズ論</h1>
+    <p class="ep-hero-en">The Economics of the Commons: Elinor Ostrom</p>
+    <div class="ep-hero-meta">
+      <span><strong>西村 勇也</strong>（NPO法人ミラツク 代表理事）</span>
+      <span>2026年5月8日</span>
+    </div>
+  </div>
+</section>
+
+<section class="layer-section layer-honbun">
+  <article class="layer-inner">
+    <p class="lead">スーザン・リー・スターが見えないインフラを哲学的に問題化したのと並走して、経済学の側からも、もう一つの大きな問いが立ち上がっていました。「**みんなのもの**」――森林、漁場、灌漑水路、放牧地、地下水、図書館、インターネット、地球大気――を、人類はどう管理してきたのか。この問いに、半世紀をかけて答えた経済学者が、米国インディアナ大学教授**エリノア・オストロム**（1933-2012）です。</p>
+
+      <p class="lead">オストロムが闘いを挑んだのは、1968年に米国の生物学者**ガレット・ハーディン**が『**Science**』誌に発表した有名な論文「**The Tragedy of the Commons（共有地の悲劇）**」でした。ハーディンの論理：放牧地を共有する牧畜民は、各自が自分の牛を増やすことが合理的に正しい。けれども全員が増やすと、放牧地は荒廃し、全員が損をする。共有地は必然的に悲劇に至る、と。だから共有資源は「私有化」か「国有化」しかない、と論じました。</p>
+
+      <p class="lead">ハーディンの議論は、その後の半世紀、世界中の環境政策・資源政策・経済学教科書の標準的な前提になりました。けれども、オストロムは1970年代から80年代にかけて、世界各地のフィールドワークで、まったく違う事実を発見していきます。スイス・アルプスの放牧地、フィリピン・スペインの灌漑用水路、メイン州・ニューイングランドの近海漁業、ネパールの森林共同管理、トルコ・ノルウェー・スリランカの地下水管理――これらの共有資源の多くが、**数百年から千年以上**にわたって、住民たちの自己組織化されたルールで持続的に管理されている事例が、無数に見つかりました。</p>
+
+      <p class="lead">1990年、彼女は集大成の著書『**Governing the Commons（コモンズのガバナンス）**』（Cambridge UP）を出版します。膨大なフィールド事例の分析から、彼女は「**コモンズ管理の8原則**」を抽出しました。第一に、**境界の明確さ**。第二に、**地域の条件に合ったルール**。第三に、**集合的選択への参加**。第四に、**監視のしくみ**。第五に、**段階的な制裁**。第六に、**紛争解決機構**。第七に、**自律性の承認**。第八に、**入れ子状の組織化**。</p>
+
+      <p class="lead">この8原則は、世界中の持続的なコモンズ管理に共通する構造でした。コモンズは「悲劇」ではなく、**人類が数千年かけて磨いてきた制度的知恵の蓄積**である、というのがオストロムの結論でした。</p>
+
+      <p class="lead">2009年、エリノア・オストロムは、女性として初の**ノーベル経済学賞**を受賞します。受賞理由は「コモンズ・ガバナンスの経済分析」でした。経済学が伝統的に扱ってきた「市場」と「国家」の二項対立に対し、オストロムは「**コモンズ**」という第3の制度形態を、現代経済学の中核に据えたのです。</p>
+
+      <p class="lead">オストロムの仕事を発展させたのが、彼女と夫**ヴィンセント・オストロム**が率いた**Workshop in Political Theory and Policy Analysis**（インディアナ大学）です。彼らが体系化した「**IADフレームワーク（Institutional Analysis and Development）**」は、世界銀行・国連・各国政府の政策立案ツールになっています。</p>
+
+      <p class="lead">日本では、**宇沢弘文**（1928-2014）の「**社会的共通資本**」概念が、オストロムと並走する系譜です。宇沢は『**社会的共通資本**』（2000年）で、自然環境（大気、水、森林）、社会的インフラ（道路、上下水道、電力、交通）、制度資本（教育、医療、金融、司法）の3つを「社会的共通資本」と呼び、これらは市場や国家の論理ではなく、**専門家による職業倫理に基づく管理**で支えるべきだ、と論じました。</p>
+
+      <p class="lead">見えないインフラの根底に、見えない制度的知恵が積み重なっています。</p>
+  </article>
+</section>
+
+<section class="layer-section layer-mgt">
+  <div class="layer-inner">
+    <span class="layer-label">FOR MANAGEMENT</span>
+    <h2 class="layer-title-jp">経営学的に読み解きたいあなたへ</h2>
+    <p class="layer-title-en">For readers approaching this through Management Studies</p>
+    <p class="lead">オストロムのコモンズ論を、現代経営に応用すると、3つの実用的視点が立ち上がります。</p>
+
+      <p class="lead">**第一に、自社が依存する「コモンズ」の特定**。多くの企業の事業は、市場でも自社所有でもない「コモンズ」に依存しています。オープンソース・ソフトウェア（Linux、PostgreSQL、Python）、業界の共通データ（OpenStreetMap、CCのライセンス）、業界の共通規格（Bluetooth、IEEE）、地域コミュニティ（地域の人材プール、地域の文化）、自然環境（水、森林、海洋資源）。これらのコモンズが劣化すると、自社の事業も劣化します。コモンズへの貢献は、長期的な経営判断として、株主への配当に並ぶ重要性を持ちます。</p>
+
+      <p class="lead">**第二に、「自社版コモンズ」の意識的な育成**。プラットフォーム企業、SaaS企業、エコシステム経営の中核には、しばしば「コモンズ的な共有資源」があります。Apple App Store、Salesforce AppExchange、AWSサービスエコシステム、Shopifyアプリ市場――これらは厳密には自社所有ですが、オストロムの8原則を意識した運営によって、サードパーティ開発者・パートナー・顧客の多元的な参加を持続させています。</p>
+
+      <p class="lead">**第三に、「ポリセントリック・ガバナンス」の組織応用**。オストロムが晩年に重視した「ポリセントリック（多中心型）ガバナンス」――一つの中央集権ではなく、複数の自律的な意思決定中心が連携する仕組み――は、地球温暖化対策、グローバルサプライチェーン、デジタルプラットフォーム規制などで、最も有望なガバナンスモデルとして認識されつつあります。組織内では、ホラクラシー、ティール組織、自律分散型組織がこの系譜にあります。</p>
+
+      <p class="lead">コモンズは、市場でも国家でもない、第三の制度です。</p>
+  </div>
+</section>
+
+<section class="layer-section layer-aca">
+  <div class="layer-inner">
+    <span class="layer-label">FOR ACADEMIA</span>
+    <h2 class="layer-title-jp">学術的に読み解きたいあなたへ</h2>
+    <p class="layer-title-en">For readers approaching this through Academic study</p>
+    <p class="lead">オストロム研究の中核文献は、Elinor Ostrom "Governing the Commons: The Evolution of Institutions for Collective Action"（Cambridge UP, 1990、邦訳『コモンズのガバナンス：人びとの協働と制度の進化』晃洋書房 2022、原田禎夫・齋藤暖生・嶋田大作訳）。"Understanding Institutional Diversity"（Princeton UP, 2005）、"Working Together: Collective Action, the Commons, and Multiple Methods in Practice"（Princeton UP, 2010、Amy Poteete & Marco Janssen共著）。Elinor & Vincent Ostrom編 "Choice, Rules and Collective Action"（ECPR Press, 2014）。</p>
+
+      <p class="lead">ハーディン論文は、Garrett Hardin "The Tragedy of the Commons"（Science 162(3859), 1968）。Hardin & John Baden eds. "Managing the Commons"（W.H. Freeman, 1977）。</p>
+
+      <p class="lead">オストロム派の代表的論集は、Charlotte Hess & Elinor Ostrom eds. "Understanding Knowledge as a Commons: From Theory to Practice"（MIT Press, 2007、邦訳『知識のコモンズ』晃洋書房 2023）、Daniel H. Cole & Michael McGinnis eds. "Elinor Ostrom and the Bloomington School of Political Economy"（4 volumes, Lexington Books, 2014-2017）。</p>
+
+      <p class="lead">ノーベル経済学賞講演は、Elinor Ostrom "Beyond Markets and States: Polycentric Governance of Complex Economic Systems"（American Economic Review 100(3), 2010）。Vincent Ostrom "The Meaning of American Federalism"（ICS Press, 1991）も近接領域。</p>
+
+      <p class="lead">ハーディン批判の決定版は、Bonnie McCay & James Acheson eds. "The Question of the Commons: The Culture and Ecology of Communal Resources"（Univ. of Arizona Press, 1987）、David Bollier "Think Like a Commoner: A Short Introduction to the Life of the Commons"（New Society, 2014、邦訳『コモンズ思考をマッピングする』みすず書房 2015）。</p>
+
+      <p class="lead">近年のコモンズ研究は、Yochai Benkler "The Wealth of Networks"（Yale UP, 2006）、Massimo De Angelis "Omnia Sunt Communia"（Zed Books, 2017）、Silke Helfrich & David Bollier "Free, Fair and Alive"（New Society, 2019、邦訳『コモンズ：人々の社会の再生のために』ハーベスト社 2024）。</p>
+
+      <p class="lead">宇沢弘文は、宇沢弘文『社会的共通資本』（岩波新書, 2000）、『経済解析：基礎篇』（岩波書店, 1986）、『地球温暖化を考える』（岩波新書, 1995）、『経済学は人びとを幸福にできるか』（東洋経済新報社, 2013）。宇沢国際学館編『社会的共通資本：宇沢弘文と現代』（東京大学出版会, 2015）。</p>
+
+      <p class="lead">日本のコモンズ研究では、井上真『コモンズの思想を求めて』（岩波書店, 2004）、宮内泰介編『なぜ環境保全はうまくいかないのか』（新泉社, 2013）、室田武・三俣学『入会林野とコモンズ』（日本評論社, 2004）、秋道智彌『コモンズの人類学』（人文書院, 2004）、間宮陽介『コモンズと地域づくり』（ナカニシヤ出版, 2017）。</p>
+
+      <p class="lead">連載第IV部第11章は、本話のオストロムから、ep68の上下水道、ep69の電力網、ep70のインターネット、ep71の章まとめへと展開します。</p>
+  </div>
+</section>
+
+<dl class="ep-meta-block">
+  <dt>今回つかったデータベース</dt>
+  <dd>経営学概念DB ／ 学術知識DB ／ 哲学概念DB ／ SIDB v9</dd>
+  <dt>今回登場した思想家・概念</dt>
+  <dd>エリノア・オストロム(1933-2012)『Governing the Commons』(1990) コモンズ管理8原則 ／ 2009年女性初ノーベル経済学賞 ／ Garrett Hardin「The Tragedy of the Commons」(1968)への反論 ／ IADフレームワーク ／ ポリセントリック・ガバナンス ／ 宇沢弘文『社会的共通資本』(2000) ／ Helfrich & Bollier『Free, Fair and Alive』(2019)</dd>
+  <dt>次回</dt>
+  <dd>第68話「上下水道の文明史」</dd>
+</dl>
+
+<nav class="ep-nav">
+  <div class="ep-nav-inner">
+    <a class="ep-nav-link" href="ep066.html">
+      <span class="ep-nav-label">← PREV</span>
+      <span class="ep-nav-title">第66話「インフラの哲学 ― スーザン・リー・スター」</span>
+    </a>
+    <a class="ep-nav-link next" href="ep068.html">
+      <span class="ep-nav-label">NEXT →</span>
+      <span class="ep-nav-title">第68話「上下水道の文明史」</span>
+    </a>
+  </div>
+</nav>
+
+<section class="feedback-section" id="comments">
+  <div class="feedback-inner">
+    <div class="feedback-label">COMMENTS ・ 感想・コメント</div>
+    <h2 class="feedback-title">この話に感想を送る</h2>
+    <p class="feedback-desc">読んで感じたこと、気になった一文、ご質問、関連する話題――どのようなものでも歓迎します。編集長（西村）に直接届きます。</p>
+
+    <form class="feedback-form" id="fbForm" onsubmit="return false;">
+      <div class="feedback-field">
+        <label for="fbSuggestion">コメント <span style="color:var(--accent-warm);">*</span></label>
+        <textarea id="fbSuggestion" placeholder="ご自由にお書きください" required></textarea>
+      </div>
+      <div class="feedback-row">
+        <div class="feedback-field">
+          <label for="fbName">お名前（任意）</label>
+          <input type="text" id="fbName" autocomplete="name" placeholder="匿名でも構いません">
+        </div>
+        <div class="feedback-field">
+          <label for="fbEmail">メール（任意）</label>
+          <input type="email" id="fbEmail" autocomplete="email" placeholder="返信不要なら空欄で">
+        </div>
+      </div>
+      <button type="button" class="feedback-submit" id="fbSubmit" onclick="submitFeedback()">送信する</button>
+    </form>
+    <div class="feedback-done" id="fbDone">ありがとうございました。コメントを受け取りました。</div>
+  </div>
+</section>
+
+<section class="newsletter" id="newsletter">
+  <div class="newsletter-inner">
+    <div class="newsletter-eyebrow">EMERGING FUTURE NEWSLETTER</div>
+    <h2 class="newsletter-title">新しい話の公開を、まずメールで。</h2>
+    <p class="newsletter-desc">本連載「変化のかたち」の更新通知、ミラツクの未来洞察・ソーシャルイノベーション関連の最新情報をお届けします。配信停止はいつでも可能です。</p>
+
+    <form class="nl-form" id="nlForm" onsubmit="return false;">
+      <div class="nl-step active" id="nlStep1">
+        <div class="nl-field"><input type="email" id="nlEmail" placeholder="メールアドレス" autocomplete="email"></div>
+        <button type="button" class="nl-btn" onclick="nlNext()">次へ →</button>
+        <div class="nl-trust">連載更新・実践事例・関連トピックをお届けします</div>
+      </div>
+      <div class="nl-step" id="nlStep2">
+        <div class="nl-row">
+          <div class="nl-field"><input type="text" id="nlName" placeholder="お名前" autocomplete="name"></div>
+          <div class="nl-field"><input type="text" id="nlOrg" placeholder="所属（任意）" autocomplete="organization"></div>
+        </div>
+        <label class="nl-consent"><input type="checkbox" id="nlConsent" checked> メールマガジン配信に同意します。配信停止はいつでも可能です。</label>
+        <button type="button" class="nl-btn" id="nlBtn" onclick="submitNl()">登録する</button>
+      </div>
+    </form>
+    <div class="nl-done" id="nlDone">ようこそ。確認メールをお送りしました。<br>これから一緒に「変化のかたち」を読み解いていきましょう。</div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-cols">
+      <div class="site-footer-col">
+        <h4>ABOUT</h4>
+        <p><strong>変化のかたち ― 未来をつくる100の型</strong></p>
+        <p style="margin-top:8px;color:var(--ink-mute);">ソーシャルイノベーションの新しい読み方。NPO法人ミラツク代表理事・西村勇也が、社会変容の奥にある「かたち」を、人類史と知の系譜のなかで読み解く全100回連載。</p>
+      </div>
+      <div class="site-footer-col">
+        <h4>NAVIGATION</h4>
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="articles.html">全100話 一覧</a></li>
+          <li><a href="ep001.html">第1話を読む</a></li>
+          <li><a href="#newsletter">メルマガ登録</a></li>
+        </ul>
+      </div>
+      <div class="site-footer-col">
+        <h4>MIRA TUKU</h4>
+        <ul>
+          <li><a href="https://emerging-future.org/" target="_blank" rel="noopener">emerging-future.org</a></li>
+          <li><a href="https://github.com/yuyanishimura0312/henka-no-katachi" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <span>© 2026 NPO法人ミラツク</span>
+      <span>変化のかたち ― 未来をつくる100の型</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const FEEDBACK_API = 'https://claude-code-manual-app.vercel.app/api/feedback';
+const NEWSLETTER_API = 'https://claude-code-manual-app.vercel.app/api/community';
+const EPISODE_ID = 'ep67';
+const EPISODE_TITLE = '第67話 ― 公共財の経済学 ― オストロムのコモンズ論';
+
+async function submitFeedback() {
+  const suggestion = document.getElementById('fbSuggestion').value.trim();
+  const name = document.getElementById('fbName').value.trim();
+  const email = document.getElementById('fbEmail').value.trim();
+  const btn = document.getElementById('fbSubmit');
+  if (!suggestion) { document.getElementById('fbSuggestion').focus(); return; }
+  btn.disabled = true; btn.textContent = '送信中…';
+  try {
+    const res = await fetch(FEEDBACK_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ source: 'henka-no-katachi', episode: EPISODE_ID + ' ' + EPISODE_TITLE, suggestion, name, email })
+    });
+    if (!res.ok) throw new Error('failed');
+    document.getElementById('fbForm').classList.add('hide');
+    document.getElementById('fbDone').classList.add('show');
+  } catch(e) { alert('送信に失敗しました'); btn.disabled = false; btn.textContent = '送信する'; }
+}
+
+function nlNext() {
+  const v = document.getElementById('nlEmail').value.trim();
+  if (!v || !v.includes('@')) { document.getElementById('nlEmail').focus(); return; }
+  document.getElementById('nlStep1').classList.remove('active');
+  document.getElementById('nlStep2').classList.add('active');
+  document.getElementById('nlName').focus();
+}
+
+async function submitNl() {
+  const name = document.getElementById('nlName').value.trim();
+  const org = document.getElementById('nlOrg').value.trim();
+  const email = document.getElementById('nlEmail').value.trim();
+  const consent = document.getElementById('nlConsent').checked;
+  const btn = document.getElementById('nlBtn');
+  if (!name) { document.getElementById('nlName').focus(); return; }
+  if (!consent) { alert('メルマガ配信への同意が必要です'); return; }
+  btn.disabled = true; btn.textContent = '登録中…';
+  try {
+    const res = await fetch(NEWSLETTER_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, org, email })
+    });
+    if (!res.ok) throw new Error('failed');
+    document.getElementById('nlForm').classList.add('hide');
+    document.getElementById('nlDone').classList.add('show');
+  } catch(e) { alert('登録に失敗しました'); btn.disabled = false; btn.textContent = '登録する'; }
+}
+</script>
+
+</body>
+</html>
