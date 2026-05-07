@@ -131,6 +131,8 @@ a:hover { color: var(--accent-deep); }
 .nl-done { display: none; padding: 22px 0; font-family: var(--serif); font-size: 16px; color: var(--bg); line-height: 1.9; }
 .nl-done.show { display: block; }
 .nl-form.hide { display: none; }
+.nl-error { display: none; margin-top: 10px; padding: 10px 14px; background: var(--accent-soft); border-left: 3px solid var(--accent); font-family: var(--sans); font-size: 12px; color: var(--bg); letter-spacing: 0.04em; line-height: 1.6; }
+.nl-error.show { display: block; }
 
 /* FOOTER */
 .site-footer { background: var(--bg-soft); padding: 56px 24px 32px; border-top: 1px solid var(--line); }
@@ -143,6 +145,13 @@ a:hover { color: var(--accent-deep); }
 .site-footer-col a:hover { color: var(--accent); }
 .site-footer-bottom { padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; font-family: var(--sans); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.06em; }
 
+@media (min-width: 761px) and (max-width: 1079px) {
+  /* タブレット中間帯 */
+  .hero { padding: 96px 32px 80px; }
+  .hero-inner { max-width: 720px; }
+  .section { padding: 80px 32px; }
+  .latest-card { grid-template-columns: 64px 1fr; padding: 28px 28px 24px; }
+}
 @media (max-width: 760px) {
   .site-nav { gap: 8px; font-size: 11px; }
   .site-nav a { padding: 12px 8px; min-height: 44px; display: flex; align-items: center; }
@@ -285,6 +294,7 @@ a:hover { color: var(--accent-deep); }
     <div class="nl-done" id="nlDone">
       ようこそ。確認メールをお送りしました。<br>これから一緒に「変化のかたち」を読み解いていきましょう。
     </div>
+    <div class="nl-error" id="nlError" role="alert" aria-live="polite"></div>
   </div>
 </section>
 
@@ -335,14 +345,22 @@ function nlNext() {
   document.getElementById('nlStep2').classList.add('active');
   document.getElementById('nlName').focus();
 }
+function _nlShowError(msg) {
+  const e = document.getElementById('nlError');
+  if (e) { e.textContent = msg; e.classList.add('show'); }
+}
+function _nlClearError() {
+  document.getElementById('nlError')?.classList.remove('show');
+}
 async function submitNl() {
+  _nlClearError();
   const name = document.getElementById('nlName').value.trim();
   const org = document.getElementById('nlOrg').value.trim();
   const email = document.getElementById('nlEmail').value.trim();
   const consent = document.getElementById('nlConsent').checked;
   const btn = document.getElementById('nlBtn');
-  if (!name) { document.getElementById('nlName').focus(); return; }
-  if (!consent) { alert('メールマガジン配信への同意が必要です'); return; }
+  if (!name) { document.getElementById('nlName').focus(); _nlShowError('お名前を入力してください'); return; }
+  if (!consent) { _nlShowError('メールマガジン配信への同意が必要です'); return; }
   btn.disabled = true;
   btn.textContent = '登録中…';
   try {
@@ -355,7 +373,7 @@ async function submitNl() {
     document.getElementById('nlForm').classList.add('hide');
     document.getElementById('nlDone').classList.add('show');
   } catch (e) {
-    alert('登録に失敗しました。少し時間をおいて再度お試しください。');
+    _nlShowError('登録に失敗しました。少し時間をおいて再度お試しください。');
     btn.disabled = false;
     btn.textContent = '登録する';
   }

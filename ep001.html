@@ -51,7 +51,7 @@ a:hover { color: var(--accent-deep); }
 
 /* ─── FOCUS VISIBLE（キーボード操作時のみ） ─── */
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
-.btn-primary:focus-visible, .nl-btn:focus-visible, .ep-action-btn:focus-visible, .feedback-submit:focus-visible { outline-offset: 4px; }
+.btn-primary:focus-visible, .nl-btn:focus-visible, .ep-action-btn:focus-visible { outline-offset: 4px; }
 .reading-lens-trigger:focus-visible { background: var(--bg-soft); outline-offset: -2px; }
 
 .read-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; background: transparent; z-index: 200; pointer-events: none; }
@@ -144,26 +144,6 @@ a:hover { color: var(--accent-deep); }
 .ep-action-btn.primary { background: var(--accent); color: var(--bg); border-color: var(--accent); }
 .ep-action-btn.primary:hover { background: var(--accent-deep); color: var(--bg); border-color: var(--accent-deep); }
 
-/* COMMENTS */
-.feedback-section { background: var(--bg); padding: 64px 24px 72px; }
-.feedback-inner { max-width: 720px; margin: 0 auto; }
-.feedback-label { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.26em; color: var(--accent); font-weight: 700; margin-bottom: 10px; }
-.feedback-title { font-family: var(--serif); font-weight: 700; font-size: 24px; color: var(--ink); letter-spacing: 0.04em; margin-bottom: 12px; }
-.feedback-desc { font-family: var(--serif); font-size: 14.5px; color: var(--ink-soft); line-height: 2; margin-bottom: 24px; }
-.feedback-form { display: flex; flex-direction: column; gap: 14px; }
-.feedback-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.feedback-field { position: relative; }
-.feedback-field input, .feedback-field textarea, .feedback-field select { width: 100%; font-family: var(--serif); font-size: 14px; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 0; padding: 14px 16px; letter-spacing: 0.04em; outline: none; transition: border-color .15s; }
-.feedback-field textarea { resize: vertical; min-height: 140px; line-height: 1.85; }
-.feedback-field input:focus, .feedback-field textarea:focus, .feedback-field select:focus { border-color: var(--accent); }
-.feedback-field label { display: block; font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; color: var(--ink-mute); margin-bottom: 6px; }
-.feedback-submit { align-self: flex-start; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--bg); background: var(--ink); border: none; padding: 14px 28px; cursor: pointer; transition: background .15s; margin-top: 4px; }
-.feedback-submit:hover { background: var(--accent); }
-.feedback-submit:disabled { background: var(--ink-mute); cursor: not-allowed; }
-.feedback-done { display: none; background: var(--accent-soft); border-left: 3px solid var(--accent); padding: 18px 22px; font-family: var(--serif); font-size: 14.5px; color: var(--ink); line-height: 1.85; }
-.feedback-done.show { display: block; }
-.feedback-form.hide { display: none; }
-
 /* PREV/NEXT */
 .ep-nav { background: var(--bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .ep-nav-inner { max-width: 760px; margin: 0 auto; padding: 28px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
@@ -196,6 +176,8 @@ a:hover { color: var(--accent-deep); }
 .nl-done { display: none; padding: 22px 0; font-family: var(--serif); font-size: 16px; color: var(--bg); line-height: 1.9; }
 .nl-done.show { display: block; }
 .nl-form.hide { display: none; }
+.nl-error { display: none; margin-top: 10px; padding: 10px 14px; background: var(--accent-soft); border-left: 3px solid var(--accent); font-family: var(--sans); font-size: 12px; color: var(--bg); letter-spacing: 0.04em; line-height: 1.6; }
+.nl-error.show { display: block; }
 
 /* FOOTER */
 .site-footer { background: var(--bg-soft); padding: 56px 24px 32px; border-top: 1px solid var(--line); }
@@ -218,10 +200,15 @@ a:hover { color: var(--accent-deep); }
 .toc-drawer-close { position: absolute; top: 14px; right: 14px; background: transparent; border: none; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: var(--ink-mute); cursor: pointer; padding: 6px 10px; }
 .toc-drawer .toc-label { margin-top: 4px; }
 
+@media (min-width: 761px) and (max-width: 1079px) {
+  /* タブレット中間帯 — サイドTOC消失後の余白最適化 */
+  .ep-body { padding: 64px 32px 80px; max-width: 680px; }
+  .ep-hero { padding: 88px 32px 72px; }
+  .ep-hero-inner { max-width: 680px; }
+}
 @media (max-width: 1080px) {
   .ep-layout { grid-template-columns: 1fr; gap: 0; padding: 0; }
   .toc-sidebar { display: none; }
-  .ep-body { padding: 56px 24px 64px; }
   .toc-fab { display: flex; align-items: center; justify-content: center; }
 }
 @media (max-width: 760px) {
@@ -249,7 +236,6 @@ a:hover { color: var(--accent-deep); }
   .ep-question-next { flex-direction: column; align-items: flex-start; }
   .ep-actions-inner { flex-direction: column; }
   .ep-action-btn { width: 100%; justify-content: center; }
-  .feedback-row { grid-template-columns: 1fr; }
   .ep-nav-inner { grid-template-columns: 1fr; padding: 22px 22px; }
   .ep-nav-link.next { text-align: left; }
   .nl-row { grid-template-columns: 1fr; }
@@ -279,7 +265,7 @@ a:hover { color: var(--accent-deep); }
     --ink: #14110F; --ink-soft: #3A3633; --ink-mute: #6B6661; --ink-faint: #9C9692;
     --line: #E8E5E1; --line-soft: #F0EDE9;
   }
-  .read-progress, .site-header, .site-header-strip, .toc-sidebar, .toc-fab, .toc-drawer, .ep-actions, .ep-nav, .feedback-section, .newsletter, .site-footer, .editor-toggle, .editor-bar { display: none !important; }
+  .read-progress, .site-header, .site-header-strip, .toc-sidebar, .toc-fab, .toc-overlay, .toc-drawer, .ep-actions, .ep-nav, .newsletter, .site-footer, .editor-toggle, .editor-bar { display: none !important; }
   body { background: #FFFFFF; color: #14110F; }
   .ep-hero { background: #FFFFFF; padding: 24px 0; page-break-after: avoid; border-bottom: none; }
   .ep-layout { grid-template-columns: 1fr; padding: 0; }
@@ -401,7 +387,7 @@ a:hover { color: var(--accent-deep); }
       <div class="ep-question-next">
         <span class="ep-question-next-meta">NEXT EPISODE</span>
         <span class="ep-question-next-title">第2話「『つくる』と『生まれる』― 創発の系譜」</span>
-        <a class="ep-question-next-link" href="articles.html#ep002">公開を待つ →</a>
+        <a class="ep-question-next-link" href="ep002.html">第2話を読む →</a>
       </div>
     </section>
 
@@ -411,7 +397,6 @@ a:hover { color: var(--accent-deep); }
 <section class="ep-actions" aria-label="読了後アクション">
   <div class="ep-actions-inner">
     <a class="ep-action-btn primary" href="#newsletter">メルマガで次話を受け取る</a>
-    <a class="ep-action-btn" href="#comments">この話に感想を送る</a>
     <a class="ep-action-btn" href="ep001-print.html" target="_blank" rel="noopener">PDF版を読む</a>
     <a class="ep-action-btn" href="articles.html">全100話の地図へ</a>
   </div>
@@ -423,41 +408,12 @@ a:hover { color: var(--accent-deep); }
       <span class="ep-nav-label">← PREV</span>
       <span class="ep-nav-title">― 連載のはじまり ―</span>
     </a>
-    <a class="ep-nav-link next" href="articles.html#ep002">
+    <a class="ep-nav-link next" href="ep002.html">
       <span class="ep-nav-label">NEXT →</span>
-      <span class="ep-nav-title">第2話「『つくる』と『生まれる』― 創発の系譜」（公開予定）</span>
+      <span class="ep-nav-title">第2話「『つくる』と『生まれる』― 創発の系譜」</span>
     </a>
   </div>
 </nav>
-
-<section class="feedback-section" id="comments">
-  <div class="feedback-inner">
-    <div class="feedback-label">COMMENTS ・ 感想・コメント</div>
-    <h2 class="feedback-title">この話に感想を送る</h2>
-    <p class="feedback-desc">読んで感じたこと、気になった一文、ご質問、関連する話題――どのようなものでも歓迎します。編集長（西村）に直接届きます。</p>
-
-    <form class="feedback-form" id="fbForm" onsubmit="return false;">
-      <div class="feedback-field">
-        <label for="fbSuggestion">コメント <span style="color:var(--accent);">*</span></label>
-        <textarea id="fbSuggestion" placeholder="ご自由にお書きください" required></textarea>
-      </div>
-      <div class="feedback-row">
-        <div class="feedback-field">
-          <label for="fbName">お名前（任意）</label>
-          <input type="text" id="fbName" autocomplete="name" placeholder="匿名でも構いません">
-        </div>
-        <div class="feedback-field">
-          <label for="fbEmail">メール（任意・返信が必要なときのみ）</label>
-          <input type="email" id="fbEmail" autocomplete="email" placeholder="返信不要なら空欄で">
-        </div>
-      </div>
-      <button type="button" class="feedback-submit" id="fbSubmit" onclick="submitFeedback()">送信する</button>
-    </form>
-    <div class="feedback-done" id="fbDone">
-      ありがとうございました。コメントを受け取りました。
-    </div>
-  </div>
-</section>
 
 <section class="newsletter" id="newsletter">
   <div class="newsletter-inner">
@@ -485,6 +441,7 @@ a:hover { color: var(--accent-deep); }
     <div class="nl-done" id="nlDone">
       ようこそ。確認メールをお送りしました。<br>これから一緒に「変化のかたち」を読み解いていきましょう。
     </div>
+    <div class="nl-error" id="nlError" role="alert" aria-live="polite"></div>
   </div>
 </section>
 
@@ -502,7 +459,6 @@ a:hover { color: var(--accent-deep); }
           <li><a href="index.html">ホーム</a></li>
           <li><a href="articles.html">全100話 一覧</a></li>
           <li><a href="#newsletter">メルマガ登録</a></li>
-          <li><a href="#comments">この話にコメント</a></li>
         </ul>
       </div>
       <div class="site-footer-col">
@@ -555,7 +511,6 @@ a:hover { color: var(--accent-deep); }
 </div>
 
 <script>
-const FEEDBACK_API = 'https://claude-code-manual-app.vercel.app/api/feedback';
 const NEWSLETTER_API = 'https://claude-code-manual-app.vercel.app/api/community';
 const EPISODE_ID = 'ep001';
 const EPISODE_TITLE = '第1話 ― なぜいま「型」でソーシャルイノベーションを読むのか';
@@ -603,38 +558,6 @@ function toggleTocDrawer() {
 }
 function _tocEsc(e) { if (e.key === 'Escape') toggleTocDrawer(); }
 
-async function submitFeedback() {
-  const suggestion = document.getElementById('fbSuggestion').value.trim();
-  const name = document.getElementById('fbName').value.trim();
-  const email = document.getElementById('fbEmail').value.trim();
-  const btn = document.getElementById('fbSubmit');
-  if (!suggestion) {
-    document.getElementById('fbSuggestion').focus();
-    document.getElementById('fbSuggestion').style.borderColor = 'var(--accent)';
-    return;
-  }
-  btn.disabled = true;
-  btn.textContent = '送信中…';
-  try {
-    const res = await fetch(FEEDBACK_API, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        source: 'henka-no-katachi',
-        episode: EPISODE_ID + ' ' + EPISODE_TITLE,
-        suggestion, name, email,
-      }),
-    });
-    if (!res.ok) throw new Error('failed');
-    document.getElementById('fbForm').classList.add('hide');
-    document.getElementById('fbDone').classList.add('show');
-  } catch (e) {
-    alert('送信に失敗しました。少し時間をおいて再度お試しください。');
-    btn.disabled = false;
-    btn.textContent = '送信する';
-  }
-}
-
 function nlNext() {
   const v = document.getElementById('nlEmail').value.trim();
   if (!v || !v.includes('@')) {
@@ -647,14 +570,22 @@ function nlNext() {
   document.getElementById('nlStep2').classList.add('active');
   document.getElementById('nlName').focus();
 }
+function _nlShowError(msg) {
+  const e = document.getElementById('nlError');
+  if (e) { e.textContent = msg; e.classList.add('show'); }
+}
+function _nlClearError() {
+  document.getElementById('nlError')?.classList.remove('show');
+}
 async function submitNl() {
+  _nlClearError();
   const name = document.getElementById('nlName').value.trim();
   const org = document.getElementById('nlOrg').value.trim();
   const email = document.getElementById('nlEmail').value.trim();
   const consent = document.getElementById('nlConsent').checked;
   const btn = document.getElementById('nlBtn');
-  if (!name) { document.getElementById('nlName').focus(); return; }
-  if (!consent) { alert('メールマガジン配信への同意が必要です'); return; }
+  if (!name) { document.getElementById('nlName').focus(); _nlShowError('お名前を入力してください'); return; }
+  if (!consent) { _nlShowError('メールマガジン配信への同意が必要です'); return; }
   btn.disabled = true;
   btn.textContent = '登録中…';
   try {
@@ -667,7 +598,7 @@ async function submitNl() {
     document.getElementById('nlForm').classList.add('hide');
     document.getElementById('nlDone').classList.add('show');
   } catch (e) {
-    alert('登録に失敗しました。少し時間をおいて再度お試しください。');
+    _nlShowError('登録に失敗しました。少し時間をおいて再度お試しください。');
     btn.disabled = false;
     btn.textContent = '登録する';
   }
