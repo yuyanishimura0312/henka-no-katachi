@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第41話 ― 学問領域創出のかたち ― 第6章のまとめ | 変化のかたち</title>
+<meta name="description" content="変化のかたち第41話。学問領域創出のかたち ― 第6章のまとめ。">
+<meta property="og:title" content="第41話 ― 学問領域創出のかたち ― 第6章のまとめ">
+<meta property="og:description" content="変化のかたち第41話。学問領域創出のかたち ― 第6章のまとめ。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yuyanishimura0312.github.io/henka-no-katachi/ep041.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://yuyanishimura0312.github.io/henka-no-katachi/ep041.html">
+<link rel="icon" href="https://esse-sense.com/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #FAF6F1;
+  --paper-soft: #F5EFE7;
+  --paper-mgt: #FCF5EE;
+  --paper-aca: #F5EEE3;
+  --ink: #2A1A14;
+  --ink-soft: #5A4238;
+  --ink-mute: #7A6358;
+  --accent-deep: #4A1F18;
+  --accent: #7A2E1F;
+  --accent-warm: #C46545;
+  --accent-coral: #E0824A;
+  --accent-peach: #F0A671;
+  --accent-sand: #F8CDAC;
+  --accent-cream: #F5E8DC;
+  --line: #E5D9CC;
+  --line-soft: #EFE4D6;
+  --serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+  --sans: "Noto Sans JP", "Hiragino Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --display: "Cormorant Garamond", "Noto Serif JP", Georgia, serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  font-family: var(--serif);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.95;
+  letter-spacing: 0.04em;
+  font-feature-settings: "palt";
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; transition: color .15s; }
+a:hover { color: var(--accent-warm); }
+
+.site-header-strip { height: 3px; background: var(--accent-deep); }
+.site-header { position: sticky; top: 0; z-index: 100; background: rgba(250,246,241,0.96); backdrop-filter: saturate(160%) blur(8px); -webkit-backdrop-filter: saturate(160%) blur(8px); border-bottom: 1px solid var(--line); }
+.site-header-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.site-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.site-brand-mark { width: 28px; height: 28px; flex-shrink: 0; }
+.site-brand-mark img { width: 100%; height: auto; display: block; }
+.site-brand-text { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; color: var(--accent); line-height: 1.3; }
+.site-brand-text small { display: block; font-size: 9.5px; letter-spacing: 0.14em; color: var(--ink-mute); font-weight: 500; margin-top: 2px; }
+.site-nav { display: flex; gap: 22px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.1em; }
+.site-nav a { color: var(--ink-soft); font-weight: 500; padding: 6px 0; border-bottom: 2px solid transparent; }
+.site-nav a:hover { color: var(--accent-warm); border-bottom-color: var(--accent-warm); }
+
+.ep-hero {
+  background: linear-gradient(170deg, #4A1F18 0%, #6B2A1E 60%, #7A2E1F 100%);
+  color: var(--paper);
+  padding: 80px 24px 64px;
+  position: relative;
+  overflow: hidden;
+}
+.ep-hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 2; }
+.ep-hero-mark { position: absolute; right: -40px; top: 30px; width: 200px; opacity: 0.18; z-index: 1; }
+.ep-hero-eyebrow { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.3em; color: var(--accent-peach); font-weight: 700; display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.ep-hero-eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--accent-peach); }
+.ep-hero-num { font-family: var(--display); font-style: italic; font-size: 64px; color: var(--accent-peach); line-height: 1; margin-bottom: 8px; letter-spacing: 0.02em; }
+.ep-hero-title { font-family: var(--serif); font-weight: 500; font-size: 28px; line-height: 1.55; letter-spacing: 0.04em; color: var(--paper); margin-bottom: 14px; }
+.ep-hero-en { font-family: var(--display); font-style: italic; font-size: 15px; color: #F5DDC4; letter-spacing: 0.02em; margin-bottom: 32px; }
+.ep-hero-meta { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-family: var(--sans); font-size: 11.5px; letter-spacing: 0.1em; color: #E5C9B5; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.18); }
+.ep-hero-meta strong { color: var(--paper); font-weight: 500; }
+
+.layer-section { padding: 56px 24px; border-bottom: 1px solid var(--line); }
+.layer-honbun { background: var(--paper); }
+.layer-mgt { background: var(--paper-mgt); }
+.layer-aca { background: var(--paper-aca); }
+.layer-inner { max-width: 680px; margin: 0 auto; }
+.layer-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: inline-block;
+  padding: 5px 12px;
+  border: 1px solid var(--accent-warm);
+  color: var(--accent-warm);
+}
+.layer-honbun .layer-label { display: none; }
+.layer-title-jp {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--accent-deep);
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+.layer-title-en {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink-mute);
+  margin-bottom: 28px;
+}
+.layer-section p {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 2.05;
+  color: var(--ink);
+  margin-bottom: 26px;
+  text-indent: 1em;
+  letter-spacing: 0.04em;
+}
+.layer-section p:first-of-type { text-indent: 0; }
+.layer-section p strong { font-weight: 700; color: var(--accent-deep); }
+
+.ep-meta-block {
+  margin: 0 auto;
+  max-width: 680px;
+  padding: 28px 30px;
+  background: #FFFFFF;
+  border-top: 3px solid var(--accent-warm);
+  border-bottom: 1px solid var(--line);
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.ep-meta-block dt {
+  font-family: var(--sans);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-top: 14px;
+  margin-bottom: 6px;
+}
+.ep-meta-block dt:first-child { margin-top: 0; }
+.ep-meta-block dd {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  line-height: 1.85;
+  color: var(--ink-soft);
+}
+
+.ep-nav { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.ep-nav-inner { max-width: 720px; margin: 0 auto; padding: 28px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.ep-nav-link { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; background: #FFFFFF; border: 1px solid var(--line); text-decoration: none; transition: border-color .15s; }
+.ep-nav-link:hover { border-color: var(--accent-warm); text-decoration: none; }
+.ep-nav-label { font-family: var(--sans); font-size: 10px; letter-spacing: 0.18em; color: var(--accent-warm); font-weight: 700; }
+.ep-nav-link.next { text-align: right; }
+.ep-nav-title { font-family: var(--serif); font-size: 13.5px; color: var(--accent-deep); line-height: 1.6; letter-spacing: 0.04em; }
+
+.newsletter { background: linear-gradient(140deg, #4A1F18 0%, #6B2A1E 100%); color: var(--paper); padding: 52px 24px 56px; }
+.newsletter-inner { max-width: 680px; margin: 0 auto; }
+.newsletter-eyebrow { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.3em; color: var(--accent-peach); font-weight: 700; margin-bottom: 14px; }
+.newsletter-title { font-family: var(--serif); font-weight: 500; font-size: 24px; line-height: 1.6; letter-spacing: 0.04em; color: var(--paper); margin-bottom: 14px; }
+.newsletter-desc { font-family: var(--serif); font-size: 14px; line-height: 1.9; color: #E5C9B5; margin-bottom: 26px; }
+.nl-form { display: flex; flex-direction: column; gap: 12px; max-width: 460px; }
+.nl-step { display: none; flex-direction: column; gap: 12px; }
+.nl-step.active { display: flex; }
+.nl-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.nl-field input { width: 100%; font-family: var(--serif); font-size: 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); color: var(--paper); padding: 12px 14px; outline: none; }
+.nl-field input::placeholder { color: rgba(255,255,255,0.45); }
+.nl-field input:focus { border-color: var(--accent-peach); background: rgba(255,255,255,0.12); }
+.nl-consent { font-family: var(--sans); font-size: 11.5px; color: #E5C9B5; line-height: 1.7; display: flex; align-items: flex-start; gap: 8px; }
+.nl-btn { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--accent-deep); background: var(--accent-peach); border: none; padding: 14px 24px; cursor: pointer; }
+.nl-btn:hover { background: var(--accent-sand); }
+.nl-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.nl-trust { font-family: var(--sans); font-size: 11px; color: rgba(229,201,181,0.7); }
+.nl-done { display: none; padding: 22px 0; font-family: var(--serif); font-size: 16px; color: var(--paper); line-height: 1.9; }
+.nl-done.show { display: block; }
+.nl-form.hide { display: none; }
+
+.feedback-section { background: var(--paper-soft); padding: 48px 24px 56px; border-top: 1px solid var(--line); }
+.feedback-inner { max-width: 680px; margin: 0 auto; }
+.feedback-label { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; color: var(--accent-warm); font-weight: 700; margin-bottom: 8px; }
+.feedback-title { font-family: var(--serif); font-weight: 600; font-size: 22px; color: var(--accent-deep); letter-spacing: 0.06em; margin-bottom: 10px; }
+.feedback-desc { font-family: var(--serif); font-size: 14.5px; color: var(--ink-soft); line-height: 1.95; margin-bottom: 22px; }
+.feedback-form { display: flex; flex-direction: column; gap: 14px; }
+.feedback-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.feedback-field input, .feedback-field textarea { width: 100%; font-family: var(--serif); font-size: 14px; color: var(--ink); background: #FFFFFF; border: 1px solid var(--line); padding: 14px 16px; outline: none; }
+.feedback-field textarea { resize: vertical; min-height: 140px; line-height: 1.85; }
+.feedback-field label { display: block; font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; color: var(--ink-mute); margin-bottom: 6px; }
+.feedback-submit { align-self: flex-start; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--paper); background: var(--accent); border: none; padding: 14px 28px; cursor: pointer; margin-top: 4px; }
+.feedback-done { display: none; background: var(--accent-cream); border-left: 3px solid var(--accent-warm); padding: 18px 22px; font-family: var(--serif); font-size: 14.5px; color: var(--accent-deep); line-height: 1.85; }
+.feedback-done.show { display: block; }
+.feedback-form.hide { display: none; }
+
+.site-footer { background: var(--paper-soft); padding: 48px 24px 28px; border-top: 1px solid var(--line); }
+.site-footer-inner { max-width: 1080px; margin: 0 auto; }
+.site-footer-cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 36px; padding-bottom: 32px; border-bottom: 1px solid var(--line); }
+.site-footer-col h4 { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 14px; }
+.site-footer-col p, .site-footer-col a { font-family: var(--serif); font-size: 13px; line-height: 1.95; color: var(--ink-soft); }
+.site-footer-col ul { list-style: none; }
+.site-footer-col li { margin-bottom: 8px; }
+.site-footer-bottom { padding-top: 22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; font-family: var(--sans); font-size: 11px; color: var(--ink-mute); }
+
+@media (max-width: 760px) {
+  .site-nav { gap: 14px; font-size: 11px; }
+  .site-brand-text small { display: none; }
+  .ep-hero { padding: 56px 22px 44px; }
+  .ep-hero-num { font-size: 48px; }
+  .ep-hero-title { font-size: 22px; }
+  .layer-section { padding: 40px 22px; }
+  .layer-section p { font-size: 15.5px; line-height: 2.05; }
+  .ep-nav-inner { grid-template-columns: 1fr; padding: 22px 22px; }
+  .ep-nav-link.next { text-align: left; }
+  .nl-row, .feedback-row { grid-template-columns: 1fr; }
+  .site-footer-cols { grid-template-columns: 1fr; gap: 28px; }
+}
+</style>
+</head>
+<body>
+
+<div class="site-header-strip"></div>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="site-brand">
+      <div class="site-brand-mark"><img src="assets/miratuku-mark.png" alt="ミラツク"></div>
+      <div class="site-brand-text">変化のかたち<small>MIRA TUKU / 未来をつくる100の型</small></div>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">ホーム</a>
+      <a href="articles.html">全100話</a>
+      <a href="#newsletter">メルマガ</a>
+    </nav>
+  </div>
+</header>
+
+<section class="ep-hero">
+  <img class="ep-hero-mark" src="assets/miratuku-mark.png" alt="">
+  <div class="ep-hero-inner">
+    <div class="ep-hero-eyebrow">PART II — 第II部 第6章 学問領域創出（章まとめ／第II部全体の閉じ）</div>
+    <div class="ep-hero-num">41.</div>
+    <h1 class="ep-hero-title">学問領域創出のかたち<br>― 第6章のまとめ</h1>
+    <p class="ep-hero-en">Forms of Discipline Creation: Closing the Sixth Chapter</p>
+    <div class="ep-hero-meta">
+      <span><strong>西村 勇也</strong>（NPO法人ミラツク 代表理事）</span>
+      <span>2026年5月8日</span>
+    </div>
+  </div>
+</section>
+
+<section class="layer-section layer-honbun">
+  <article class="layer-inner">
+    <p class="lead">第II部「媒介のかたち」の最終章を閉じます。第6章では、看護学（ナイチンゲール）、社会福祉学（リッチモンド）、専門家批判（イリイチ・フレイレ）、実践共同体（ウェンガー・レイヴ）、デザイン思考（バウハウス・IDEO・d.school）と、5つの学問領域の生成過程を辿りました。連載でいちばん長い時間軸（1860年から2010年まで150年）と、いちばん多様な領域を扱った章でした。</p>
+
+      <p class="lead">5話を並べると、「**学問領域創出**」というかたちには共通の構造が見えます。**現場の困難から始まる**こと（クリミア戦争病院、ロンドンの貧困街、20世紀の専門家依存社会、リベリアの仕立屋共同体、デザイン現場）。**データや観察から方法論を抽出する**こと（コクスコム、社会診断、脱学校化、状況的学習、共感→定義→発想→プロトタイピング→検証）。**教育機関と専門職団体を同時に立ち上げる**こと（ナイチンゲール看護学校、ニューヨーク慈善学校、CIDOC、d.school）。そして、**創出された学問が次の批判を呼び込む**こと（看護学→医療化批判、社会福祉学→脱学校化、専門家批判→実践共同体、CoP→批判教育学）。</p>
+
+      <p class="lead">現代日本にも、この系譜を継ぐ動きがあります。3つ紹介します。</p>
+
+      <p class="lead">ひとつ目は、**全国子ども食堂支援センターむすびえ**（2018年設立、湯浅誠理事長）。日本の子ども食堂は2012年に東京都大田区「気まぐれ八百屋だんだん」で始まり、2024年時点で全国9,000か所超に拡大しました。むすびえは、現場の実践を支援し、調査研究を通じて「子ども食堂学」とも呼ぶべき新しい知識領域を立ち上げています。リッチモンドが慈善を社会福祉学に変えたように、現場の善意を専門知に変える仕事です。</p>
+
+      <p class="lead">ふたつ目は、**Community Nurse Company**（2014年設立、矢田明子代表、島根発）。「コミュニティナース」という新しい職能を立ち上げ、全国に育成プログラムを展開しています。ナイチンゲールが病院看護を制度化したように、コミュニティナースは「**地域の中で日常的に住民の健康と暮らしに関わる新しい看護のかたち**」を、職能・資格・教育の三位一体で立ち上げています。</p>
+
+      <p class="lead">3つ目は、**ソーシャルデザイン教育の制度化**。武蔵野美術大学ソーシャルクリエイティブ研究所、東京大学i.school、京都芸術大学クロステックデザインコース、慶應SFCのSocial Innovation Lab――各大学で、デザイン思考と社会課題解決を統合した新カリキュラムが立ち上がっています。バウハウスが工芸とデザインを統合したように、現代日本の教育機関は「社会課題」と「デザイン」と「経営」を統合する新領域を作っています。</p>
+
+      <p class="lead">これらすべてに共通する底流が、本連載の3つの底流のうちの「**見えない領域への投資**」です。現場の困難・無償の善意・暗黙のスキル・周辺的な実践――短期の収益にならない領域に、長い時間と知性を投資する人がいる。彼らの仕事が、後世から見ると新しい学問領域として記録される。</p>
+
+      <p class="lead">第II部全体（第4章「媒介者」、第5章「中間支援」、第6章「学問領域創出」）の総括をしておきます。媒介者は人と人をつなぎ、中間支援は組織と組織をつなぎ、学問領域創出は世代と世代をつなぐ。この3つの媒介の入れ子構造が、社会の変化を持続的に支える「**媒介のかたち**」の全体像です。</p>
+  </article>
+</section>
+
+<section class="layer-section layer-mgt">
+  <div class="layer-inner">
+    <span class="layer-label">FOR MANAGEMENT</span>
+    <h2 class="layer-title-jp">経営学的に読み解きたいあなたへ</h2>
+    <p class="layer-title-en">For readers approaching this through Management Studies</p>
+    <p class="lead">第II部から取り出せる、組織における「媒介」の3階建てモデルを整理します。</p>
+
+      <p class="lead">**第一階：人を媒介する（第4章 媒介者）**。社内外の異なるチーム・職位・専門の人を結びつける個人。グラノヴェッターの「弱い紐帯」、バートの「ストラクチャル・ホール」、ガッドウェルの「コネクター」「メイブン」「セールスマン」が、この階層の理論的基盤です。組織はこの階層を、JD（職務記述書）や評価指標に組み込めずにきました。プロジェクト・マネジャー、コミュニティ・マネジャー、ファシリテーター、エグゼクティブ・コーチが、現代の媒介者職能の代表です。</p>
+
+      <p class="lead">**第二階：組織を媒介する（第5章 中間支援）**。NPO中間支援、業界団体、商工会議所、大学のTLO、コンソーシアム、プラットフォーム企業。個別組織では到達できない**集合的な学習・標準化・連携**を可能にする組織群。経営戦略では、自社が属するエコシステムにおける「中間支援組織」の地図を作る作業が要ります。誰が中間支援を担っているか、自社がどう貢献できるか――これは長期競争力の源泉です。</p>
+
+      <p class="lead">**第三階：知を媒介する（第6章 学問領域創出）**。最も長い時間軸の媒介。新しい学問領域・専門職・教育プログラムを立ち上げる仕事。看護・社会福祉・デザイン思考・データサイエンス・サステナビリティ。組織が新領域の創出に**短期では報われない投資**を続けることは、長期的には他社が真似できない知的資本を作ります。Procter&Gambleがデザイン思考を、IBMがサービスサイエンスを社内に育てた事例は、この第三階の経営判断の代表です。</p>
+
+      <p class="lead">媒介は、すべての階層で、**短期効率の対極にある投資**です。</p>
+  </div>
+</section>
+
+<section class="layer-section layer-aca">
+  <div class="layer-inner">
+    <span class="layer-label">FOR ACADEMIA</span>
+    <h2 class="layer-title-jp">学術的に読み解きたいあなたへ</h2>
+    <p class="layer-title-en">For readers approaching this through Academic study</p>
+    <p class="lead">第II部「媒介のかたち」全体の理論的枠組みは、3つの社会学的伝統を統合しています。</p>
+
+      <p class="lead">**第一に、社会ネットワーク論**：Mark Granovetter "The Strength of Weak Ties"（1973）、Ronald Burt "Structural Holes"（1992）が基底。Lin "Social Capital"（2001）、Putnam "Bowling Alone"（2000）が、ネットワークの集合的価値を扱う。</p>
+
+      <p class="lead">**第二に、組織学習論・知識経営論**：Jean Lave & Etienne Wenger "Situated Learning"（1991）、Wenger "Communities of Practice"（1998）、野中郁次郎・竹内弘高 "The Knowledge-Creating Company"（1995）、Engeström "Learning by Expanding"（1987）。</p>
+
+      <p class="lead">**第三に、専門職社会学**：Andrew Abbott "The System of Professions"（1988）、Eliot Freidson "Professionalism: The Third Logic"（2001）が、専門職の生成と権力構造を理論化。批判系では、Ivan Illich "Disabling Professions"（1977）、Paulo Freire "Pedagogy of the Oppressed"（1968/1970）。</p>
+
+      <p class="lead">3伝統の統合は、近年の組織研究で進行中。Sari Yli-Kauhaluoma & Mikko Vesa "Brokerage and Communities of Practice"（Organization Studies 38(3-4), 2017）、Charles Heckscher & Paul Adler eds. "The Firm as a Collaborative Community"（Oxford UP, 2006）、Daniel Levin & Rob Cross "The Strength of Weak Ties You Can Trust"（Management Science 50(11), 2004）が代表。</p>
+
+      <p class="lead">日本の媒介者・中間支援研究では、加藤哲夫『市民の日本語』（ひつじ書房, 2002）、田中弥生『市民社会政策論』（明石書店, 2011）、宮城孝編『コミュニティ実践の社会学』（学文社, 2014）。NPO中間支援の歴史は、田中尚輝・浅川澄一・横田能洋『NPO中間支援組織』（明石書店, 2008）。</p>
+
+      <p class="lead">学問領域創出の社会学では、Andrew Abbott "Chaos of Disciplines"（Univ. of Chicago Press, 2001）が、学問の生成・分裂・統合のダイナミクスを理論化。Jerry Jacobs "In Defense of Disciplines"（Univ. of Chicago Press, 2014）が学際性論争の整理。</p>
+
+      <p class="lead">連載は、本話で第II部「媒介のかたち」を閉じ、ep42から第III部「物語のかたち」へと展開します。物語経済学・ナラティブ・アイデンティティ・ブランドナラティブ・神話と原型を経て、ep45で第7章「物語付加」前半を仕上げ、ep51で第III部全体の中間総括に至ります。</p>
+  </div>
+</section>
+
+<dl class="ep-meta-block">
+  <dt>今回つかったデータベース</dt>
+  <dd>SIDB v9 ／ 学術知識DB ／ 経営学概念DB ／ 歴史偉人DB ／ 文化構造DB</dd>
+  <dt>今回登場した思想家・概念</dt>
+  <dd>ナイチンゲール看護学／リッチモンド社会福祉学／イリイチ・フレイレ専門家批判／ウェンガー・レイヴCoP／IDEO・d.schoolデザイン思考 ／ 全国子ども食堂支援センターむすびえ(湯浅誠2018) ／ Community Nurse Company(矢田明子2014) ／ 武蔵野美大ソーシャルクリエイティブ研／東大i.school ／ 第II部「媒介のかたち」3階建て構造（人→組織→知の媒介）／底流「見えない領域への投資」</dd>
+  <dt>次回</dt>
+  <dd>第42話「物語経済学 ― ロバート・シラーの挑戦」（第III部「物語のかたち」始まる）</dd>
+</dl>
+
+<nav class="ep-nav">
+  <div class="ep-nav-inner">
+    <a class="ep-nav-link" href="ep040.html">
+      <span class="ep-nav-label">← PREV</span>
+      <span class="ep-nav-title">第40話「デザイン思考の制度化」</span>
+    </a>
+    <a class="ep-nav-link next" href="ep042.html">
+      <span class="ep-nav-label">NEXT →</span>
+      <span class="ep-nav-title">第42話「物語経済学 ― ロバート・シラーの挑戦」（第III部「物語のかたち」始まる）</span>
+    </a>
+  </div>
+</nav>
+
+<section class="feedback-section" id="comments">
+  <div class="feedback-inner">
+    <div class="feedback-label">COMMENTS ・ 感想・コメント</div>
+    <h2 class="feedback-title">この話に感想を送る</h2>
+    <p class="feedback-desc">読んで感じたこと、気になった一文、ご質問、関連する話題――どのようなものでも歓迎します。編集長（西村）に直接届きます。</p>
+
+    <form class="feedback-form" id="fbForm" onsubmit="return false;">
+      <div class="feedback-field">
+        <label for="fbSuggestion">コメント <span style="color:var(--accent-warm);">*</span></label>
+        <textarea id="fbSuggestion" placeholder="ご自由にお書きください" required></textarea>
+      </div>
+      <div class="feedback-row">
+        <div class="feedback-field">
+          <label for="fbName">お名前（任意）</label>
+          <input type="text" id="fbName" autocomplete="name" placeholder="匿名でも構いません">
+        </div>
+        <div class="feedback-field">
+          <label for="fbEmail">メール（任意）</label>
+          <input type="email" id="fbEmail" autocomplete="email" placeholder="返信不要なら空欄で">
+        </div>
+      </div>
+      <button type="button" class="feedback-submit" id="fbSubmit" onclick="submitFeedback()">送信する</button>
+    </form>
+    <div class="feedback-done" id="fbDone">ありがとうございました。コメントを受け取りました。</div>
+  </div>
+</section>
+
+<section class="newsletter" id="newsletter">
+  <div class="newsletter-inner">
+    <div class="newsletter-eyebrow">EMERGING FUTURE NEWSLETTER</div>
+    <h2 class="newsletter-title">新しい話の公開を、まずメールで。</h2>
+    <p class="newsletter-desc">本連載「変化のかたち」の更新通知、ミラツクの未来洞察・ソーシャルイノベーション関連の最新情報をお届けします。配信停止はいつでも可能です。</p>
+
+    <form class="nl-form" id="nlForm" onsubmit="return false;">
+      <div class="nl-step active" id="nlStep1">
+        <div class="nl-field"><input type="email" id="nlEmail" placeholder="メールアドレス" autocomplete="email"></div>
+        <button type="button" class="nl-btn" onclick="nlNext()">次へ →</button>
+        <div class="nl-trust">連載更新・実践事例・関連トピックをお届けします</div>
+      </div>
+      <div class="nl-step" id="nlStep2">
+        <div class="nl-row">
+          <div class="nl-field"><input type="text" id="nlName" placeholder="お名前" autocomplete="name"></div>
+          <div class="nl-field"><input type="text" id="nlOrg" placeholder="所属（任意）" autocomplete="organization"></div>
+        </div>
+        <label class="nl-consent"><input type="checkbox" id="nlConsent" checked> メールマガジン配信に同意します。配信停止はいつでも可能です。</label>
+        <button type="button" class="nl-btn" id="nlBtn" onclick="submitNl()">登録する</button>
+      </div>
+    </form>
+    <div class="nl-done" id="nlDone">ようこそ。確認メールをお送りしました。<br>これから一緒に「変化のかたち」を読み解いていきましょう。</div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-cols">
+      <div class="site-footer-col">
+        <h4>ABOUT</h4>
+        <p><strong>変化のかたち ― 未来をつくる100の型</strong></p>
+        <p style="margin-top:8px;color:var(--ink-mute);">ソーシャルイノベーションの新しい読み方。NPO法人ミラツク代表理事・西村勇也が、社会変容の奥にある「かたち」を、人類史と知の系譜のなかで読み解く全100回連載。</p>
+      </div>
+      <div class="site-footer-col">
+        <h4>NAVIGATION</h4>
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="articles.html">全100話 一覧</a></li>
+          <li><a href="ep001.html">第1話を読む</a></li>
+          <li><a href="#newsletter">メルマガ登録</a></li>
+        </ul>
+      </div>
+      <div class="site-footer-col">
+        <h4>MIRA TUKU</h4>
+        <ul>
+          <li><a href="https://emerging-future.org/" target="_blank" rel="noopener">emerging-future.org</a></li>
+          <li><a href="https://github.com/yuyanishimura0312/henka-no-katachi" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <span>© 2026 NPO法人ミラツク</span>
+      <span>変化のかたち ― 未来をつくる100の型</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const FEEDBACK_API = 'https://claude-code-manual-app.vercel.app/api/feedback';
+const NEWSLETTER_API = 'https://claude-code-manual-app.vercel.app/api/community';
+const EPISODE_ID = 'ep41';
+const EPISODE_TITLE = '第41話 ― 学問領域創出のかたち ― 第6章のまとめ';
+
+async function submitFeedback() {
+  const suggestion = document.getElementById('fbSuggestion').value.trim();
+  const name = document.getElementById('fbName').value.trim();
+  const email = document.getElementById('fbEmail').value.trim();
+  const btn = document.getElementById('fbSubmit');
+  if (!suggestion) { document.getElementById('fbSuggestion').focus(); return; }
+  btn.disabled = true; btn.textContent = '送信中…';
+  try {
+    const res = await fetch(FEEDBACK_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ source: 'henka-no-katachi', episode: EPISODE_ID + ' ' + EPISODE_TITLE, suggestion, name, email })
+    });
+    if (!res.ok) throw new Error('failed');
+    document.getElementById('fbForm').classList.add('hide');
+    document.getElementById('fbDone').classList.add('show');
+  } catch(e) { alert('送信に失敗しました'); btn.disabled = false; btn.textContent = '送信する'; }
+}
+
+function nlNext() {
+  const v = document.getElementById('nlEmail').value.trim();
+  if (!v || !v.includes('@')) { document.getElementById('nlEmail').focus(); return; }
+  document.getElementById('nlStep1').classList.remove('active');
+  document.getElementById('nlStep2').classList.add('active');
+  document.getElementById('nlName').focus();
+}
+
+async function submitNl() {
+  const name = document.getElementById('nlName').value.trim();
+  const org = document.getElementById('nlOrg').value.trim();
+  const email = document.getElementById('nlEmail').value.trim();
+  const consent = document.getElementById('nlConsent').checked;
+  const btn = document.getElementById('nlBtn');
+  if (!name) { document.getElementById('nlName').focus(); return; }
+  if (!consent) { alert('メルマガ配信への同意が必要です'); return; }
+  btn.disabled = true; btn.textContent = '登録中…';
+  try {
+    const res = await fetch(NEWSLETTER_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, org, email })
+    });
+    if (!res.ok) throw new Error('failed');
+    document.getElementById('nlForm').classList.add('hide');
+    document.getElementById('nlDone').classList.add('show');
+  } catch(e) { alert('登録に失敗しました'); btn.disabled = false; btn.textContent = '登録する'; }
+}
+</script>
+
+</body>
+</html>
