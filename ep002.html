@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>第2話 ― 「つくる」と「生まれる」― 創発の系譜 | 変化のかたち</title>
-<meta name="description" content="変化のかたち第2話。「つくる」と「生まれる」― 創発の系譜。">
-<meta property="og:title" content="第2話 ― 「つくる」と「生まれる」― 創発の系譜">
-<meta property="og:description" content="変化のかたち第2話。「つくる」と「生まれる」― 創発の系譜。">
+<title>第2話 ― 「つくる」と「生まれる」 ― 創発の系譜 | 変化のかたち</title>
+<meta name="description" content="変化のかたち第2話。古代中国の老子から二十世紀の散逸構造へ。「つくる」イノベーションと「生まれる」イノベーションのあいだに走る細い溝を辿りながら、創発というかたちを科学と現場の両側から読み解く。">
+<meta property="og:title" content="第2話 ― 「つくる」と「生まれる」 ― 創発の系譜">
+<meta property="og:description" content="古代中国の老子から二十世紀の散逸構造へ。「つくる」イノベーションと「生まれる」イノベーションのあいだに走る細い溝を辿りながら、創発というかたちを科学と現場の両側から読み解く。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yuyanishimura0312.github.io/henka-no-katachi/ep002.html">
 <meta name="twitter:card" content="summary_large_image">
@@ -14,213 +14,279 @@
 <link rel="icon" href="https://esse-sense.com/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@300;400;500;600;700;900&family=Judson:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --paper: #FAF6F1;
-  --paper-soft: #F5EFE7;
-  --paper-mgt: #FCF5EE;
-  --paper-aca: #F5EEE3;
-  --ink: #2A1A14;
-  --ink-soft: #5A4238;
-  --ink-mute: #7A6358;
-  --accent-deep: #4A1F18;
-  --accent: #7A2E1F;
-  --accent-warm: #C46545;
-  --accent-coral: #E0824A;
-  --accent-peach: #F0A671;
-  --accent-sand: #F8CDAC;
-  --accent-cream: #F5E8DC;
-  --line: #E5D9CC;
-  --line-soft: #EFE4D6;
-  --serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
-  --sans: "Noto Sans JP", "Hiragino Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --display: "Cormorant Garamond", "Noto Serif JP", Georgia, serif;
+  --bg:           #14110F;
+  --bg-soft:      #1E1B19;
+  --bg-tint:      #25221F;
+  --ink:          #FFFFFF;
+  --ink-soft:     #D8D5D1;
+  --ink-mute:     #A6A29D;
+  --ink-faint:    #7A7672;
+  --accent:       #FF3644;
+  --accent-deep:  #FF5560;
+  --accent-soft:  rgba(255, 54, 68, 0.10);
+  --accent-tint:  rgba(255, 54, 68, 0.22);
+  --line:         #2D2A27;
+  --line-soft:    #1F1D1B;
+  --serif:   "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "Plantin MT Pro", Georgia, serif;
+  --sans:    "Noto Sans JP", "Hiragino Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --display: "Judson", "Noto Serif JP", Georgia, serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; scroll-behavior: smooth; }
 body {
   font-family: var(--serif);
-  background: var(--paper);
+  background: var(--bg);
   color: var(--ink);
   line-height: 1.95;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   font-feature-settings: "palt";
   -webkit-font-smoothing: antialiased;
 }
 a { color: var(--accent); text-decoration: none; transition: color .15s; }
-a:hover { color: var(--accent-warm); }
+a:hover { color: var(--accent-deep); }
 
-.site-header-strip { height: 3px; background: var(--accent-deep); }
-.site-header { position: sticky; top: 0; z-index: 100; background: rgba(250,246,241,0.96); backdrop-filter: saturate(160%) blur(8px); -webkit-backdrop-filter: saturate(160%) blur(8px); border-bottom: 1px solid var(--line); }
-.site-header-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+/* ─── FOCUS VISIBLE（キーボード操作時のみ） ─── */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.btn-primary:focus-visible, .nl-btn:focus-visible, .ep-action-btn:focus-visible { outline-offset: 4px; }
+.reading-lens-trigger:focus-visible { background: var(--bg-soft); outline-offset: -2px; }
+
+.read-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; background: transparent; z-index: 200; pointer-events: none; }
+.read-progress-bar { height: 100%; width: 0%; background: var(--accent); transition: width .1s linear; }
+
+.site-header-strip { display: none; }
+.site-header { position: sticky; top: 0; z-index: 100; background: rgba(20, 17, 15, 0.92); backdrop-filter: saturate(160%) blur(10px); -webkit-backdrop-filter: saturate(160%) blur(10px); border-bottom: 1px solid var(--line); }
+.site-header-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .site-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.site-brand-mark { width: 28px; height: 28px; flex-shrink: 0; }
+.site-brand-mark { width: 30px; height: 30px; flex-shrink: 0; }
 .site-brand-mark img { width: 100%; height: auto; display: block; }
-.site-brand-text { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; color: var(--accent); line-height: 1.3; }
+.site-brand-text { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--ink); line-height: 1.3; }
 .site-brand-text small { display: block; font-size: 9.5px; letter-spacing: 0.14em; color: var(--ink-mute); font-weight: 500; margin-top: 2px; }
-.site-nav { display: flex; gap: 22px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.1em; }
-.site-nav a { color: var(--ink-soft); font-weight: 500; padding: 6px 0; border-bottom: 2px solid transparent; }
-.site-nav a:hover { color: var(--accent-warm); border-bottom-color: var(--accent-warm); }
+.site-nav { display: flex; gap: 28px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.1em; }
+.site-nav a { color: var(--ink-soft); font-weight: 500; padding: 6px 0; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s; }
+.site-nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.site-nav a.active { color: var(--ink); border-bottom-color: var(--ink); }
 
-.ep-hero {
-  background: linear-gradient(170deg, #4A1F18 0%, #6B2A1E 60%, #7A2E1F 100%);
-  color: var(--paper);
-  padding: 80px 24px 64px;
-  position: relative;
-  overflow: hidden;
-}
-.ep-hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 2; }
-.ep-hero-mark { position: absolute; right: -40px; top: 30px; width: 200px; opacity: 0.18; z-index: 1; }
-.ep-hero-eyebrow { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.3em; color: var(--accent-peach); font-weight: 700; display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-.ep-hero-eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--accent-peach); }
-.ep-hero-num { font-family: var(--display); font-style: italic; font-size: 64px; color: var(--accent-peach); line-height: 1; margin-bottom: 8px; letter-spacing: 0.02em; }
-.ep-hero-title { font-family: var(--serif); font-weight: 500; font-size: 28px; line-height: 1.55; letter-spacing: 0.04em; color: var(--paper); margin-bottom: 14px; }
-.ep-hero-en { font-family: var(--display); font-style: italic; font-size: 15px; color: #F5DDC4; letter-spacing: 0.02em; margin-bottom: 32px; }
-.ep-hero-meta { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-family: var(--sans); font-size: 11.5px; letter-spacing: 0.1em; color: #E5C9B5; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.18); }
-.ep-hero-meta strong { color: var(--paper); font-weight: 500; }
+/* HERO — miratuku-journal 風 白基調 */
+.ep-hero { background: var(--bg); color: var(--ink); padding: 80px 24px 64px; position: relative; border-bottom: 1px solid var(--line); }
+.ep-hero-inner { max-width: 760px; margin: 0 auto; position: relative; }
+.ep-hero-eyebrow { font-family: var(--sans); font-size: 11px; letter-spacing: 0.32em; color: var(--accent); font-weight: 700; display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+.ep-hero-eyebrow::before { content: ""; width: 32px; height: 2px; background: var(--accent); }
+.ep-hero-num { font-family: var(--display); font-size: 80px; color: var(--ink); line-height: 0.95; margin-bottom: 24px; letter-spacing: 0; display: flex; align-items: baseline; gap: 14px; font-weight: 700; }
+.ep-hero-num-total { font-family: var(--display); font-size: 22px; color: var(--ink-mute); font-weight: 400; }
+.ep-hero-title { font-family: var(--serif); font-weight: 700; font-size: 34px; line-height: 1.55; letter-spacing: 0.02em; color: var(--ink); margin-bottom: 20px; }
+.ep-hero-en { font-family: var(--display); font-size: 18px; color: var(--ink-mute); letter-spacing: 0.02em; margin-bottom: 32px; font-weight: 400; }
+.ep-hero-lead { font-family: var(--serif); font-size: 16px; font-weight: 400; line-height: 2; color: var(--ink-soft); letter-spacing: 0.04em; max-width: 640px; margin-bottom: 36px; padding-left: 18px; border-left: 3px solid var(--accent); }
+.ep-hero-meta { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; font-family: var(--sans); font-size: 11.5px; letter-spacing: 0.1em; color: var(--ink-mute); padding-top: 24px; border-top: 1px solid var(--line); }
+.ep-hero-meta strong { color: var(--ink); font-weight: 700; }
+.author-badge { display: inline-flex; align-items: center; gap: 12px; }
+.author-badge-initial { width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 700; font-size: 16px; flex-shrink: 0; }
+.ep-hero-meta .read-time { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-soft); }
+.ep-hero-meta .read-time::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.ep-hero-meta .pdf-btn { margin-left: auto; font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--bg); background: var(--ink); padding: 10px 20px; border-radius: 24px; text-decoration: none; transition: background .15s, transform .15s; }
+.ep-hero-meta .pdf-btn:hover { background: var(--accent); transform: translateY(-1px); text-decoration: none; }
 
-.layer-section { padding: 56px 24px; border-bottom: 1px solid var(--line); }
-.layer-honbun { background: var(--paper); }
-.layer-mgt { background: var(--paper-mgt); }
-.layer-aca { background: var(--paper-aca); }
-.layer-inner { max-width: 680px; margin: 0 auto; }
-.layer-label {
-  font-family: var(--sans);
-  font-size: 11px;
-  letter-spacing: 0.3em;
-  font-weight: 700;
-  margin-bottom: 16px;
-  display: inline-block;
-  padding: 5px 12px;
-  border: 1px solid var(--accent-warm);
-  color: var(--accent-warm);
-}
-.layer-honbun .layer-label { display: none; }
-.layer-title-jp {
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: 22px;
-  color: var(--accent-deep);
-  letter-spacing: 0.06em;
-  margin-bottom: 8px;
-}
-.layer-title-en {
-  font-family: var(--display);
-  font-style: italic;
-  font-size: 14px;
-  color: var(--ink-mute);
-  margin-bottom: 28px;
-}
-.layer-section p {
-  font-family: var(--serif);
-  font-size: 16px;
-  line-height: 2.05;
-  color: var(--ink);
-  margin-bottom: 26px;
-  text-indent: 1em;
-  letter-spacing: 0.04em;
-}
-.layer-section p:first-of-type { text-indent: 0; }
-.layer-section p strong { font-weight: 700; color: var(--accent-deep); }
+.ep-layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); max-width: 1180px; margin: 0 auto; gap: 48px; padding: 0 24px; align-items: start; }
+.toc-sidebar { position: sticky; top: 84px; padding: 56px 0 80px; font-family: var(--sans); font-size: 12px; align-self: start; max-height: calc(100vh - 84px); overflow-y: auto; }
+.toc-label { font-size: 10px; letter-spacing: 0.28em; color: var(--accent); font-weight: 700; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--ink); }
+.toc-section { margin-bottom: 18px; }
+.toc-part { display: block; font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.18em; color: var(--ink); margin-bottom: 6px; text-decoration: none; }
+.toc-part:hover { color: var(--accent); }
+.toc-part-title { display: block; font-family: var(--serif); font-size: 13px; color: var(--ink-soft); line-height: 1.6; letter-spacing: 0.04em; text-decoration: none; margin-bottom: 4px; font-weight: 500; }
+.toc-part-title:hover { color: var(--accent); }
+.toc-current { display: block; font-family: var(--sans); font-size: 11.5px; color: var(--ink); font-weight: 700; background: var(--accent-soft); border-left: 3px solid var(--accent); padding: 10px 12px; letter-spacing: 0.04em; line-height: 1.6; margin-top: 8px; }
+.toc-current::before { content: "● 現在地"; display: block; font-size: 9px; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 4px; font-weight: 700; }
 
-.ep-meta-block {
-  margin: 0 auto;
-  max-width: 680px;
-  padding: 28px 30px;
-  background: #FFFFFF;
-  border-top: 3px solid var(--accent-warm);
-  border-bottom: 1px solid var(--line);
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-.ep-meta-block dt {
-  font-family: var(--sans);
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--accent);
-  margin-top: 14px;
-  margin-bottom: 6px;
-}
-.ep-meta-block dt:first-child { margin-top: 0; }
-.ep-meta-block dd {
-  font-family: var(--sans);
-  font-size: 12.5px;
-  line-height: 1.85;
-  color: var(--ink-soft);
-}
+.ep-body { max-width: 720px; margin: 0 auto; padding: 64px 0 96px; }
+.ep-body p { font-family: var(--serif); font-size: 17px; line-height: 2.1; color: var(--ink); margin-bottom: 30px; text-indent: 1em; letter-spacing: 0.04em; }
+.ep-body p:first-of-type { text-indent: 0; }
+.ep-body p:first-of-type::first-letter { font-family: var(--display); font-weight: 700; font-size: 4.4em; float: left; line-height: 0.92; margin: 0.06em 0.14em 0 0; color: var(--ink); }
+.ep-body p strong { font-weight: 700; color: var(--ink); }
 
-.ep-nav { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.ep-nav-inner { max-width: 720px; margin: 0 auto; padding: 28px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-.ep-nav-link { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; background: #FFFFFF; border: 1px solid var(--line); text-decoration: none; transition: border-color .15s; }
-.ep-nav-link:hover { border-color: var(--accent-warm); text-decoration: none; }
-.ep-nav-label { font-family: var(--sans); font-size: 10px; letter-spacing: 0.18em; color: var(--accent-warm); font-weight: 700; }
+/* HIGHLIGHTER (miratuku-journal 風 マーカー) */
+.ep-body p .hl, .ep-body p span.hl, .ep-body .hl { background-image: linear-gradient(transparent 60%, var(--accent-tint) 60%); padding: 0 1px; }
+::selection { background: var(--accent-tint); color: var(--ink); }
+
+.ep-pullquote { margin: 64px 0; padding: 36px 0 36px 36px; border-left: 4px solid var(--accent); font-family: var(--serif); font-size: 19.5px; line-height: 2; color: var(--ink); letter-spacing: 0.04em; font-weight: 600; font-feature-settings: "palt"; position: relative; }
+.ep-pullquote::before { content: "\201C"; position: absolute; top: -22px; left: 18px; font-family: var(--display); font-size: 72px; color: var(--accent); line-height: 1; font-weight: 700; }
+.ep-pullquote::after { content: ""; display: block; width: 40px; height: 2px; background: var(--accent); margin-top: 24px; opacity: 0.6; }
+
+.section-divider { display: flex; align-items: center; gap: 16px; margin: 56px 0 48px; opacity: 0.5; }
+.section-divider::before, .section-divider::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.section-divider-mark { font-family: var(--display); font-weight: 700; font-size: 14px; color: var(--accent); letter-spacing: 0.4em; padding-right: 0.4em; }
+
+/* READING LENSES — 経営学／学術 折りたたみ */
+.reading-lens { margin-top: 40px; border: 1px solid var(--line); background: var(--bg); transition: border-color .2s; }
+.reading-lens[open] { border-color: var(--ink); }
+.reading-lens + .reading-lens { margin-top: 16px; }
+.reading-lens-trigger { list-style: none; cursor: pointer; padding: 22px 26px; display: flex; align-items: center; gap: 16px; user-select: none; transition: background .15s; }
+.reading-lens-trigger::-webkit-details-marker { display: none; }
+.reading-lens-trigger:hover { background: var(--bg-soft); }
+.reading-lens[open] .reading-lens-trigger { border-bottom: 1px solid var(--line); background: var(--bg-tint); }
+.reading-lens-label { font-family: var(--sans); font-size: 9.5px; font-weight: 700; letter-spacing: 0.22em; color: var(--accent); flex-shrink: 0; padding: 4px 10px; border: 1px solid var(--accent); }
+.reading-lens-title { font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--ink); letter-spacing: 0.04em; flex: 1; }
+.reading-lens-arrow { font-family: var(--sans); font-size: 14px; color: var(--ink-mute); margin-left: auto; transition: transform .25s; flex-shrink: 0; }
+.reading-lens[open] .reading-lens-arrow { transform: rotate(180deg); color: var(--accent); }
+.reading-lens-body { padding: 28px 26px 32px; }
+.reading-lens-body p { font-family: var(--serif); font-size: 15.5px; line-height: 2.1; color: var(--ink-soft); margin-bottom: 0; text-indent: 1em; letter-spacing: 0.04em; }
+
+/* NEXT-EPISODE QUESTION */
+.ep-question { margin-top: 56px; padding: 32px 30px 30px; background: var(--bg-tint); border-top: 3px solid var(--ink); position: relative; }
+.ep-question-label { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.26em; color: var(--accent); margin-bottom: 12px; }
+.ep-question-q { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--ink); line-height: 1.95; letter-spacing: 0.04em; margin-bottom: 22px; }
+.ep-question-next { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding-top: 18px; border-top: 1px solid var(--line); }
+.ep-question-next-meta { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.2em; color: var(--ink-mute); }
+.ep-question-next-title { font-family: var(--serif); font-size: 14px; color: var(--ink); letter-spacing: 0.04em; font-weight: 600; }
+.ep-question-next-link { font-family: var(--sans); font-size: 11.5px; font-weight: 700; letter-spacing: 0.16em; color: var(--bg); background: var(--ink); padding: 9px 18px; border-radius: 20px; text-decoration: none; transition: background .15s; }
+.ep-question-next-link:hover { background: var(--accent); text-decoration: none; }
+
+/* AFTER-ARTICLE CTA */
+.ep-actions { background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 36px 24px; }
+.ep-actions-inner { max-width: 720px; margin: 0 auto; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; align-items: center; }
+.ep-action-btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.14em; padding: 12px 22px; border: 1px solid var(--ink); color: var(--ink); background: var(--bg); text-decoration: none; transition: background .15s, color .15s; }
+.ep-action-btn:hover { background: var(--ink); color: var(--bg); text-decoration: none; }
+.ep-action-btn.primary { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.ep-action-btn.primary:hover { background: var(--accent-deep); color: var(--bg); border-color: var(--accent-deep); }
+
+/* PREV/NEXT */
+.ep-nav { background: var(--bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.ep-nav-inner { max-width: 760px; margin: 0 auto; padding: 28px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.ep-nav-link { display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; background: var(--bg); border: 1px solid var(--line); text-decoration: none; transition: border-color .15s; }
+.ep-nav-link:hover { border-color: var(--accent); text-decoration: none; }
+.ep-nav-link.disabled { opacity: 0.45; pointer-events: none; background: var(--bg-soft); }
+.ep-nav-label { font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em; color: var(--accent); font-weight: 700; }
 .ep-nav-link.next { text-align: right; }
-.ep-nav-title { font-family: var(--serif); font-size: 13.5px; color: var(--accent-deep); line-height: 1.6; letter-spacing: 0.04em; }
+.ep-nav-title { font-family: var(--serif); font-size: 13.5px; color: var(--ink); line-height: 1.65; letter-spacing: 0.04em; font-weight: 500; }
 
-.newsletter { background: linear-gradient(140deg, #4A1F18 0%, #6B2A1E 100%); color: var(--paper); padding: 52px 24px 56px; }
-.newsletter-inner { max-width: 680px; margin: 0 auto; }
-.newsletter-eyebrow { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.3em; color: var(--accent-peach); font-weight: 700; margin-bottom: 14px; }
-.newsletter-title { font-family: var(--serif); font-weight: 500; font-size: 24px; line-height: 1.6; letter-spacing: 0.04em; color: var(--paper); margin-bottom: 14px; }
-.newsletter-desc { font-family: var(--serif); font-size: 14px; line-height: 1.9; color: #E5C9B5; margin-bottom: 26px; }
+/* NEWSLETTER — inverse callout: cream bg on dark page */
+.newsletter { background: var(--ink); color: var(--bg); padding: 64px 24px 64px; }
+.newsletter-inner { max-width: 720px; margin: 0 auto; text-align: left; }
+.newsletter-eyebrow { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.32em; color: var(--accent); font-weight: 700; margin-bottom: 14px; }
+.newsletter-title { font-family: var(--serif); font-weight: 700; font-size: 26px; line-height: 1.6; letter-spacing: 0.04em; color: var(--bg); margin-bottom: 14px; }
+.newsletter-desc { font-family: var(--serif); font-size: 14.5px; line-height: 2; color: rgba(20, 17, 15, 0.74); margin-bottom: 28px; }
 .nl-form { display: flex; flex-direction: column; gap: 12px; max-width: 460px; }
 .nl-step { display: none; flex-direction: column; gap: 12px; }
 .nl-step.active { display: flex; }
 .nl-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.nl-field input { width: 100%; font-family: var(--serif); font-size: 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); color: var(--paper); padding: 12px 14px; outline: none; }
-.nl-field input::placeholder { color: rgba(255,255,255,0.45); }
-.nl-field input:focus { border-color: var(--accent-peach); background: rgba(255,255,255,0.12); }
-.nl-consent { font-family: var(--sans); font-size: 11.5px; color: #E5C9B5; line-height: 1.7; display: flex; align-items: flex-start; gap: 8px; }
-.nl-btn { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--accent-deep); background: var(--accent-peach); border: none; padding: 14px 24px; cursor: pointer; }
-.nl-btn:hover { background: var(--accent-sand); }
+.nl-field input { width: 100%; font-family: var(--serif); font-size: 14px; background: rgba(20, 17, 15, 0.04); border: 1px solid rgba(20, 17, 15, 0.18); color: var(--bg); padding: 12px 14px; letter-spacing: 0.04em; outline: none; transition: border-color .15s, background .15s; }
+.nl-field input::placeholder { color: rgba(20, 17, 15, 0.42); }
+.nl-field input:focus { border-color: var(--accent); background: rgba(20, 17, 15, 0.06); }
+.nl-consent { font-family: var(--sans); font-size: 11.5px; color: rgba(20, 17, 15, 0.7); line-height: 1.7; display: flex; align-items: flex-start; gap: 8px; }
+.nl-consent input { margin-top: 4px; flex-shrink: 0; }
+.nl-btn { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #FFFFFF; background: var(--accent); border: none; padding: 14px 26px; cursor: pointer; transition: background .15s; }
+.nl-btn:hover { background: var(--accent-deep); }
 .nl-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-.nl-trust { font-family: var(--sans); font-size: 11px; color: rgba(229,201,181,0.7); }
-.nl-done { display: none; padding: 22px 0; font-family: var(--serif); font-size: 16px; color: var(--paper); line-height: 1.9; }
+.nl-trust { font-family: var(--sans); font-size: 11px; color: rgba(20, 17, 15, 0.5); letter-spacing: 0.04em; }
+.nl-done { display: none; padding: 22px 0; font-family: var(--serif); font-size: 16px; color: var(--bg); line-height: 1.9; }
 .nl-done.show { display: block; }
 .nl-form.hide { display: none; }
+.nl-error { display: none; margin-top: 10px; padding: 10px 14px; background: var(--accent-soft); border-left: 3px solid var(--accent); font-family: var(--sans); font-size: 12px; color: var(--bg); letter-spacing: 0.04em; line-height: 1.6; }
+.nl-error.show { display: block; }
 
-.feedback-section { background: var(--paper-soft); padding: 48px 24px 56px; border-top: 1px solid var(--line); }
-.feedback-inner { max-width: 680px; margin: 0 auto; }
-.feedback-label { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; color: var(--accent-warm); font-weight: 700; margin-bottom: 8px; }
-.feedback-title { font-family: var(--serif); font-weight: 600; font-size: 22px; color: var(--accent-deep); letter-spacing: 0.06em; margin-bottom: 10px; }
-.feedback-desc { font-family: var(--serif); font-size: 14.5px; color: var(--ink-soft); line-height: 1.95; margin-bottom: 22px; }
-.feedback-form { display: flex; flex-direction: column; gap: 14px; }
-.feedback-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.feedback-field input, .feedback-field textarea { width: 100%; font-family: var(--serif); font-size: 14px; color: var(--ink); background: #FFFFFF; border: 1px solid var(--line); padding: 14px 16px; outline: none; }
-.feedback-field textarea { resize: vertical; min-height: 140px; line-height: 1.85; }
-.feedback-field label { display: block; font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; color: var(--ink-mute); margin-bottom: 6px; }
-.feedback-submit { align-self: flex-start; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--paper); background: var(--accent); border: none; padding: 14px 28px; cursor: pointer; margin-top: 4px; }
-.feedback-done { display: none; background: var(--accent-cream); border-left: 3px solid var(--accent-warm); padding: 18px 22px; font-family: var(--serif); font-size: 14.5px; color: var(--accent-deep); line-height: 1.85; }
-.feedback-done.show { display: block; }
-.feedback-form.hide { display: none; }
-
-.site-footer { background: var(--paper-soft); padding: 48px 24px 28px; border-top: 1px solid var(--line); }
-.site-footer-inner { max-width: 1080px; margin: 0 auto; }
-.site-footer-cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 36px; padding-bottom: 32px; border-bottom: 1px solid var(--line); }
-.site-footer-col h4 { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 14px; }
-.site-footer-col p, .site-footer-col a { font-family: var(--serif); font-size: 13px; line-height: 1.95; color: var(--ink-soft); }
+/* FOOTER */
+.site-footer { background: var(--bg-soft); padding: 56px 24px 32px; border-top: 1px solid var(--line); }
+.site-footer-inner { max-width: 1180px; margin: 0 auto; }
+.site-footer-cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding-bottom: 36px; border-bottom: 1px solid var(--line); }
+.site-footer-col h4 { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.22em; color: var(--ink); margin-bottom: 16px; }
+.site-footer-col p, .site-footer-col a { font-family: var(--serif); font-size: 13px; line-height: 2; color: var(--ink-soft); }
 .site-footer-col ul { list-style: none; }
 .site-footer-col li { margin-bottom: 8px; }
-.site-footer-bottom { padding-top: 22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; font-family: var(--sans); font-size: 11px; color: var(--ink-mute); }
+.site-footer-col a:hover { color: var(--accent); }
+.site-footer-bottom { padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; font-family: var(--sans); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.06em; }
 
+/* MOBILE TOC */
+.toc-fab { display: none; position: fixed; bottom: 88px; right: 24px; z-index: 80; width: 52px; height: 52px; border-radius: 50%; background: var(--ink); color: var(--bg); border: none; cursor: pointer; font-family: var(--sans); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; box-shadow: 0 4px 16px rgba(20, 17, 15, 0.28); transition: background .15s, transform .15s; }
+.toc-fab:hover { background: var(--accent); transform: translateY(-2px); }
+.toc-overlay { display: none; position: fixed; inset: 0; z-index: 89; background: rgba(0, 0, 0, 0.55); }
+.toc-drawer.show ~ .toc-overlay, .toc-overlay.show { display: block; }
+.toc-drawer { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; background: var(--bg); border-top: 4px solid var(--accent); padding: 32px 24px 36px; max-height: 80vh; overflow-y: auto; box-shadow: 0 -8px 32px rgba(20, 17, 15, 0.18); transform: translateY(100%); transition: transform .25s ease; }
+.toc-drawer.show { display: block; transform: translateY(0); }
+.toc-drawer-close { position: absolute; top: 14px; right: 14px; background: transparent; border: none; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: var(--ink-mute); cursor: pointer; padding: 6px 10px; }
+.toc-drawer .toc-label { margin-top: 4px; }
+
+@media (min-width: 761px) and (max-width: 1079px) {
+  /* タブレット中間帯 — サイドTOC消失後の余白最適化 */
+  .ep-body { padding: 64px 32px 80px; max-width: 680px; }
+  .ep-hero { padding: 88px 32px 72px; }
+  .ep-hero-inner { max-width: 680px; }
+}
+@media (max-width: 1080px) {
+  .ep-layout { grid-template-columns: 1fr; gap: 0; padding: 0; }
+  .toc-sidebar { display: none; }
+  .toc-fab { display: flex; align-items: center; justify-content: center; }
+}
 @media (max-width: 760px) {
-  .site-nav { gap: 14px; font-size: 11px; }
+  .site-nav { gap: 8px; font-size: 11px; }
+  .site-nav a { padding: 12px 8px; min-height: 44px; display: flex; align-items: center; }
   .site-brand-text small { display: none; }
-  .ep-hero { padding: 56px 22px 44px; }
-  .ep-hero-num { font-size: 48px; }
-  .ep-hero-title { font-size: 22px; }
-  .layer-section { padding: 40px 22px; }
-  .layer-section p { font-size: 15.5px; line-height: 2.05; }
+  .ep-hero { padding: 56px 22px 48px; }
+  .ep-hero-num { font-size: 60px; }
+  .ep-hero-num-total { font-size: 18px; }
+  .ep-hero-title { font-size: 24px; }
+  .ep-hero-en { font-size: 15px; }
+  .ep-hero-lead { font-size: 14.5px; padding-left: 14px; }
+  .ep-hero-meta .pdf-btn { margin-left: 0; }
+  .ep-body { padding: 44px 22px 60px; }
+  .ep-body p { font-size: 15.5px; line-height: 2.05; margin-bottom: 28px; }
+  .ep-body p:first-of-type::first-letter { font-size: 3.8em; }
+  .ep-pullquote { font-size: 16px; padding: 24px 0 24px 22px; margin: 40px 0; }
+  .reading-lens-trigger { padding: 18px 20px; flex-wrap: wrap; }
+  .reading-lens-title { font-size: 15px; flex-basis: 100%; order: 3; }
+  .reading-lens-label { font-size: 9px; }
+  .reading-lens-body { padding: 22px 20px 26px; }
+  .reading-lens-body p { font-size: 14.5px; line-height: 2; }
+  .ep-question { padding: 26px 22px; }
+  .ep-question-q { font-size: 15.5px; }
+  .ep-question-next { flex-direction: column; align-items: flex-start; }
+  .ep-actions-inner { flex-direction: column; }
+  .ep-action-btn { width: 100%; justify-content: center; }
   .ep-nav-inner { grid-template-columns: 1fr; padding: 22px 22px; }
   .ep-nav-link.next { text-align: left; }
-  .nl-row, .feedback-row { grid-template-columns: 1fr; }
+  .nl-row { grid-template-columns: 1fr; }
   .site-footer-cols { grid-template-columns: 1fr; gap: 28px; }
+}
+
+/* EDITOR */
+.editor-toggle { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 44px; height: 44px; border-radius: 50%; background: rgba(255, 255, 255, 0.14); color: var(--ink); border: 1px solid rgba(255, 255, 255, 0.22); cursor: pointer; font-size: 18px; opacity: 0.5; transition: opacity .15s, background .15s; box-shadow: 0 4px 14px rgba(0,0,0,0.4); }
+.editor-toggle:hover { opacity: 1; background: var(--accent); border-color: var(--accent); color: #FFFFFF; }
+.editor-bar { position: fixed; top: 78px; left: 50%; transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 10px 16px; border-radius: 28px; z-index: 1000; display: none; gap: 10px; align-items: center; font-family: var(--sans); font-size: 12px; letter-spacing: 0.08em; box-shadow: 0 8px 30px rgba(0,0,0,0.4); }
+.editor-bar.show { display: flex; }
+.editor-bar-label { padding: 0 8px; color: var(--accent); font-weight: 700; }
+.editor-bar button { font-family: var(--sans); font-size: 11.5px; font-weight: 700; letter-spacing: 0.12em; padding: 7px 14px; border: none; border-radius: 20px; cursor: pointer; transition: opacity .15s, background .15s; }
+.editor-bar button.save-btn { background: var(--accent); color: #FFFFFF; }
+.editor-bar button.save-btn:hover { background: var(--accent-deep); }
+.editor-bar button.save-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.editor-bar button.cancel-btn { background: transparent; color: var(--bg); border: 1px solid rgba(20, 17, 15, 0.3); }
+.editor-bar button.cancel-btn:hover { background: rgba(20, 17, 15, 0.08); }
+.editor-bar button.reset-btn { background: transparent; color: rgba(20, 17, 15, 0.5); border: 1px solid rgba(20, 17, 15, 0.15); font-size: 10px; padding: 5px 10px; }
+.editor-bar button.reset-btn:hover { color: var(--bg); }
+[contenteditable="true"] { outline: 1px dashed var(--accent); outline-offset: 4px; background: var(--accent-soft); cursor: text; }
+[contenteditable="true"]:focus { outline: 2px solid var(--accent); background: rgba(255, 54, 68, 0.18); }
+
+@media print {
+  :root {
+    --bg: #FFFFFF; --bg-soft: #FAFAFA; --bg-tint: #F5F5F4;
+    --ink: #14110F; --ink-soft: #3A3633; --ink-mute: #6B6661; --ink-faint: #9C9692;
+    --line: #E8E5E1; --line-soft: #F0EDE9;
+  }
+  .read-progress, .site-header, .site-header-strip, .toc-sidebar, .toc-fab, .toc-overlay, .toc-drawer, .ep-actions, .ep-nav, .newsletter, .site-footer, .editor-toggle, .editor-bar { display: none !important; }
+  body { background: #FFFFFF; color: #14110F; }
+  .ep-hero { background: #FFFFFF; padding: 24px 0; page-break-after: avoid; border-bottom: none; }
+  .ep-layout { grid-template-columns: 1fr; padding: 0; }
+  .ep-body { padding: 0 24px; }
+  .reading-lens { border: 1px solid #14110F; page-break-inside: avoid; }
+  .reading-lens[open] .reading-lens-body { display: block !important; }
+  .reading-lens-arrow { display: none; }
+  .ep-pullquote, .ep-question { page-break-inside: avoid; }
 }
 </style>
 </head>
 <body>
+
+<div class="read-progress" aria-hidden="true"><div class="read-progress-bar" id="readProgressBar"></div></div>
 
 <div class="site-header-strip"></div>
 <header class="site-header">
@@ -238,87 +304,128 @@ a:hover { color: var(--accent-warm); }
 </header>
 
 <section class="ep-hero">
-  <img class="ep-hero-mark" src="assets/miratuku-mark.png" alt="">
   <div class="ep-hero-inner">
     <div class="ep-hero-eyebrow">PROLOGUE — 序 章 第2話</div>
-    <div class="ep-hero-num">02.</div>
-    <h1 class="ep-hero-title">「つくる」と「生まれる」<br>― 創発の系譜</h1>
+    <div class="ep-hero-num">02.<span class="ep-hero-num-total">/ 100</span></div>
+    <h1 class="ep-hero-title">「つくる」と「生まれる」 ― 創発の系譜</h1>
     <p class="ep-hero-en">Genealogy of Emergence</p>
+    <p class="ep-hero-lead">古代中国の老子から二十世紀の散逸構造へ。「つくる」イノベーションと「生まれる」イノベーションのあいだに走る細い溝を辿りながら、創発というかたちを科学と現場の両側から読み解く。</p>
     <div class="ep-hero-meta">
-      <span><strong>西村 勇也</strong>（NPO法人ミラツク 代表理事）</span>
-      <span>2026年5月8日</span>
+      <span class="author-badge"><span class="author-badge-initial" aria-hidden="true">N</span><span class="ep-hero-author"><strong>西村 勇也</strong>（NPO法人ミラツク 代表理事）</span></span>
+      <span class="ep-hero-date">2026年5月8日</span>
+      <span class="read-time" id="readTime">推定読了 約11分</span>
+      <a class="pdf-btn" href="ep002-print.html" target="_blank" rel="noopener">PDF版で読む</a>
     </div>
   </div>
 </section>
 
-<section class="layer-section layer-honbun">
-  <article class="layer-inner">
-    <p class="lead">ソーシャルイノベーションの現場でいちばん耳にする言葉のひとつが、「つくる」です。場をつくる、関係をつくる、仕組みをつくる――どれも当たり前のように口にされますが、実際にうまく回っている現場を訪れると、もう少し別の動詞が聞こえてくることに気づきます。「生まれる」「立ち上がる」「育つ」。何かが起きているとき、人がそれを完全に設計したわけではない。けれど、起きるための条件は確かに整えられている。今回は、この「つくる」と「生まれる」のあいだの細い溝に目を凝らしてみます。</p>
+<div class="ep-layout">
 
-      <p class="lead">古い言葉から始めましょう。紀元前6世紀ごろの中国の思想家・老子が残した『道徳経』には、「無為にして為さざるなし」という有名な一節があります。何もしないように見えるけれど、なされていないことは何ひとつない、という逆説です。ここで老子が指していたのは、世界には人為では届かない深い秩序が走っていて、その秩序を妨げずに条件だけを整えれば、ものごとは自ずから「生まれる」、という見立てでした。茶道の一期一会も、能の間も、この感覚と地続きです。</p>
+  <aside class="toc-sidebar" aria-label="連載目次">
+    <div class="toc-label">FULL SERIES — 全100話</div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#prologue">PROLOGUE — 序 章</a>
+      <span class="toc-current">第2話 ― 「つくる」と「生まれる」</span>
+    </div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#part-i">PART I</a>
+      <a class="toc-part-title" href="articles.html#part-i">場のかたち ― 集まりが価値を生む</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#part-ii">PART II</a>
+      <a class="toc-part-title" href="articles.html#part-ii">媒介のかたち ― つなぎ手が社会を変える</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#part-iii">PART III</a>
+      <a class="toc-part-title" href="articles.html#part-iii">物語のかたち ― 価値はどこに宿るか</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#part-iv">PART IV</a>
+      <a class="toc-part-title" href="articles.html#part-iv">支えのかたち ― 見えないものが社会を支える</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#part-v">PART V</a>
+      <a class="toc-part-title" href="articles.html#part-v">開きのかたち ― 特権を多くの人に開く</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#final">FINAL — 終 章</a>
+    </div>
+  </aside>
 
-      <p class="lead">時代を下って20世紀のはじまり、フランスの哲学者アンリ・ベルクソンは1907年に『創造的進化』を刊行し、「エラン・ヴィタル（生命の躍動）」という概念を提示しました。生命は、機械のように外から組み立てられるのではなく、内側から押し出されるように新しいかたちを生みつづけていく――そういう力動として捉えるべきだ、と論じたのです。ベルクソンは大きな喝采を浴び、ノーベル文学賞も受けましたが、同時に「科学的でない」という批判もまた強く浴びました。彼の直感は、半世紀を待って、別のかたちで科学に帰ってきます。</p>
+  <article class="ep-body" id="articleBody">
 
-      <p class="lead">1968年、オーストリア出身の生物学者ルートヴィヒ・フォン・ベルタランフィが『一般システム理論』を世に問います。生物・社会・経済を、部分の総和ではなく相互作用の網として捉えなおす方法論でした。1977年には、化学者イリヤ・プリゴジンが「散逸構造」の研究でノーベル化学賞を受けます。エネルギーが散逸していく流れに乗って、思いがけず秩序が生まれる現象を、数式で書き直したのです。1990年代に入ると、ジョン・ホランドの『隠れた秩序』、スチュアート・カウフマンの『秩序の起源』が相次いで現れ、「自己組織化」「創発」が真剣な科学のことばになりました。ベルクソンの直感が、ようやく数式と実験の言語で言い直された瞬間でした。</p>
+    <p>ソーシャルイノベーションの現場でいちばん耳にする言葉のひとつが、「つくる」です。場をつくる、関係をつくる、仕組みをつくる――どれも当たり前のように口にされますが、実際にうまく回っている現場を訪れると、もう少し別の動詞が聞こえてくることに気づきます。「生まれる」「立ち上がる」「育つ」。何かが起きているとき、人がそれを完全に設計したわけではない。けれど、起きるための条件は確かに整えられている。今回は、この「つくる」と「生まれる」のあいだの細い溝に目を凝らしてみます。</p>
 
-      <p class="lead">私たちの社会の現場でも、「生まれる」かたちのソーシャルイノベーションは、確かに姿を見せます。たとえばある町で月に一度のお茶会が始まり、いつの間にか地域のセーフティネットになっていた。誰かがコワーキングスペースを開くと、想定していなかった事業や友情が立ち上がってきた。場の運営者たちは、よく「自分たちが場をつくったのではなく、場が育ってきた」と話します。これは謙遜ではなく、観察として正確です。多くの場合、運営者がしているのは、安心感・余白・関わりしろといった条件を整え、あとは結果が「生まれる」のを待つこと、なのです。</p>
+    <p>古い言葉から始めましょう。紀元前6世紀ごろの中国の思想家・老子が残した『道徳経』には、「無為にして為さざるなし」という有名な一節があります。何もしないように見えるけれど、なされていないことは何ひとつない、という逆説です。ここで老子が指していたのは、世界には人為では届かない深い秩序が走っていて、その秩序を妨げずに条件だけを整えれば、ものごとは自ずから「生まれる」、という見立てでした。茶道の一期一会も、能の間も、この感覚と地続きです。</p>
 
-      <p class="lead">強くつくろうとするより、生まれる条件を整えるほうが、ときに速くて深い。「型」のひとつめは、ここに静かに座っています。</p>
+    <p>時代を下って20世紀のはじまり、フランスの哲学者アンリ・ベルクソンは1907年に『創造的進化』を刊行し、「エラン・ヴィタル（生命の躍動）」という概念を提示しました。生命は、機械のように外から組み立てられるのではなく、内側から押し出されるように新しいかたちを生みつづけていく――そういう力動として捉えるべきだ、と論じたのです。ベルクソンは大きな喝采を浴び、ノーベル文学賞も受けましたが、同時に「科学的でない」という批判もまた強く浴びました。彼の直感は、半世紀を待って、別のかたちで科学に帰ってきます。</p>
 
-      <p class="lead">---</p>
+    <p>1968年、オーストリア出身の生物学者ルートヴィヒ・フォン・ベルタランフィが『一般システム理論』を世に問います。生物・社会・経済を、部分の総和ではなく相互作用の網として捉えなおす方法論でした。1977年には、化学者イリヤ・プリゴジンが「散逸構造」の研究でノーベル化学賞を受けます。エネルギーが散逸していく流れに乗って、思いがけず秩序が生まれる現象を、数式で書き直したのです。1990年代に入ると、ジョン・ホランドの『隠れた秩序』、スチュアート・カウフマンの『秩序の起源』が相次いで現れ、「自己組織化」「創発」が真剣な科学のことばになりました。ベルクソンの直感が、ようやく数式と実験の言語で言い直された瞬間でした。</p>
+
+    <p>私たちの社会の現場でも、「生まれる」かたちのソーシャルイノベーションは、確かに姿を見せます。たとえばある町で月に一度のお茶会が始まり、いつの間にか地域のセーフティネットになっていた。誰かがコワーキングスペースを開くと、想定していなかった事業や友情が立ち上がってきた。場の運営者たちは、よく「自分たちが場をつくったのではなく、場が育ってきた」と話します。これは謙遜ではなく、観察として正確です。多くの場合、運営者がしているのは、安心感・余白・関わりしろといった条件を整え、あとは結果が「生まれる」のを待つこと、なのです。</p>
+
+    <p>強くつくろうとするより、生まれる条件を整えるほうが、ときに速くて深い。「型」のひとつめは、ここに静かに座っています。</p>
+
+    <blockquote class="ep-pullquote">強くつくろうとするより、生まれる条件を整えるほうが、ときに速くて深い。「型」のひとつめは、ここに静かに座っています。</blockquote>
+
+    <div class="section-divider" aria-hidden="true"><span class="section-divider-mark">◆ ◇ ◆</span></div>
+
+    <details class="reading-lens" id="lens-management">
+      <summary class="reading-lens-trigger">
+        <span class="reading-lens-label">FOR MANAGEMENT</span>
+        <span class="reading-lens-title">経営学的に読み解きたいあなたへ</span>
+        <span class="reading-lens-arrow">▾</span>
+      </summary>
+      <div class="reading-lens-body">
+        <p>経営の世界でも、「設計するか、生まれさせるか」は古い問いです。1985年、経営学者ヘンリー・ミンツバーグは「意図された戦略（intended strategy）」と「創発的戦略（emergent strategy）」を区別しました。実際にうまく機能している戦略の多くは、最初の事業計画書の通りには進まない。現場で日々起きる試行錯誤と発見が積み重なって、いつの間にか戦略になっている――Honda の北米バイク市場進出（小型バイクのスーパーカブが偶然のヒットで主軸になった事例）が、しばしばその典型として引かれます。</p>
+        <p>1990年、ピーター・センゲは『学習する組織』で、組織には自然学習する力があると論じました。リーダーの仕事は、答えを与えることよりも、学習が起きる場の条件――システム思考、共有ビジョン、メンタルモデルの自己観察、チーム学習、自己マスタリーの5つ――を整えることだ、と。</p>
+        <p>ホラクラシー、ティール組織、Spotifyの自律分散モデル、リーンスタートアップの「ピボット」も、すべて同じ系譜にあります。最初の計画から「生まれる」何かを掴み直す、という作法です。</p>
+        <p>実務で「生まれる」を引き出すには、3つの胆力が要ります。第一に、計画と評価のサイクルを短くする胆力（試行を許容する余白）。第二に、現場の発見を経営判断に流し込む通路をつくる胆力（観察の制度化）。第三に、自分たちのもとから「生まれた」ものを信じてリリースする胆力（手放す勇気）。</p>
+        <p>「つくる」より「生まれる」を経営に組み込むということは、計画の放棄ではなく、より高度な計画の更新です。計画は「閉じる」ためではなく、「開く」ためにあります。</p>
+      </div>
+    </details>
+
+    <details class="reading-lens" id="lens-academic">
+      <summary class="reading-lens-trigger">
+        <span class="reading-lens-label">FOR ACADEMIA</span>
+        <span class="reading-lens-title">学術的に読み解きたいあなたへ</span>
+        <span class="reading-lens-arrow">▾</span>
+      </summary>
+      <div class="reading-lens-body">
+        <p>「創発（emergence）」は、20世紀半ばに哲学的概念から科学的概念へと移行した稀な事例です。哲学側の起点は19世紀。ジョン・スチュアート・ミルが『論理学体系』（1843）で、構成要素の単純な合成則からは導けない結果を「heteropathic effects」と呼んだのが先駆けです。1875年、G.H.ルイスが『生命と精神の問題』で、初めて "emergent" という語をこの意味で用いました。1920年のサミュエル・アレキサンダー『空間・時間・神』、1923年のC.D.ブロード『心の本性』が、これを「創発主義（emergentism）」として体系化します。</p>
+        <p>科学的定式化は戦後を待ちます。Bertalanffy（1968）、Prigogine（1977ノーベル化学賞、邦訳『混沌からの秩序』1984）、Holland（1995『隠れた秩序』、1998『創発』）、Kauffman（1993『秩序の起源』）。1984年に設立されたサンタフェ研究所がこの系譜の中心地となりました。</p>
+        <p>近年は、創発が単なる比喩でなく形式的に定義可能であることが示されつつあります。哲学者Mark Bedauは "Weak Emergence"（Philosophical Perspectives 11, 1997）で、「下位レベルからの完全シミュレーション以外の方法では予測不可能な高次パターン」を弱い創発と定義しました。</p>
+        <p>社会科学側からは、Schelling "Dynamic Models of Segregation"（J. Mathematical Sociology 1, 1971）が居住地分離の創発を、Granovetter "Threshold Models of Collective Behavior"（AJS 83, 1978）が暴動・流行の閾値的創発を扱いました。これらは1990年代以降のエージェント・ベース・モデリング（ABM）に継承されています。</p>
+        <p>第1話で扱った「予測符号化」（Friston）も、自由エネルギー原理という創発的最適化として読めます。脳の認知、社会の秩序、生命の代謝――いずれも「上位の規則性が下位の相互作用から自ずと立ち上がる」という同型の構造を持つとされています。「つくる/生まれる」の二項は、規範論の言葉から、創発の科学への入り口です。</p>
+      </div>
+    </details>
+
+    <section class="ep-question">
+      <div class="ep-question-label">QUESTION FOR NEXT — 次号への問い</div>
+      <p class="ep-question-q">新しいものは、ゼロから生まれることはほとんどありません。古い文脈と古い素材が、別の組み合わせで結び直されたとき、はじめて「新しい」と感じられる。次回はシュンペーターが「新結合」と呼んだ、この組合わせの作法を扱います。</p>
+      <div class="ep-question-next">
+        <span class="ep-question-next-meta">NEXT EPISODE</span>
+        <span class="ep-question-next-title">第3話「文脈と新結合 ― シュンペーターの種」</span>
+        <a class="ep-question-next-link" href="ep003.html">第3話を読む →</a>
+      </div>
+    </section>
+
   </article>
-</section>
+</div>
 
-<section class="layer-section layer-mgt">
-  <div class="layer-inner">
-    <span class="layer-label">FOR MANAGEMENT</span>
-    <h2 class="layer-title-jp">経営学的に読み解きたいあなたへ</h2>
-    <p class="layer-title-en">For readers approaching this through Management Studies</p>
-    <p class="lead">経営の世界でも、「設計するか、生まれさせるか」は古い問いです。1985年、経営学者ヘンリー・ミンツバーグは「意図された戦略（intended strategy）」と「創発的戦略（emergent strategy）」を区別しました。実際にうまく機能している戦略の多くは、最初の事業計画書の通りには進まない。現場で日々起きる試行錯誤と発見が積み重なって、いつの間にか戦略になっている――Honda の北米バイク市場進出（小型バイクのスーパーカブが偶然のヒットで主軸になった事例）が、しばしばその典型として引かれます。</p>
-
-      <p class="lead">1990年、ピーター・センゲは『学習する組織』で、組織には自然学習する力があると論じました。リーダーの仕事は、答えを与えることよりも、学習が起きる場の条件――システム思考、共有ビジョン、メンタルモデルの自己観察、チーム学習、自己マスタリーの5つ――を整えることだ、と。</p>
-
-      <p class="lead">ホラクラシー、ティール組織、Spotifyの自律分散モデル、リーンスタートアップの「ピボット」も、すべて同じ系譜にあります。最初の計画から「生まれる」何かを掴み直す、という作法です。</p>
-
-      <p class="lead">実務で「生まれる」を引き出すには、3つの胆力が要ります。第一に、計画と評価のサイクルを短くする胆力（試行を許容する余白）。第二に、現場の発見を経営判断に流し込む通路をつくる胆力（観察の制度化）。第三に、自分たちのもとから「生まれた」ものを信じてリリースする胆力（手放す勇気）。</p>
-
-      <p class="lead">「つくる」より「生まれる」を経営に組み込むということは、計画の放棄ではなく、より高度な計画の更新です。計画は「閉じる」ためではなく、「開く」ためにあります。</p>
-
-      <p class="lead">---</p>
+<section class="ep-actions" aria-label="読了後アクション">
+  <div class="ep-actions-inner">
+    <a class="ep-action-btn primary" href="#newsletter">メルマガで次話を受け取る</a>
+    <a class="ep-action-btn" href="ep002-print.html" target="_blank" rel="noopener">PDF版を読む</a>
+    <a class="ep-action-btn" href="articles.html">全100話の地図へ</a>
   </div>
 </section>
-
-<section class="layer-section layer-aca">
-  <div class="layer-inner">
-    <span class="layer-label">FOR ACADEMIA</span>
-    <h2 class="layer-title-jp">学術的に読み解きたいあなたへ</h2>
-    <p class="layer-title-en">For readers approaching this through Academic study</p>
-    <p class="lead">「創発（emergence）」は、20世紀半ばに哲学的概念から科学的概念へと移行した稀な事例です。哲学側の起点は19世紀。ジョン・スチュアート・ミルが『論理学体系』（1843）で、構成要素の単純な合成則からは導けない結果を「heteropathic effects」と呼んだのが先駆けです。1875年、G.H.ルイスが『生命と精神の問題』で、初めて "emergent" という語をこの意味で用いました。1920年のサミュエル・アレキサンダー『空間・時間・神』、1923年のC.D.ブロード『心の本性』が、これを「創発主義（emergentism）」として体系化します。</p>
-
-      <p class="lead">科学的定式化は戦後を待ちます。Bertalanffy（1968）、Prigogine（1977ノーベル化学賞、邦訳『混沌からの秩序』1984）、Holland（1995『隠れた秩序』、1998『創発』）、Kauffman（1993『秩序の起源』）。1984年に設立されたサンタフェ研究所がこの系譜の中心地となりました。</p>
-
-      <p class="lead">近年は、創発が単なる比喩でなく形式的に定義可能であることが示されつつあります。哲学者Mark Bedauは "Weak Emergence"（Philosophical Perspectives 11, 1997）で、「下位レベルからの完全シミュレーション以外の方法では予測不可能な高次パターン」を弱い創発と定義しました。</p>
-
-      <p class="lead">社会科学側からは、Schelling "Dynamic Models of Segregation"（J. Mathematical Sociology 1, 1971）が居住地分離の創発を、Granovetter "Threshold Models of Collective Behavior"（AJS 83, 1978）が暴動・流行の閾値的創発を扱いました。これらは1990年代以降のエージェント・ベース・モデリング（ABM）に継承されています。</p>
-
-      <p class="lead">第1話で扱った「予測符号化」（Friston）も、自由エネルギー原理という創発的最適化として読めます。脳の認知、社会の秩序、生命の代謝――いずれも「上位の規則性が下位の相互作用から自ずと立ち上がる」という同型の構造を持つとされています。「つくる/生まれる」の二項は、規範論の言葉から、創発の科学への入り口です。</p>
-  </div>
-</section>
-
-<dl class="ep-meta-block">
-  <dt>今回つかったデータベース</dt>
-  <dd>哲学概念DB ／ イノベーション理論DB ／ 経営学概念DB ／ 認知科学・脳科学（参照）／ SIDB v9</dd>
-  <dt>今回登場した思想家・概念</dt>
-  <dd>老子（無為） ／ アンリ・ベルクソン（エラン・ヴィタル） ／ ベルタランフィ（一般システム理論） ／ プリゴジン（散逸構造） ／ ホランド（隠れた秩序） ／ カウフマン（秩序の起源） ／ ミンツバーグ（創発的戦略） ／ センゲ（学習する組織） ／ ミル・ルイス・アレキサンダー（哲学的創発主義） ／ Bedau（弱い創発） ／ Schelling・Granovetter（社会的創発のABM）</dd>
-  <dt>次回</dt>
-  <dd>第3話「文脈と新結合 ― シュンペーターの種」</dd>
-</dl>
 
 <nav class="ep-nav">
   <div class="ep-nav-inner">
     <a class="ep-nav-link" href="ep001.html">
       <span class="ep-nav-label">← PREV</span>
-      <span class="ep-nav-title">第1話「なぜいま「型」でソーシャルイノベーションを読むのか」</span>
+      <span class="ep-nav-title">第1話「なぜいま『型』でソーシャルイノベーションを読むのか」</span>
     </a>
     <a class="ep-nav-link next" href="ep003.html">
       <span class="ep-nav-label">NEXT →</span>
@@ -326,33 +433,6 @@ a:hover { color: var(--accent-warm); }
     </a>
   </div>
 </nav>
-
-<section class="feedback-section" id="comments">
-  <div class="feedback-inner">
-    <div class="feedback-label">COMMENTS ・ 感想・コメント</div>
-    <h2 class="feedback-title">この話に感想を送る</h2>
-    <p class="feedback-desc">読んで感じたこと、気になった一文、ご質問、関連する話題――どのようなものでも歓迎します。編集長（西村）に直接届きます。</p>
-
-    <form class="feedback-form" id="fbForm" onsubmit="return false;">
-      <div class="feedback-field">
-        <label for="fbSuggestion">コメント <span style="color:var(--accent-warm);">*</span></label>
-        <textarea id="fbSuggestion" placeholder="ご自由にお書きください" required></textarea>
-      </div>
-      <div class="feedback-row">
-        <div class="feedback-field">
-          <label for="fbName">お名前（任意）</label>
-          <input type="text" id="fbName" autocomplete="name" placeholder="匿名でも構いません">
-        </div>
-        <div class="feedback-field">
-          <label for="fbEmail">メール（任意）</label>
-          <input type="email" id="fbEmail" autocomplete="email" placeholder="返信不要なら空欄で">
-        </div>
-      </div>
-      <button type="button" class="feedback-submit" id="fbSubmit" onclick="submitFeedback()">送信する</button>
-    </form>
-    <div class="feedback-done" id="fbDone">ありがとうございました。コメントを受け取りました。</div>
-  </div>
-</section>
 
 <section class="newsletter" id="newsletter">
   <div class="newsletter-inner">
@@ -362,7 +442,9 @@ a:hover { color: var(--accent-warm); }
 
     <form class="nl-form" id="nlForm" onsubmit="return false;">
       <div class="nl-step active" id="nlStep1">
-        <div class="nl-field"><input type="email" id="nlEmail" placeholder="メールアドレス" autocomplete="email"></div>
+        <div class="nl-field">
+          <input type="email" id="nlEmail" placeholder="メールアドレス" autocomplete="email">
+        </div>
         <button type="button" class="nl-btn" onclick="nlNext()">次へ →</button>
         <div class="nl-trust">連載更新・実践事例・関連トピックをお届けします</div>
       </div>
@@ -375,7 +457,10 @@ a:hover { color: var(--accent-warm); }
         <button type="button" class="nl-btn" id="nlBtn" onclick="submitNl()">登録する</button>
       </div>
     </form>
-    <div class="nl-done" id="nlDone">ようこそ。確認メールをお送りしました。<br>これから一緒に「変化のかたち」を読み解いていきましょう。</div>
+    <div class="nl-done" id="nlDone">
+      ようこそ。確認メールをお送りしました。<br>これから一緒に「変化のかたち」を読み解いていきましょう。
+    </div>
+    <div class="nl-error" id="nlError" role="alert" aria-live="polite"></div>
   </div>
 </section>
 
@@ -392,7 +477,6 @@ a:hover { color: var(--accent-warm); }
         <ul>
           <li><a href="index.html">ホーム</a></li>
           <li><a href="articles.html">全100話 一覧</a></li>
-          <li><a href="ep001.html">第1話を読む</a></li>
           <li><a href="#newsletter">メルマガ登録</a></li>
         </ul>
       </div>
@@ -411,60 +495,279 @@ a:hover { color: var(--accent-warm); }
   </div>
 </footer>
 
-<script>
-const FEEDBACK_API = 'https://claude-code-manual-app.vercel.app/api/feedback';
-const NEWSLETTER_API = 'https://claude-code-manual-app.vercel.app/api/community';
-const EPISODE_ID = 'ep02';
-const EPISODE_TITLE = '第2話 ― 「つくる」と「生まれる」― 創発の系譜';
+<button class="toc-fab" id="tocFab" onclick="toggleTocDrawer()" aria-label="目次を開く">目次</button>
+<div class="toc-overlay" id="tocOverlay" onclick="toggleTocDrawer()" aria-hidden="true"></div>
+<div class="toc-drawer" id="tocDrawer" role="dialog" aria-label="連載目次" aria-modal="true">
+  <button class="toc-drawer-close" onclick="toggleTocDrawer()" aria-label="閉じる">閉じる</button>
+  <div class="toc-label">FULL SERIES — 全100話</div>
+  <div class="toc-section">
+    <a class="toc-part" href="articles.html#prologue">PROLOGUE — 序 章</a>
+    <span class="toc-current">第2話 ― 「つくる」と「生まれる」</span>
+  </div>
+  <div class="toc-section">
+    <a class="toc-part" href="articles.html#part-i">PART I</a>
+    <a class="toc-part-title" href="articles.html#part-i">場のかたち ― 集まりが価値を生む</a>
+  </div>
+  <div class="toc-section">
+    <a class="toc-part" href="articles.html#part-ii">PART II</a>
+    <a class="toc-part-title" href="articles.html#part-ii">媒介のかたち ― つなぎ手が社会を変える</a>
+  </div>
+  <div class="toc-section">
+    <a class="toc-part" href="articles.html#part-iii">PART III</a>
+    <a class="toc-part-title" href="articles.html#part-iii">物語のかたち ― 価値はどこに宿るか</a>
+  </div>
+  <div class="toc-section">
+    <a class="toc-part" href="articles.html#part-iv">PART IV</a>
+    <a class="toc-part-title" href="articles.html#part-iv">支えのかたち ― 見えないものが社会を支える</a>
+  </div>
+  <div class="toc-section">
+    <a class="toc-part" href="articles.html#part-v">PART V</a>
+    <a class="toc-part-title" href="articles.html#part-v">開きのかたち ― 特権を多くの人に開く</a>
+  </div>
+  <div class="toc-section">
+    <a class="toc-part" href="articles.html#final">FINAL — 終 章</a>
+  </div>
 
-async function submitFeedback() {
-  const suggestion = document.getElementById('fbSuggestion').value.trim();
-  const name = document.getElementById('fbName').value.trim();
-  const email = document.getElementById('fbEmail').value.trim();
-  const btn = document.getElementById('fbSubmit');
-  if (!suggestion) { document.getElementById('fbSuggestion').focus(); return; }
-  btn.disabled = true; btn.textContent = '送信中…';
-  try {
-    const res = await fetch(FEEDBACK_API, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ source: 'henka-no-katachi', episode: EPISODE_ID + ' ' + EPISODE_TITLE, suggestion, name, email })
-    });
-    if (!res.ok) throw new Error('failed');
-    document.getElementById('fbForm').classList.add('hide');
-    document.getElementById('fbDone').classList.add('show');
-  } catch(e) { alert('送信に失敗しました'); btn.disabled = false; btn.textContent = '送信する'; }
+</div>
+
+<script>
+const NEWSLETTER_API = 'https://claude-code-manual-app.vercel.app/api/community';
+const EPISODE_ID = 'ep002';
+const EPISODE_TITLE = '第2話 ― 「つくる」と「生まれる」 ― 創発の系譜';
+
+(function() {
+  const article = document.getElementById('articleBody');
+  const bar = document.getElementById('readProgressBar');
+  const readTimeEl = document.getElementById('readTime');
+
+  if (article && readTimeEl) {
+    const text = article.innerText || article.textContent || '';
+    const charCount = text.replace(/\s/g, '').length;
+    const minutes = Math.max(1, Math.round(charCount / 280));
+    readTimeEl.textContent = '推定読了 約' + minutes + '分';
+  }
+
+  if (article && bar) {
+    function updateProgress() {
+      const rect = article.getBoundingClientRect();
+      const total = article.offsetHeight - window.innerHeight;
+      const scrolled = -rect.top;
+      const pct = total > 0 ? Math.max(0, Math.min(100, (scrolled / total) * 100)) : 0;
+      bar.style.width = pct + '%';
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress, { passive: true });
+    updateProgress();
+  }
+})();
+
+function toggleTocDrawer() {
+  const d = document.getElementById('tocDrawer');
+  if (!d) return;
+  const willOpen = !d.classList.contains('show');
+  d.classList.toggle('show');
+  document.body.style.overflow = willOpen ? 'hidden' : '';
+  document.getElementById('tocOverlay')?.classList.toggle('show', willOpen);
+  if (willOpen) {
+    d.querySelector('.toc-drawer-close')?.focus();
+    document.addEventListener('keydown', _tocEsc);
+  } else {
+    document.removeEventListener('keydown', _tocEsc);
+    document.getElementById('tocFab')?.focus();
+  }
 }
+function _tocEsc(e) { if (e.key === 'Escape') toggleTocDrawer(); }
 
 function nlNext() {
   const v = document.getElementById('nlEmail').value.trim();
-  if (!v || !v.includes('@')) { document.getElementById('nlEmail').focus(); return; }
+  if (!v || !v.includes('@')) {
+    document.getElementById('nlEmail').style.borderColor = 'var(--accent)';
+    document.getElementById('nlEmail').focus();
+    setTimeout(() => document.getElementById('nlEmail').style.borderColor = '', 2000);
+    return;
+  }
   document.getElementById('nlStep1').classList.remove('active');
   document.getElementById('nlStep2').classList.add('active');
   document.getElementById('nlName').focus();
 }
-
+function _nlShowError(msg) {
+  const e = document.getElementById('nlError');
+  if (e) { e.textContent = msg; e.classList.add('show'); }
+}
+function _nlClearError() {
+  document.getElementById('nlError')?.classList.remove('show');
+}
 async function submitNl() {
+  _nlClearError();
   const name = document.getElementById('nlName').value.trim();
   const org = document.getElementById('nlOrg').value.trim();
   const email = document.getElementById('nlEmail').value.trim();
   const consent = document.getElementById('nlConsent').checked;
   const btn = document.getElementById('nlBtn');
-  if (!name) { document.getElementById('nlName').focus(); return; }
-  if (!consent) { alert('メルマガ配信への同意が必要です'); return; }
-  btn.disabled = true; btn.textContent = '登録中…';
+  if (!name) { document.getElementById('nlName').focus(); _nlShowError('お名前を入力してください'); return; }
+  if (!consent) { _nlShowError('メールマガジン配信への同意が必要です'); return; }
+  btn.disabled = true;
+  btn.textContent = '登録中…';
   try {
     const res = await fetch(NEWSLETTER_API, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, org, email })
+      body: JSON.stringify({ name, org, email }),
     });
     if (!res.ok) throw new Error('failed');
     document.getElementById('nlForm').classList.add('hide');
     document.getElementById('nlDone').classList.add('show');
-  } catch(e) { alert('登録に失敗しました'); btn.disabled = false; btn.textContent = '登録する'; }
+  } catch (e) {
+    _nlShowError('登録に失敗しました。少し時間をおいて再度お試しください。');
+    btn.disabled = false;
+    btn.textContent = '登録する';
+  }
+}
+
+const EDITOR_REPO = 'yuyanishimura0312/henka-no-katachi';
+const PAT_KEY = 'gh_pat_henka_no_katachi';
+const EDITABLE_SELECTOR = '.ep-hero-eyebrow, .ep-hero-num, .ep-hero-title, .ep-hero-en, .ep-hero-lead, .ep-hero-author, .ep-hero-date, .ep-body p, .ep-body blockquote, .ep-question-q, .reading-lens-body p, .reading-lens-title';
+let editingNow = false;
+
+function sanitizePAT(raw) {
+  if (!raw) return '';
+  return String(raw).replace(/[^\x21-\x7E]/g, '');
+}
+
+function getPAT() {
+  let pat = sanitizePAT(localStorage.getItem(PAT_KEY));
+  if (!pat) {
+    const raw = prompt(
+      '編集長モードに入ります。\n\nGitHub Personal Access Token を入力してください。\n（fine-grained PAT、henka-no-katachi リポジトリの Contents: Read and Write 権限）\n\n作成方法はこちら:\nhttps://github.com/settings/personal-access-tokens/new'
+    );
+    pat = sanitizePAT(raw);
+    if (pat && /^(github_pat_|ghp_)/.test(pat)) {
+      localStorage.setItem(PAT_KEY, pat);
+    } else if (pat) {
+      alert('Tokenの形式が正しくありません。github_pat_… または ghp_… で始まる文字列を入力してください。');
+      return null;
+    } else {
+      return null;
+    }
+  }
+  return pat;
+}
+
+function startEdit() {
+  if (editingNow) return;
+  const pat = getPAT();
+  if (!pat) return;
+  document.querySelectorAll(EDITABLE_SELECTOR).forEach(el => {
+    el.contentEditable = 'true';
+  });
+  document.getElementById('editorBar').classList.add('show');
+  document.getElementById('editorToggle').style.display = 'none';
+  editingNow = true;
+  document.querySelector(EDITABLE_SELECTOR)?.focus();
+}
+
+function cancelEdit() {
+  if (!editingNow) return;
+  if (confirm('編集中の内容を破棄してもよろしいですか？')) {
+    location.reload();
+  }
+}
+
+function resetPAT() {
+  if (confirm('保存されたGitHub Tokenをリセットします。次回の編集時に再入力が必要になります。')) {
+    localStorage.removeItem(PAT_KEY);
+    alert('Tokenをリセットしました。');
+  }
+}
+
+async function saveEdit() {
+  const pat = sanitizePAT(localStorage.getItem(PAT_KEY));
+  if (!pat) { alert('Tokenが見つかりません'); return; }
+  if (!/^(github_pat_|ghp_)/.test(pat)) {
+    alert('保存されているTokenの形式が不正です。「Token更新」を押して再入力してください。\n受け取り長: ' + pat.length);
+    return;
+  }
+  console.log('[editor] PAT length:', pat.length, 'prefix:', pat.slice(0, 12));
+  const saveBtn = document.querySelector('.editor-bar .save-btn');
+  const cancelBtn = document.querySelector('.editor-bar .cancel-btn');
+  saveBtn.disabled = true;
+  cancelBtn.disabled = true;
+  saveBtn.textContent = '保存中…';
+
+  try {
+    const path = (location.pathname.split('/').pop() || 'index.html').split('?')[0] || 'index.html';
+    const url = `https://api.github.com/repos/${EDITOR_REPO}/contents/${path}`;
+    console.log('[editor] PUT target:', url);
+
+    const headers = new Headers();
+    headers.set('Authorization', 'Bearer ' + pat);
+    headers.set('Accept', 'application/vnd.github+json');
+    const resGet = await fetch(url, { method: 'GET', headers });
+    if (!resGet.ok) {
+      if (resGet.status === 401) throw new Error('認証失敗（Token無効）。「Token更新」で再入力してください。');
+      if (resGet.status === 403) throw new Error('権限不足（Token権限を確認してください）');
+      if (resGet.status === 404) throw new Error('ファイルが見つかりません: ' + path);
+      throw new Error('ファイル取得失敗 (HTTP ' + resGet.status + ')');
+    }
+    const data = await resGet.json();
+    const sha = data.sha;
+    const oldContent = decodeURIComponent(escape(atob(data.content.replace(/\n/g, ''))));
+
+    const cleanClone = (sel) => {
+      const c = document.querySelector(sel).cloneNode(true);
+      c.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
+      return c.outerHTML;
+    };
+    const newArticleHTML = cleanClone('.ep-body');
+    const newHeroHTML = cleanClone('.ep-hero');
+
+    const articleRegex = /<article class="ep-body"[^>]*>[\s\S]*?<\/article>/;
+    const heroRegex = /<section class="ep-hero">[\s\S]*?<\/section>/;
+    if (!articleRegex.test(oldContent)) throw new Error('元HTMLに記事タグが見つかりません');
+    if (!heroRegex.test(oldContent)) throw new Error('元HTMLにヒーロー部が見つかりません');
+    let newContent = oldContent.replace(heroRegex, newHeroHTML);
+    newContent = newContent.replace(articleRegex, newArticleHTML);
+
+    const newB64 = btoa(unescape(encodeURIComponent(newContent)));
+
+    const ts = new Date().toISOString().slice(0,16).replace('T',' ');
+    const putHeaders = new Headers();
+    putHeaders.set('Authorization', 'Bearer ' + pat);
+    putHeaders.set('Content-Type', 'application/json');
+    putHeaders.set('Accept', 'application/vnd.github+json');
+    const resPut = await fetch(url, {
+      method: 'PUT',
+      headers: putHeaders,
+      body: JSON.stringify({
+        message: `Edit ${path} via inline editor (${ts})`,
+        content: newB64,
+        sha,
+      }),
+    });
+    if (!resPut.ok) {
+      const errText = await resPut.text();
+      throw new Error('保存失敗 (HTTP ' + resPut.status + '): ' + errText.slice(0,200));
+    }
+
+    saveBtn.textContent = '✓ 保存完了 (30秒で公開)';
+    setTimeout(() => location.reload(), 3000);
+  } catch (e) {
+    console.error('[editor] save error:', e);
+    alert('保存失敗:\n\n' + (e.message || e) + '\n\n（詳細はブラウザのDevTools→Consoleで確認できます）');
+    saveBtn.disabled = false;
+    cancelBtn.disabled = false;
+    saveBtn.textContent = '保存';
+  }
 }
 </script>
+
+<button id="editorToggle" class="editor-toggle" onclick="startEdit()" title="編集（編集長専用）" aria-label="編集">✎</button>
+<div id="editorBar" class="editor-bar">
+  <span class="editor-bar-label">編集中</span>
+  <button class="save-btn" onclick="saveEdit()">保存</button>
+  <button class="cancel-btn" onclick="cancelEdit()">キャンセル</button>
+  <button class="reset-btn" onclick="resetPAT()">Token更新</button>
+</div>
 
 </body>
 </html>
