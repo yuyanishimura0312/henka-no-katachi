@@ -866,15 +866,24 @@ const PAT_KEY = 'gh_pat_henka_no_katachi';
 const EDITABLE_SELECTOR = '.ep-body p, .ep-body dd';
 let editingNow = false;
 
+function sanitizePAT(raw) {
+  if (!raw) return '';
+  // Remove all whitespace, control chars, and non-ASCII (PATs are pure ASCII)
+  return String(raw).replace(/[^\x21-\x7E]/g, '');
+}
+
 function getPAT() {
-  let pat = localStorage.getItem(PAT_KEY);
+  let pat = sanitizePAT(localStorage.getItem(PAT_KEY));
   if (!pat) {
-    pat = prompt(
+    const raw = prompt(
       '編集長モードに入ります。\n\nGitHub Personal Access Token を入力してください。\n（fine-grained PAT、henka-no-katachi リポジトリの Contents: Read and Write 権限）\n\n作成方法はこちら:\nhttps://github.com/settings/personal-access-tokens/new'
     );
-    if (pat) {
-      pat = pat.trim();
+    pat = sanitizePAT(raw);
+    if (pat && /^(github_pat_|ghp_)/.test(pat)) {
       localStorage.setItem(PAT_KEY, pat);
+    } else if (pat) {
+      alert('Tokenの形式が正しくありません。github_pat_… または ghp_… で始まる文字列を入力してください。');
+      return null;
     } else {
       return null;
     }
@@ -911,8 +920,13 @@ function resetPAT() {
 }
 
 async function saveEdit() {
-  const pat = localStorage.getItem(PAT_KEY);
+  const pat = sanitizePAT(localStorage.getItem(PAT_KEY));
   if (!pat) { alert('Tokenが見つかりません'); return; }
+  if (!/^(github_pat_|ghp_)/.test(pat)) {
+    alert('保存されているTokenの形式が不正です。「Token更新」を押して再入力してください。\n受け取り長: ' + pat.length);
+    return;
+  }
+  console.log('[editor] PAT length:', pat.length, 'prefix:', pat.slice(0, 12));
   const saveBtn = document.querySelector('.editor-bar .save-btn');
   const cancelBtn = document.querySelector('.editor-bar .cancel-btn');
   saveBtn.disabled = true;
@@ -922,14 +936,18 @@ async function saveEdit() {
   try {
     const path = (location.pathname.split('/').pop() || 'index.html').split('?')[0] || 'index.html';
     const url = `https://api.github.com/repos/${EDITOR_REPO}/contents/${path}`;
+    console.log('[editor] PUT target:', url);
 
     // 1. Fetch current file
-    const resGet = await fetch(url, {
-      headers: { 'Authorization': `Bearer ${pat}`, 'Accept': 'application/vnd.github+json' }
-    });
+    const headers = new Headers();
+    headers.set('Authorization', 'Bearer ' + pat);
+    headers.set('Accept', 'application/vnd.github+json');
+    const resGet = await fetch(url, { method: 'GET', headers });
     if (!resGet.ok) {
-      if (resGet.status === 401) throw new Error('認証失敗（Token無効）。Tokenをリセットしてください。');
-      throw new Error('ファイル取得失敗 (' + resGet.status + ')');
+      if (resGet.status === 401) throw new Error('認証失敗（Token無効）。「Token更新」で再入力してください。');
+      if (resGet.status === 403) throw new Error('権限不足（Token権限を確認してください）');
+      if (resGet.status === 404) throw new Error('ファイルが見つかりません: ' + path);
+      throw new Error('ファイル取得失敗 (HTTP ' + resGet.status + ')');
     }
     const data = await resGet.json();
     const sha = data.sha;
@@ -952,9 +970,13 @@ async function saveEdit() {
 
     // 5. PUT
     const ts = new Date().toISOString().slice(0,16).replace('T',' ');
+    const putHeaders = new Headers();
+    putHeaders.set('Authorization', 'Bearer ' + pat);
+    putHeaders.set('Content-Type', 'application/json');
+    putHeaders.set('Accept', 'application/vnd.github+json');
     const resPut = await fetch(url, {
       method: 'PUT',
-      headers: { 'Authorization': `Bearer ${pat}`, 'Content-Type': 'application/json' },
+      headers: putHeaders,
       body: JSON.stringify({
         message: `Edit ${path} via inline editor (${ts})`,
         content: newB64,
@@ -963,13 +985,14 @@ async function saveEdit() {
     });
     if (!resPut.ok) {
       const errText = await resPut.text();
-      throw new Error('保存失敗 (' + resPut.status + '): ' + errText.slice(0,120));
+      throw new Error('保存失敗 (HTTP ' + resPut.status + '): ' + errText.slice(0,200));
     }
 
     saveBtn.textContent = '✓ 保存完了 (30秒で公開)';
     setTimeout(() => location.reload(), 3000);
   } catch (e) {
-    alert('保存失敗: ' + e.message);
+    console.error('[editor] save error:', e);
+    alert('保存失敗:\n\n' + (e.message || e) + '\n\n（詳細はブラウザのDevTools→Consoleで確認できます）');
     saveBtn.disabled = false;
     cancelBtn.disabled = false;
     saveBtn.textContent = '保存';
