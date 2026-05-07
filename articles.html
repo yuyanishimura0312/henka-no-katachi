@@ -13,116 +13,156 @@
 <link rel="icon" href="https://esse-sense.com/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@300;400;500;600;700;900&family=Judson:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --paper: #FAF6F1;
-  --paper-soft: #F5EFE7;
-  --ink: #2A1A14;
-  --ink-soft: #5A4238;
-  --ink-mute: #7A6358;
-  --accent-deep: #4A1F18;
-  --accent: #7A2E1F;
-  --accent-warm: #C46545;
-  --accent-coral: #E0824A;
-  --accent-peach: #F0A671;
-  --accent-sand: #F8CDAC;
-  --accent-cream: #F5E8DC;
-  --line: #E5D9CC;
-  --line-soft: #EFE4D6;
-  --serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
-  --sans: "Noto Sans JP", "Hiragino Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --display: "Cormorant Garamond", "Noto Serif JP", Georgia, serif;
+  --bg:           #FFFFFF;
+  --bg-soft:      #FAFAFA;
+  --bg-tint:      #F5F5F4;
+  --ink:          #14110F;
+  --ink-soft:     #3A3633;
+  --ink-mute:     #6B6661;
+  --ink-faint:    #9C9692;
+  --accent:       #FF3644;
+  --accent-deep:  #D4202E;
+  --accent-soft:  rgba(255, 54, 68, 0.08);
+  --accent-tint:  rgba(255, 54, 68, 0.18);
+  --line:         #E8E5E1;
+  --line-soft:    #F0EDE9;
+  --serif:   "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "Plantin MT Pro", Georgia, serif;
+  --sans:    "Noto Sans JP", "Hiragino Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --display: "Judson", "Noto Serif JP", Georgia, serif;
 }
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; scroll-behavior: smooth; }
-body { font-family: var(--serif); background: var(--paper); color: var(--ink); line-height: 1.95; letter-spacing: 0.04em; font-feature-settings: "palt"; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--serif); background: var(--bg); color: var(--ink); line-height: 1.95; letter-spacing: 0.02em; font-feature-settings: "palt"; -webkit-font-smoothing: antialiased; }
 a { color: var(--accent); text-decoration: none; transition: color .15s; }
-a:hover { color: var(--accent-warm); }
+a:hover { color: var(--accent-deep); }
 
-.site-header-strip { height: 3px; background: var(--accent-deep); }
-.site-header { position: sticky; top: 0; z-index: 100; background: rgba(250,246,241,0.96); backdrop-filter: saturate(160%) blur(8px); -webkit-backdrop-filter: saturate(160%) blur(8px); border-bottom: 1px solid var(--line); }
-.site-header-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+/* ─── HEADER ─── */
+.site-header { position: sticky; top: 0; z-index: 100; background: rgba(255, 255, 255, 0.96); backdrop-filter: saturate(160%) blur(8px); -webkit-backdrop-filter: saturate(160%) blur(8px); border-bottom: 1px solid var(--line); }
+.site-header-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .site-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.site-brand-mark { width: 28px; height: 28px; flex-shrink: 0; }
+.site-brand-mark { width: 30px; height: 30px; flex-shrink: 0; }
 .site-brand-mark img { width: 100%; height: auto; display: block; }
-.site-brand-text { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; color: var(--accent); line-height: 1.3; }
+.site-brand-text { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--ink); line-height: 1.3; }
 .site-brand-text small { display: block; font-size: 9.5px; letter-spacing: 0.14em; color: var(--ink-mute); font-weight: 500; margin-top: 2px; }
-.site-nav { display: flex; gap: 22px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.1em; }
-.site-nav a { color: var(--ink-soft); font-weight: 500; padding: 6px 0; border-bottom: 2px solid transparent; }
-.site-nav a:hover { color: var(--accent-warm); border-bottom-color: var(--accent-warm); }
-.site-nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
+.site-nav { display: flex; gap: 28px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.1em; }
+.site-nav a { color: var(--ink-soft); font-weight: 500; padding: 6px 0; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s; }
+.site-nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.site-nav a.active { color: var(--ink); border-bottom-color: var(--ink); }
 
-.page-banner { background: linear-gradient(170deg, #4A1F18 0%, #6B2A1E 60%, #7A2E1F 100%); color: var(--paper); padding: 64px 24px 56px; position: relative; overflow: hidden; }
-.page-banner-mark { position: absolute; right: -40px; top: 30px; width: 200px; opacity: 0.15; }
-.page-banner-inner { max-width: 1080px; margin: 0 auto; position: relative; z-index: 2; }
-.page-banner-eyebrow { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.4em; color: var(--accent-peach); font-weight: 700; margin-bottom: 16px; }
-.page-banner-title { font-family: var(--serif); font-weight: 500; font-size: 36px; line-height: 1.5; letter-spacing: 0.06em; color: var(--paper); margin-bottom: 12px; }
-.page-banner-en { font-family: var(--display); font-style: italic; font-size: 18px; color: #F5DDC4; letter-spacing: 0.02em; margin-bottom: 18px; }
-.page-banner-stats { display: flex; gap: 28px; flex-wrap: wrap; font-family: var(--sans); font-size: 12px; letter-spacing: 0.12em; color: #E5C9B5; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.18); }
-.page-banner-stats span strong { color: var(--accent-peach); font-family: var(--display); font-style: italic; font-size: 18px; margin-right: 6px; font-weight: 500; }
+/* ─── PAGE BANNER ─── */
+.page-banner { background: var(--bg); color: var(--ink); padding: 80px 24px 56px; position: relative; border-bottom: 1px solid var(--line); }
+.page-banner-inner { max-width: 1080px; margin: 0 auto; }
+.page-banner-eyebrow { font-family: var(--sans); font-size: 11px; letter-spacing: 0.32em; color: var(--accent); font-weight: 700; display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+.page-banner-eyebrow::before { content: ""; width: 32px; height: 2px; background: var(--accent); }
+.page-banner-title { font-family: var(--serif); font-weight: 700; font-size: 40px; line-height: 1.45; letter-spacing: 0.04em; color: var(--ink); margin-bottom: 14px; }
+.page-banner-en { font-family: var(--display); font-weight: 400; font-size: 20px; color: var(--ink-mute); letter-spacing: 0.02em; margin-bottom: 32px; }
 
-.content { max-width: 920px; margin: 0 auto; padding: 56px 24px 80px; }
-.content-intro { font-family: var(--serif); font-size: 15.5px; line-height: 2; color: var(--ink-soft); margin-bottom: 36px; padding-bottom: 26px; border-bottom: 1px solid var(--line); }
+.page-stats { display: grid; grid-template-columns: repeat(4, auto); gap: 32px; align-items: baseline; padding-top: 24px; border-top: 1px solid var(--line); font-family: var(--sans); font-size: 11px; letter-spacing: 0.12em; color: var(--ink-mute); }
+.page-stats span { display: flex; flex-direction: column; gap: 4px; }
+.page-stats span strong { font-family: var(--display); font-weight: 700; font-size: 22px; color: var(--ink); letter-spacing: 0; }
+.page-stats span strong .stat-suffix { font-family: var(--sans); font-size: 11px; font-weight: 500; color: var(--ink-mute); margin-left: 4px; letter-spacing: 0.1em; }
 
-.part-section { margin-top: 48px; margin-bottom: 12px; }
+/* ─── PROGRESS BAR ─── */
+.series-progress { max-width: 1080px; margin: 32px auto 0; padding: 0 24px; }
+.series-progress-bar-wrap { background: var(--bg-tint); height: 6px; position: relative; overflow: hidden; }
+.series-progress-bar-fill { background: var(--accent); height: 100%; width: 1%; }
+.series-progress-meta { display: flex; justify-content: space-between; align-items: baseline; margin-top: 8px; font-family: var(--sans); font-size: 10.5px; color: var(--ink-mute); letter-spacing: 0.14em; }
+.series-progress-meta strong { color: var(--ink); font-weight: 700; }
+
+/* ─── PART JUMP GRID ─── */
+.parts-jump { max-width: 1080px; margin: 56px auto 0; padding: 0 24px; }
+.parts-jump-label { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.26em; color: var(--accent); margin-bottom: 14px; }
+.parts-jump-title { font-family: var(--serif); font-weight: 700; font-size: 22px; color: var(--ink); letter-spacing: 0.04em; margin-bottom: 24px; }
+.parts-jump-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+.part-jump-card { background: var(--bg); border: 1px solid var(--line); padding: 22px 20px; text-decoration: none; display: flex; flex-direction: column; gap: 8px; transition: border-color .15s, transform .15s; }
+.part-jump-card:hover { border-color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+.part-jump-num { font-family: var(--display); font-weight: 700; font-size: 24px; color: var(--accent); line-height: 1; }
+.part-jump-name { font-family: var(--serif); font-weight: 700; font-size: 15px; color: var(--ink); letter-spacing: 0.04em; line-height: 1.55; }
+.part-jump-sub { font-family: var(--sans); font-size: 10.5px; color: var(--ink-mute); letter-spacing: 0.1em; line-height: 1.65; }
+
+/* ─── FILTER ─── */
+.filters { max-width: 1080px; margin: 56px auto 0; padding: 0 24px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.filter-label { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.18em; color: var(--ink-mute); margin-right: 4px; }
+.filter-btn { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; padding: 8px 18px; border: 1px solid var(--line); background: var(--bg); color: var(--ink-soft); cursor: pointer; transition: background .15s, color .15s, border-color .15s; }
+.filter-btn:hover { border-color: var(--ink); color: var(--ink); }
+.filter-btn.active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+/* ─── CONTENT ─── */
+.content { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+.content-intro { font-family: var(--serif); font-size: 15.5px; line-height: 2; color: var(--ink-soft); margin-bottom: 36px; padding-bottom: 26px; border-bottom: 1px solid var(--line); letter-spacing: 0.04em; }
+
+.part-section { margin-top: 64px; margin-bottom: 12px; scroll-margin-top: 80px; }
 .part-section:first-of-type { margin-top: 0; }
-.part-eyebrow { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.3em; color: var(--accent-warm); font-weight: 700; margin-bottom: 8px; }
-.part-title { font-family: var(--serif); font-weight: 500; font-size: 22px; line-height: 1.5; letter-spacing: 0.06em; color: var(--accent-deep); border-bottom: 2px solid var(--accent-warm); padding-bottom: 10px; margin-bottom: 22px; }
-.chap-title { font-family: var(--serif); font-weight: 500; font-size: 14px; letter-spacing: 0.08em; color: var(--accent); margin: 22px 0 10px; padding-left: 12px; border-left: 3px solid var(--accent-coral); }
+.part-eyebrow { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.3em; color: var(--accent); font-weight: 700; margin-bottom: 8px; }
+.part-title { font-family: var(--serif); font-weight: 700; font-size: 24px; line-height: 1.5; letter-spacing: 0.04em; color: var(--ink); border-bottom: 2px solid var(--ink); padding-bottom: 12px; margin-bottom: 24px; }
+.chap-title { font-family: var(--serif); font-weight: 700; font-size: 14.5px; letter-spacing: 0.06em; color: var(--ink); margin: 28px 0 12px; padding-left: 14px; border-left: 4px solid var(--accent); }
 
 .ep-list { list-style: none; }
-.ep-row { display: grid; grid-template-columns: 50px 1fr 90px; gap: 16px; padding: 14px 4px; border-bottom: 1px dotted var(--line); align-items: baseline; transition: background .12s; }
-.ep-row:hover { background: var(--paper-soft); }
-.ep-num { font-family: var(--display); font-style: italic; font-size: 16px; color: var(--accent-warm); font-weight: 500; letter-spacing: 0.04em; }
-.ep-title { font-family: var(--serif); font-size: 14.5px; line-height: 1.7; color: var(--ink); letter-spacing: 0.04em; }
-.ep-title a { color: var(--accent-deep); font-weight: 500; }
-.ep-title a:hover { color: var(--accent-warm); }
-.ep-status { font-family: var(--sans); font-size: 9.5px; letter-spacing: 0.14em; color: var(--ink-mute); text-align: right; white-space: nowrap; }
-.ep-status.published { color: var(--paper); background: var(--accent-warm); padding: 3px 8px; font-weight: 700; }
+.ep-row { display: grid; grid-template-columns: 56px 1fr 96px; gap: 16px; padding: 16px 6px; border-bottom: 1px solid var(--line); align-items: baseline; transition: background .12s, padding-left .15s; }
+.ep-row:hover { background: var(--bg-soft); padding-left: 12px; }
+.ep-row.hidden { display: none; }
+.ep-num { font-family: var(--display); font-weight: 700; font-size: 17px; color: var(--accent); letter-spacing: 0; }
+.ep-title { font-family: var(--serif); font-size: 15px; line-height: 1.7; color: var(--ink); letter-spacing: 0.03em; font-weight: 500; }
+.ep-title a { color: var(--ink); font-weight: 600; }
+.ep-title a:hover { color: var(--accent); }
+.ep-status { font-family: var(--sans); font-size: 9.5px; letter-spacing: 0.18em; color: var(--ink-faint); text-align: right; white-space: nowrap; font-weight: 600; }
+.ep-status.published { color: var(--bg); background: var(--accent); padding: 4px 10px; font-weight: 700; }
 
-.newsletter { background: linear-gradient(140deg, #4A1F18 0%, #6B2A1E 100%); color: var(--paper); padding: 60px 24px 64px; }
-.newsletter-inner { max-width: 680px; margin: 0 auto; }
-.newsletter-eyebrow { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.3em; color: var(--accent-peach); font-weight: 700; margin-bottom: 14px; }
-.newsletter-title { font-family: var(--serif); font-weight: 500; font-size: 26px; line-height: 1.6; letter-spacing: 0.04em; color: var(--paper); margin-bottom: 14px; }
-.newsletter-desc { font-family: var(--serif); font-size: 14.5px; line-height: 1.95; color: #E5C9B5; margin-bottom: 28px; }
+/* ─── NEWSLETTER ─── */
+.newsletter { background: var(--ink); color: var(--bg); padding: 64px 24px 64px; }
+.newsletter-inner { max-width: 720px; margin: 0 auto; }
+.newsletter-eyebrow { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.32em; color: var(--accent); font-weight: 700; margin-bottom: 14px; }
+.newsletter-title { font-family: var(--serif); font-weight: 700; font-size: 26px; line-height: 1.6; letter-spacing: 0.04em; color: var(--bg); margin-bottom: 14px; }
+.newsletter-desc { font-family: var(--serif); font-size: 14.5px; line-height: 2; color: rgba(255,255,255,0.78); margin-bottom: 28px; }
 .nl-form { display: flex; flex-direction: column; gap: 12px; max-width: 460px; }
 .nl-step { display: none; flex-direction: column; gap: 12px; }
 .nl-step.active { display: flex; }
 .nl-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.nl-field input { width: 100%; font-family: var(--serif); font-size: 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); color: var(--paper); padding: 12px 14px; letter-spacing: 0.04em; outline: none; transition: border-color .15s, background .15s; }
+.nl-field input { width: 100%; font-family: var(--serif); font-size: 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); color: var(--bg); padding: 12px 14px; letter-spacing: 0.04em; outline: none; transition: border-color .15s, background .15s; }
 .nl-field input::placeholder { color: rgba(255,255,255,0.45); }
-.nl-field input:focus { border-color: var(--accent-peach); background: rgba(255,255,255,0.12); }
-.nl-consent { font-family: var(--sans); font-size: 11.5px; color: #E5C9B5; line-height: 1.7; display: flex; align-items: flex-start; gap: 8px; }
+.nl-field input:focus { border-color: var(--accent); background: rgba(255,255,255,0.14); }
+.nl-consent { font-family: var(--sans); font-size: 11.5px; color: rgba(255,255,255,0.72); line-height: 1.7; display: flex; align-items: flex-start; gap: 8px; }
 .nl-consent input { margin-top: 4px; flex-shrink: 0; }
-.nl-btn { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--accent-deep); background: var(--accent-peach); border: none; padding: 14px 24px; cursor: pointer; transition: background .15s; }
-.nl-btn:hover { background: var(--accent-sand); }
+.nl-btn { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--bg); background: var(--accent); border: none; padding: 14px 26px; cursor: pointer; transition: background .15s; }
+.nl-btn:hover { background: var(--accent-deep); }
 .nl-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-.nl-trust { font-family: var(--sans); font-size: 11px; color: rgba(229,201,181,0.7); letter-spacing: 0.04em; }
-.nl-done { display: none; padding: 22px 0; font-family: var(--serif); font-size: 16px; color: var(--paper); line-height: 1.9; }
+.nl-trust { font-family: var(--sans); font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: 0.04em; }
+.nl-done { display: none; padding: 22px 0; font-family: var(--serif); font-size: 16px; color: var(--bg); line-height: 1.9; }
 .nl-done.show { display: block; }
 .nl-form.hide { display: none; }
 
-.site-footer { background: var(--paper-soft); padding: 48px 24px 28px; border-top: 1px solid var(--line); }
-.site-footer-inner { max-width: 1080px; margin: 0 auto; }
-.site-footer-cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 36px; padding-bottom: 32px; border-bottom: 1px solid var(--line); }
-.site-footer-col h4 { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 14px; }
-.site-footer-col p, .site-footer-col a { font-family: var(--serif); font-size: 13px; line-height: 1.95; color: var(--ink-soft); }
+/* ─── FOOTER ─── */
+.site-footer { background: var(--bg-soft); padding: 56px 24px 32px; border-top: 1px solid var(--line); }
+.site-footer-inner { max-width: 1180px; margin: 0 auto; }
+.site-footer-cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding-bottom: 36px; border-bottom: 1px solid var(--line); }
+.site-footer-col h4 { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.22em; color: var(--ink); margin-bottom: 16px; }
+.site-footer-col p, .site-footer-col a { font-family: var(--serif); font-size: 13px; line-height: 2; color: var(--ink-soft); }
 .site-footer-col ul { list-style: none; }
 .site-footer-col li { margin-bottom: 8px; }
-.site-footer-col a:hover { color: var(--accent-warm); }
-.site-footer-bottom { padding-top: 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; font-family: var(--sans); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.06em; }
+.site-footer-col a:hover { color: var(--accent); }
+.site-footer-bottom { padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; font-family: var(--sans); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.06em; }
 
 @media (max-width: 760px) {
-  .site-nav { gap: 14px; font-size: 11px; }
+  .site-nav { gap: 16px; font-size: 11px; }
   .site-brand-text small { display: none; }
-  .page-banner { padding: 44px 22px 40px; }
-  .page-banner-title { font-size: 24px; }
-  .page-banner-en { font-size: 14px; }
-  .page-banner-stats { gap: 18px; font-size: 11px; }
-  .content { padding: 40px 22px 60px; }
-  .ep-row { grid-template-columns: 40px 1fr; padding: 12px 4px; }
-  .ep-status { grid-column: 1 / -1; padding-left: 56px; text-align: left; }
+  .page-banner { padding: 56px 22px 40px; }
+  .page-banner-title { font-size: 26px; }
+  .page-banner-en { font-size: 15px; }
+  .page-stats { grid-template-columns: 1fr 1fr; gap: 18px; }
+  .series-progress { padding: 0 22px; }
+  .parts-jump { padding: 0 22px; }
+  .parts-jump-grid { grid-template-columns: 1fr 1fr; }
+  .filters { padding: 0 22px; }
+  .filter-btn { padding: 7px 14px; font-size: 10.5px; }
+  .content { padding: 28px 22px 64px; }
+  .content-intro { font-size: 14.5px; }
+  .part-title { font-size: 19px; }
+  .ep-row { grid-template-columns: 44px 1fr; padding: 14px 4px; }
+  .ep-status { grid-column: 1 / -1; padding-left: 60px; text-align: left; padding-top: 4px; }
   .nl-row { grid-template-columns: 1fr; }
   .site-footer-cols { grid-template-columns: 1fr; gap: 28px; }
 }
@@ -130,7 +170,6 @@ a:hover { color: var(--accent-warm); }
 </head>
 <body>
 
-<div class="site-header-strip"></div>
 <header class="site-header">
   <div class="site-header-inner">
     <a href="index.html" class="site-brand">
@@ -146,19 +185,75 @@ a:hover { color: var(--accent-warm); }
 </header>
 
 <section class="page-banner">
-  <img class="page-banner-mark" src="assets/miratuku-mark.png" alt="">
   <div class="page-banner-inner">
     <div class="page-banner-eyebrow">ROADMAP — 全100話の地図</div>
     <h1 class="page-banner-title">変化のかたち ― 全100話</h1>
     <p class="page-banner-en">The Complete Roadmap of One Hundred Patterns</p>
-    <div class="page-banner-stats">
-      <span><strong>100</strong>連載予定回</span>
-      <span><strong>5</strong>部</span>
-      <span><strong>15</strong>章</span>
-      <span><strong>15万字</strong>予定総文字数</span>
+    <div class="page-stats">
+      <span><strong>100<span class="stat-suffix">回</span></strong>連載予定</span>
+      <span><strong>5<span class="stat-suffix">部</span></strong>5メタ型</span>
+      <span><strong>15<span class="stat-suffix">章</span></strong>サブ型</span>
+      <span><strong>15万<span class="stat-suffix">字</span></strong>予定総量</span>
     </div>
   </div>
 </section>
+
+<div class="series-progress" aria-label="連載進捗">
+  <div class="series-progress-bar-wrap"><div class="series-progress-bar-fill" id="progressFill"></div></div>
+  <div class="series-progress-meta">
+    <span><strong id="progressNum">1</strong> / 100 公開済</span>
+    <span id="progressPct">1%</span>
+  </div>
+</div>
+
+<section class="parts-jump" aria-label="5部へクイックジャンプ">
+  <div class="parts-jump-label">FIVE FORMS — 5つのかたち</div>
+  <h2 class="parts-jump-title">部からたどる</h2>
+  <div class="parts-jump-grid">
+    <a class="part-jump-card" href="#prologue">
+      <span class="part-jump-num">00</span>
+      <span class="part-jump-name">序 章</span>
+      <span class="part-jump-sub">なぜ「かたち」で読むのか</span>
+    </a>
+    <a class="part-jump-card" href="#part-i">
+      <span class="part-jump-num">I</span>
+      <span class="part-jump-name">場のかたち</span>
+      <span class="part-jump-sub">集まりが価値を生む</span>
+    </a>
+    <a class="part-jump-card" href="#part-ii">
+      <span class="part-jump-num">II</span>
+      <span class="part-jump-name">媒介のかたち</span>
+      <span class="part-jump-sub">つなぎ手が社会を変える</span>
+    </a>
+    <a class="part-jump-card" href="#part-iii">
+      <span class="part-jump-num">III</span>
+      <span class="part-jump-name">物語のかたち</span>
+      <span class="part-jump-sub">価値はどこに宿るか</span>
+    </a>
+    <a class="part-jump-card" href="#part-iv">
+      <span class="part-jump-num">IV</span>
+      <span class="part-jump-name">支えのかたち</span>
+      <span class="part-jump-sub">見えないものが社会を支える</span>
+    </a>
+    <a class="part-jump-card" href="#part-v">
+      <span class="part-jump-num">V</span>
+      <span class="part-jump-name">開きのかたち</span>
+      <span class="part-jump-sub">特権を多くの人に開く</span>
+    </a>
+    <a class="part-jump-card" href="#final">
+      <span class="part-jump-num">∞</span>
+      <span class="part-jump-name">終 章</span>
+      <span class="part-jump-sub">これまでとこれから</span>
+    </a>
+  </div>
+</section>
+
+<div class="filters" aria-label="表示フィルタ">
+  <span class="filter-label">FILTER</span>
+  <button class="filter-btn active" data-filter="all" onclick="applyFilter('all', this)">すべて表示</button>
+  <button class="filter-btn" data-filter="published" onclick="applyFilter('published', this)">公開中のみ</button>
+  <button class="filter-btn" data-filter="upcoming" onclick="applyFilter('upcoming', this)">公開予定のみ</button>
+</div>
 
 <main class="content">
   <p class="content-intro">本連載は、序章5回、5部それぞれ18回（3章×6話）、終章5回で構成します。15章はそれぞれ、5つのかたちのサブパターンに対応します。下のリストから読みたい話に進んでください（順次公開中）。</p>
@@ -167,11 +262,11 @@ a:hover { color: var(--accent-warm); }
     <div class="part-eyebrow">PROLOGUE</div>
     <h2 class="part-title">序 章 ― なぜ「かたち」で読むのか</h2>
     <ul class="ep-list">
-      <li class="ep-row" id="ep001"><span class="ep-num">001</span><span class="ep-title"><a href="ep001.html">なぜいま「型」でソーシャルイノベーションを読むのか</a></span><span class="ep-status published">公開中</span></li>
-      <li class="ep-row" id="ep002"><span class="ep-num">002</span><span class="ep-title">「つくる」と「生まれる」― 創発の系譜</span><span class="ep-status">予定</span></li>
-      <li class="ep-row" id="ep003"><span class="ep-num">003</span><span class="ep-title">文脈と新結合 ― シュンペーターの種</span><span class="ep-status">予定</span></li>
-      <li class="ep-row" id="ep004"><span class="ep-num">004</span><span class="ep-title">見えないものへの投資 ― 公共性の思想史</span><span class="ep-status">予定</span></li>
-      <li class="ep-row" id="ep005"><span class="ep-num">005</span><span class="ep-title">これからの旅の地図</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" id="ep001" data-status="published"><span class="ep-num">001</span><span class="ep-title"><a href="ep001.html">なぜいま「型」でソーシャルイノベーションを読むのか</a></span><span class="ep-status published">公開中</span></li>
+      <li class="ep-row" id="ep002" data-status="upcoming"><span class="ep-num">002</span><span class="ep-title">「つくる」と「生まれる」― 創発の系譜</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" id="ep003" data-status="upcoming"><span class="ep-num">003</span><span class="ep-title">文脈と新結合 ― シュンペーターの種</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" id="ep004" data-status="upcoming"><span class="ep-num">004</span><span class="ep-title">見えないものへの投資 ― 公共性の思想史</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" id="ep005" data-status="upcoming"><span class="ep-num">005</span><span class="ep-title">これからの旅の地図</span><span class="ep-status">予定</span></li>
     </ul>
   </div>
 
@@ -180,30 +275,30 @@ a:hover { color: var(--accent-warm); }
     <h2 class="part-title">場のかたち ― 集まりが価値を生む</h2>
     <h3 class="chap-title">第1章　自発交流 ― 強制せず、生まれる場</h3>
     <ul class="ep-list">
-      <li class="ep-row"><span class="ep-num">006</span><span class="ep-title">アゴラから第三の場へ ― 集会の人類史</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">007</span><span class="ep-title">コーヒーハウスと啓蒙 ― 知識の流通装置</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">008</span><span class="ep-title">サードプレイスの社会学 ― オルデンバーグ再読</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">009</span><span class="ep-title">茶室の哲学 ― 一期一会と場の凝縮</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">010</span><span class="ep-title">銭湯と公共性 ― 日本的な開きの場</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">011</span><span class="ep-title">自発交流のかたち ― 第1章のまとめ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">006</span><span class="ep-title">アゴラから第三の場へ ― 集会の人類史</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">007</span><span class="ep-title">コーヒーハウスと啓蒙 ― 知識の流通装置</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">008</span><span class="ep-title">サードプレイスの社会学 ― オルデンバーグ再読</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">009</span><span class="ep-title">茶室の哲学 ― 一期一会と場の凝縮</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">010</span><span class="ep-title">銭湯と公共性 ― 日本的な開きの場</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">011</span><span class="ep-title">自発交流のかたち ― 第1章のまとめ</span><span class="ep-status">予定</span></li>
     </ul>
     <h3 class="chap-title">第2章　越境出会い ― 境界を渡る装置</h3>
     <ul class="ep-list">
-      <li class="ep-row"><span class="ep-num">012</span><span class="ep-title">通過儀礼の文化人類学 ― ファン・ヘネップから</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">013</span><span class="ep-title">留学の系譜 ― 巡礼から現代の越境へ</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">014</span><span class="ep-title">大学キャンパスの偶然 ― 出会いの装置</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">015</span><span class="ep-title">オンラインの越境 ― DiscordからGitHubへ</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">016</span><span class="ep-title">フェスと祭りのなかの越境</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">017</span><span class="ep-title">越境のかたち ― 第2章のまとめ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">012</span><span class="ep-title">通過儀礼の文化人類学 ― ファン・ヘネップから</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">013</span><span class="ep-title">留学の系譜 ― 巡礼から現代の越境へ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">014</span><span class="ep-title">大学キャンパスの偶然 ― 出会いの装置</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">015</span><span class="ep-title">オンラインの越境 ― DiscordからGitHubへ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">016</span><span class="ep-title">フェスと祭りのなかの越境</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">017</span><span class="ep-title">越境のかたち ― 第2章のまとめ</span><span class="ep-status">予定</span></li>
     </ul>
     <h3 class="chap-title">第3章　余白確保 ― 何かのためでない時間と空間</h3>
     <ul class="ep-list">
-      <li class="ep-row"><span class="ep-num">018</span><span class="ep-title">余暇の発明 ― 労働時間短縮の系譜</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">019</span><span class="ep-title">公園というユートピア ― オルムステッドの仕事</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">020</span><span class="ep-title">余白の経営学 ― DeMarcoのスラック</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">021</span><span class="ep-title">詩学と休符 ― 西脇順三郎の余韻</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">022</span><span class="ep-title">デフォルト・モード・ネットワーク ― 脳の余白</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">023</span><span class="ep-title">余白のかたち ― 第3章のまとめ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">018</span><span class="ep-title">余暇の発明 ― 労働時間短縮の系譜</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">019</span><span class="ep-title">公園というユートピア ― オルムステッドの仕事</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">020</span><span class="ep-title">余白の経営学 ― DeMarcoのスラック</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">021</span><span class="ep-title">詩学と休符 ― 西脇順三郎の余韻</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">022</span><span class="ep-title">デフォルト・モード・ネットワーク ― 脳の余白</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">023</span><span class="ep-title">余白のかたち ― 第3章のまとめ</span><span class="ep-status">予定</span></li>
     </ul>
   </div>
 
@@ -212,30 +307,30 @@ a:hover { color: var(--accent-warm); }
     <h2 class="part-title">媒介のかたち ― つなぎ手が社会を変える</h2>
     <h3 class="chap-title">第4章　市民専門家 ― 専門と日常の架け橋</h3>
     <ul class="ep-list">
-      <li class="ep-row"><span class="ep-num">024</span><span class="ep-title">媒介者の人類史 ― ヘルメスから現代のキュレーターへ</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">025</span><span class="ep-title">産婆の系譜 ― 古代から現代のドゥーラ概念へ</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">026</span><span class="ep-title">市民科学の100年 ― シチズンサイエンスの系譜</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">027</span><span class="ep-title">自助グループ運動 ― AAから現代へ</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">028</span><span class="ep-title">ピアサポートの倫理</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">029</span><span class="ep-title">市民専門家のかたち ― 第4章のまとめ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">024</span><span class="ep-title">媒介者の人類史 ― ヘルメスから現代のキュレーターへ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">025</span><span class="ep-title">産婆の系譜 ― 古代から現代のドゥーラ概念へ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">026</span><span class="ep-title">市民科学の100年 ― シチズンサイエンスの系譜</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">027</span><span class="ep-title">自助グループ運動 ― AAから現代へ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">028</span><span class="ep-title">ピアサポートの倫理</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">029</span><span class="ep-title">市民専門家のかたち ― 第4章のまとめ</span><span class="ep-status">予定</span></li>
     </ul>
     <h3 class="chap-title">第5章　中間支援 ― 支援を支援する</h3>
     <ul class="ep-list">
-      <li class="ep-row"><span class="ep-num">030</span><span class="ep-title">中間支援の系譜 ― 産業組合からNPO中間支援へ</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">031</span><span class="ep-title">賀川豊彦と日本の協同組合運動</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">032</span><span class="ep-title">ストラクチャル・ホール理論 ― バートの構造的空隙</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">033</span><span class="ep-title">弱い紐帯の強さ ― グラノヴェッターの衝撃</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">034</span><span class="ep-title">プラットフォーム経営論 ― 媒介者のビジネスモデル</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">035</span><span class="ep-title">中間支援のかたち ― 第5章のまとめ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">030</span><span class="ep-title">中間支援の系譜 ― 産業組合からNPO中間支援へ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">031</span><span class="ep-title">賀川豊彦と日本の協同組合運動</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">032</span><span class="ep-title">ストラクチャル・ホール理論 ― バートの構造的空隙</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">033</span><span class="ep-title">弱い紐帯の強さ ― グラノヴェッターの衝撃</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">034</span><span class="ep-title">プラットフォーム経営論 ― 媒介者のビジネスモデル</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">035</span><span class="ep-title">中間支援のかたち ― 第5章のまとめ</span><span class="ep-status">予定</span></li>
     </ul>
     <h3 class="chap-title">第6章　学問領域創出 ― 媒介者を再生産する</h3>
     <ul class="ep-list">
-      <li class="ep-row"><span class="ep-num">036</span><span class="ep-title">ナイチンゲールと看護学の創出</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">037</span><span class="ep-title">社会福祉学の誕生 ― リッチモンドの仕事</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">038</span><span class="ep-title">専門家批判の社会学 ― イリイチからフレイレへ</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">039</span><span class="ep-title">実践共同体（CoP）― ウェンガーとレイヴ</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">040</span><span class="ep-title">デザイン思考の制度化</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">041</span><span class="ep-title">学問領域創出のかたち ― 第6章のまとめ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">036</span><span class="ep-title">ナイチンゲールと看護学の創出</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">037</span><span class="ep-title">社会福祉学の誕生 ― リッチモンドの仕事</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">038</span><span class="ep-title">専門家批判の社会学 ― イリイチからフレイレへ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">039</span><span class="ep-title">実践共同体（CoP）― ウェンガーとレイヴ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">040</span><span class="ep-title">デザイン思考の制度化</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">041</span><span class="ep-title">学問領域創出のかたち ― 第6章のまとめ</span><span class="ep-status">予定</span></li>
     </ul>
   </div>
 
@@ -244,30 +339,30 @@ a:hover { color: var(--accent-warm); }
     <h2 class="part-title">物語のかたち ― 価値はどこに宿るか</h2>
     <h3 class="chap-title">第7章　物語付加 ― 物語が価値を立ち上げる</h3>
     <ul class="ep-list">
-      <li class="ep-row"><span class="ep-num">042</span><span class="ep-title">物語経済学 ― ロバート・シラーの挑戦</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">043</span><span class="ep-title">ナラティブ・アイデンティティ ― リクールの自己論</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">044</span><span class="ep-title">ブランド・ナラティブの経営学</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">045</span><span class="ep-title">神話と原型 ― キャンベルの英雄の旅</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">046</span><span class="ep-title">ナラティブ・ベースド・メディスン</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">047</span><span class="ep-title">物語付加のかたち ― 第7章のまとめ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">042</span><span class="ep-title">物語経済学 ― ロバート・シラーの挑戦</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">043</span><span class="ep-title">ナラティブ・アイデンティティ ― リクールの自己論</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">044</span><span class="ep-title">ブランド・ナラティブの経営学</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">045</span><span class="ep-title">神話と原型 ― キャンベルの英雄の旅</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">046</span><span class="ep-title">ナラティブ・ベースド・メディスン</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">047</span><span class="ep-title">物語付加のかたち ― 第7章のまとめ</span><span class="ep-status">予定</span></li>
     </ul>
     <h3 class="chap-title">第8章　文脈再結合 ― 古いものに新しい意味を</h3>
     <ul class="ep-list">
-      <li class="ep-row"><span class="ep-num">048</span><span class="ep-title">価値論の系譜 ― 効用説から関係説へ</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">049</span><span class="ep-title">シュンペーターの新結合再読</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">050</span><span class="ep-title">伝統の発明 ― ホブズボームの反転</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">051</span><span class="ep-title">ローカルナレッジ ― ギアツの厚い記述</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">052</span><span class="ep-title">ハイデガー的「物（Ding）」と意味の起こり</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">053</span><span class="ep-title">文脈再結合のかたち ― 第8章のまとめ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">048</span><span class="ep-title">価値論の系譜 ― 効用説から関係説へ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">049</span><span class="ep-title">シュンペーターの新結合再読</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">050</span><span class="ep-title">伝統の発明 ― ホブズボームの反転</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">051</span><span class="ep-title">ローカルナレッジ ― ギアツの厚い記述</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">052</span><span class="ep-title">ハイデガー的「物（Ding）」と意味の起こり</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">053</span><span class="ep-title">文脈再結合のかたち ― 第8章のまとめ</span><span class="ep-status">予定</span></li>
     </ul>
     <h3 class="chap-title">第9章　当事者主体回復 ― 受け手を主体に戻す</h3>
     <ul class="ep-list">
-      <li class="ep-row"><span class="ep-num">054</span><span class="ep-title">当事者運動の系譜 ― 障害学から</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">055</span><span class="ep-title">ケアの倫理 ― ギリガンとノディングズ</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">056</span><span class="ep-title">文化盗用と文化転用 ― 価値の正当性</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">057</span><span class="ep-title">反専門家としての当事者</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">058</span><span class="ep-title">自己決定権の哲学</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">059</span><span class="ep-title">当事者主体回復のかたち ― 第9章のまとめ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">054</span><span class="ep-title">当事者運動の系譜 ― 障害学から</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">055</span><span class="ep-title">ケアの倫理 ― ギリガンとノディングズ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">056</span><span class="ep-title">文化盗用と文化転用 ― 価値の正当性</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">057</span><span class="ep-title">反専門家としての当事者</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">058</span><span class="ep-title">自己決定権の哲学</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">059</span><span class="ep-title">当事者主体回復のかたち ― 第9章のまとめ</span><span class="ep-status">予定</span></li>
     </ul>
   </div>
 
@@ -276,30 +371,30 @@ a:hover { color: var(--accent-warm); }
     <h2 class="part-title">支えのかたち ― 見えないものが社会を支える</h2>
     <h3 class="chap-title">第10章　規格・標準化 ― 共通の物差し</h3>
     <ul class="ep-list">
-      <li class="ep-row"><span class="ep-num">060</span><span class="ep-title">規格戦争の経済史 ― QWERTYからUSB-Cまで</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">061</span><span class="ep-title">経路依存性とロックイン ― ポール・デイヴィッド</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">062</span><span class="ep-title">メートル法の革命 ― 計量の標準化</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">063</span><span class="ep-title">万国博覧会と標準化</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">064</span><span class="ep-title">ISO規格の人類学</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">065</span><span class="ep-title">規格・標準化のかたち ― 第10章のまとめ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">060</span><span class="ep-title">規格戦争の経済史 ― QWERTYからUSB-Cまで</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">061</span><span class="ep-title">経路依存性とロックイン ― ポール・デイヴィッド</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">062</span><span class="ep-title">メートル法の革命 ― 計量の標準化</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">063</span><span class="ep-title">万国博覧会と標準化</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">064</span><span class="ep-title">ISO規格の人類学</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">065</span><span class="ep-title">規格・標準化のかたち ― 第10章のまとめ</span><span class="ep-status">予定</span></li>
     </ul>
     <h3 class="chap-title">第11章　見えないインフラ ― 地味な土台が世界を支える</h3>
     <ul class="ep-list">
-      <li class="ep-row"><span class="ep-num">066</span><span class="ep-title">インフラの哲学 ― スーザン・リー・スター</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">067</span><span class="ep-title">公共財の経済学 ― オストロムのコモンズ論</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">068</span><span class="ep-title">上下水道の文明史</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">069</span><span class="ep-title">電力網の倫理学</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">070</span><span class="ep-title">インターネットというコモンズ</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">071</span><span class="ep-title">見えないインフラのかたち ― 第11章のまとめ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">066</span><span class="ep-title">インフラの哲学 ― スーザン・リー・スター</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">067</span><span class="ep-title">公共財の経済学 ― オストロムのコモンズ論</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">068</span><span class="ep-title">上下水道の文明史</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">069</span><span class="ep-title">電力網の倫理学</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">070</span><span class="ep-title">インターネットというコモンズ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">071</span><span class="ep-title">見えないインフラのかたち ― 第11章のまとめ</span><span class="ep-status">予定</span></li>
     </ul>
     <h3 class="chap-title">第12章　編集・並列化 ― 並べることで意味が立ち上がる</h3>
     <ul class="ep-list">
-      <li class="ep-row"><span class="ep-num">072</span><span class="ep-title">メディア論の系譜 ― イニス、マクルーハン</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">073</span><span class="ep-title">編集の人類学 ― 並列化とは何か</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">074</span><span class="ep-title">図書館分類法の歴史</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">075</span><span class="ep-title">都市計画の系譜 ― ハワードからコールハースへ</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">076</span><span class="ep-title">データベースとアルゴリズム</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">077</span><span class="ep-title">編集・並列化のかたち ― 第12章のまとめ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">072</span><span class="ep-title">メディア論の系譜 ― イニス、マクルーハン</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">073</span><span class="ep-title">編集の人類学 ― 並列化とは何か</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">074</span><span class="ep-title">図書館分類法の歴史</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">075</span><span class="ep-title">都市計画の系譜 ― ハワードからコールハースへ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">076</span><span class="ep-title">データベースとアルゴリズム</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">077</span><span class="ep-title">編集・並列化のかたち ― 第12章のまとめ</span><span class="ep-status">予定</span></li>
     </ul>
   </div>
 
@@ -308,30 +403,30 @@ a:hover { color: var(--accent-warm); }
     <h2 class="part-title">開きのかたち ― 特権を多くの人に開く</h2>
     <h3 class="chap-title">第13章　複製・伝達 ― 複製可能なかたちにする</h3>
     <ul class="ep-list">
-      <li class="ep-row"><span class="ep-num">078</span><span class="ep-title">活版印刷とグーテンベルク</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">079</span><span class="ep-title">複製技術時代 ― ベンヤミンと現代</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">080</span><span class="ep-title">オープンソース運動の哲学</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">081</span><span class="ep-title">クリエイティブ・コモンズの思想</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">082</span><span class="ep-title">オラリティとリテラシー ― オングの系譜</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">083</span><span class="ep-title">複製・伝達のかたち ― 第13章のまとめ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">078</span><span class="ep-title">活版印刷とグーテンベルク</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">079</span><span class="ep-title">複製技術時代 ― ベンヤミンと現代</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">080</span><span class="ep-title">オープンソース運動の哲学</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">081</span><span class="ep-title">クリエイティブ・コモンズの思想</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">082</span><span class="ep-title">オラリティとリテラシー ― オングの系譜</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">083</span><span class="ep-title">複製・伝達のかたち ― 第13章のまとめ</span><span class="ep-status">予定</span></li>
     </ul>
     <h3 class="chap-title">第14章　大衆化技術 ― 特権を全員に開く</h3>
     <ul class="ep-list">
-      <li class="ep-row"><span class="ep-num">084</span><span class="ep-title">フォードと自動車の大衆化</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">085</span><span class="ep-title">民主化テクノロジーの系譜</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">086</span><span class="ep-title">ユニバーサルデザインの思想 ― ロン・メイス</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">087</span><span class="ep-title">アクセシビリティと包摂の倫理</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">088</span><span class="ep-title">シェアエコノミーの経営史</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">089</span><span class="ep-title">大衆化技術のかたち ― 第14章のまとめ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">084</span><span class="ep-title">フォードと自動車の大衆化</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">085</span><span class="ep-title">民主化テクノロジーの系譜</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">086</span><span class="ep-title">ユニバーサルデザインの思想 ― ロン・メイス</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">087</span><span class="ep-title">アクセシビリティと包摂の倫理</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">088</span><span class="ep-title">シェアエコノミーの経営史</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">089</span><span class="ep-title">大衆化技術のかたち ― 第14章のまとめ</span><span class="ep-status">予定</span></li>
     </ul>
     <h3 class="chap-title">第15章　可視化メディア ― 見えなかったものを見せる</h3>
     <ul class="ep-list">
-      <li class="ep-row"><span class="ep-num">090</span><span class="ep-title">可視化メディアの倫理 ― ソンタグから</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">091</span><span class="ep-title">報道写真の系譜 ― キャパからの100年</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">092</span><span class="ep-title">ジャーナリズムと社会変容</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">093</span><span class="ep-title">データジャーナリズムの登場</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">094</span><span class="ep-title">アクティビストとしての映像</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">095</span><span class="ep-title">可視化メディアのかたち ― 第15章のまとめ</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">090</span><span class="ep-title">可視化メディアの倫理 ― ソンタグから</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">091</span><span class="ep-title">報道写真の系譜 ― キャパからの100年</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">092</span><span class="ep-title">ジャーナリズムと社会変容</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">093</span><span class="ep-title">データジャーナリズムの登場</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">094</span><span class="ep-title">アクティビストとしての映像</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">095</span><span class="ep-title">可視化メディアのかたち ― 第15章のまとめ</span><span class="ep-status">予定</span></li>
     </ul>
   </div>
 
@@ -339,11 +434,11 @@ a:hover { color: var(--accent-warm); }
     <div class="part-eyebrow">FINAL</div>
     <h2 class="part-title">終 章 ― これまでとこれから</h2>
     <ul class="ep-list">
-      <li class="ep-row"><span class="ep-num">096</span><span class="ep-title">5つの「かたち」を編み直す ― 統合的視座</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">097</span><span class="ep-title">3つの底流が指し示す未来</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">098</span><span class="ep-title">フォーサイトと型 ― 未来は「つくる」もの</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">099</span><span class="ep-title">教養としてのソーシャルイノベーション</span><span class="ep-status">予定</span></li>
-      <li class="ep-row"><span class="ep-num">100</span><span class="ep-title">変化のかたち ― 連載を閉じて</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">096</span><span class="ep-title">5つの「かたち」を編み直す ― 統合的視座</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">097</span><span class="ep-title">3底流が指し示す未来</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">098</span><span class="ep-title">フォーサイトと型 ― 未来は「つくる」もの</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">099</span><span class="ep-title">教養としてのソーシャルイノベーション</span><span class="ep-status">予定</span></li>
+      <li class="ep-row" data-status="upcoming"><span class="ep-num">100</span><span class="ep-title">変化のかたち ― 連載を閉じて</span><span class="ep-status">予定</span></li>
     </ul>
   </div>
 </main>
@@ -406,10 +501,38 @@ a:hover { color: var(--accent-warm); }
 
 <script>
 const NEWSLETTER_API = 'https://claude-code-manual-app.vercel.app/api/community';
+
+/* ─── 進捗バー ─── */
+(function() {
+  const rows = document.querySelectorAll('.ep-row');
+  const total = rows.length;
+  let published = 0;
+  rows.forEach(r => { if (r.dataset.status === 'published') published++; });
+  const pct = Math.round((published / total) * 100);
+  const fill = document.getElementById('progressFill');
+  const num = document.getElementById('progressNum');
+  const pctEl = document.getElementById('progressPct');
+  if (fill) fill.style.width = Math.max(1, pct) + '%';
+  if (num) num.textContent = published;
+  if (pctEl) pctEl.textContent = pct + '%';
+})();
+
+/* ─── フィルタ ─── */
+function applyFilter(filter, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.ep-row').forEach(r => {
+    if (filter === 'all') r.classList.remove('hidden');
+    else if (filter === 'published') r.classList.toggle('hidden', r.dataset.status !== 'published');
+    else if (filter === 'upcoming') r.classList.toggle('hidden', r.dataset.status !== 'upcoming');
+  });
+}
+
+/* ─── メルマガ ─── */
 function nlNext() {
   const v = document.getElementById('nlEmail').value.trim();
   if (!v || !v.includes('@')) {
-    document.getElementById('nlEmail').style.borderColor = 'var(--accent-peach)';
+    document.getElementById('nlEmail').style.borderColor = 'var(--accent)';
     document.getElementById('nlEmail').focus();
     setTimeout(() => document.getElementById('nlEmail').style.borderColor = '', 2000);
     return;
