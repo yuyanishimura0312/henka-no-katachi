@@ -22,8 +22,8 @@
   --bg-tint:      #25221F;
   --ink:          #FFFFFF;
   --ink-soft:     #D8D5D1;
-  --ink-mute:     #8E8A86;
-  --ink-faint:    #5C5854;
+  --ink-mute:     #A6A29D;
+  --ink-faint:    #7A7672;
   --accent:       #FF3644;
   --accent-deep:  #FF5560;
   --accent-soft:  rgba(255, 54, 68, 0.10);
@@ -48,6 +48,11 @@ body {
 }
 a { color: var(--accent); text-decoration: none; transition: color .15s; }
 a:hover { color: var(--accent-deep); }
+
+/* ─── FOCUS VISIBLE（キーボード操作時のみ） ─── */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.btn-primary:focus-visible, .nl-btn:focus-visible, .ep-action-btn:focus-visible, .feedback-submit:focus-visible { outline-offset: 4px; }
+.reading-lens-trigger:focus-visible { background: var(--bg-soft); outline-offset: -2px; }
 
 .read-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; background: transparent; z-index: 200; pointer-events: none; }
 .read-progress-bar { height: 100%; width: 0%; background: var(--accent); transition: width .1s linear; }
@@ -206,6 +211,8 @@ a:hover { color: var(--accent-deep); }
 /* MOBILE TOC */
 .toc-fab { display: none; position: fixed; bottom: 88px; right: 24px; z-index: 80; width: 52px; height: 52px; border-radius: 50%; background: var(--ink); color: var(--bg); border: none; cursor: pointer; font-family: var(--sans); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; box-shadow: 0 4px 16px rgba(20, 17, 15, 0.28); transition: background .15s, transform .15s; }
 .toc-fab:hover { background: var(--accent); transform: translateY(-2px); }
+.toc-overlay { display: none; position: fixed; inset: 0; z-index: 89; background: rgba(0, 0, 0, 0.55); }
+.toc-drawer.show ~ .toc-overlay, .toc-overlay.show { display: block; }
 .toc-drawer { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; background: var(--bg); border-top: 4px solid var(--accent); padding: 32px 24px 36px; max-height: 80vh; overflow-y: auto; box-shadow: 0 -8px 32px rgba(20, 17, 15, 0.18); transform: translateY(100%); transition: transform .25s ease; }
 .toc-drawer.show { display: block; transform: translateY(0); }
 .toc-drawer-close { position: absolute; top: 14px; right: 14px; background: transparent; border: none; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: var(--ink-mute); cursor: pointer; padding: 6px 10px; }
@@ -218,7 +225,8 @@ a:hover { color: var(--accent-deep); }
   .toc-fab { display: flex; align-items: center; justify-content: center; }
 }
 @media (max-width: 760px) {
-  .site-nav { gap: 16px; font-size: 11px; }
+  .site-nav { gap: 8px; font-size: 11px; }
+  .site-nav a { padding: 12px 8px; min-height: 44px; display: flex; align-items: center; }
   .site-brand-text small { display: none; }
   .ep-hero { padding: 56px 22px 48px; }
   .ep-hero-num { font-size: 60px; }
@@ -513,7 +521,8 @@ a:hover { color: var(--accent-deep); }
 </footer>
 
 <button class="toc-fab" id="tocFab" onclick="toggleTocDrawer()" aria-label="目次を開く">目次</button>
-<div class="toc-drawer" id="tocDrawer" role="dialog" aria-label="連載目次">
+<div class="toc-overlay" id="tocOverlay" onclick="toggleTocDrawer()" aria-hidden="true"></div>
+<div class="toc-drawer" id="tocDrawer" role="dialog" aria-label="連載目次" aria-modal="true">
   <button class="toc-drawer-close" onclick="toggleTocDrawer()" aria-label="閉じる">閉じる</button>
   <div class="toc-label">FULL SERIES — 全100話</div>
   <div class="toc-section">
@@ -579,8 +588,20 @@ const EPISODE_TITLE = '第1話 ― なぜいま「型」でソーシャルイノ
 
 function toggleTocDrawer() {
   const d = document.getElementById('tocDrawer');
-  if (d) d.classList.toggle('show');
+  if (!d) return;
+  const willOpen = !d.classList.contains('show');
+  d.classList.toggle('show');
+  document.body.style.overflow = willOpen ? 'hidden' : '';
+  document.getElementById('tocOverlay')?.classList.toggle('show', willOpen);
+  if (willOpen) {
+    d.querySelector('.toc-drawer-close')?.focus();
+    document.addEventListener('keydown', _tocEsc);
+  } else {
+    document.removeEventListener('keydown', _tocEsc);
+    document.getElementById('tocFab')?.focus();
+  }
 }
+function _tocEsc(e) { if (e.key === 'Escape') toggleTocDrawer(); }
 
 async function submitFeedback() {
   const suggestion = document.getElementById('fbSuggestion').value.trim();

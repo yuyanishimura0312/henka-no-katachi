@@ -21,8 +21,8 @@
   --bg-tint:      #25221F;
   --ink:          #FFFFFF;
   --ink-soft:     #D8D5D1;
-  --ink-mute:     #8E8A86;
-  --ink-faint:    #5C5854;
+  --ink-mute:     #A6A29D;
+  --ink-faint:    #7A7672;
   --accent:       #FF3644;
   --accent-deep:  #FF5560;
   --accent-soft:  rgba(255, 54, 68, 0.10);
@@ -39,6 +39,9 @@ html { font-size: 16px; scroll-behavior: smooth; }
 body { font-family: var(--serif); background: var(--bg); color: var(--ink); line-height: 1.95; letter-spacing: 0.02em; font-feature-settings: "palt"; -webkit-font-smoothing: antialiased; }
 a { color: var(--accent); text-decoration: none; transition: color .15s; }
 a:hover { color: var(--accent-deep); }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.filter-btn:focus-visible, .part-jump-card:focus-visible, .nl-btn:focus-visible { outline-offset: 4px; }
 
 /* ─── HEADER ─── */
 .site-header { position: sticky; top: 0; z-index: 100; background: rgba(20, 17, 15, 0.92); backdrop-filter: saturate(160%) blur(10px); -webkit-backdrop-filter: saturate(160%) blur(10px); border-bottom: 1px solid var(--line); }
@@ -87,7 +90,7 @@ a:hover { color: var(--accent-deep); }
 /* ─── FILTER ─── */
 .filters { max-width: 1080px; margin: 56px auto 0; padding: 0 24px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 .filter-label { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.18em; color: var(--ink-mute); margin-right: 4px; }
-.filter-btn { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; padding: 8px 18px; border: 1px solid var(--line); background: var(--bg); color: var(--ink-soft); cursor: pointer; transition: background .15s, color .15s, border-color .15s; }
+.filter-btn { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; padding: 12px 18px; min-height: 44px; border: 1px solid var(--line); background: var(--bg); color: var(--ink-soft); cursor: pointer; transition: background .15s, color .15s, border-color .15s; }
 .filter-btn:hover { border-color: var(--ink); color: var(--ink); }
 .filter-btn.active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
 
@@ -147,7 +150,8 @@ a:hover { color: var(--accent-deep); }
 .site-footer-bottom { padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; font-family: var(--sans); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.06em; }
 
 @media (max-width: 760px) {
-  .site-nav { gap: 16px; font-size: 11px; }
+  .site-nav { gap: 8px; font-size: 11px; }
+  .site-nav a { padding: 12px 8px; min-height: 44px; display: flex; align-items: center; }
   .site-brand-text small { display: none; }
   .page-banner { padding: 56px 22px 40px; }
   .page-banner-title { font-size: 26px; }
