@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>付録 ― 用語集 | 変化のかたち</title>
+<meta name="description" content="連載「変化のかたち」全100話で用いた主要概念の用語集。5メタ型・15サブ型・3底流の厳密定義に加え、弱い紐帯・コモンズ・厚い記述・記憶の場・経路依存性など重要学術概念15点の定義を、対応話とともに収録。">
+<meta property="og:title" content="付録 ― 用語集 | 変化のかたち">
+<meta property="og:description" content="連載「変化のかたち」全100話で用いた主要概念の用語集。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yuyanishimura0312.github.io/henka-no-katachi/appendix-glossary.html">
+<link rel="canonical" href="https://yuyanishimura0312.github.io/henka-no-katachi/appendix-glossary.html">
+<link rel="icon" href="https://esse-sense.com/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@300;400;500;600;700;900&family=Judson:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:           #14110F;
+  --bg-soft:      #1E1B19;
+  --bg-tint:      #25221F;
+  --ink:          #FFFFFF;
+  --ink-soft:     #D8D5D1;
+  --ink-mute:     #A6A29D;
+  --ink-faint:    #7A7672;
+  --accent:       #FF3644;
+  --accent-deep:  #FF5560;
+  --accent-soft:  rgba(255, 54, 68, 0.10);
+  --line:         #2D2A27;
+  --line-soft:    #1F1D1B;
+  --serif:   "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "Plantin MT Pro", Georgia, serif;
+  --sans:    "Noto Sans JP", "Hiragino Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --display: "Judson", "Noto Serif JP", Georgia, serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body { font-family: var(--serif); background: var(--bg); color: var(--ink); line-height: 1.95; letter-spacing: 0.02em; font-feature-settings: "palt"; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; transition: color .15s; }
+a:hover { color: var(--accent-deep); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+/* HEADER */
+.site-header { position: sticky; top: 0; z-index: 100; background: rgba(20, 17, 15, 0.92); backdrop-filter: saturate(160%) blur(10px); -webkit-backdrop-filter: saturate(160%) blur(10px); border-bottom: 1px solid var(--line); }
+.site-header-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.site-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.site-brand-mark { width: 30px; height: 30px; flex-shrink: 0; }
+.site-brand-mark img { width: 100%; height: auto; display: block; }
+.site-brand-text { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--ink); line-height: 1.3; }
+.site-brand-text small { display: block; font-size: 9.5px; letter-spacing: 0.14em; color: var(--ink-mute); font-weight: 500; margin-top: 2px; }
+.site-nav { display: flex; gap: 28px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.1em; }
+.site-nav a { color: var(--ink-soft); font-weight: 500; padding: 6px 0; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s; }
+.site-nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.site-nav a.active { color: var(--ink); border-bottom-color: var(--ink); }
+
+/* BANNER */
+.page-banner { background: var(--bg); color: var(--ink); padding: 80px 24px 56px; border-bottom: 1px solid var(--line); }
+.page-banner-inner { max-width: 1080px; margin: 0 auto; }
+.page-banner-eyebrow { font-family: var(--sans); font-size: 11px; letter-spacing: 0.32em; color: var(--accent); font-weight: 700; display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+.page-banner-eyebrow::before { content: ""; width: 32px; height: 2px; background: var(--accent); }
+.page-banner-title { font-family: var(--serif); font-weight: 700; font-size: 38px; line-height: 1.45; letter-spacing: 0.04em; color: var(--ink); margin-bottom: 14px; }
+.page-banner-en { font-family: var(--display); font-weight: 400; font-size: 19px; color: var(--ink-mute); letter-spacing: 0.02em; margin-bottom: 28px; }
+.page-banner-desc { font-family: var(--serif); font-size: 15px; line-height: 2; color: var(--ink-soft); max-width: 720px; letter-spacing: 0.04em; }
+
+/* SUBNAV */
+.app-subnav { background: var(--bg-soft); border-bottom: 1px solid var(--line); }
+.app-subnav-inner { max-width: 1080px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.app-subnav-label { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.22em; color: var(--ink-mute); margin-right: 8px; }
+.app-subnav a { font-family: var(--sans); font-size: 11px; font-weight: 500; letter-spacing: 0.1em; padding: 8px 14px; border: 1px solid var(--line); color: var(--ink-soft); transition: border-color .15s, color .15s, background .15s; }
+.app-subnav a:hover { border-color: var(--accent); color: var(--accent); }
+.app-subnav a.active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.app-subnav .back-link { color: var(--ink-mute); border: none; padding: 8px 0; }
+.app-subnav .back-link:hover { color: var(--accent); }
+
+/* CONTENT */
+.content { max-width: 1080px; margin: 0 auto; padding: 56px 24px 80px; }
+.content > section { margin-bottom: 80px; }
+.section-eyebrow { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.28em; color: var(--accent); margin-bottom: 10px; }
+.section-title { font-family: var(--serif); font-weight: 700; font-size: 24px; line-height: 1.5; letter-spacing: 0.04em; color: var(--ink); border-bottom: 2px solid var(--ink); padding-bottom: 14px; margin-bottom: 24px; }
+.section-lead { font-family: var(--serif); font-size: 15px; line-height: 2; color: var(--ink-soft); letter-spacing: 0.04em; margin-bottom: 32px; max-width: 880px; }
+
+/* TERM ENTRIES */
+.term-list { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--line); }
+.term { padding: 26px 0 24px; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 220px 1fr; gap: 32px; align-items: start; }
+.term-name { font-family: var(--serif); font-weight: 700; font-size: 17px; color: var(--ink); letter-spacing: 0.04em; line-height: 1.5; }
+.term-name .en { display: block; font-family: var(--display); font-weight: 400; font-size: 13px; color: var(--ink-mute); margin-top: 4px; letter-spacing: 0.02em; }
+.term-body { font-family: var(--serif); font-size: 14.5px; line-height: 2; color: var(--ink-soft); letter-spacing: 0.04em; }
+.term-body p { text-indent: 1em; }
+.term-body p:first-child { text-indent: 0; }
+.term-ref { font-family: var(--sans); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.1em; margin-top: 12px; padding-top: 10px; border-top: 1px dotted var(--line); }
+.term-ref strong { font-family: var(--sans); font-weight: 700; color: var(--ink); margin-right: 8px; }
+.term-ref a { font-family: var(--display); font-weight: 700; color: var(--accent); margin: 0 4px; }
+.term-ref a:hover { color: var(--accent-deep); }
+
+/* TOC for terms */
+.term-toc { background: var(--bg-soft); border: 1px solid var(--line); padding: 24px 22px; margin-bottom: 32px; }
+.term-toc h3 { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.22em; color: var(--ink); margin-bottom: 14px; }
+.term-toc ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px 16px; }
+.term-toc li { font-family: var(--serif); font-size: 13.5px; }
+.term-toc a { color: var(--ink-soft); border-bottom: 1px dotted var(--line); padding-bottom: 1px; }
+.term-toc a:hover { color: var(--accent); border-color: var(--accent); }
+
+/* FOOTER */
+.site-footer { background: var(--bg-soft); padding: 56px 24px 32px; border-top: 1px solid var(--line); }
+.site-footer-inner { max-width: 1180px; margin: 0 auto; }
+.site-footer-cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding-bottom: 36px; border-bottom: 1px solid var(--line); }
+.site-footer-col h4 { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.22em; color: var(--ink); margin-bottom: 16px; }
+.site-footer-col p, .site-footer-col a { font-family: var(--serif); font-size: 13px; line-height: 2; color: var(--ink-soft); }
+.site-footer-col ul { list-style: none; }
+.site-footer-col li { margin-bottom: 8px; }
+.site-footer-col a:hover { color: var(--accent); }
+.site-footer-bottom { padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; font-family: var(--sans); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.06em; }
+
+@media (max-width: 760px) {
+  .site-nav { gap: 8px; font-size: 11px; }
+  .site-nav a { padding: 12px 8px; min-height: 44px; display: flex; align-items: center; }
+  .site-brand-text small { display: none; }
+  .page-banner { padding: 56px 22px 40px; }
+  .page-banner-title { font-size: 24px; }
+  .page-banner-en { font-size: 14px; }
+  .content { padding: 36px 22px 64px; }
+  .section-title { font-size: 19px; }
+  .term { grid-template-columns: 1fr; gap: 14px; padding: 22px 0; }
+  .term-name { font-size: 16.5px; }
+  .term-body { font-size: 14px; }
+  .site-footer-cols { grid-template-columns: 1fr; gap: 28px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="site-brand">
+      <div class="site-brand-mark"><img src="assets/miratuku-mark.png" alt="ミラツク"></div>
+      <div class="site-brand-text">変化のかたち<small>MIRA TUKU / 未来をつくる100の型</small></div>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">ホーム</a>
+      <a href="articles.html">全100話</a>
+      <a href="#newsletter">付録</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="app-subnav" aria-label="付録ナビゲーション">
+  <div class="app-subnav-inner">
+    <a class="back-link" href="articles.html">← 全100話に戻る</a>
+    <span class="app-subnav-label">APPENDIX</span>
+    <a href="appendix-typology.html">A1 対応表</a>
+    <a href="appendix-glossary.html" class="active">A2 用語集</a>
+    <a href="appendix-sotokoto.html">A3 ソトコト60回</a>
+    <a href="appendix-people-index.html">A4 人物索引</a>
+    <a href="appendix-timeline.html">A5 年表</a>
+  </div>
+</nav>
+
+<section class="page-banner">
+  <div class="page-banner-inner">
+    <div class="page-banner-eyebrow">APPENDIX A2 — 用語集</div>
+    <h1 class="page-banner-title">用語集 ― 連載で使った主要概念</h1>
+    <p class="page-banner-en">Glossary of Concepts and Categories</p>
+    <p class="page-banner-desc">連載「変化のかたち」全100話を通じて、独自に提示した型の体系と、各話で参照した学術的概念を厳密に定義し直しました。第一部では本連載の骨格である5メタ型・15サブ型・3底流を、第二部では連載のなかで重要な役割を果たした学術概念15点を、それぞれ短い定義と主要参照話とともに掲載します。</p>
+  </div>
+</section>
+
+<main class="content">
+
+<section id="part1">
+  <div class="section-eyebrow">PART 1 — STRUCTURAL TERMS</div>
+  <h2 class="section-title">第1部 ― 連載の骨格となる用語</h2>
+  <p class="section-lead">本連載は、5メタ型・15サブ型・3底流という三層の骨格で構成されています。これらは既存の学術タクソノミーから借りたものではなく、ソトコト連載60回の事例分析（帰納）と、序章での文献的素描（演繹）の両側から立ち上げた連載独自の枠組みです。下に厳密な定義を示します。</p>
+
+  <div class="term-toc">
+    <h3>INDEX — 用語一覧</h3>
+    <ul>
+      <li><a href="#t-meta-ba">場のかたち</a></li>
+      <li><a href="#t-meta-baikai">媒介のかたち</a></li>
+      <li><a href="#t-meta-mono">物語のかたち</a></li>
+      <li><a href="#t-meta-sasae">支えのかたち</a></li>
+      <li><a href="#t-meta-hiraki">開きのかたち</a></li>
+      <li><a href="#t-sub-1">15サブ型（一覧）</a></li>
+      <li><a href="#t-current-1">底流1 つくる→生まれる</a></li>
+      <li><a href="#t-current-2">底流2 文脈と新結合</a></li>
+      <li><a href="#t-current-3">底流3 見えない領域への投資</a></li>
+    </ul>
+  </div>
+
+  <div class="term-list">
+
+    <div class="term" id="t-meta-ba">
+      <div class="term-name">場のかたち<span class="en">Forms of Place</span></div>
+      <div class="term-body">
+        <p>人と人が出会い、交流し、新しい関係や知が生まれる物理的・社会的空間に関するメタ型。何を作るかではなく、どう人を集め、どう留まらせ、どう離れさせるかという、関係生成の様式に焦点を置く。サブ型として自発交流（1.1）・越境出会い（1.2）・余白確保（1.3）を含む。</p>
+        <div class="term-ref"><strong>主要参照</strong><a href="ep006.html">ep006</a><a href="ep011.html">ep011</a><a href="ep017.html">ep017</a><a href="ep023.html">ep023</a><a href="ep096.html">ep096</a></div>
+      </div>
+    </div>
+
+    <div class="term" id="t-meta-baikai">
+      <div class="term-name">媒介のかたち<span class="en">Forms of Mediation</span></div>
+      <div class="term-body">
+        <p>異なる集団・専門領域・制度の間に立ち、両者を翻訳・接続・拡張する役割に関するメタ型。媒介者は単なる仲介ではなく、両側の文脈を読み替えることで新しい価値を立ち上げる存在として位置づけられる。サブ型として市民専門家（2.1）・中間支援（2.2）・学問領域創出（2.3）を含む。</p>
+        <div class="term-ref"><strong>主要参照</strong><a href="ep024.html">ep024</a><a href="ep029.html">ep029</a><a href="ep035.html">ep035</a><a href="ep041.html">ep041</a></div>
+      </div>
+    </div>
+
+    <div class="term" id="t-meta-mono">
+      <div class="term-name">物語のかたち<span class="en">Forms of Narrative</span></div>
+      <div class="term-body">
+        <p>モノ・場・行為に物語を添えること、物語を循環させること、物語の語り手を取り戻すことに関するメタ型。物語は経済・組織・運動の機能を超えた価値の媒体として扱われ、社会変容の要としての性格を持つ。サブ型として物語付加（3.1）・物語循環（3.2）・当事者主体回復（3.3）を含む。</p>
+        <div class="term-ref"><strong>主要参照</strong><a href="ep042.html">ep042</a><a href="ep050.html">ep050</a><a href="ep055.html">ep055</a><a href="ep059.html">ep059</a></div>
+      </div>
+    </div>
+
+    <div class="term" id="t-meta-sasae">
+      <div class="term-name">支えのかたち<span class="en">Forms of Foundation</span></div>
+      <div class="term-body">
+        <p>普段は見えず、意識されないが、それなしには社会が成立しない土台に関するメタ型。標準・インフラ・分類というかたちで、社会の表層を支える地味な構造物が含まれる。サブ型として規格・標準化（4.1）・見えないインフラ（4.2）・編集・並列化（4.3）を含む。</p>
+        <div class="term-ref"><strong>主要参照</strong><a href="ep060.html">ep060</a><a href="ep065.html">ep065</a><a href="ep071.html">ep071</a><a href="ep077.html">ep077</a></div>
+      </div>
+    </div>
+
+    <div class="term" id="t-meta-hiraki">
+      <div class="term-name">開きのかたち<span class="en">Forms of Opening</span></div>
+      <div class="term-body">
+        <p>限られた人々のものだった知・技術・経験を、より多くの人へと開いていく運動に関するメタ型。複製、大衆化、可視化という三つの手段で、特権の壁を越えるかたちが論じられる。サブ型として複製・伝達（5.1）・大衆化技術（5.2）・可視化メディア（5.3）を含む。</p>
+        <div class="term-ref"><strong>主要参照</strong><a href="ep078.html">ep078</a><a href="ep083.html">ep083</a><a href="ep089.html">ep089</a><a href="ep095.html">ep095</a></div>
+      </div>
+    </div>
+
+    <div class="term" id="t-sub-1">
+      <div class="term-name">15サブ型<span class="en">Fifteen Sub-Patterns</span></div>
+      <div class="term-body">
+        <p>5メタ型のそれぞれが3つのサブ型を抱え、合計で15のサブ型として展開される。1.1自発交流／1.2越境出会い／1.3余白確保／2.1市民専門家／2.2中間支援／2.3学問領域創出／3.1物語付加／3.2物語循環／3.3当事者主体回復／4.1規格・標準化／4.2見えないインフラ／4.3編集・並列化／5.1複製・伝達／5.2大衆化技術／5.3可視化メディア。</p>
+        <p>15サブ型の厳密定義は付録A1（5メタ型×15サブ型×3底流の対応表）に集約してある。本連載のすべての話は、序章5話・終章5話を除き、いずれか一つのサブ型に対応する。</p>
+        <div class="term-ref"><strong>定義集</strong><a href="appendix-typology.html">appendix-typology.html</a></div>
+      </div>
+    </div>
+
+    <div class="term" id="t-current-1">
+      <div class="term-name">底流 1 ― つくる→生まれる<span class="en">From Making to Emerging</span></div>
+      <div class="term-body">
+        <p>意図して「つくる」のではなく、条件を整えれば「生まれる」という創発の系譜。設計者中心の発想から、土壌づくり中心の発想への転換を促す視点。場の生成・物語の生成・大衆化された創造性において繰り返し現れる。</p>
+        <div class="term-ref"><strong>主要参照</strong><a href="ep002.html">ep002</a><a href="ep011.html">ep011</a><a href="ep050.html">ep050</a><a href="ep089.html">ep089</a><a href="ep097.html">ep097</a></div>
+      </div>
+    </div>
+
+    <div class="term" id="t-current-2">
+      <div class="term-name">底流 2 ― 文脈と新結合<span class="en">Context and New Combination</span></div>
+      <div class="term-body">
+        <p>シュンペーターの新結合は、無からの発明ではなく、文脈の組み替えとして起こる。既にある要素を、別の文脈に置き直すことで価値が生まれるという視点。越境出会い・物語循環・編集・複製伝達において、この底流が最も顕著に立ち上がる。</p>
+        <div class="term-ref"><strong>主要参照</strong><a href="ep003.html">ep003</a><a href="ep017.html">ep017</a><a href="ep055.html">ep055</a><a href="ep077.html">ep077</a><a href="ep083.html">ep083</a></div>
+      </div>
+    </div>
+
+    <div class="term" id="t-current-3">
+      <div class="term-name">底流 3 ― 見えない領域への投資<span class="en">Investing in the Invisible</span></div>
+      <div class="term-body">
+        <p>すぐに成果が出ず、目立たず、定量化しにくい領域に時間と資源を注ぐこと。インフラ・コモンズ・余白・支援者の支援などへの長期投資の視点。連載15章のうち8章でこの底流が前面に立ち上がり、現代のソーシャルイノベーションの中核的視座と位置づけられる。</p>
+        <div class="term-ref"><strong>主要参照</strong><a href="ep004.html">ep004</a><a href="ep023.html">ep023</a><a href="ep029.html">ep029</a><a href="ep071.html">ep071</a><a href="ep097.html">ep097</a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="part2">
+  <div class="section-eyebrow">PART 2 — KEY ACADEMIC CONCEPTS</div>
+  <h2 class="section-title">第2部 ― 連載で重要な学術概念15</h2>
+  <p class="section-lead">連載のなかで参照した数百の学術概念のうち、特に複数の章を貫いて立ち上がってきた中核的概念を15点選び、定義と主要参照話を整理しました。社会学・人類学・経済学・思想史・宗教学にまたがるこれらの概念は、本連載の議論を支える知の格子を形づくっています。</p>
+
+  <div class="term-toc">
+    <h3>INDEX — 学術概念15</h3>
+    <ul>
+      <li><a href="#c-weak-ties">弱い紐帯</a></li>
+      <li><a href="#c-commons">コモンズ</a></li>
+      <li><a href="#c-cultural-capital">文化資本</a></li>
+      <li><a href="#c-tojisha">当事者研究</a></li>
+      <li><a href="#c-habitus">ハビトゥス</a></li>
+      <li><a href="#c-invented-tradition">創られた伝統</a></li>
+      <li><a href="#c-thick-description">厚い記述</a></li>
+      <li><a href="#c-lieux-de-memoire">記憶の場</a></li>
+      <li><a href="#c-path-dependence">経路依存性</a></li>
+      <li><a href="#c-invisible-infra">見えないインフラ</a></li>
+      <li><a href="#c-editorial-eng">編集工学</a></li>
+      <li><a href="#c-narrative">ナラティブ</a></li>
+      <li><a href="#c-logotherapy">ロゴセラピー</a></li>
+      <li><a href="#c-heros-journey">英雄の旅</a></li>
+      <li><a href="#c-thirdplace">サードプレイス</a></li>
+    </ul>
+  </div>
+
+  <div class="term-list">
+
+    <div class="term" id="c-weak-ties">
+      <div class="term-name">弱い紐帯<span class="en">The Strength of Weak Ties</span></div>
+      <div class="term-body">
+        <p>1973年に社会学者マーク・グラノヴェッターが提示した命題。普段はあまり接触しない知人（弱い紐帯）こそが、本人が知らない情報や機会を運んでくる、というネットワーク上の働き。</p>
+        <p>強い紐帯は冗長な情報を循環させるが、弱い紐帯は集団の境界を越えて新しい情報を持ち込むため、転職・革新・社会運動において重要な役割を果たす。本連載では中間支援と越境出会いの基礎理論として参照される。</p>
+        <div class="term-ref"><strong>主要参照</strong><a href="ep033.html">ep033</a><a href="ep035.html">ep035</a><a href="ep017.html">ep017</a></div>
+      </div>
+    </div>
+
+    <div class="term" id="c-commons">
+      <div class="term-name">コモンズ<span class="en">Commons</span></div>
+      <div class="term-body">
+        <p>共有資源とそれを管理する集合的制度。1968年のハーディン「共有地の悲劇」論を、エリノア・オストロムが反証し、現実の地域社会では共有資源が制度的に持続管理されてきたことを実証した。</p>
+        <p>森林・漁場・灌漑から、現代ではインターネット・ソフトウェア・データに至るまで、コモンズ概念は拡張されてきた。本連載では見えないインフラ章の中核概念として扱われる。</p>
+        <div class="term-ref"><strong>主要参照</strong><a href="ep067.html">ep067</a><a href="ep070.html">ep070</a><a href="ep080.html">ep080</a><a href="ep081.html">ep081</a></div>
+      </div>
+    </div>
+
+    <div class="term" id="c-cultural-capital">
+      <div class="term-name">文化資本<span class="en">Cultural Capital</span></div>
+      <div class="term-body">
+        <p>ピエール・ブルデューが提示した概念。経済資本（金銭）とは別の資本として、家庭環境・教育・趣味嗜好を通じて身体化された文化的素養を指す。客体化（書物・絵画）、身体化（振る舞い・話し方）、制度化（学歴）の三形態を持つ。</p>
+        <p>文化資本は世代を超えて継承され、社会的階層の再生産に深く関わる。本連載では物語循環と教養の章で、継承される文化の構造として参照される。</p>
+        <div class="term-ref"><strong>主要参照</strong><a href="ep051.html">ep051</a><a href="ep055.html">ep055</a><a href="ep099.html">ep099</a></div>
+      </div>
+    </div>
+
+    <div class="term" id="c-tojisha">
+      <div class="term-name">当事者研究<span class="en">Tōjisha-Kenkyū / Self-as-Subject Research</span></div>
+      <div class="term-body">
+        <p>2001年に北海道浦河の「べてるの家」で始まった、精神障害をもつ当事者自身が自らの困りごとを研究テーマとして共同探究する実践方法。専門家による外側からの研究ではなく、当事者が主体・客体・研究者を兼ねる。</p>
+        <p>のちに発達障害・依存症・難病など多領域に広がり、専門家中心の知のあり方を反転させる方法論として国際的にも注目されている。本連載では当事者主体回復章の核となる。</p>
+        <div class="term-ref"><strong>主要参照</strong><a href="ep056.html">ep056</a><a href="ep058.html">ep058</a><a href="ep059.html">ep059</a></div>
+      </div>
+    </div>
+
+    <div class="term" id="c-habitus">
+      <div class="term-name">ハビトゥス<span class="en">Habitus</span></div>
+      <div class="term-body">
+        <p>ブルデューの中心概念。社会的環境のなかで身体化され、無意識的な性向として行為を方向づける図式の総体。個人の振る舞い・趣味・身体技法は、本人が「自然」と感じていても、所属階層と歴史によって形成されている。</p>
+        <p>ハビトゥスは構造と個人を媒介する概念であり、文化資本が「資源」だとすればハビトゥスは「身体に染み込んだ性向」である。物語循環の議論を支える基礎概念。</p>
+        <div class="term-ref"><strong>主要参照</strong><a href="ep051.html">ep051</a><a href="ep055.html">ep055</a></div>
+      </div>
+    </div>
+
+    <div class="term" id="c-invented-tradition">
+      <div class="term-name">創られた伝統<span class="en">The Invention of Tradition</span></div>
+      <div class="term-body">
+        <p>1983年にエリック・ホブズボームらが提示した概念。「古来からの伝統」と語られるものの多くは、近代以降に意図的に作られ、過去への接続を演出する装置として機能してきた、という反転的視点。</p>
+        <p>スコットランドのキルトから国民国家の儀礼まで、伝統の発明は近代化と並行して進行した。本連載では物語循環の鍵概念として、伝統の固定性ではなく流動性を強調する文脈で参照される。</p>
+        <div class="term-ref"><strong>主要参照</strong><a href="ep052.html">ep052</a><a href="ep055.html">ep055</a></div>
+      </div>
+    </div>
+
+    <div class="term" id="c-thick-description">
+      <div class="term-name">厚い記述<span class="en">Thick Description</span></div>
+      <div class="term-body">
+        <p>クリフォード・ギアツが解釈人類学の方法として提示した記述様式。現象の表面（薄い記述）ではなく、その行為が当事者にとってもつ意味の層を、文脈ごと記述する方法論。</p>
+        <p>「まばたき」と「ウインク」と「合図のウインク」が外形上同じでも意味の重なりが異なる、というギアツの例が広く知られる。ローカルナレッジの尊重と接続して、本連載のリサーチ態度の規範となる概念。</p>
+        <div class="term-ref"><strong>主要参照</strong><a href="ep053.html">ep053</a><a href="ep055.html">ep055</a></div>
+      </div>
+    </div>
+
+    <div class="term" id="c-lieux-de-memoire">
+      <div class="term-name">記憶の場<span class="en">Lieux de Mémoire</span></div>
+      <div class="term-body">
+        <p>フランスの歴史家ピエール・ノラが1980年代に編纂した同名の集合著作で提示した概念。共同体の記憶が結晶化する物理的・象徴的な場所（記念碑・行事・人物・書物・場所）を指す。</p>
+        <p>記憶は個人の頭の中だけにあるのではなく、社会的な「場」に外化され、保存・更新される。記憶の場が機能を失うと、共同体の物語循環は途絶える。本連載では物語循環章の主柱の一つ。</p>
+        <div class="term-ref"><strong>主要参照</strong><a href="ep054.html">ep054</a><a href="ep055.html">ep055</a></div>
+      </div>
+    </div>
+
+    <div class="term" id="c-path-dependence">
+      <div class="term-name">経路依存性<span class="en">Path Dependence</span></div>
+      <div class="term-body">
+        <p>過去の選択や偶発的な出来事が、その後の選択肢を制約し続ける現象。経済学者ポール・デヴィッドのQWERTY配列分析、ブライアン・アーサーの収穫逓増理論などで定式化された。</p>
+        <p>初期に普及した規格は、たとえ後から優れた代替案が出ても、切り替えコストの高さゆえに残り続ける。本連載では規格・標準化章の中核概念として、見えないインフラの粘性を説明する。</p>
+        <div class="term-ref"><strong>主要参照</strong><a href="ep060.html">ep060</a><a href="ep061.html">ep061</a><a href="ep065.html">ep065</a></div>
+      </div>
+    </div>
+
+    <div class="term" id="c-invisible-infra">
+      <div class="term-name">見えないインフラ<span class="en">Invisible Infrastructure</span></div>
+      <div class="term-body">
+        <p>科学技術社会論者スーザン・リー・スターが理論化したインフラ概念。インフラは普段は意識されず、それが壊れたとき初めて存在に気づかれるという「不可視性」を本質的な性格として持つ。</p>
+        <p>規格・分類体系・配管・電力網・データ標準など、インフラは関係的な存在であり、ユーザーから見て当たり前になっているほど深く浸透している。本連載のメタ型「支えのかたち」全体を支える基礎概念。</p>
+        <div class="term-ref"><strong>主要参照</strong><a href="ep066.html">ep066</a><a href="ep071.html">ep071</a><a href="ep097.html">ep097</a></div>
+      </div>
+    </div>
+
+    <div class="term" id="c-editorial-eng">
+      <div class="term-name">編集工学<span class="en">Editorial Engineering</span></div>
+      <div class="term-body">
+        <p>松岡正剛が1980年代から提唱した知の方法論。情報を集める・並べる・編む・組み替える行為そのものを、創造の中核に据える発想。要素そのものよりも、要素と要素の関係（並列化・対比・接合）が新しい意味を立ち上げると考える。</p>
+        <p>本連載の「編集・並列化」章の理論的基盤であり、底流2「文脈と新結合」とも深く接続する。</p>
+        <div class="term-ref"><strong>主要参照</strong><a href="ep073.html">ep073</a><a href="ep076.html">ep076</a><a href="ep077.html">ep077</a></div>
+      </div>
+    </div>
+
+    <div class="term" id="c-narrative">
+      <div class="term-name">ナラティブ<span class="en">Narrative</span></div>
+      <div class="term-body">
+        <p>単なる物語（ストーリー）ではなく、語り手・聞き手・出来事の配列・因果づけが組み合わさって意味を生む語りの構造。リクールの『時間と物語』、ブルーナーのナラティブ的思考論、シラーのナラティブ経済学が連載で参照される。</p>
+        <p>ナラティブは経済・組織・自己・運動を駆動する力をもち、本連載のメタ型「物語のかたち」全体を理論的に支える概念。</p>
+        <div class="term-ref"><strong>主要参照</strong><a href="ep042.html">ep042</a><a href="ep043.html">ep043</a><a href="ep044.html">ep044</a><a href="ep046.html">ep046</a><a href="ep050.html">ep050</a></div>
+      </div>
+    </div>
+
+    <div class="term" id="c-logotherapy">
+      <div class="term-name">ロゴセラピー<span class="en">Logotherapy</span></div>
+      <div class="term-body">
+        <p>強制収容所体験を経たヴィクトール・フランクルが創始した心理療法。人間の根源的動機を「意味への意志」と捉え、人生の意味を見出す物語の力によって苦難を生き抜く道を探る。</p>
+        <p>『夜と霧』に結実した思想は、当事者の物語が生存と治癒の中核資源であることを示す。本連載ではライフ・ナラティブと意味療法の節で参照される。</p>
+        <div class="term-ref"><strong>主要参照</strong><a href="ep049.html">ep049</a><a href="ep050.html">ep050</a></div>
+      </div>
+    </div>
+
+    <div class="term" id="c-heros-journey">
+      <div class="term-name">英雄の旅<span class="en">The Hero's Journey</span></div>
+      <div class="term-body">
+        <p>神話学者ジョーゼフ・キャンベルが世界各地の神話に共通する構造として抽出した物語パターン。日常からの離脱・試練・帰還の三段階を骨格に、17の段階で英雄の変容を記述する。</p>
+        <p>映画・小説・ブランドナラティブから、起業家やソーシャルイノベーターの自己語りに至るまで、現代社会で広く再生産されている物語のひな型。本連載では物語付加章で扱われる。</p>
+        <div class="term-ref"><strong>主要参照</strong><a href="ep045.html">ep045</a><a href="ep050.html">ep050</a></div>
+      </div>
+    </div>
+
+    <div class="term" id="c-thirdplace">
+      <div class="term-name">サードプレイス<span class="en">The Third Place</span></div>
+      <div class="term-body">
+        <p>社会学者レイ・オルデンバーグが1989年に提示した概念。家庭（第一の場）・職場（第二の場）でも、家でもない、誰もが対等に立ち寄れる第三の場。カフェ・酒場・床屋・公園などが典型例。</p>
+        <p>所属を要求せず、利害を越えて人が交わる開かれた場として、市民社会の活力源となる。本連載では自発交流章の中核概念であり、他章への伏流としても繰り返し顔を出す。</p>
+        <div class="term-ref"><strong>主要参照</strong><a href="ep008.html">ep008</a><a href="ep010.html">ep010</a><a href="ep011.html">ep011</a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-cols">
+      <div class="site-footer-col">
+        <h4>ABOUT</h4>
+        <p><strong>変化のかたち ― 未来をつくる100の型</strong></p>
+        <p style="margin-top:8px;color:var(--ink-mute);">ソーシャルイノベーションの新しい読み方。NPO法人ミラツク代表理事・西村勇也が、社会変容の奥にある「かたち」を、人類史と知の系譜のなかで読み解く全100回連載。</p>
+      </div>
+      <div class="site-footer-col">
+        <h4>NAVIGATION</h4>
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="articles.html">全100話 一覧</a></li>
+          <li><a href="appendix-typology.html">A1 対応表</a></li>
+          <li><a href="appendix-glossary.html">A2 用語集</a></li>
+          <li><a href="appendix-sotokoto.html">A3 ソトコト60回</a></li>
+        </ul>
+      </div>
+      <div class="site-footer-col">
+        <h4>MIRA TUKU</h4>
+        <ul>
+          <li><a href="https://emerging-future.org/" target="_blank" rel="noopener">emerging-future.org</a></li>
+          <li><a href="https://github.com/yuyanishimura0312/henka-no-katachi" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <span>© 2026 NPO法人ミラツク</span>
+      <span>変化のかたち ― 未来をつくる100の型</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

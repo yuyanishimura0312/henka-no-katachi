@@ -281,6 +281,11 @@ a:hover { color: var(--accent-deep); }
       <span class="part-jump-name">終 章</span>
       <span class="part-jump-sub">これまでとこれから</span>
     </a>
+    <a class="part-jump-card" href="#appendix">
+      <span class="part-jump-num">A</span>
+      <span class="part-jump-name">付 録</span>
+      <span class="part-jump-sub">全体を一望するために</span>
+    </a>
   </div>
 </section>
 
@@ -295,7 +300,7 @@ a:hover { color: var(--accent-deep); }
       <input type="search" class="search-input" id="searchInput" placeholder="タイトル検索..." aria-label="エピソード検索" oninput="applySearch(this.value)">
       <button class="search-clear" onclick="clearSearch()" aria-label="検索をクリア">×</button>
     </div>
-    <span class="search-count" id="searchCount"><strong>100</strong> 件表示中</span>
+    <span class="search-count" id="searchCount"><strong>105</strong> 件表示中</span>
   </div>
 </div>
 
@@ -486,6 +491,19 @@ a:hover { color: var(--accent-deep); }
     </ul>
   </div>
 
+  <div class="part-section" id="appendix">
+    <div class="part-eyebrow">APPENDIX</div>
+    <h2 class="part-title">付 録 ― 全体を一望するために</h2>
+    <p style="font-family:var(--serif);font-size:15px;line-height:2;color:var(--ink-soft);letter-spacing:0.04em;margin-bottom:24px;">100話を読み終えたら、または読み始める前に。連載全体を俯瞰するための5つの付録です。型の対応表、用語集、ソトコト60回との対応、人物索引、年表を通じて、全体構造をいつでも引き直せるようにしました。</p>
+    <ul class="ep-list">
+      <li class="ep-row" data-status="published"><span class="ep-num">A1</span><span class="ep-title published"><a href="appendix-typology.html">5メタ型 × 15サブ型 × 3底流の対応表</a></span><span class="ep-status published">公開中</span></li>
+      <li class="ep-row" data-status="published"><span class="ep-num">A2</span><span class="ep-title published"><a href="appendix-glossary.html">用語集 ― 連載で使った主要概念</a></span><span class="ep-status published">公開中</span></li>
+      <li class="ep-row" data-status="published"><span class="ep-num">A3</span><span class="ep-title published"><a href="appendix-sotokoto.html">ソトコト60回対応表 ― 連載の源流</a></span><span class="ep-status published">公開中</span></li>
+      <li class="ep-row" data-status="published"><span class="ep-num">A4</span><span class="ep-title published"><a href="appendix-people-index.html">人物索引 ― 登場した思想家・実践者</a></span><span class="ep-status published">公開中</span></li>
+      <li class="ep-row" data-status="published"><span class="ep-num">A5</span><span class="ep-title published"><a href="appendix-timeline.html">年表 ― 100話を貫く歴史軸</a></span><span class="ep-status published">公開中</span></li>
+    </ul>
+  </div>
+
   <div class="no-results" id="noResults">該当する話が見つかりません。検索語を変えてお試しください。</div>
 </main>
 
@@ -551,7 +569,8 @@ const NEWSLETTER_API = 'https://claude-code-manual-app.vercel.app/api/community'
 
 /* ─── 進捗バー ─── */
 (function() {
-  const rows = document.querySelectorAll('.ep-row');
+  // 付録は本編100話の進捗カウントから除外
+  const rows = document.querySelectorAll('.part-section:not(#appendix) .ep-row');
   const total = rows.length;
   let published = 0;
   rows.forEach(r => { if (r.dataset.status === 'published') published++; });

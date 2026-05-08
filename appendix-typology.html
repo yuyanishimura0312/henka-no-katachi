@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>付録 ― 5メタ型 × 15サブ型 × 3底流の対応表 | 変化のかたち</title>
+<meta name="description" content="連載「変化のかたち」全100話の構造を一望する対応表。5メタ型・15サブ型・3底流の関係、各サブ型の定義と対応話、3底流の章まとめ分布を一枚にまとめる。">
+<meta property="og:title" content="付録 ― 5メタ型 × 15サブ型 × 3底流の対応表 | 変化のかたち">
+<meta property="og:description" content="連載「変化のかたち」全100話の構造を一望する対応表。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yuyanishimura0312.github.io/henka-no-katachi/appendix-typology.html">
+<link rel="canonical" href="https://yuyanishimura0312.github.io/henka-no-katachi/appendix-typology.html">
+<link rel="icon" href="https://esse-sense.com/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@300;400;500;600;700;900&family=Judson:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:           #14110F;
+  --bg-soft:      #1E1B19;
+  --bg-tint:      #25221F;
+  --ink:          #FFFFFF;
+  --ink-soft:     #D8D5D1;
+  --ink-mute:     #A6A29D;
+  --ink-faint:    #7A7672;
+  --accent:       #FF3644;
+  --accent-deep:  #FF5560;
+  --accent-soft:  rgba(255, 54, 68, 0.10);
+  --accent-tint:  rgba(255, 54, 68, 0.22);
+  --line:         #2D2A27;
+  --line-soft:    #1F1D1B;
+  --type-ba:       #FF3644;
+  --type-baikai:   #FF7A3C;
+  --type-mono:     #FFB347;
+  --type-sasae:    #C03540;
+  --type-hiraki:   #FF8088;
+  --serif:   "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "Plantin MT Pro", Georgia, serif;
+  --sans:    "Noto Sans JP", "Hiragino Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --display: "Judson", "Noto Serif JP", Georgia, serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body { font-family: var(--serif); background: var(--bg); color: var(--ink); line-height: 1.95; letter-spacing: 0.02em; font-feature-settings: "palt"; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; transition: color .15s; }
+a:hover { color: var(--accent-deep); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+/* HEADER */
+.site-header { position: sticky; top: 0; z-index: 100; background: rgba(20, 17, 15, 0.92); backdrop-filter: saturate(160%) blur(10px); -webkit-backdrop-filter: saturate(160%) blur(10px); border-bottom: 1px solid var(--line); }
+.site-header-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.site-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.site-brand-mark { width: 30px; height: 30px; flex-shrink: 0; }
+.site-brand-mark img { width: 100%; height: auto; display: block; }
+.site-brand-text { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--ink); line-height: 1.3; }
+.site-brand-text small { display: block; font-size: 9.5px; letter-spacing: 0.14em; color: var(--ink-mute); font-weight: 500; margin-top: 2px; }
+.site-nav { display: flex; gap: 28px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.1em; }
+.site-nav a { color: var(--ink-soft); font-weight: 500; padding: 6px 0; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s; }
+.site-nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.site-nav a.active { color: var(--ink); border-bottom-color: var(--ink); }
+
+/* BANNER */
+.page-banner { background: var(--bg); color: var(--ink); padding: 80px 24px 56px; border-bottom: 1px solid var(--line); }
+.page-banner-inner { max-width: 1080px; margin: 0 auto; }
+.page-banner-eyebrow { font-family: var(--sans); font-size: 11px; letter-spacing: 0.32em; color: var(--accent); font-weight: 700; display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+.page-banner-eyebrow::before { content: ""; width: 32px; height: 2px; background: var(--accent); }
+.page-banner-title { font-family: var(--serif); font-weight: 700; font-size: 38px; line-height: 1.45; letter-spacing: 0.04em; color: var(--ink); margin-bottom: 14px; }
+.page-banner-en { font-family: var(--display); font-weight: 400; font-size: 19px; color: var(--ink-mute); letter-spacing: 0.02em; margin-bottom: 28px; }
+.page-banner-desc { font-family: var(--serif); font-size: 15px; line-height: 2; color: var(--ink-soft); max-width: 720px; letter-spacing: 0.04em; }
+
+/* APPENDIX NAV */
+.app-subnav { background: var(--bg-soft); border-bottom: 1px solid var(--line); }
+.app-subnav-inner { max-width: 1080px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.app-subnav-label { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.22em; color: var(--ink-mute); margin-right: 8px; }
+.app-subnav a { font-family: var(--sans); font-size: 11px; font-weight: 500; letter-spacing: 0.1em; padding: 8px 14px; border: 1px solid var(--line); color: var(--ink-soft); transition: border-color .15s, color .15s, background .15s; }
+.app-subnav a:hover { border-color: var(--accent); color: var(--accent); }
+.app-subnav a.active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.app-subnav .back-link { color: var(--ink-mute); border: none; padding: 8px 0; }
+.app-subnav .back-link:hover { color: var(--accent); }
+
+/* CONTENT */
+.content { max-width: 1080px; margin: 0 auto; padding: 56px 24px 80px; }
+.content > section { margin-bottom: 72px; }
+.section-eyebrow { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.28em; color: var(--accent); margin-bottom: 10px; }
+.section-title { font-family: var(--serif); font-weight: 700; font-size: 24px; line-height: 1.5; letter-spacing: 0.04em; color: var(--ink); border-bottom: 2px solid var(--ink); padding-bottom: 14px; margin-bottom: 24px; }
+.section-lead { font-family: var(--serif); font-size: 15px; line-height: 2; color: var(--ink-soft); letter-spacing: 0.04em; margin-bottom: 28px; max-width: 880px; }
+
+/* TABLE — typology */
+.typo-table { width: 100%; border-collapse: collapse; font-family: var(--serif); font-size: 14px; line-height: 1.85; color: var(--ink-soft); margin-bottom: 12px; }
+.typo-table th, .typo-table td { padding: 14px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+.typo-table thead th { background: var(--bg-soft); color: var(--ink); font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; border-bottom: 2px solid var(--ink); text-transform: uppercase; }
+.typo-table tbody tr:hover { background: var(--bg-soft); }
+.typo-table .meta-cell { font-family: var(--sans); font-size: 11px; letter-spacing: 0.12em; color: var(--ink-mute); white-space: nowrap; }
+.typo-table .sub-name { font-family: var(--serif); font-weight: 700; font-size: 14.5px; color: var(--ink); }
+.typo-table .sub-id { font-family: var(--display); font-weight: 700; color: var(--accent); margin-right: 8px; }
+.typo-table .ep-meta { font-family: var(--sans); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.08em; }
+.typo-table .ep-meta strong { font-family: var(--display); font-weight: 700; color: var(--ink); }
+.typo-table a { color: var(--accent); }
+
+.meta-row { background: var(--bg-tint) !important; }
+.meta-row td { font-family: var(--sans); font-weight: 700; letter-spacing: 0.12em; color: var(--ink); padding-top: 18px; padding-bottom: 18px; }
+.meta-tag { display: inline-block; padding: 3px 10px; font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.16em; color: var(--bg); background: var(--accent); margin-right: 10px; }
+.meta-tag.ba { background: var(--type-ba); }
+.meta-tag.baikai { background: var(--type-baikai); color: var(--bg); }
+.meta-tag.mono { background: var(--type-mono); color: var(--bg); }
+.meta-tag.sasae { background: var(--type-sasae); }
+.meta-tag.hiraki { background: var(--type-hiraki); color: var(--bg); }
+
+/* CURRENT — 3 currents block */
+.currents-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 18px; }
+.current-card { background: var(--bg-soft); border: 1px solid var(--line); border-left: 4px solid var(--accent); padding: 24px 22px; }
+.current-card h3 { font-family: var(--serif); font-weight: 700; font-size: 17px; color: var(--ink); letter-spacing: 0.04em; margin-bottom: 10px; }
+.current-card p { font-family: var(--serif); font-size: 13.5px; line-height: 1.95; color: var(--ink-soft); letter-spacing: 0.04em; margin-bottom: 14px; }
+.current-card .ep-list { font-family: var(--sans); font-size: 11.5px; color: var(--ink-mute); letter-spacing: 0.08em; line-height: 1.8; }
+.current-card .ep-list strong { font-family: var(--display); font-weight: 700; color: var(--accent); }
+.current-card .ep-list a { color: var(--ink-soft); border-bottom: 1px dotted var(--line); }
+.current-card .ep-list a:hover { color: var(--accent); border-color: var(--accent); }
+
+/* DISTRIBUTION */
+.dist-table { width: 100%; border-collapse: collapse; font-family: var(--serif); font-size: 13.5px; margin-top: 18px; }
+.dist-table th, .dist-table td { padding: 12px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.dist-table thead th { background: var(--bg-soft); font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.16em; color: var(--ink); border-bottom: 2px solid var(--ink); }
+.dist-table .ep-num { font-family: var(--display); font-weight: 700; color: var(--accent); white-space: nowrap; }
+.dist-table .current-tag { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; color: var(--ink-mute); }
+
+/* FOOTER */
+.site-footer { background: var(--bg-soft); padding: 56px 24px 32px; border-top: 1px solid var(--line); }
+.site-footer-inner { max-width: 1180px; margin: 0 auto; }
+.site-footer-cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding-bottom: 36px; border-bottom: 1px solid var(--line); }
+.site-footer-col h4 { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.22em; color: var(--ink); margin-bottom: 16px; }
+.site-footer-col p, .site-footer-col a { font-family: var(--serif); font-size: 13px; line-height: 2; color: var(--ink-soft); }
+.site-footer-col ul { list-style: none; }
+.site-footer-col li { margin-bottom: 8px; }
+.site-footer-col a:hover { color: var(--accent); }
+.site-footer-bottom { padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; font-family: var(--sans); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.06em; }
+
+@media (max-width: 760px) {
+  .site-nav { gap: 8px; font-size: 11px; }
+  .site-nav a { padding: 12px 8px; min-height: 44px; display: flex; align-items: center; }
+  .site-brand-text small { display: none; }
+  .page-banner { padding: 56px 22px 40px; }
+  .page-banner-title { font-size: 24px; }
+  .page-banner-en { font-size: 14px; }
+  .content { padding: 36px 22px 64px; }
+  .section-title { font-size: 19px; }
+  .typo-table { font-size: 13px; }
+  .typo-table th, .typo-table td { padding: 10px 8px; }
+  .typo-table .meta-cell { white-space: normal; }
+  .site-footer-cols { grid-template-columns: 1fr; gap: 28px; }
+  .currents-grid { grid-template-columns: 1fr; }
+  .dist-table { font-size: 12.5px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="site-brand">
+      <div class="site-brand-mark"><img src="assets/miratuku-mark.png" alt="ミラツク"></div>
+      <div class="site-brand-text">変化のかたち<small>MIRA TUKU / 未来をつくる100の型</small></div>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">ホーム</a>
+      <a href="articles.html">全100話</a>
+      <a href="#newsletter">付録</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="app-subnav" aria-label="付録ナビゲーション">
+  <div class="app-subnav-inner">
+    <a class="back-link" href="articles.html">← 全100話に戻る</a>
+    <span class="app-subnav-label">APPENDIX</span>
+    <a href="appendix-typology.html" class="active">A1 対応表</a>
+    <a href="appendix-glossary.html">A2 用語集</a>
+    <a href="appendix-sotokoto.html">A3 ソトコト60回</a>
+    <a href="appendix-people-index.html">A4 人物索引</a>
+    <a href="appendix-timeline.html">A5 年表</a>
+  </div>
+</nav>
+
+<section class="page-banner">
+  <div class="page-banner-inner">
+    <div class="page-banner-eyebrow">APPENDIX A1 — 対応表</div>
+    <h1 class="page-banner-title">5メタ型 × 15サブ型 × 3底流の対応表</h1>
+    <p class="page-banner-en">The Map of Five Forms, Fifteen Patterns, and Three Currents</p>
+    <p class="page-banner-desc">連載「変化のかたち」全100話の骨格を、一枚の表に畳み直しました。5メタ型は社会変容を読むための大分類、15サブ型はそれぞれの内側で働く具体的な型、3底流は連載全体を貫く水脈です。サブ型の定義、対応する章の話数、まとめ話の番号、そして3底流が章まとめ15話のどこに分布したかを、ここから一望できます。</p>
+  </div>
+</section>
+
+<main class="content">
+
+<section>
+  <div class="section-eyebrow">SECTION 1 — TYPOLOGY MATRIX</div>
+  <h2 class="section-title">5メタ型 × 15サブ型 ― 対応マトリクス</h2>
+  <p class="section-lead">5部に対応する5メタ型は、それぞれ3つのサブ型を抱えます。各サブ型は、その章で展開される本文（5〜9話）と、章末に置かれた「章まとめ」1話で構成されます。下表では、サブ型の名前と短い定義、本文話の番号レンジ、章まとめ話の番号、そして本文の主底流を示しました。底流欄は、その章まとめが連載全体の3底流のどれを最も強く担うかを示しています。</p>
+
+  <table class="typo-table">
+    <thead>
+      <tr>
+        <th style="width:18%">メタ型</th>
+        <th style="width:22%">サブ型</th>
+        <th style="width:30%">定義（1〜2文）</th>
+        <th style="width:14%">本文・章まとめ</th>
+        <th style="width:16%">主底流</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="meta-row"><td colspan="5"><span class="meta-tag ba">PART I</span>場のかたち ― 集まりが価値を生む</td></tr>
+      <tr>
+        <td class="meta-cell">場（ば）</td>
+        <td><span class="sub-id">1.1</span><span class="sub-name">自発交流</span></td>
+        <td>強制や設計に頼らず、人が自然に集まり、交わりがそれ自体として価値を生む場のかたち。アゴラからサードプレイスまで、開かれた集会の系譜に連なる。</td>
+        <td><span class="ep-meta">本文 <strong>ep006–010</strong><br>章まとめ <strong>ep011</strong></span></td>
+        <td><span class="ep-meta">つくる→生まれる</span></td>
+      </tr>
+      <tr>
+        <td class="meta-cell">場（ば）</td>
+        <td><span class="sub-id">1.2</span><span class="sub-name">越境出会い</span></td>
+        <td>異なる文脈・専門・身分を渡る境界に置かれた、出会いを起こす装置のかたち。通過儀礼から留学・キャンパス・オンライン越境まで。</td>
+        <td><span class="ep-meta">本文 <strong>ep012–016</strong><br>章まとめ <strong>ep017</strong></span></td>
+        <td><span class="ep-meta">文脈と新結合</span></td>
+      </tr>
+      <tr>
+        <td class="meta-cell">場（ば）</td>
+        <td><span class="sub-id">1.3</span><span class="sub-name">余白確保</span></td>
+        <td>何かのためでない時間と空間をあえて残し、創発と回復の余地を担保するかたち。スコレー・公園・スラック・脳の余白まで連なる。</td>
+        <td><span class="ep-meta">本文 <strong>ep018–022</strong><br>章まとめ <strong>ep023</strong></span></td>
+        <td><span class="ep-meta">見えない領域への投資</span></td>
+      </tr>
+
+      <tr class="meta-row"><td colspan="5"><span class="meta-tag baikai">PART II</span>媒介のかたち ― つなぎ手が社会を変える</td></tr>
+      <tr>
+        <td class="meta-cell">媒介（ばいかい）</td>
+        <td><span class="sub-id">2.1</span><span class="sub-name">市民専門家</span></td>
+        <td>専門知と日常の間に立ち、両者を翻訳しながらケアや知識生産を担う、職業的でない専門性のかたち。産婆・市民科学・ピアサポートを通史する。</td>
+        <td><span class="ep-meta">本文 <strong>ep024–028</strong><br>章まとめ <strong>ep029</strong></span></td>
+        <td><span class="ep-meta">見えない領域への投資</span></td>
+      </tr>
+      <tr>
+        <td class="meta-cell">媒介（ばいかい）</td>
+        <td><span class="sub-id">2.2</span><span class="sub-name">中間支援</span></td>
+        <td>支援する者を支援し、組織と組織・人と制度の間に立つ、媒介者の媒介のかたち。協同組合・構造的空隙・弱い紐帯・プラットフォームへ。</td>
+        <td><span class="ep-meta">本文 <strong>ep030–034</strong><br>章まとめ <strong>ep035</strong></span></td>
+        <td><span class="ep-meta">見えない領域への投資</span></td>
+      </tr>
+      <tr>
+        <td class="meta-cell">媒介（ばいかい）</td>
+        <td><span class="sub-id">2.3</span><span class="sub-name">学問領域創出</span></td>
+        <td>媒介者を制度的に再生産するために、新しい学問・教育領域を立ち上げるかたち。看護学・社会福祉学・実践共同体・デザイン思考まで。</td>
+        <td><span class="ep-meta">本文 <strong>ep036–040</strong><br>章まとめ <strong>ep041</strong></span></td>
+        <td><span class="ep-meta">見えない領域への投資</span></td>
+      </tr>
+
+      <tr class="meta-row"><td colspan="5"><span class="meta-tag mono">PART III</span>物語のかたち ― 価値はどこに宿るか</td></tr>
+      <tr>
+        <td class="meta-cell">物語（ものがたり）</td>
+        <td><span class="sub-id">3.1</span><span class="sub-name">物語付加</span></td>
+        <td>モノ・場・行為に物語を添えることで、機能を超えた価値を立ち上げるかたち。物語経済学・ナラティブ・アイデンティティ・英雄の旅まで。</td>
+        <td><span class="ep-meta">本文 <strong>ep042–049</strong><br>章まとめ <strong>ep050</strong></span></td>
+        <td><span class="ep-meta">つくる→生まれる</span></td>
+      </tr>
+      <tr>
+        <td class="meta-cell">物語（ものがたり）</td>
+        <td><span class="sub-id">3.2</span><span class="sub-name">物語循環</span></td>
+        <td>物語が世代と土地を超えて継承・更新される循環のかたち。文化資本・伝統の発明・厚い記述・記憶の場が連なる。</td>
+        <td><span class="ep-meta">本文 <strong>ep051–054</strong><br>章まとめ <strong>ep055</strong></span></td>
+        <td><span class="ep-meta">文脈と新結合</span></td>
+      </tr>
+      <tr>
+        <td class="meta-cell">物語（ものがたり）</td>
+        <td><span class="sub-id">3.3</span><span class="sub-name">当事者主体回復</span></td>
+        <td>物語の語り手を、専門家から当事者へと取り戻すかたち。障害学・ケアの倫理・反専門家としての当事者まで。</td>
+        <td><span class="ep-meta">本文 <strong>ep056–058</strong><br>章まとめ <strong>ep059</strong></span></td>
+        <td><span class="ep-meta">見えない領域への投資</span></td>
+      </tr>
+
+      <tr class="meta-row"><td colspan="5"><span class="meta-tag sasae">PART IV</span>支えのかたち ― 見えないものが社会を支える</td></tr>
+      <tr>
+        <td class="meta-cell">支え（ささえ）</td>
+        <td><span class="sub-id">4.1</span><span class="sub-name">規格・標準化</span></td>
+        <td>共通の物差しを定めることで、相互運用と公平性を支えるかたち。QWERTYからUSB-C、メートル法、ISOまでの標準化の系譜。</td>
+        <td><span class="ep-meta">本文 <strong>ep060–064</strong><br>章まとめ <strong>ep065</strong></span></td>
+        <td><span class="ep-meta">見えない領域への投資</span></td>
+      </tr>
+      <tr>
+        <td class="meta-cell">支え（ささえ）</td>
+        <td><span class="sub-id">4.2</span><span class="sub-name">見えないインフラ</span></td>
+        <td>普段は意識されないが、それなしには生活が成立しない地味な土台のかたち。インフラ哲学・コモンズ・上下水道・電力・インターネット。</td>
+        <td><span class="ep-meta">本文 <strong>ep066–070</strong><br>章まとめ <strong>ep071</strong></span></td>
+        <td><span class="ep-meta">見えない領域への投資</span></td>
+      </tr>
+      <tr>
+        <td class="meta-cell">支え（ささえ）</td>
+        <td><span class="sub-id">4.3</span><span class="sub-name">編集・並列化</span></td>
+        <td>並べ方・分け方そのものが新しい意味を立ち上げる、編集の支えのかたち。メディア論・図書館分類・都市計画・データベースまで。</td>
+        <td><span class="ep-meta">本文 <strong>ep072–076</strong><br>章まとめ <strong>ep077</strong></span></td>
+        <td><span class="ep-meta">文脈と新結合</span></td>
+      </tr>
+
+      <tr class="meta-row"><td colspan="5"><span class="meta-tag hiraki">PART V</span>開きのかたち ― 特権を多くの人に開く</td></tr>
+      <tr>
+        <td class="meta-cell">開き（ひらき）</td>
+        <td><span class="sub-id">5.1</span><span class="sub-name">複製・伝達</span></td>
+        <td>かつて一部の特権だった知や表現を、複製可能なかたちに変えて広く伝達するかたち。活版印刷・複製技術論・OSS・CC。</td>
+        <td><span class="ep-meta">本文 <strong>ep078–082</strong><br>章まとめ <strong>ep083</strong></span></td>
+        <td><span class="ep-meta">文脈と新結合</span></td>
+      </tr>
+      <tr>
+        <td class="meta-cell">開き（ひらき）</td>
+        <td><span class="sub-id">5.2</span><span class="sub-name">大衆化技術</span></td>
+        <td>限られた人だけのものだった製品・サービスを、誰もが使えるかたちに開く技術。フォードからユニバーサルデザイン・シェアエコノミーまで。</td>
+        <td><span class="ep-meta">本文 <strong>ep084–088</strong><br>章まとめ <strong>ep089</strong></span></td>
+        <td><span class="ep-meta">つくる→生まれる</span></td>
+      </tr>
+      <tr>
+        <td class="meta-cell">開き（ひらき）</td>
+        <td><span class="sub-id">5.3</span><span class="sub-name">可視化メディア</span></td>
+        <td>これまで見えなかった現実を可視化し、社会的注目を生み出すメディアのかたち。報道写真・データジャーナリズム・アクティビスト映像。</td>
+        <td><span class="ep-meta">本文 <strong>ep090–094</strong><br>章まとめ <strong>ep095</strong></span></td>
+        <td><span class="ep-meta">見えない領域への投資</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <div class="section-eyebrow">SECTION 2 — THREE UNDERCURRENTS</div>
+  <h2 class="section-title">3底流 ― 連載全体を貫く水脈</h2>
+  <p class="section-lead">15のサブ型は表層の分類ですが、その下には連載全体を貫く三本の水脈が流れています。序章ep002〜004で素描し、終章ep097で総括した三底流は、単なる主題ではなく、社会変容を見るときに繰り返し浮かび上がってくる「ものの見方」です。それぞれの定義と、章まとめ15話のうちどの話で前面に立ち上がったかを示します。</p>
+
+  <div class="currents-grid">
+    <div class="current-card">
+      <h3>底流 1 ― つくる → 生まれる</h3>
+      <p>意図して「つくる」のではなく、条件を整えれば「生まれる」という創発の系譜。設計者中心の発想から、土壌づくり中心の発想への転換を促す視点。</p>
+      <p class="ep-list"><strong>章まとめ分布</strong><br>
+        <a href="ep011.html">ep011</a> 自発交流 ／ <a href="ep050.html">ep050</a> 物語付加 ／ <a href="ep089.html">ep089</a> 大衆化技術
+      </p>
+    </div>
+    <div class="current-card">
+      <h3>底流 2 ― 文脈と新結合</h3>
+      <p>シュンペーターの新結合は、無からの発明ではなく、文脈の組み替えとして起こる。既にある要素を、別の文脈に置き直すことで価値が生まれるという視点。</p>
+      <p class="ep-list"><strong>章まとめ分布</strong><br>
+        <a href="ep017.html">ep017</a> 越境出会い ／ <a href="ep055.html">ep055</a> 物語循環 ／ <a href="ep077.html">ep077</a> 編集・並列化 ／ <a href="ep083.html">ep083</a> 複製・伝達
+      </p>
+    </div>
+    <div class="current-card">
+      <h3>底流 3 ― 見えない領域への投資</h3>
+      <p>すぐに成果が出ず、目立たず、定量化しにくい領域に時間と資源を注ぐこと。インフラ・コモンズ・余白・支援者の支援などへの長期投資の視点。</p>
+      <p class="ep-list"><strong>章まとめ分布</strong><br>
+        <a href="ep023.html">ep023</a> 余白確保 ／ <a href="ep029.html">ep029</a> 市民専門家 ／ <a href="ep035.html">ep035</a> 中間支援 ／ <a href="ep041.html">ep041</a> 学問領域創出 ／ <a href="ep059.html">ep059</a> 当事者主体回復 ／ <a href="ep065.html">ep065</a> 規格・標準化 ／ <a href="ep071.html">ep071</a> 見えないインフラ ／ <a href="ep095.html">ep095</a> 可視化メディア
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-eyebrow">SECTION 3 — DISTRIBUTION TABLE</div>
+  <h2 class="section-title">3底流 ― 章まとめ15話への分布</h2>
+  <p class="section-lead">章まとめ15話を、3底流のどれを主に担うかで並べ直したのが下の表です。底流3「見えない領域への投資」が15話中8話と最も多く、底流2「文脈と新結合」が4話、底流1「つくる→生まれる」が3話となりました。これは編集後の偶然ではなく、現代のソーシャルイノベーションが、いかに「見えにくい層」への投資なしには成立しえないかを反映しています。</p>
+
+  <table class="dist-table">
+    <thead>
+      <tr>
+        <th style="width:13%">章まとめ</th>
+        <th style="width:25%">サブ型</th>
+        <th style="width:24%">主底流</th>
+        <th>連載内での位置づけ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="ep-num"><a href="ep011.html">ep011</a></td><td>1.1 自発交流</td><td class="current-tag">つくる→生まれる</td><td>場は設計するものではなく、条件を整えると生まれる、という底流の出発点。</td></tr>
+      <tr><td class="ep-num"><a href="ep017.html">ep017</a></td><td>1.2 越境出会い</td><td class="current-tag">文脈と新結合</td><td>境界を渡ることで、既存の要素が別文脈と再結合する場面を集約。</td></tr>
+      <tr><td class="ep-num"><a href="ep023.html">ep023</a></td><td>1.3 余白確保</td><td class="current-tag">見えない領域への投資</td><td>「無駄」と見える時間・空間こそ、長期の創発の土壌であるという視点。</td></tr>
+      <tr><td class="ep-num"><a href="ep029.html">ep029</a></td><td>2.1 市民専門家</td><td class="current-tag">見えない領域への投資</td><td>制度化された専門家の外側にある、長期の知識生産への投資を扱う。</td></tr>
+      <tr><td class="ep-num"><a href="ep035.html">ep035</a></td><td>2.2 中間支援</td><td class="current-tag">見えない領域への投資</td><td>「支援者の支援者」という、見えにくいが社会を支える層の重要性。</td></tr>
+      <tr><td class="ep-num"><a href="ep041.html">ep041</a></td><td>2.3 学問領域創出</td><td class="current-tag">見えない領域への投資</td><td>新領域の制度化は何十年もかかる、長期投資の典型例。</td></tr>
+      <tr><td class="ep-num"><a href="ep050.html">ep050</a></td><td>3.1 物語付加</td><td class="current-tag">つくる→生まれる</td><td>物語は外から付け加えるよりも、内側から生まれるほうが強い、という洞察。</td></tr>
+      <tr><td class="ep-num"><a href="ep055.html">ep055</a></td><td>3.2 物語循環</td><td class="current-tag">文脈と新結合</td><td>伝統は固定されず、新しい文脈で再結合され続けることで生き残る。</td></tr>
+      <tr><td class="ep-num"><a href="ep059.html">ep059</a></td><td>3.3 当事者主体回復</td><td class="current-tag">見えない領域への投資</td><td>当事者の語りに耳を傾けることは、効率を超えた長期の倫理的投資。</td></tr>
+      <tr><td class="ep-num"><a href="ep065.html">ep065</a></td><td>4.1 規格・標準化</td><td class="current-tag">見えない領域への投資</td><td>標準化は地味で目立たないが、相互運用の土台を100年単位で支える。</td></tr>
+      <tr><td class="ep-num"><a href="ep071.html">ep071</a></td><td>4.2 見えないインフラ</td><td class="current-tag">見えない領域への投資</td><td>底流3が最も強く立ち上がる章。タイトルそのものが底流名と重なる。</td></tr>
+      <tr><td class="ep-num"><a href="ep077.html">ep077</a></td><td>4.3 編集・並列化</td><td class="current-tag">文脈と新結合</td><td>並べ方を変える＝文脈を組み替えることで、新しい意味が立ち上がる。</td></tr>
+      <tr><td class="ep-num"><a href="ep083.html">ep083</a></td><td>5.1 複製・伝達</td><td class="current-tag">文脈と新結合</td><td>同じ知識を別の人々の文脈に届けると、別のかたちの新結合が起こる。</td></tr>
+      <tr><td class="ep-num"><a href="ep089.html">ep089</a></td><td>5.2 大衆化技術</td><td class="current-tag">つくる→生まれる</td><td>誰もが使える条件を整えると、想定外の利用と価値が生まれる。</td></tr>
+      <tr><td class="ep-num"><a href="ep095.html">ep095</a></td><td>5.3 可視化メディア</td><td class="current-tag">見えない領域への投資</td><td>見えないものを見えるかたちにする作業は、社会の関心への長期投資。</td></tr>
+    </tbody>
+  </table>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-cols">
+      <div class="site-footer-col">
+        <h4>ABOUT</h4>
+        <p><strong>変化のかたち ― 未来をつくる100の型</strong></p>
+        <p style="margin-top:8px;color:var(--ink-mute);">ソーシャルイノベーションの新しい読み方。NPO法人ミラツク代表理事・西村勇也が、社会変容の奥にある「かたち」を、人類史と知の系譜のなかで読み解く全100回連載。</p>
+      </div>
+      <div class="site-footer-col">
+        <h4>NAVIGATION</h4>
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="articles.html">全100話 一覧</a></li>
+          <li><a href="appendix-typology.html">A1 対応表</a></li>
+          <li><a href="appendix-glossary.html">A2 用語集</a></li>
+          <li><a href="appendix-sotokoto.html">A3 ソトコト60回</a></li>
+        </ul>
+      </div>
+      <div class="site-footer-col">
+        <h4>MIRA TUKU</h4>
+        <ul>
+          <li><a href="https://emerging-future.org/" target="_blank" rel="noopener">emerging-future.org</a></li>
+          <li><a href="https://github.com/yuyanishimura0312/henka-no-katachi" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <span>© 2026 NPO法人ミラツク</span>
+      <span>変化のかたち ― 未来をつくる100の型</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
