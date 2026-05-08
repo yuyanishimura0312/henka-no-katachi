@@ -135,17 +135,15 @@
 
         <p>インターネット史の中核は、Vinton Cerf &amp; Robert Kahn "A Protocol for Packet Network Intercommunication"（IEEE Transactions on Communications COM-22(5), 1974）、Janet Abbate "Inventing the Internet"（MIT Press, 1999）、Walter Isaacson "The Innovators"（Simon &amp; Schuster, 2014、邦訳『イノベーターズ』講談社 2019）。Web史は、Tim Berners-Lee "Weaving the Web"（HarperOne, 1999、邦訳『Webの創成』毎日コミュニケーションズ 2001）。法と規範はLawrence Lessig "Code: Version 2.0"（Basic Books, 2006、邦訳『CODE Version 2.0』翔泳社 2007）。コモンズ論は、Yochai Benkler "The Wealth of Networks"（Yale UP, 2006、邦訳『ネットワークの富』NTT出版 2013）、Elinor Ostrom "Governing the Commons"（Cambridge UP, 1990）。デジタル主権はAnu Bradford "Digital Empires"（Oxford UP, 2023）。日本の文脈は、村井純『インターネット』（岩波新書, 1995）。</p>
 
-        <p>### 2. 異分野からの発展的視点</p>
+        <p>### 2. 異分野からの発展的視点 ― ヴァン・ジェイコブソンが救った1986年のインターネット</p>
 
-        <p>インターネットは、ネットワーク工学・情報理論・物理学が同時に応答する対象です。</p>
+        <p>1986年、初期のインターネット（当時はまだARPANET）で、奇妙な現象が起きました。LBL研究所からUCバークレーまでの<strong>400メートルしかない区間で、転送速度が1,000分の1に低下した</strong>のです。原因は、初期のインターネットには<strong>中央制御の仕組みがなく、各送信者が遠慮なくデータを送り出した結果、ネットワークが渋滞で完全に詰まっていた</strong>ことでした。「<strong>輻輳崩壊（congestion collapse）</strong>」と呼ばれるこの現象は、インターネットの存続そのものを危険にさらしていました。</p>
 
-        <p>第一に、輻輳制御の制御工学。Van Jacobson "Congestion Avoidance and Control"（ACM SIGCOMM Computer Communication Review 18(4), 1988）は、TCPがパケット損失を信号として送信レートを指数的に下げる加法増加・乗法減少（AIMD）アルゴリズムを設計しました。これはエンドホスト同士が中央調整なしに協力的に帯域を分け合う、分散制御の傑作です。後継のCUBIC（Ha, Rhee, Xu 2008）、BBR（Cardwell et al. Google 2016）まで、TCPの進化は中央集権なき自己調整の連続実験です。</p>
+        <p>この危機を救ったのが、ローレンス・バークレー国立研究所のヴァン・ジェイコブソン（Van Jacobson）です。彼は1988年、ACM SIGCOMM学会で論文「<strong>Congestion Avoidance and Control</strong>」（*Computer Communication Review* 18巻, 314-329頁）を発表しました。提案したのは、驚くほど単純な分散アルゴリズムでした ―― <strong>送信者は、最初は控えめに送る。順調に届いている限り、徐々に送信量を増やす。パケット損失が起きた瞬間に、送信量を半分に切る</strong>。各送信者がこの規則を守るだけで、中央調整なしに、全体が自然と最適な帯域配分に収束する。</p>
 
-        <p>第二に、Shannonのチャネル容量とエンドツーエンド原理。Shannonが1948年に定義したチャネル容量は、ノイズと帯域の関数として情報伝達の上限を与えます。Jerome Saltzer, David Reed, David Clark "End-to-End Arguments in System Design"（ACM TOCS 2(4), 1984）は、信頼性確保はネットワーク中央ではなく端点で実装すべき、という設計哲学を定式化しました。これがインターネットを「土管としての中立な伝送路」に保ち、Web・SNS・動画ストリーミングの後発革新を可能にしました。</p>
+        <p>これが「<strong>加法増加・乗法減少（AIMD）</strong>」アルゴリズムです。中央政府も、市場の価格調整も、何もない。ただ各端末が「混んだら譲る」という礼儀を守るだけで、世界規模のネットワークが共有資源を秩序立てて使い続けることができる。ジェイコブソンの設計は、エリノア・オストロムがフィールドで観察した<strong>コモンズ管理の自己組織化原則</strong>を、ネットワーク工学の言語で実装したものでした。</p>
 
-        <p>第三に、スケールフリー・ネットワークの物理学。Albert-László Barabási &amp; Réka Albert "Emergence of Scaling in Random Networks"（Science 286(5439), 1999）は、Webのリンク構造がべき乗則P(k)~k^-2.1に従うことを発見しました。優先的接続による自己組織化は、Googleの検索アルゴリズム（PageRank, Brin-Page 1998）、SNSのインフルエンサー分布、ハブ攻撃への脆弱性まで、現代インターネット解析の前提になっています。</p>
-
-        <p>インターネットは、分散制御・端点知能・スケールフリー構造の三位一体として今も進化中の生命体です。</p>
+        <p>その後、CUBIC（Ha, Rhee, Xu 2008）、BBR（Cardwell, Google 2016）と進化を続けながら、AIMDの基本原則は今もすべてのウェブ通信、Netflix のストリーミング、ChatGPTの応答の底で動いています。Cerfのプロトコル、村井純のJUNET、Berners-LeeのWWW、Linuxサーバーの群れ ―― これらすべてが共有しているのは、ジェイコブソンが1988年に書いた、<strong>譲り合いを工学的に書いた数十行のコード</strong>です。インターネットがコモンズとして機能するのは、この古い礼儀作法が、地球規模で守られているからです。</p>
 
         <p>---</p>
 
