@@ -109,15 +109,15 @@
 
         <p>中核はRichard Stallman "Free Software, Free Society"（GNU Press, 2002、邦訳アスキー 2003）、Eric Raymond "The Cathedral and the Bazaar"（O'Reilly, 1999、邦訳USP研究所 2010）。経済学的理論化はYochai Benkler "Coase's Penguin, or, Linux and 'The Nature of the Firm'"（Yale Law Journal 112(3), 2002）と "The Wealth of Networks"（Yale UP, 2006、邦訳NTT出版 2013）。Steven Weber "The Success of Open Source"（Harvard UP, 2004）、Christopher Kelty "Two Bits"（Duke UP, 2008）、Lawrence Lessig "Free Culture"（Penguin, 2004）が標準。日本の文脈はまつもとゆきひろ『コードの世界』（日経BP, 2009）、村井純『インターネット』（岩波新書, 1995）。</p>
 
-        <p>### 2. 異分野からの発展的視点</p>
+        <p>### 2. 異分野からの発展的視点 ― ノヴァクが解いた「協力の5方程式」</p>
 
-        <p>「無償で見知らぬ他者に貢献する」というOSS現象は、進化生物学・複雑系経済学・神経経済学から見ると、3つの異なる説明系統で精緻化されます。</p>
+        <p>「なぜ見知らぬ他者のために、無償でコードを書く人が現れるのか」 ―― ストールマンとトーバルズが立ち上げたOSS運動の中心にあるこの問いを、進化生物学は数理として正面から解いてきました。2006年12月、ハーバード大学のマーティン・ノヴァク（Martin A. Nowak）は*Science*誌に "Five Rules for the Evolution of Cooperation" を発表し、半世紀にわたって積み重ねられてきた協力進化理論の総括を提示しました。</p>
 
-        <p>第一に、協力進化理論。Robert Axelrod "The Evolution of Cooperation"（Basic Books, 1984）の繰り返し囚人のジレンマ・トーナメントが示したTit-for-Tat戦略の優位、Martin Nowak "Five Rules for the Evolution of Cooperation"（Science 314, 2006）が体系化した5メカニズム（kin selection・direct reciprocity・indirect reciprocity・network reciprocity・group selection）は、Linux Kernelに5万人超が無償貢献する現象を、生物進化と同じ数理で説明します。Nowakの間接互恵モデルでは、評判q&gt;cost/benefitで協力が安定化し、これはGitHubのstar・PR mergeの統計と整合します。</p>
+        <p>ノヴァクが体系化したのは、利己的な個体集団のなかで協力者が消滅せずに残るための、数学的に独立した5つのメカニズムです。<strong>血縁選択</strong>（Hamilton 1964、関係係数r&gt;c/b）、<strong>直接互恵</strong>（Trivers 1971、Axelrodの繰り返し囚人ジレンマ、w&gt;c/b）、<strong>間接互恵</strong>（Nowak &amp; Sigmund 2005、評判q&gt;c/b）、<strong>ネットワーク互恵</strong>（Ohtsuki et al. 2006、平均次数k&lt;b/c）、そして<strong>集団選択</strong>（Wilson 1975、群間分散n&lt;1+(b/c)）。それぞれが、c/b比 ―― 協力にかかる費用と受け取る便益の比 ―― を超える臨界条件を厳密に与えます。</p>
 
-        <p>第二に、自己組織化臨界とバザール型生産の数理。Per Bak "How Nature Works"（Springer, 1996）の砂山モデルは、無数の小さな貢献がべき乗則分布で大規模イベント（メジャーリリース）を生む現象を予測します。Mockus, Fielding &amp; Herbsleb "Two Case Studies of Open Source Software Development"（ACM TOSEM 11(3), 2002）は、Apache・Mozillaのコミット分布が実際にPareto則（上位20%が80%貢献）に従うことを実証しました。</p>
+        <p>この理論をLinux Kernelに重ねると、現象の不思議さは溶解します。約8万人の貢献者が、GitHubのスター数・PRマージ履歴という公開された評判系（間接互恵）と、レビュアー間の繰り返し相互作用（直接互恵）、そしてサブシステム別の密なクラスタ構造（ネットワーク互恵）の三重に支えられて協力均衡を維持している ―― Mockus, Fielding &amp; Herbsleb（*ACM TOSEM* 11巻, 2002）が実証したApache・Mozillaのコミット分布が示すPareto則（上位20%が貢献の80%）も、ノヴァクのネットワーク互恵モデルが予測するハブ-周辺構造そのものです。</p>
 
-        <p>第三に、神経経済学の内発動機。Tabibnia, Satpute &amp; Lieberman "The Sunny Side of Fairness"（Psychological Science 19, 2008）のfMRI研究は、公正な行為がventral striatum（報酬系）を活性化し、金銭的インセンティブと同等の神経応答を起こすことを示しました。Deci &amp; Ryan の自己決定理論（1985-）と合わせて、コードを書く喜びが脳内報酬として実装されている事実が、「Just for Fun」というLinusの自伝題名の生理学的根拠を与えます。</p>
+        <p>レイモンドが「バザール」と呼んだ混沌は、文学的隠喩ではありません。生物進化が38億年かけて発見した協力の5方程式が、ソースコードという媒体で再演されている、その数理的必然なのです。</p>
 
         <p>---</p>
 

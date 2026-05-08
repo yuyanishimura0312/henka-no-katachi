@@ -107,15 +107,15 @@
 
         <p>中核はLawrence Lessig "Code: Version 2.0"（Basic Books, 2006、邦訳翔泳社 2007）、"Free Culture"（Penguin, 2004、邦訳翔泳社 2004）、"Remix"（Penguin, 2008、邦訳翔泳社 2010）。Eldred v. Ashcroft（537 U.S. 186, 2003）が背景の判例。理論的基礎はYochai Benkler "The Wealth of Networks"（Yale UP, 2006、邦訳NTT出版 2013）、James Boyle "The Public Domain"（Yale UP, 2008）。歴史視点はAdrian Johns "Piracy"（Chicago UP, 2009）、リミックス研究はHenry Jenkins "Convergence Culture"（NYU Press, 2006）。日本はドミニク・チェン『フリーカルチャーをつくるためのガイドブック』（フィルムアート社, 2012）、福井健策『著作権とは何か』（集英社新書, 2005）。</p>
 
-        <p>### 2. 異分野からの発展的視点</p>
+        <p>### 2. 異分野からの発展的視点 ― RSAが先に書いた「許諾の数学」</p>
 
-        <p>「some rights reserved」の発明は、暗号理論・経済学・コモンズ研究のなかで別の言語で再構成されています。</p>
+        <p>レッシグが2002年に提示した「some rights reserved」という発想は、それより四半世紀前、まったく別の領域で数学的にスケッチされていました。1978年2月、MIT人工知能研究所のRon Rivest、Adi Shamir、Leonard Adlemanの3人が*Communications of the ACM*誌に発表した4頁の論文 "A Method for Obtaining Digital Signatures and Public-Key Cryptosystems" ――いまではRSA暗号と呼ばれます――は、人類史上初めて「許諾」という社会的行為を厳密な数学に翻訳した瞬間でした。</p>
 
-        <p>第一に、暗号理論とライセンスの計算可能化。Whitfield Diffie &amp; Martin Hellman "New Directions in Cryptography"（IEEE Trans. on Information Theory 22(6), 1976）が拓いた公開鍵暗号、Rivest, Shamir &amp; Adleman「RSA」（CACM 21(2), 1978）が、デジタル署名による「来歴の機械検証」を可能にしました。CCライセンスがRDFa・JSON-LDメタデータとして埋め込み機械可読化された設計（CC REL, 2008）は、暗号的来歴記録（C2PA, 2021）と接続し、「許諾の状態」が計算可能な属性になる時代を準備しています。Ron Rivest "Chaffing and Winnowing"（1998）以来の情報理論的考察も、ライセンスの数学的設計に寄与しました。</p>
+        <p>RSAの中心は、二つの大きな素数p、qの積n=pqを公開し、p、q自体を秘密にするという、素因数分解の計算複雑性に依拠した非対称性です。秘密鍵保持者だけが署名でき、公開鍵を持つ誰もが検証できる ―― 「<strong>自分の作品である</strong>」という主張を、機械が客観的に判定可能な属性に変えたのです。論文発表から数年内に、ディジタル署名・電子認証・SSL/TLSの基盤となり、現在では毎秒数十億回、世界中で実行されています。</p>
 
-        <p>第二に、コモンズの統治構造。Elinor Ostrom "Governing the Commons"（Cambridge UP, 1990、邦訳晃洋書房 2022、ノーベル経済学賞2009）の8設計原則は、漁業・牧草地・灌漑などの物理的コモンズで実証されたガバナンス条件を、デジタル知的コモンズに適用可能であることを示します。Hess &amp; Ostrom編 "Understanding Knowledge as a Commons"（MIT Press, 2007）が、CC・OSS・Wikipedia等のデジタル財をOstromフレームに組み込みました。</p>
+        <p>CCライセンスがRDFaやJSON-LDのメタデータとしてHTMLに埋め込まれ、Creative Commons Rights Expression Language（CC REL, 2008）として機械可読化された設計は、RSAが拓いた地平の延長線上にあります。2021年にAdobe・Microsoft・BBCらが発足させたContent Authenticity Initiative（C2PA）は、画像・動画にRSA系の暗号署名で来歴を刻む規格として、ジャーナリズムと生成AI時代の真正性問題に応えています。</p>
 
-        <p>第三に、ネットワーク経済の数理。W. Brian Arthur "Increasing Returns and Path Dependence"（Univ. of Michigan Press, 1994）のロックイン理論は、CCの早期普及がなぜAttribution系（CC BY、CC BY-SA）に集中したかを説明します。Wikipediaの選択（CC BY-SA）が事実上の業界標準化を生み、収穫逓増のフィードバックループが形成されたのです。</p>
+        <p>レッシグが法律の上に積み上げた契約レイヤーは、Rivest・Shamir・Adlemanが用意していた数学の上に、社会制度を立ち上げる試みでした。「許諾」という、それまで紙とハンコの世界に属していた行為が、素因数分解の困難性という自然法則を背景に、機械が計算可能な属性へと組み替えられている ―― そう情報科学が教えてくれるとき、CCは法学の発明である以上に、暗号理論の社会実装として立ち現れます。</p>
 
         <p>---</p>
 
