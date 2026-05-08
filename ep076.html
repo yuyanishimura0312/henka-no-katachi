@@ -4,225 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>第76話 ― データベースとアルゴリズム | 変化のかたち</title>
-<meta name="description" content="変化のかたち第76話。データベースとアルゴリズム。">
+<meta name="description" content="変化のかたち第76話。第IV部第12章「編集・並列化」を続けます。前話まで、印刷・出版・図書館・索引・百科事典という、人類が情報を編集し並列化してきた仕組みを辿ってきました。本話で扱うのは、その作業を機械が自動で行うようになった現代の形――データベースとアルゴリズムです。">
 <meta property="og:title" content="第76話 ― データベースとアルゴリズム">
-<meta property="og:description" content="変化のかたち第76話。データベースとアルゴリズム。">
+<meta property="og:description" content="第IV部第12章「編集・並列化」を続けます。前話まで、印刷・出版・図書館・索引・百科事典という、人類が情報を編集し並列化してきた仕組みを辿ってきました。本話で扱うのは、その作業を機械が自動で行うようになった現代の形――データベースとアルゴリズムです。">
 <meta property="og:type" content="article">
+<meta property="og:image" content="https://yuyanishimura0312.github.io/henka-no-katachi/assets/og-image.png">
 <meta property="og:url" content="https://yuyanishimura0312.github.io/henka-no-katachi/ep076.html">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://yuyanishimura0312.github.io/henka-no-katachi/ep076.html">
 <link rel="icon" href="https://esse-sense.com/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
-<style>
-:root {
-  --paper: #FAF6F1;
-  --paper-soft: #F5EFE7;
-  --paper-mgt: #FCF5EE;
-  --paper-aca: #F5EEE3;
-  --ink: #2A1A14;
-  --ink-soft: #5A4238;
-  --ink-mute: #7A6358;
-  --accent-deep: #4A1F18;
-  --accent: #7A2E1F;
-  --accent-warm: #C46545;
-  --accent-coral: #E0824A;
-  --accent-peach: #F0A671;
-  --accent-sand: #F8CDAC;
-  --accent-cream: #F5E8DC;
-  --line: #E5D9CC;
-  --line-soft: #EFE4D6;
-  --serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
-  --sans: "Noto Sans JP", "Hiragino Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --display: "Cormorant Garamond", "Noto Serif JP", Georgia, serif;
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-size: 16px; scroll-behavior: smooth; }
-body {
-  font-family: var(--serif);
-  background: var(--paper);
-  color: var(--ink);
-  line-height: 1.95;
-  letter-spacing: 0.04em;
-  font-feature-settings: "palt";
-  -webkit-font-smoothing: antialiased;
-}
-a { color: var(--accent); text-decoration: none; transition: color .15s; }
-a:hover { color: var(--accent-warm); }
-
-.site-header-strip { height: 3px; background: var(--accent-deep); }
-.site-header { position: sticky; top: 0; z-index: 100; background: rgba(250,246,241,0.96); backdrop-filter: saturate(160%) blur(8px); -webkit-backdrop-filter: saturate(160%) blur(8px); border-bottom: 1px solid var(--line); }
-.site-header-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.site-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.site-brand-mark { width: 28px; height: 28px; flex-shrink: 0; }
-.site-brand-mark img { width: 100%; height: auto; display: block; }
-.site-brand-text { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; color: var(--accent); line-height: 1.3; }
-.site-brand-text small { display: block; font-size: 9.5px; letter-spacing: 0.14em; color: var(--ink-mute); font-weight: 500; margin-top: 2px; }
-.site-nav { display: flex; gap: 22px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.1em; }
-.site-nav a { color: var(--ink-soft); font-weight: 500; padding: 6px 0; border-bottom: 2px solid transparent; }
-.site-nav a:hover { color: var(--accent-warm); border-bottom-color: var(--accent-warm); }
-
-.ep-hero {
-  background: linear-gradient(170deg, #4A1F18 0%, #6B2A1E 60%, #7A2E1F 100%);
-  color: var(--paper);
-  padding: 80px 24px 64px;
-  position: relative;
-  overflow: hidden;
-}
-.ep-hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 2; }
-.ep-hero-mark { position: absolute; right: -40px; top: 30px; width: 200px; opacity: 0.18; z-index: 1; }
-.ep-hero-eyebrow { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.3em; color: var(--accent-peach); font-weight: 700; display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-.ep-hero-eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--accent-peach); }
-.ep-hero-num { font-family: var(--display); font-style: italic; font-size: 64px; color: var(--accent-peach); line-height: 1; margin-bottom: 8px; letter-spacing: 0.02em; }
-.ep-hero-title { font-family: var(--serif); font-weight: 500; font-size: 28px; line-height: 1.55; letter-spacing: 0.04em; color: var(--paper); margin-bottom: 14px; }
-.ep-hero-en { font-family: var(--display); font-style: italic; font-size: 15px; color: #F5DDC4; letter-spacing: 0.02em; margin-bottom: 32px; }
-.ep-hero-meta { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-family: var(--sans); font-size: 11.5px; letter-spacing: 0.1em; color: #E5C9B5; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.18); }
-.ep-hero-meta strong { color: var(--paper); font-weight: 500; }
-
-.layer-section { padding: 56px 24px; border-bottom: 1px solid var(--line); }
-.layer-honbun { background: var(--paper); }
-.layer-mgt { background: var(--paper-mgt); }
-.layer-aca { background: var(--paper-aca); }
-.layer-inner { max-width: 680px; margin: 0 auto; }
-.layer-label {
-  font-family: var(--sans);
-  font-size: 11px;
-  letter-spacing: 0.3em;
-  font-weight: 700;
-  margin-bottom: 16px;
-  display: inline-block;
-  padding: 5px 12px;
-  border: 1px solid var(--accent-warm);
-  color: var(--accent-warm);
-}
-.layer-honbun .layer-label { display: none; }
-.layer-title-jp {
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: 22px;
-  color: var(--accent-deep);
-  letter-spacing: 0.06em;
-  margin-bottom: 8px;
-}
-.layer-title-en {
-  font-family: var(--display);
-  font-style: italic;
-  font-size: 14px;
-  color: var(--ink-mute);
-  margin-bottom: 28px;
-}
-.layer-section p {
-  font-family: var(--serif);
-  font-size: 16px;
-  line-height: 2.05;
-  color: var(--ink);
-  margin-bottom: 26px;
-  text-indent: 1em;
-  letter-spacing: 0.04em;
-}
-.layer-section p:first-of-type { text-indent: 0; }
-.layer-section p strong { font-weight: 700; color: var(--accent-deep); }
-
-.ep-meta-block {
-  margin: 0 auto;
-  max-width: 680px;
-  padding: 28px 30px;
-  background: #FFFFFF;
-  border-top: 3px solid var(--accent-warm);
-  border-bottom: 1px solid var(--line);
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-.ep-meta-block dt {
-  font-family: var(--sans);
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--accent);
-  margin-top: 14px;
-  margin-bottom: 6px;
-}
-.ep-meta-block dt:first-child { margin-top: 0; }
-.ep-meta-block dd {
-  font-family: var(--sans);
-  font-size: 12.5px;
-  line-height: 1.85;
-  color: var(--ink-soft);
-}
-
-.ep-nav { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.ep-nav-inner { max-width: 720px; margin: 0 auto; padding: 28px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-.ep-nav-link { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; background: #FFFFFF; border: 1px solid var(--line); text-decoration: none; transition: border-color .15s; }
-.ep-nav-link:hover { border-color: var(--accent-warm); text-decoration: none; }
-.ep-nav-label { font-family: var(--sans); font-size: 10px; letter-spacing: 0.18em; color: var(--accent-warm); font-weight: 700; }
-.ep-nav-link.next { text-align: right; }
-.ep-nav-title { font-family: var(--serif); font-size: 13.5px; color: var(--accent-deep); line-height: 1.6; letter-spacing: 0.04em; }
-
-.newsletter { background: linear-gradient(140deg, #4A1F18 0%, #6B2A1E 100%); color: var(--paper); padding: 52px 24px 56px; }
-.newsletter-inner { max-width: 680px; margin: 0 auto; }
-.newsletter-eyebrow { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.3em; color: var(--accent-peach); font-weight: 700; margin-bottom: 14px; }
-.newsletter-title { font-family: var(--serif); font-weight: 500; font-size: 24px; line-height: 1.6; letter-spacing: 0.04em; color: var(--paper); margin-bottom: 14px; }
-.newsletter-desc { font-family: var(--serif); font-size: 14px; line-height: 1.9; color: #E5C9B5; margin-bottom: 26px; }
-.nl-form { display: flex; flex-direction: column; gap: 12px; max-width: 460px; }
-.nl-step { display: none; flex-direction: column; gap: 12px; }
-.nl-step.active { display: flex; }
-.nl-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.nl-field input { width: 100%; font-family: var(--serif); font-size: 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); color: var(--paper); padding: 12px 14px; outline: none; }
-.nl-field input::placeholder { color: rgba(255,255,255,0.45); }
-.nl-field input:focus { border-color: var(--accent-peach); background: rgba(255,255,255,0.12); }
-.nl-consent { font-family: var(--sans); font-size: 11.5px; color: #E5C9B5; line-height: 1.7; display: flex; align-items: flex-start; gap: 8px; }
-.nl-btn { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--accent-deep); background: var(--accent-peach); border: none; padding: 14px 24px; cursor: pointer; }
-.nl-btn:hover { background: var(--accent-sand); }
-.nl-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-.nl-trust { font-family: var(--sans); font-size: 11px; color: rgba(229,201,181,0.7); }
-.nl-done { display: none; padding: 22px 0; font-family: var(--serif); font-size: 16px; color: var(--paper); line-height: 1.9; }
-.nl-done.show { display: block; }
-.nl-form.hide { display: none; }
-
-.feedback-section { background: var(--paper-soft); padding: 48px 24px 56px; border-top: 1px solid var(--line); }
-.feedback-inner { max-width: 680px; margin: 0 auto; }
-.feedback-label { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; color: var(--accent-warm); font-weight: 700; margin-bottom: 8px; }
-.feedback-title { font-family: var(--serif); font-weight: 600; font-size: 22px; color: var(--accent-deep); letter-spacing: 0.06em; margin-bottom: 10px; }
-.feedback-desc { font-family: var(--serif); font-size: 14.5px; color: var(--ink-soft); line-height: 1.95; margin-bottom: 22px; }
-.feedback-form { display: flex; flex-direction: column; gap: 14px; }
-.feedback-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.feedback-field input, .feedback-field textarea { width: 100%; font-family: var(--serif); font-size: 14px; color: var(--ink); background: #FFFFFF; border: 1px solid var(--line); padding: 14px 16px; outline: none; }
-.feedback-field textarea { resize: vertical; min-height: 140px; line-height: 1.85; }
-.feedback-field label { display: block; font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; color: var(--ink-mute); margin-bottom: 6px; }
-.feedback-submit { align-self: flex-start; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--paper); background: var(--accent); border: none; padding: 14px 28px; cursor: pointer; margin-top: 4px; }
-.feedback-done { display: none; background: var(--accent-cream); border-left: 3px solid var(--accent-warm); padding: 18px 22px; font-family: var(--serif); font-size: 14.5px; color: var(--accent-deep); line-height: 1.85; }
-.feedback-done.show { display: block; }
-.feedback-form.hide { display: none; }
-
-.site-footer { background: var(--paper-soft); padding: 48px 24px 28px; border-top: 1px solid var(--line); }
-.site-footer-inner { max-width: 1080px; margin: 0 auto; }
-.site-footer-cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 36px; padding-bottom: 32px; border-bottom: 1px solid var(--line); }
-.site-footer-col h4 { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 14px; }
-.site-footer-col p, .site-footer-col a { font-family: var(--serif); font-size: 13px; line-height: 1.95; color: var(--ink-soft); }
-.site-footer-col ul { list-style: none; }
-.site-footer-col li { margin-bottom: 8px; }
-.site-footer-bottom { padding-top: 22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; font-family: var(--sans); font-size: 11px; color: var(--ink-mute); }
-
-@media (max-width: 760px) {
-  .site-nav { gap: 14px; font-size: 11px; }
-  .site-brand-text small { display: none; }
-  .ep-hero { padding: 56px 22px 44px; }
-  .ep-hero-num { font-size: 48px; }
-  .ep-hero-title { font-size: 22px; }
-  .layer-section { padding: 40px 22px; }
-  .layer-section p { font-size: 15.5px; line-height: 2.05; }
-  .ep-nav-inner { grid-template-columns: 1fr; padding: 22px 22px; }
-  .ep-nav-link.next { text-align: left; }
-  .nl-row, .feedback-row { grid-template-columns: 1fr; }
-  .site-footer-cols { grid-template-columns: 1fr; gap: 28px; }
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@300;400;500;600;700;900&family=Judson:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
 
-<div class="site-header-strip"></div>
+<div class="read-progress" aria-hidden="true"><div class="read-progress-bar" id="readProgressBar"></div></div>
+
 <header class="site-header">
   <div class="site-header-inner">
     <a href="index.html" class="site-brand">
@@ -238,81 +37,140 @@ a:hover { color: var(--accent-warm); }
 </header>
 
 <section class="ep-hero">
-  <img class="ep-hero-mark" src="assets/miratuku-mark.png" alt="">
   <div class="ep-hero-inner">
-    <div class="ep-hero-eyebrow">PART IV — 第IV部 第12章 編集・並列化</div>
-    <div class="ep-hero-num">76.</div>
-    <h1 class="ep-hero-title">データベースと<br>アルゴリズム</h1>
-    <p class="ep-hero-en">Databases and Algorithms</p>
+    <div class="ep-hero-eyebrow">PART IV 支えのかたち 第12章 編集・並列化 第76話</div>
+    <div class="ep-hero-num">76.<span class="ep-hero-num-total">/ 100</span></div>
+    <h1 class="ep-hero-title">データベースとアルゴリズム</h1>
+    <p class="ep-hero-en"></p>
+    <p class="ep-hero-lead">第IV部第12章「編集・並列化」を続けます。前話まで、印刷・出版・図書館・索引・百科事典という、人類が情報を編集し並列化してきた仕組みを辿ってきました。本話で扱うのは、その作業を機械が自動で行うようになった現代の形――データベースとアルゴリズムです。</p>
     <div class="ep-hero-meta">
-      <span><strong>西村 勇也</strong>（NPO法人ミラツク 代表理事）</span>
-      <span>2026年5月8日</span>
+      <span class="author-badge"><span class="author-badge-initial" aria-hidden="true">N</span><span class="ep-hero-author"><strong>西村 勇也</strong>（NPO法人ミラツク 代表理事）</span></span>
+      <span class="ep-hero-date">2026年5月8日</span>
+      <span class="read-time" id="readTime">推定読了 約—分</span>
+      <a class="pdf-btn" href="ep076-print.html" target="_blank" rel="noopener">PDF版で読む</a>
     </div>
   </div>
 </section>
 
-<section class="layer-section layer-honbun">
-  <article class="layer-inner">
-    <p class="lead">第IV部第12章「<strong>編集・並列化</strong>」を続けます。前話まで、印刷・出版・図書館・索引・百科事典という、人類が情報を編集し並列化してきた仕組みを辿ってきました。本話で扱うのは、その作業を機械が自動で行うようになった現代の形――<strong>データベース</strong>と<strong>アルゴリズム</strong>です。</p>
+<div class="ep-layout">
 
-      <p class="lead">物語の出発点は、1970年6月、米国計算機学会の機関誌『Communications of the ACM』第13巻に掲載された一篇の論文でした。「A Relational Model of Data for Large Shared Data Banks」。著者はIBM研究所サンノゼ研究センターの英国人研究者エドガー・コッド（Edgar F. Codd, 1923-2003）。彼が提案したのは、データを行と列の表（リレーション）として捉え、表同士を演算（リレーショナル代数）で結合・選択・射影する仕組みでした。</p>
+  <aside class="toc-sidebar" aria-label="連載目次">
+    <div class="toc-label">FULL SERIES — 全100話</div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#prologue">PROLOGUE — 序 章</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#part-i">PART I</a>
+      <a class="toc-part-title" href="articles.html#part-i">場のかたち ― 集まりが価値を生む</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#part-ii">PART II</a>
+      <a class="toc-part-title" href="articles.html#part-ii">媒介のかたち ― つなぎ手が社会を変える</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#part-iii">PART III</a>
+      <a class="toc-part-title" href="articles.html#part-iii">物語のかたち ― 価値はどこに宿るか</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#part-iv">PART IV</a>
+      <a class="toc-part-title" href="articles.html#part-iv">支えのかたち ― 見えないものが社会を支える</a>
+      <span class="toc-current">第76話 ― データベースとアルゴリズム</span>
+    </div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#part-v">PART V</a>
+      <a class="toc-part-title" href="articles.html#part-v">開きのかたち ― 特権を多くの人に開く</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-part" href="articles.html#final">FINAL — 終 章</a>
+    </div>
+  </aside>
 
-      <p class="lead">コッド以前、データはツリー構造（階層型）やグラフ構造（ネットワーク型）として、特定のアプリケーションに紐付いた形で保管されていました。コッドは、データをアプリケーションから切り離し、表という抽象形式に還元することで、誰でも同じデータを別の目的で使い回せる構造を発明したのです。1970年代後半にはIBMで実験的データベースSystem Rが開発され、その問い合わせ言語SEQUEL（後のSQL）が国際標準化されます。1979年にOracle、1995年にMySQL、1996年にPostgreSQLが登場し、リレーショナルデータベースは世界中の業務システムを支える共通基盤になりました。</p>
+  <article class="ep-body" id="articleBody">
 
-      <p class="lead">メディア理論家レフ・マノヴィッチ（1960-）は、2001年の著作『The Language of New Media』（MIT Press、邦訳『ニューメディアの言語』みすず書房 2013、堀潤之訳）で、より射程の広い命題を提示します。「データベースは、現代における新しい文化形式である」。19世紀の小説が線形の物語形式を文化の中心に据えたように、21世紀の文化はデータベース形式――項目の集合と検索による任意の組み立て――を中心に据える、と彼は論じました。Wikipedia、Google検索、Spotify、Netflix、Instagram。私たちがいま日常的に触れる文化体験の多くは、データベースから動的に組み立てられています。</p>
+<p>第IV部第12章「<strong>編集・並列化</strong>」を続けます。前話まで、印刷・出版・図書館・索引・百科事典という、人類が情報を編集し並列化してきた仕組みを辿ってきました。本話で扱うのは、その作業を機械が自動で行うようになった現代の形――<strong>データベース</strong>と<strong>アルゴリズム</strong>です。</p>
 
-      <p class="lead">データベースが<strong>編集の自動化</strong>だとすれば、もう一方の柱、アルゴリズムは<strong>並列化の自動化</strong>です。ドナルド・クヌース（1938-）が1968年から書き継いでいる『The Art of Computer Programming』全7巻計画は、検索・整列・組合せ論を形式的に体系化した記念碑的著作で、現在も執筆が続いています。1998年、スタンフォード大学院生だったセルゲイ・ブリン（1973-）とラリー・ペイジ（1973-）は、論文「The Anatomy of a Large-Scale Hypertextual Web Search Engine」でPageRankを提案します。Webページ間のリンク構造を民主的投票として解釈し、重要度を再帰的に計算する。これがGoogleとなり、世界の知の入り口を握りました。</p>
+    <p>物語の出発点は、1970年6月、米国計算機学会の機関誌『Communications of the ACM』第13巻に掲載された一篇の論文でした。「A Relational Model of Data for Large Shared Data Banks」。著者はIBM研究所サンノゼ研究センターの英国人研究者エドガー・コッド（Edgar F. Codd, 1923-2003）。彼が提案したのは、データを行と列の表（リレーション）として捉え、表同士を演算（リレーショナル代数）で結合・選択・射影する仕組みでした。</p>
 
-      <p class="lead">しかし、データ数学者キャシー・オニール（1968-）は2016年の著作『Weapons of Math Destruction』（Crown、邦訳『あなたを支配し、社会を破壊する、AI・ビッグデータの罠』インターシフト 2018、久保尚子訳）で警鐘を鳴らします。信用スコア、再犯予測、教員評価、求人選考、保険料率――不透明で大規模で破壊的な数学モデルが、特に弱者を不可視のうちに排除している、と。</p>
+    <p>コッド以前、データはツリー構造（階層型）やグラフ構造（ネットワーク型）として、特定のアプリケーションに紐付いた形で保管されていました。コッドは、データをアプリケーションから切り離し、表という抽象形式に還元することで、誰でも同じデータを別の目的で使い回せる構造を発明したのです。1970年代後半にはIBMで実験的データベースSystem Rが開発され、その問い合わせ言語SEQUEL（後のSQL）が国際標準化されます。1979年にOracle、1995年にMySQL、1996年にPostgreSQLが登場し、リレーショナルデータベースは世界中の業務システムを支える共通基盤になりました。</p>
 
-      <p class="lead">データベースは編集を、アルゴリズムは並列化を、自動化しました。しかしそこに<strong>誰の問いを刻むか</strong>は、依然として人間の選択です。</p>
+    <p>メディア理論家レフ・マノヴィッチ（1960-）は、2001年の著作『The Language of New Media』（MIT Press、邦訳『ニューメディアの言語』みすず書房 2013、堀潤之訳）で、より射程の広い命題を提示します。「データベースは、現代における新しい文化形式である」。19世紀の小説が線形の物語形式を文化の中心に据えたように、21世紀の文化はデータベース形式――項目の集合と検索による任意の組み立て――を中心に据える、と彼は論じました。Wikipedia、Google検索、Spotify、Netflix、Instagram。私たちがいま日常的に触れる文化体験の多くは、データベースから動的に組み立てられています。</p>
+
+    <p>データベースが<strong>編集の自動化</strong>だとすれば、もう一方の柱、アルゴリズムは<strong>並列化の自動化</strong>です。ドナルド・クヌース（1938-）が1968年から書き継いでいる『The Art of Computer Programming』全7巻計画は、検索・整列・組合せ論を形式的に体系化した記念碑的著作で、現在も執筆が続いています。1998年、スタンフォード大学院生だったセルゲイ・ブリン（1973-）とラリー・ペイジ（1973-）は、論文「The Anatomy of a Large-Scale Hypertextual Web Search Engine」でPageRankを提案します。Webページ間のリンク構造を民主的投票として解釈し、重要度を再帰的に計算する。これがGoogleとなり、世界の知の入り口を握りました。</p>
+
+    <p>しかし、データ数学者キャシー・オニール（1968-）は2016年の著作『Weapons of Math Destruction』（Crown、邦訳『あなたを支配し、社会を破壊する、AI・ビッグデータの罠』インターシフト 2018、久保尚子訳）で警鐘を鳴らします。信用スコア、再犯予測、教員評価、求人選考、保険料率――不透明で大規模で破壊的な数学モデルが、特に弱者を不可視のうちに排除している、と。</p>
+
+    <p>データベースは編集を、アルゴリズムは並列化を、自動化しました。しかしそこに<strong>誰の問いを刻むか</strong>は、依然として人間の選択です。</p>
+
+    <div class="section-divider" aria-hidden="true"><span class="section-divider-mark">◆ ◇ ◆</span></div>
+
+    <details class="reading-lens" id="lens-management">
+      <summary class="reading-lens-trigger">
+        <span class="reading-lens-label">FOR MANAGEMENT</span>
+        <span class="reading-lens-title">経営学的に読み解きたいあなたへ</span>
+        <span class="reading-lens-arrow">▾</span>
+      </summary>
+      <div class="reading-lens-body">
+<p>データベースとアルゴリズムを経営の文脈で読み直すと、<strong>3つの実用視点</strong>が立ち上がります。</p>
+
+        <p><strong>第一に、自社の「データ資産」の整理</strong>。多くの中堅企業は、顧客情報・販売履歴・契約・在庫・会計・人事評価といったデータを、Excelファイルや個別のSaaSにバラバラに抱えています。コッドのリレーショナルモデルが教えるのは、データは用途から切り離して整理した瞬間に、別の用途にも使える資産になるという事実です。CRM、ERP、データウェアハウス（BigQuery、Snowflakeなど）への統合は、短期では負担に見えますが、中長期の意思決定速度と新規事業の発想力を決定的に左右します。</p>
+
+        <p><strong>第二に、「アルゴリズムによる意思決定」の境界設計</strong>。採用書類のスクリーニング、与信判断、価格設定、推薦リスト、業績評価など、機械的な並列化が向いている領域は数多くあります。一方で、オニールが指摘するように、説明できないアルゴリズムは、組織の信頼を一度に毀損します。アルゴリズムが下す判断には、必ず人間が説明できるロジックを残し、不当な扱いを受けたと感じた人が異議申し立てできる経路を設計する。これは経営倫理の問題であると同時に、レピュテーションリスク管理の問題でもあります。</p>
+
+        <p><strong>第三に、「データベース文化形式」の自社への応用</strong>。マノヴィッチが指摘した通り、現代の文化体験はデータベースから動的に組み立てられます。自社のWebサイト、商品カタログ、ナレッジベース、社内資料を、検索可能で、組み合わせ可能な、項目の集合として再設計するだけで、顧客体験と社員生産性は劇的に向上します。一品物のページを量産するよりも、データベース駆動で動的に生成する設計のほうが、長期の更新コストも下がります。</p>
+
+        <p>データを資産にし、判断にロジックの足跡を残す。それが現代の編集と並列化です。</p>
+      </div>
+    </details>
+
+    <details class="reading-lens" id="lens-academic">
+      <summary class="reading-lens-trigger">
+        <span class="reading-lens-label">FOR ACADEMIA</span>
+        <span class="reading-lens-title">学術的に読み解きたいあなたへ</span>
+        <span class="reading-lens-arrow">▾</span>
+      </summary>
+      <div class="reading-lens-body">
+<p>### 1. 主要文献</p>
+
+        <p>リレーショナル理論の起点は、Edgar F. Codd "A Relational Model of Data for Large Shared Data Banks"（Communications of the ACM 13(6), 1970）、体系書はCodd "The Relational Model for Database Management: Version 2"（Addison-Wesley, 1990）。データベース文化論はLev Manovich "The Language of New Media"（MIT Press, 2001、邦訳みすず書房 2013）。アルゴリズムの古典はDonald Knuth "The Art of Computer Programming"（Addison-Wesley, 1968-）、PageRank原論文はBrin &amp; Page（Computer Networks 30, 1998）。批判はCathy O'Neil "Weapons of Math Destruction"（Crown, 2016、邦訳インターシフト 2018）、Frank Pasquale "The Black Box Society"（Harvard UP, 2015）。</p>
+
+        <p>### 2. 異分野からの発展的視点</p>
+
+        <p>データベースとアルゴリズムの本質は、計算機科学の外に出ると別の構造を露わにします。</p>
+
+        <p>第一に、計算複雑性理論。Stephen Cook "The Complexity of Theorem-Proving Procedures"（1971）が定式化したNP完全性は、データベース問い合わせ最適化、巡回経路、シフト勤務表など、現実の編集・並列化問題の多くがP≠NP仮説下で「最適解を多項式時間で得られない」ことを示しました。Garey &amp; Johnson "Computers and Intractability"（1979）のNP困難問題300例は、組織が直面する編集タスクの大半が近似解と発見的探索に頼らざるを得ない理由を教えます。</p>
+
+        <p>第二に、情報理論とPageRankの数理基盤。PageRankは確率行列の主固有ベクトル計算であり、Markov連鎖の定常分布として再解釈できます。Page et al. "The PageRank Citation Ranking"（Stanford InfoLab, 1999）が示した減衰係数d=0.85という具体値は、ランダムサーファーが平均6.7回でリスタートする計算で、Milgramの六次の隔たり実験（1967）と数学的に呼応します。Newman "Networks: An Introduction"（Oxford UP, 2010）はこれを社会ネットワーク分析の標準として体系化しました。</p>
+
+        <p>第三に、機械学習公平性研究の数理。Hardt, Price &amp; Srebro "Equality of Opportunity in Supervised Learning"（NeurIPS 2016）は、Demographic Parity・Equal Opportunity・Calibrationの3公平性指標が一般に同時達成不可能であることを証明しました。Chouldechova（Big Data 5(2), 2017）も独立に同型の不可能性を示しており、O'Neilの倫理批判は、数学的な制約条件としても裏付けられたのです。</p>
+
+        <p>---</p>
+
+        <p><strong>今回つかったデータベース</strong>: 学術知識DB ／ 経営学概念DB ／ 文化構造DB ／ 技術発展加速度DB ／ SIDB v9
+<strong>今回登場した思想家・概念</strong>: エドガー・コッド「A Relational Model of Data for Large Shared Data Banks」(1970) リレーショナル代数 ／ SQL・System R・Oracle(1979)・MySQL(1995)・PostgreSQL(1996) ／ レフ・マノヴィッチ『ニューメディアの言語』(2001) データベースという文化形式 ／ ドナルド・クヌース『The Art of Computer Programming』(1968-) ／ ブリン＆ペイジ PageRank(1998) ／ キャシー・オニール『Weapons of Math Destruction』(2016) アルゴリズム批判
+<strong>次回</strong>: 第77話「編集・並列化のかたち ― 第12章のまとめ」</p>
+      </div>
+    </details>
+
+    <section class="ep-question">
+      <div class="ep-question-label">QUESTION FOR NEXT — 次号への問い</div>
+      <p class="ep-question-q">次回は「編集・並列化のかたち ― 第12章のまとめ」をお届けします。</p>
+      <div class="ep-question-next">
+        <span class="ep-question-next-meta">NEXT EPISODE</span>
+        <span class="ep-question-next-title">第77話「編集・並列化のかたち ― 第12章のまとめ」</span>
+        <a class="ep-question-next-link" href="ep077.html">第77話を読む →</a>
+      </div>
+    </section>
+
   </article>
-</section>
+</div>
 
-<section class="layer-section layer-mgt">
-  <div class="layer-inner">
-    <span class="layer-label">FOR MANAGEMENT</span>
-    <h2 class="layer-title-jp">経営学的に読み解きたいあなたへ</h2>
-    <p class="layer-title-en">For readers approaching this through Management Studies</p>
-    <p class="lead">データベースとアルゴリズムを経営の文脈で読み直すと、<strong>3つの実用視点</strong>が立ち上がります。</p>
-
-      <p class="lead"><strong>第一に、自社の「データ資産」の整理</strong>。多くの中堅企業は、顧客情報・販売履歴・契約・在庫・会計・人事評価といったデータを、Excelファイルや個別のSaaSにバラバラに抱えています。コッドのリレーショナルモデルが教えるのは、データは用途から切り離して整理した瞬間に、別の用途にも使える資産になるという事実です。CRM、ERP、データウェアハウス（BigQuery、Snowflakeなど）への統合は、短期では負担に見えますが、中長期の意思決定速度と新規事業の発想力を決定的に左右します。</p>
-
-      <p class="lead"><strong>第二に、「アルゴリズムによる意思決定」の境界設計</strong>。採用書類のスクリーニング、与信判断、価格設定、推薦リスト、業績評価など、機械的な並列化が向いている領域は数多くあります。一方で、オニールが指摘するように、説明できないアルゴリズムは、組織の信頼を一度に毀損します。アルゴリズムが下す判断には、必ず人間が説明できるロジックを残し、不当な扱いを受けたと感じた人が異議申し立てできる経路を設計する。これは経営倫理の問題であると同時に、レピュテーションリスク管理の問題でもあります。</p>
-
-      <p class="lead"><strong>第三に、「データベース文化形式」の自社への応用</strong>。マノヴィッチが指摘した通り、現代の文化体験はデータベースから動的に組み立てられます。自社のWebサイト、商品カタログ、ナレッジベース、社内資料を、検索可能で、組み合わせ可能な、項目の集合として再設計するだけで、顧客体験と社員生産性は劇的に向上します。一品物のページを量産するよりも、データベース駆動で動的に生成する設計のほうが、長期の更新コストも下がります。</p>
-
-      <p class="lead">データを資産にし、判断にロジックの足跡を残す。それが現代の編集と並列化です。</p>
+<section class="ep-actions" aria-label="読了後アクション">
+  <div class="ep-actions-inner">
+    <a class="ep-action-btn primary" href="#newsletter">メルマガで次話を受け取る</a>
+    <a class="ep-action-btn" href="ep076-print.html" target="_blank" rel="noopener">PDF版を読む</a>
+    <a class="ep-action-btn" href="articles.html">全100話の地図へ</a>
   </div>
 </section>
-
-<section class="layer-section layer-aca">
-  <div class="layer-inner">
-    <span class="layer-label">FOR ACADEMIA</span>
-    <h2 class="layer-title-jp">学術的に読み解きたいあなたへ</h2>
-    <p class="layer-title-en">For readers approaching this through Academic study</p>
-    <p class="lead">リレーショナルデータベースの基礎文献は、Edgar F. Codd "A Relational Model of Data for Large Shared Data Banks"（Communications of the ACM 13(6), 1970）。続編として "Relational Completeness of Data Base Sublanguages"（in Rustin ed., *Data Base Systems*, Prentice-Hall, 1972）、決定版の体系書は Codd "The Relational Model for Database Management: Version 2"（Addison-Wesley, 1990）。SQL史は、Donald Chamberlin & Raymond Boyce "SEQUEL: A Structured English Query Language"（ACM SIGFIDET, 1974）が起点で、教科書としては Hector Garcia-Molina, Jeffrey Ullman & Jennifer Widom "Database Systems: The Complete Book"（Pearson, 2nd ed. 2008）、C. J. Date "An Introduction to Database Systems"（Addison-Wesley, 8th ed. 2003、邦訳『データベースシステム概論』丸善 8版 2007）が標準。</p>
-
-      <p class="lead">データベース文化論は、Lev Manovich "The Language of New Media"（MIT Press, 2001、邦訳『ニューメディアの言語』みすず書房 2013、堀潤之訳）。続編として Manovich "Software Takes Command"（Bloomsbury, 2013、邦訳『ソフトウェアが命令する』ビー・エヌ・エヌ新社 2014）。</p>
-
-      <p class="lead">アルゴリズム研究の古典は、Donald Knuth "The Art of Computer Programming"（Addison-Wesley, vol.1 1968 / vol.2 1969 / vol.3 1973 / vol.4A 2011、邦訳『The Art of Computer Programming』アスキー・ドワンゴ 各巻）。教科書としては Thomas Cormen, Charles Leiserson, Ronald Rivest & Clifford Stein "Introduction to Algorithms"（MIT Press, 4th ed. 2022、邦訳『アルゴリズムイントロダクション』近代科学社 第3版 2012）が標準。PageRankの原論文は、Sergey Brin & Lawrence Page "The Anatomy of a Large-Scale Hypertextual Web Search Engine"（Computer Networks and ISDN Systems 30, 1998）、および Page, Brin, Motwani & Winograd "The PageRank Citation Ranking: Bringing Order to the Web"（Stanford InfoLab Technical Report, 1999）。</p>
-
-      <p class="lead">アルゴリズム批判の中核文献は、Cathy O'Neil "Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy"（Crown, 2016、邦訳『あなたを支配し、社会を破壊する、AI・ビッグデータの罠』インターシフト 2018、久保尚子訳）。続く議論として、Safiya Umoja Noble "Algorithms of Oppression"（NYU Press, 2018）、Virginia Eubanks "Automating Inequality"（St. Martin's Press, 2018、邦訳『格差の自動化』人文書院 2021）、Ruha Benjamin "Race After Technology"（Polity, 2019）、Frank Pasquale "The Black Box Society"（Harvard UP, 2015、邦訳『ブラックボックス化する社会』青土社 2018）。</p>
-
-      <p class="lead">日本の文脈は、増永良文『リレーショナルデータベース入門』（サイエンス社, 第3版 2017）、北川博之『データベースシステム』（オーム社, 改訂2版 2020）、宇野毅明『最適化アルゴリズムから見た数理計画法』（共立出版, 2010）、西垣通『デジタル社会の罠』（朝日新聞出版, 2018）。</p>
-
-      <p class="lead">連載第IV部第12章は、本話のデータベースとアルゴリズムから、ep77の章まとめへと進み、編集と並列化の系譜全体を俯瞰します。</p>
-  </div>
-</section>
-
-<dl class="ep-meta-block">
-  <dt>今回つかったデータベース</dt>
-  <dd>学術知識DB ／ 経営学概念DB ／ 文化構造DB ／ 技術発展加速度DB ／ SIDB v9</dd>
-  <dt>今回登場した思想家・概念</dt>
-  <dd>エドガー・コッド「A Relational Model of Data for Large Shared Data Banks」(1970) リレーショナル代数 ／ SQL・System R・Oracle(1979)・MySQL(1995)・PostgreSQL(1996) ／ レフ・マノヴィッチ『ニューメディアの言語』(2001) データベースという文化形式 ／ ドナルド・クヌース『The Art of Computer Programming』(1968-) ／ ブリン＆ペイジ PageRank(1998) ／ キャシー・オニール『Weapons of Math Destruction』(2016) アルゴリズム批判</dd>
-  <dt>次回</dt>
-  <dd>第77話「編集・並列化のかたち ― 第12章のまとめ」</dd>
-</dl>
 
 <nav class="ep-nav">
   <div class="ep-nav-inner">
@@ -327,33 +185,6 @@ a:hover { color: var(--accent-warm); }
   </div>
 </nav>
 
-<section class="feedback-section" id="comments">
-  <div class="feedback-inner">
-    <div class="feedback-label">COMMENTS ・ 感想・コメント</div>
-    <h2 class="feedback-title">この話に感想を送る</h2>
-    <p class="feedback-desc">読んで感じたこと、気になった一文、ご質問、関連する話題――どのようなものでも歓迎します。編集長（西村）に直接届きます。</p>
-
-    <form class="feedback-form" id="fbForm" onsubmit="return false;">
-      <div class="feedback-field">
-        <label for="fbSuggestion">コメント <span style="color:var(--accent-warm);">*</span></label>
-        <textarea id="fbSuggestion" placeholder="ご自由にお書きください" required></textarea>
-      </div>
-      <div class="feedback-row">
-        <div class="feedback-field">
-          <label for="fbName">お名前（任意）</label>
-          <input type="text" id="fbName" autocomplete="name" placeholder="匿名でも構いません">
-        </div>
-        <div class="feedback-field">
-          <label for="fbEmail">メール（任意）</label>
-          <input type="email" id="fbEmail" autocomplete="email" placeholder="返信不要なら空欄で">
-        </div>
-      </div>
-      <button type="button" class="feedback-submit" id="fbSubmit" onclick="submitFeedback()">送信する</button>
-    </form>
-    <div class="feedback-done" id="fbDone">ありがとうございました。コメントを受け取りました。</div>
-  </div>
-</section>
-
 <section class="newsletter" id="newsletter">
   <div class="newsletter-inner">
     <div class="newsletter-eyebrow">EMERGING FUTURE NEWSLETTER</div>
@@ -362,7 +193,9 @@ a:hover { color: var(--accent-warm); }
 
     <form class="nl-form" id="nlForm" onsubmit="return false;">
       <div class="nl-step active" id="nlStep1">
-        <div class="nl-field"><input type="email" id="nlEmail" placeholder="メールアドレス" autocomplete="email"></div>
+        <div class="nl-field">
+          <input type="email" id="nlEmail" placeholder="メールアドレス" autocomplete="email">
+        </div>
         <button type="button" class="nl-btn" onclick="nlNext()">次へ →</button>
         <div class="nl-trust">連載更新・実践事例・関連トピックをお届けします</div>
       </div>
@@ -375,7 +208,10 @@ a:hover { color: var(--accent-warm); }
         <button type="button" class="nl-btn" id="nlBtn" onclick="submitNl()">登録する</button>
       </div>
     </form>
-    <div class="nl-done" id="nlDone">ようこそ。確認メールをお送りしました。<br>これから一緒に「変化のかたち」を読み解いていきましょう。</div>
+    <div class="nl-done" id="nlDone">
+      ようこそ。確認メールをお送りしました。<br>これから一緒に「変化のかたち」を読み解いていきましょう。
+    </div>
+    <div class="nl-error" id="nlError" role="alert" aria-live="polite"></div>
   </div>
 </section>
 
@@ -392,7 +228,6 @@ a:hover { color: var(--accent-warm); }
         <ul>
           <li><a href="index.html">ホーム</a></li>
           <li><a href="articles.html">全100話 一覧</a></li>
-          <li><a href="ep001.html">第1話を読む</a></li>
           <li><a href="#newsletter">メルマガ登録</a></li>
         </ul>
       </div>
@@ -411,58 +246,128 @@ a:hover { color: var(--accent-warm); }
   </div>
 </footer>
 
+<button class="toc-fab" id="tocFab" onclick="toggleTocDrawer()" aria-label="目次を開く">目次</button>
+<div class="toc-overlay" id="tocOverlay" onclick="toggleTocDrawer()" aria-hidden="true"></div>
+<div class="toc-drawer" id="tocDrawer" role="dialog" aria-label="連載目次" aria-modal="true">
+  <button class="toc-drawer-close" onclick="toggleTocDrawer()" aria-label="閉じる">閉じる</button>
+  <div class="toc-label">FULL SERIES — 全100話</div>
+  <div class="toc-section">
+    <a class="toc-part" href="articles.html#prologue">PROLOGUE — 序 章</a>
+  </div>
+  <div class="toc-section">
+    <a class="toc-part" href="articles.html#part-i">PART I</a>
+    <a class="toc-part-title" href="articles.html#part-i">場のかたち ― 集まりが価値を生む</a>
+  </div>
+  <div class="toc-section">
+    <a class="toc-part" href="articles.html#part-ii">PART II</a>
+    <a class="toc-part-title" href="articles.html#part-ii">媒介のかたち ― つなぎ手が社会を変える</a>
+  </div>
+  <div class="toc-section">
+    <a class="toc-part" href="articles.html#part-iii">PART III</a>
+    <a class="toc-part-title" href="articles.html#part-iii">物語のかたち ― 価値はどこに宿るか</a>
+  </div>
+  <div class="toc-section">
+    <a class="toc-part" href="articles.html#part-iv">PART IV</a>
+    <a class="toc-part-title" href="articles.html#part-iv">支えのかたち ― 見えないものが社会を支える</a>
+    <span class="toc-current">第76話 ― データベースとアルゴリズム</span>
+  </div>
+  <div class="toc-section">
+    <a class="toc-part" href="articles.html#part-v">PART V</a>
+    <a class="toc-part-title" href="articles.html#part-v">開きのかたち ― 特権を多くの人に開く</a>
+  </div>
+  <div class="toc-section">
+    <a class="toc-part" href="articles.html#final">FINAL — 終 章</a>
+  </div>
+</div>
+
 <script>
-const FEEDBACK_API = 'https://claude-code-manual-app.vercel.app/api/feedback';
 const NEWSLETTER_API = 'https://claude-code-manual-app.vercel.app/api/community';
-const EPISODE_ID = 'ep76';
+const EPISODE_ID = 'ep076';
 const EPISODE_TITLE = '第76話 ― データベースとアルゴリズム';
 
-async function submitFeedback() {
-  const suggestion = document.getElementById('fbSuggestion').value.trim();
-  const name = document.getElementById('fbName').value.trim();
-  const email = document.getElementById('fbEmail').value.trim();
-  const btn = document.getElementById('fbSubmit');
-  if (!suggestion) { document.getElementById('fbSuggestion').focus(); return; }
-  btn.disabled = true; btn.textContent = '送信中…';
-  try {
-    const res = await fetch(FEEDBACK_API, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ source: 'henka-no-katachi', episode: EPISODE_ID + ' ' + EPISODE_TITLE, suggestion, name, email })
-    });
-    if (!res.ok) throw new Error('failed');
-    document.getElementById('fbForm').classList.add('hide');
-    document.getElementById('fbDone').classList.add('show');
-  } catch(e) { alert('送信に失敗しました'); btn.disabled = false; btn.textContent = '送信する'; }
+(function() {
+  const article = document.getElementById('articleBody');
+  const bar = document.getElementById('readProgressBar');
+  const readTimeEl = document.getElementById('readTime');
+  if (article && readTimeEl) {
+    const text = article.innerText || article.textContent || '';
+    const charCount = text.replace(/\s/g, '').length;
+    const minutes = Math.max(1, Math.round(charCount / 280));
+    readTimeEl.textContent = '推定読了 約' + minutes + '分';
+  }
+  if (article && bar) {
+    function updateProgress() {
+      const rect = article.getBoundingClientRect();
+      const total = article.offsetHeight - window.innerHeight;
+      const scrolled = -rect.top;
+      const pct = total > 0 ? Math.max(0, Math.min(100, (scrolled / total) * 100)) : 0;
+      bar.style.width = pct + '%';
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress, { passive: true });
+    updateProgress();
+  }
+})();
+
+function toggleTocDrawer() {
+  const d = document.getElementById('tocDrawer');
+  if (!d) return;
+  const willOpen = !d.classList.contains('show');
+  d.classList.toggle('show');
+  document.body.style.overflow = willOpen ? 'hidden' : '';
+  document.getElementById('tocOverlay')?.classList.toggle('show', willOpen);
+  if (willOpen) {
+    d.querySelector('.toc-drawer-close')?.focus();
+    document.addEventListener('keydown', _tocEsc);
+  } else {
+    document.removeEventListener('keydown', _tocEsc);
+    document.getElementById('tocFab')?.focus();
+  }
 }
+function _tocEsc(e) { if (e.key === 'Escape') toggleTocDrawer(); }
 
 function nlNext() {
   const v = document.getElementById('nlEmail').value.trim();
-  if (!v || !v.includes('@')) { document.getElementById('nlEmail').focus(); return; }
+  if (!v || !v.includes('@')) {
+    document.getElementById('nlEmail').style.borderColor = 'var(--accent)';
+    document.getElementById('nlEmail').focus();
+    setTimeout(() => document.getElementById('nlEmail').style.borderColor = '', 2000);
+    return;
+  }
   document.getElementById('nlStep1').classList.remove('active');
   document.getElementById('nlStep2').classList.add('active');
   document.getElementById('nlName').focus();
 }
-
+function _nlShowError(msg) {
+  const e = document.getElementById('nlError');
+  if (e) { e.textContent = msg; e.classList.add('show'); }
+}
+function _nlClearError() { document.getElementById('nlError')?.classList.remove('show'); }
 async function submitNl() {
+  _nlClearError();
   const name = document.getElementById('nlName').value.trim();
   const org = document.getElementById('nlOrg').value.trim();
   const email = document.getElementById('nlEmail').value.trim();
   const consent = document.getElementById('nlConsent').checked;
   const btn = document.getElementById('nlBtn');
-  if (!name) { document.getElementById('nlName').focus(); return; }
-  if (!consent) { alert('メルマガ配信への同意が必要です'); return; }
-  btn.disabled = true; btn.textContent = '登録中…';
+  if (!name) { document.getElementById('nlName').focus(); _nlShowError('お名前を入力してください'); return; }
+  if (!consent) { _nlShowError('メールマガジン配信への同意が必要です'); return; }
+  btn.disabled = true;
+  btn.textContent = '登録中…';
   try {
     const res = await fetch(NEWSLETTER_API, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, org, email })
+      body: JSON.stringify({ name, org, email }),
     });
     if (!res.ok) throw new Error('failed');
     document.getElementById('nlForm').classList.add('hide');
     document.getElementById('nlDone').classList.add('show');
-  } catch(e) { alert('登録に失敗しました'); btn.disabled = false; btn.textContent = '登録する'; }
+  } catch (e) {
+    _nlShowError('登録に失敗しました。少し時間をおいて再度お試しください。');
+    btn.disabled = false;
+    btn.textContent = '登録する';
+  }
 }
 </script>
 
