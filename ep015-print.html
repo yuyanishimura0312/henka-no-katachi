@@ -107,15 +107,17 @@
 
         <p>オンライン共同体研究の中核は、Jean Lave &amp; Etienne Wenger "Situated Learning"（Cambridge UP, 1991、邦訳『状況に埋め込まれた学習』産業図書 1993）、Etienne Wenger "Communities of Practice"（Cambridge UP, 1998、邦訳『実践コミュニティ』翔泳社 2002）、Eric Raymond "The Cathedral and the Bazaar"（O'Reilly, 1999、邦訳『伽藍とバザール』USP研究所 2010）、Yochai Benkler "Coase's Penguin"（Yale Law Journal 112, 2002, pp.369-446）、同 "The Wealth of Networks"（Yale UP, 2006）。実証研究はLaura Dabbish et al. "Social Coding in GitHub"（CSCW 2012）、Eytan Bakshy et al. "Exposure to Ideologically Diverse News on Facebook"（Science 348, 2015, pp.1130-1132）。</p>
 
-        <p>### 2. 異分野からの発展的視点</p>
+        <p>### 2. 異分野からの発展的視点 ― ワッツとストロガッツの「6次の隔たり」を解いた1998年の論文</p>
 
-        <p>オンライン越境のメカニズムは、情報理論とネットワーク科学で厳密に記述できます。</p>
+        <p>世界中のどんな知らない人とも、知人を6人辿れば繋がる ―― 1967年に米国の社会心理学者スタンレー・ミルグラムが手紙の連鎖実験で示したこの「<strong>6次の隔たり</strong>」は、長らく逸話として知られていました。しかしその仕組みを、数学的に解き明かした論文は、ミルグラム実験から30年以上経った1998年に登場します。</p>
 
-        <p>第一に、Shannon情報理論の通信路容量。Claude Shannon "A Mathematical Theory of Communication"（Bell System Technical Journal 27, 1948）が定義した通信路容量C=B log2(1+S/N)は、帯域幅Bと信号対雑音比S/Nから情報伝達の上限を与えます。ARPANETから現代のGitHubまでの帯域幅拡大（kbps→Gbps、約10^6倍）は、知識共有の理論的最大効率を桁違いに引き上げました。Linuxの分散開発が「伽藍より速い」のは、通信路容量が個人の認知速度をはるかに超えた瞬間に、並列性がボトルネックを移動させたからです。</p>
+        <p>米国コーネル大学の物理学者ダンカン・ワッツ（Duncan Watts）とスティーブン・ストロガッツ（Steven Strogatz）が学術誌『Nature』393巻（440-442頁）に発表した論文「<strong>Collective dynamics of 'small-world' networks</strong>」は、世界中のネットワークに共通する驚くべき性質を示しました。彼らは線虫の神経網、米国西部の電力網、ハリウッド俳優の共演ネットワーク、という全く異なる3種のネットワークを比較したのです。</p>
 
-        <p>第二に、Six Degrees現象とスモールワールド。Watts-Strogatz "Collective Dynamics of Small-World Networks"（Nature 393, 1998）の小世界モデルは、ランダム再配線確率p≈0.01でクラスタ係数を保ったまま平均経路長Lが急減することを示しました。Backstrom et al. "Four Degrees of Separation"（Web Science 2012）はFacebook 7.2億ユーザーの実測で平均経路長3.74を確認しています。GitHubの「フォーク連鎖」は、まさにこの小世界構造の上で、コードが地球規模で3-4ステップで到達する仕組みです。</p>
+        <p>3つすべてに共通したのは、「<strong>高いクラスタ係数（仲間が固まる度合い）を保ったまま、平均経路長が驚くほど短い</strong>」という構造でした。彼らはコンピュータ・シミュレーションで、規則格子のリンクをわずか<strong>1%だけランダムに張り替える</strong>だけで、平均経路長が劇的に短くなる ―― つまり「ご近所付き合い」を保ちながら全世界が繋がる ―― ことを証明しました。これが「<strong>スモールワールド・ネットワーク</strong>」です。</p>
 
-        <p>第三に、ピアプロダクションの数理。Benklerが提示したCommons-based peer productionは、生産関数として「モジュラリティ×粒度の細かさ×統合コストの低さ」が条件です。Kevin Crowston et al.（"Free/Libre OSS Development" ACM Computing Surveys 44, 2012）の実証分析は、コミット粒度の中央値が約20-50行に収束することを示しました。Linux/GitHubの組織原理は、複雑系の階層的モジュラリティの工学的実装と読めます。</p>
+        <p>その後、Lars Backstromら（*ACM Web Science* 2012）は、Facebookの7億2千万人の実測で、平均経路長が<strong>3.74</strong>であることを確認しました。6次から、4次未満へ。</p>
+
+        <p>ARPANET、Linux、GitHub、Discord、Slack、X(Twitter) ―― オンラインの越境が成立するのは、これらのプラットフォームが、ワッツとストロガッツが定式化した小世界構造を、世界規模で実装しているからです。1%のランダムな繋がりが、知らない誰かとの距離を一気に縮めている。私たちが今日、地球の反対側のオープンソース開発者と数時間で対話できるのは、20世紀末に物理学者2人がコーネル大学で書いた数式の延長線上にあります。</p>
 
         <p>---</p>
 
