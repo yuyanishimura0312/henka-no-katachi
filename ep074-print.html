@@ -111,17 +111,17 @@
 
         <p>分類体系の社会的構築は、Geoffrey C. Bowker &amp; Susan Leigh Star "Sorting Things Out: Classification and Its Consequences"（MIT Press, 1999、邦訳『分類はいかに思想を作るか』みすず書房 2024）が出発点。デューイ史は、Wayne A. Wiegand "Irrepressible Reformer: A Biography of Melvil Dewey"（ALA, 1996）。ポール・オトレ研究はAlex Wright "Cataloging the World"（Oxford UP, 2014）、W. Boyd Rayward "The Universe of Information"（VINITI, 1975）。LCCはLois Mai Chan "A Guide to the Library of Congress Classification"（Libraries Unlimited, 第6版 2016）。日本では、もり・きよし原編／日本図書館協会編『日本十進分類法 新訂10版』（日本図書館協会, 2014）、緑川信之『本を分類する』（勁草書房, 1996）。ICDはWHO "ICD-11 for Mortality and Morbidity Statistics"（2022発効）、Theodore Porter "Trust in Numbers"（Princeton UP, 1995、邦訳みすず書房 2013）。フォークソノミーはDavid Weinberger "Everything Is Miscellaneous"（Times Books, 2007）。</p>
 
-        <p>### 2. 異分野からの発展的視点</p>
+        <p>### 2. 異分野からの発展的視点 ― スパーク・ジョーンズが解いた「稀な言葉ほど検索価値が高い」</p>
 
-        <p>分類は、情報科学・機械学習・情報理論が共通に直面する技術的課題でもあります。</p>
+        <p>デューイ十進分類法、米国議会図書館分類、UDC、日本十進分類法 ―― 人類が手で組み立ててきた分類体系には、ある共通の知恵がありました。<strong>よく出てくる言葉より、稀にしか出てこない言葉のほうが、文書の特徴を強く捉える</strong>。この直感を厳格な数式に落とし込んだのが、英国ケンブリッジ大学の情報科学者カレン・スパーク・ジョーンズ（Karen Spärck Jones）です。</p>
 
-        <p>第一に、ベクトル空間モデルの発明と継承。Gerard Salton "A Vector Space Model for Automatic Indexing"（Communications of the ACM 18(11), 1975）は、文書を語の重み付きベクトルとして表現する操作を定式化し、現代の検索エンジンの基礎を築きました。Karen Spärck Jones "A Statistical Interpretation of Term Specificity"（Journal of Documentation 28(1), 1972）が提示したIDF（Inverse Document Frequency）は、稀少語ほど分類的価値が高いことを情報理論的に正当化します。デューイの十進分類は、人間が手で行ったTF-IDFランキングの祖型と読めます。</p>
+        <p>1972年、スパーク・ジョーンズは『Journal of Documentation』28巻1号に短い論文「<strong>A Statistical Interpretation of Term Specificity and Its Application in Retrieval</strong>」（11-21頁）を発表しました。彼女は、ある単語の検索的価値を測る指標として「<strong>逆文書頻度（Inverse Document Frequency, IDF）</strong>」を提案したのです。式は単純です ―― 全文書数Nを、その単語を含む文書数nfで割って対数を取る。<strong>ありふれた単語ほどIDFが低く、稀な単語ほどIDFが高くなる</strong>。</p>
 
-        <p>第二に、機械学習による分散表現。Tomas Mikolov et al. "Efficient Estimation of Word Representations in Vector Space"（ICLR 2013）のword2vec、Jacob Devlin et al. "BERT"（NAACL 2019）の文脈化埋め込みは、語を300〜768次元の連続ベクトルとして表現することで、階層分類の硬さを克服しました。Bowker &amp; Starの「分類はリンゴをミカンと並べる選択である」という命題は、埋め込み空間ではcosine類似度に置き換わります。</p>
+        <p>この発想は、その後Gerard Salton（コーネル大学）が1975年に提案したベクトル空間モデルと組み合わさり、<strong>TF-IDF</strong>として現代の検索エンジンの基礎技術になりました。Google、Bing、Yahoo!、Elasticsearch、Wikipediaの検索 ―― これらすべての底に、スパーク・ジョーンズの1972年の式が動いています。</p>
 
-        <p>第三に、相互情報量と情報抽出。Claude Shannonの相互情報量I(X;Y)は、語と文書、文書と利用者ニーズの依存度を測る指標として、現代のBM25・LSI・LDAトピックモデル（Blei, Ng, Jordan 2003）まで継承されています。</p>
+        <p>この発見は、分類体系の働きそのものを情報理論の言葉で再定義しました。デューイ十進分類法が「100哲学・200宗教...」と知識を10分類した行為は、頻度の偏りを使って情報の特異性を顕在化させる、<strong>情報利得（mutual information）の最大化操作</strong>として読み直せます。</p>
 
-        <p>分類は、リンゴとミカンの境界を引く政治であると同時に、ベクトル空間と相互情報量の数理でもあります。</p>
+        <p>その後、word2vec（Mikolov 2013）、BERT（Devlin 2018）、ChatGPTの基礎技術にまで連なる<strong>ベクトル意味表現</strong>の系譜は、スパーク・ジョーンズが半世紀前に書いた一行の式を、AIが扱える形に拡張したものです。図書館分類は、19世紀の硬い棚から、21世紀の機械学習モデルまで、ひとつの普遍的な情報原理 ―― <strong>稀少さこそが意味を運ぶ</strong> ―― の上で進化を続けています。</p>
 
         <p>---</p>
 

@@ -133,15 +133,17 @@
 
         <p>リレーショナル理論の起点は、Edgar F. Codd "A Relational Model of Data for Large Shared Data Banks"（Communications of the ACM 13(6), 1970）、体系書はCodd "The Relational Model for Database Management: Version 2"（Addison-Wesley, 1990）。データベース文化論はLev Manovich "The Language of New Media"（MIT Press, 2001、邦訳みすず書房 2013）。アルゴリズムの古典はDonald Knuth "The Art of Computer Programming"（Addison-Wesley, 1968-）、PageRank原論文はBrin &amp; Page（Computer Networks 30, 1998）。批判はCathy O'Neil "Weapons of Math Destruction"（Crown, 2016、邦訳インターシフト 2018）、Frank Pasquale "The Black Box Society"（Harvard UP, 2015）。</p>
 
-        <p>### 2. 異分野からの発展的視点</p>
+        <p>### 2. 異分野からの発展的視点 ― ブリンとペイジが学生時代に書いた「PageRank」</p>
 
-        <p>データベースとアルゴリズムの本質は、計算機科学の外に出ると別の構造を露わにします。</p>
+        <p>1996年、米国スタンフォード大学のセルゲイ・ブリン（Sergey Brin）とラリー・ペイジ（Larry Page）は、博士課程の研究プロジェクトを始めていました。当時のWeb検索エンジン（AltaVista、Lycos、Excite）は、検索語が含まれる回数で結果を順位づけていました。けれども、その方式では権威ある論文と無価値なスパムが等しく上位に表示されてしまう。二人の問いは「<strong>Webページの本当の重要性は、何で測れるのか</strong>」でした。</p>
 
-        <p>第一に、計算複雑性理論。Stephen Cook "The Complexity of Theorem-Proving Procedures"（1971）が定式化したNP完全性は、データベース問い合わせ最適化、巡回経路、シフト勤務表など、現実の編集・並列化問題の多くがP≠NP仮説下で「最適解を多項式時間で得られない」ことを示しました。Garey &amp; Johnson "Computers and Intractability"（1979）のNP困難問題300例は、組織が直面する編集タスクの大半が近似解と発見的探索に頼らざるを得ない理由を教えます。</p>
+        <p>二人が出した答えは、学術論文の世界からのアナロジーでした。<strong>学術界では、論文の重要性は「他のどれだけ重要な論文に引用されているか」で決まる</strong>。同じ論理をWebに適用したらどうなるか。ブリンとペイジは1998年、論文「<strong>The Anatomy of a Large-Scale Hypertextual Web Search Engine</strong>」（*Computer Networks* 30巻、107-117頁）を発表しました。彼らが提案した「<strong>PageRank</strong>」は、単純で強力なアルゴリズムでした。</p>
 
-        <p>第二に、情報理論とPageRankの数理基盤。PageRankは確率行列の主固有ベクトル計算であり、Markov連鎖の定常分布として再解釈できます。Page et al. "The PageRank Citation Ranking"（Stanford InfoLab, 1999）が示した減衰係数d=0.85という具体値は、ランダムサーファーが平均6.7回でリスタートする計算で、Milgramの六次の隔たり実験（1967）と数学的に呼応します。Newman "Networks: An Introduction"（Oxford UP, 2010）はこれを社会ネットワーク分析の標準として体系化しました。</p>
+        <p>数学的に書けば、PageRankは<strong>Webリンク・グラフの主固有ベクトル</strong>を計算する操作です。各ページの「重要度」が、リンクを通じて他のページから流れ込む。ある種のランダムサーファーがWebをクリックして歩き回るとき、各ページに留まる確率分布が定常分布として収束する。これは19世紀の数学者アンドレイ・マルコフ（Andrey Markov）が研究した<strong>マルコフ連鎖の定常分布</strong>そのものでした。</p>
 
-        <p>第三に、機械学習公平性研究の数理。Hardt, Price &amp; Srebro "Equality of Opportunity in Supervised Learning"（NeurIPS 2016）は、Demographic Parity・Equal Opportunity・Calibrationの3公平性指標が一般に同時達成不可能であることを証明しました。Chouldechova（Big Data 5(2), 2017）も独立に同型の不可能性を示しており、O'Neilの倫理批判は、数学的な制約条件としても裏付けられたのです。</p>
+        <p>PageRankの式は、減衰係数d=0.85という具体値を使います。ランダムサーファーが平均約6.7クリックでリンクを離れて新しい場所に飛ぶ ―― これはミルグラムの六次の隔たり実験（1967）と数学的に呼応する数値です。</p>
+
+        <p>ブリンとペイジが学生時代に書いたこの式は、Googleの中核技術となり、20世紀末から21世紀のWeb空間そのものの「並べ方」を支配してきました。Codd のリレーショナル・モデルが提示した「データを表として並べる」発明から始まり、ブリン＆ペイジの<strong>ネットワーク構造を主固有ベクトルとして並べる</strong>発明へ ―― 編集と並列化の数理は、世界の見え方を、いまも静かに書き換え続けています。</p>
 
         <p>---</p>
 
