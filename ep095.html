@@ -4,24 +4,225 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>第95話 ― 可視化メディアのかたち ― 第15章のまとめ | 変化のかたち</title>
-<meta name="description" content="変化のかたち第95話。第V部「開きのかたち」第15章「可視化メディア」を閉じます。">
+<meta name="description" content="変化のかたち第95話。可視化メディアのかたち ― 第15章のまとめ。">
 <meta property="og:title" content="第95話 ― 可視化メディアのかたち ― 第15章のまとめ">
-<meta property="og:description" content="第V部「開きのかたち」第15章「可視化メディア」を閉じます。">
+<meta property="og:description" content="変化のかたち第95話。可視化メディアのかたち ― 第15章のまとめ。">
 <meta property="og:type" content="article">
-<meta property="og:image" content="https://yuyanishimura0312.github.io/henka-no-katachi/assets/og-image.png">
 <meta property="og:url" content="https://yuyanishimura0312.github.io/henka-no-katachi/ep095.html">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://yuyanishimura0312.github.io/henka-no-katachi/ep095.html">
 <link rel="icon" href="https://esse-sense.com/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@300;400;500;600;700;900&family=Judson:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #FAF6F1;
+  --paper-soft: #F5EFE7;
+  --paper-mgt: #FCF5EE;
+  --paper-aca: #F5EEE3;
+  --ink: #2A1A14;
+  --ink-soft: #5A4238;
+  --ink-mute: #7A6358;
+  --accent-deep: #4A1F18;
+  --accent: #7A2E1F;
+  --accent-warm: #C46545;
+  --accent-coral: #E0824A;
+  --accent-peach: #F0A671;
+  --accent-sand: #F8CDAC;
+  --accent-cream: #F5E8DC;
+  --line: #E5D9CC;
+  --line-soft: #EFE4D6;
+  --serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+  --sans: "Noto Sans JP", "Hiragino Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --display: "Cormorant Garamond", "Noto Serif JP", Georgia, serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  font-family: var(--serif);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.95;
+  letter-spacing: 0.04em;
+  font-feature-settings: "palt";
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; transition: color .15s; }
+a:hover { color: var(--accent-warm); }
+
+.site-header-strip { height: 3px; background: var(--accent-deep); }
+.site-header { position: sticky; top: 0; z-index: 100; background: rgba(250,246,241,0.96); backdrop-filter: saturate(160%) blur(8px); -webkit-backdrop-filter: saturate(160%) blur(8px); border-bottom: 1px solid var(--line); }
+.site-header-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.site-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.site-brand-mark { width: 28px; height: 28px; flex-shrink: 0; }
+.site-brand-mark img { width: 100%; height: auto; display: block; }
+.site-brand-text { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; color: var(--accent); line-height: 1.3; }
+.site-brand-text small { display: block; font-size: 9.5px; letter-spacing: 0.14em; color: var(--ink-mute); font-weight: 500; margin-top: 2px; }
+.site-nav { display: flex; gap: 22px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.1em; }
+.site-nav a { color: var(--ink-soft); font-weight: 500; padding: 6px 0; border-bottom: 2px solid transparent; }
+.site-nav a:hover { color: var(--accent-warm); border-bottom-color: var(--accent-warm); }
+
+.ep-hero {
+  background: linear-gradient(170deg, #4A1F18 0%, #6B2A1E 60%, #7A2E1F 100%);
+  color: var(--paper);
+  padding: 80px 24px 64px;
+  position: relative;
+  overflow: hidden;
+}
+.ep-hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 2; }
+.ep-hero-mark { position: absolute; right: -40px; top: 30px; width: 200px; opacity: 0.18; z-index: 1; }
+.ep-hero-eyebrow { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.3em; color: var(--accent-peach); font-weight: 700; display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.ep-hero-eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--accent-peach); }
+.ep-hero-num { font-family: var(--display); font-style: italic; font-size: 64px; color: var(--accent-peach); line-height: 1; margin-bottom: 8px; letter-spacing: 0.02em; }
+.ep-hero-title { font-family: var(--serif); font-weight: 500; font-size: 28px; line-height: 1.55; letter-spacing: 0.04em; color: var(--paper); margin-bottom: 14px; }
+.ep-hero-en { font-family: var(--display); font-style: italic; font-size: 15px; color: #F5DDC4; letter-spacing: 0.02em; margin-bottom: 32px; }
+.ep-hero-meta { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-family: var(--sans); font-size: 11.5px; letter-spacing: 0.1em; color: #E5C9B5; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.18); }
+.ep-hero-meta strong { color: var(--paper); font-weight: 500; }
+
+.layer-section { padding: 56px 24px; border-bottom: 1px solid var(--line); }
+.layer-honbun { background: var(--paper); }
+.layer-mgt { background: var(--paper-mgt); }
+.layer-aca { background: var(--paper-aca); }
+.layer-inner { max-width: 680px; margin: 0 auto; }
+.layer-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: inline-block;
+  padding: 5px 12px;
+  border: 1px solid var(--accent-warm);
+  color: var(--accent-warm);
+}
+.layer-honbun .layer-label { display: none; }
+.layer-title-jp {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--accent-deep);
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+.layer-title-en {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink-mute);
+  margin-bottom: 28px;
+}
+.layer-section p {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 2.05;
+  color: var(--ink);
+  margin-bottom: 26px;
+  text-indent: 1em;
+  letter-spacing: 0.04em;
+}
+.layer-section p:first-of-type { text-indent: 0; }
+.layer-section p strong { font-weight: 700; color: var(--accent-deep); }
+
+.ep-meta-block {
+  margin: 0 auto;
+  max-width: 680px;
+  padding: 28px 30px;
+  background: #FFFFFF;
+  border-top: 3px solid var(--accent-warm);
+  border-bottom: 1px solid var(--line);
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.ep-meta-block dt {
+  font-family: var(--sans);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-top: 14px;
+  margin-bottom: 6px;
+}
+.ep-meta-block dt:first-child { margin-top: 0; }
+.ep-meta-block dd {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  line-height: 1.85;
+  color: var(--ink-soft);
+}
+
+.ep-nav { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.ep-nav-inner { max-width: 720px; margin: 0 auto; padding: 28px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.ep-nav-link { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; background: #FFFFFF; border: 1px solid var(--line); text-decoration: none; transition: border-color .15s; }
+.ep-nav-link:hover { border-color: var(--accent-warm); text-decoration: none; }
+.ep-nav-label { font-family: var(--sans); font-size: 10px; letter-spacing: 0.18em; color: var(--accent-warm); font-weight: 700; }
+.ep-nav-link.next { text-align: right; }
+.ep-nav-title { font-family: var(--serif); font-size: 13.5px; color: var(--accent-deep); line-height: 1.6; letter-spacing: 0.04em; }
+
+.newsletter { background: linear-gradient(140deg, #4A1F18 0%, #6B2A1E 100%); color: var(--paper); padding: 52px 24px 56px; }
+.newsletter-inner { max-width: 680px; margin: 0 auto; }
+.newsletter-eyebrow { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.3em; color: var(--accent-peach); font-weight: 700; margin-bottom: 14px; }
+.newsletter-title { font-family: var(--serif); font-weight: 500; font-size: 24px; line-height: 1.6; letter-spacing: 0.04em; color: var(--paper); margin-bottom: 14px; }
+.newsletter-desc { font-family: var(--serif); font-size: 14px; line-height: 1.9; color: #E5C9B5; margin-bottom: 26px; }
+.nl-form { display: flex; flex-direction: column; gap: 12px; max-width: 460px; }
+.nl-step { display: none; flex-direction: column; gap: 12px; }
+.nl-step.active { display: flex; }
+.nl-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.nl-field input { width: 100%; font-family: var(--serif); font-size: 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); color: var(--paper); padding: 12px 14px; outline: none; }
+.nl-field input::placeholder { color: rgba(255,255,255,0.45); }
+.nl-field input:focus { border-color: var(--accent-peach); background: rgba(255,255,255,0.12); }
+.nl-consent { font-family: var(--sans); font-size: 11.5px; color: #E5C9B5; line-height: 1.7; display: flex; align-items: flex-start; gap: 8px; }
+.nl-btn { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--accent-deep); background: var(--accent-peach); border: none; padding: 14px 24px; cursor: pointer; }
+.nl-btn:hover { background: var(--accent-sand); }
+.nl-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.nl-trust { font-family: var(--sans); font-size: 11px; color: rgba(229,201,181,0.7); }
+.nl-done { display: none; padding: 22px 0; font-family: var(--serif); font-size: 16px; color: var(--paper); line-height: 1.9; }
+.nl-done.show { display: block; }
+.nl-form.hide { display: none; }
+
+.feedback-section { background: var(--paper-soft); padding: 48px 24px 56px; border-top: 1px solid var(--line); }
+.feedback-inner { max-width: 680px; margin: 0 auto; }
+.feedback-label { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; color: var(--accent-warm); font-weight: 700; margin-bottom: 8px; }
+.feedback-title { font-family: var(--serif); font-weight: 600; font-size: 22px; color: var(--accent-deep); letter-spacing: 0.06em; margin-bottom: 10px; }
+.feedback-desc { font-family: var(--serif); font-size: 14.5px; color: var(--ink-soft); line-height: 1.95; margin-bottom: 22px; }
+.feedback-form { display: flex; flex-direction: column; gap: 14px; }
+.feedback-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.feedback-field input, .feedback-field textarea { width: 100%; font-family: var(--serif); font-size: 14px; color: var(--ink); background: #FFFFFF; border: 1px solid var(--line); padding: 14px 16px; outline: none; }
+.feedback-field textarea { resize: vertical; min-height: 140px; line-height: 1.85; }
+.feedback-field label { display: block; font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; color: var(--ink-mute); margin-bottom: 6px; }
+.feedback-submit { align-self: flex-start; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--paper); background: var(--accent); border: none; padding: 14px 28px; cursor: pointer; margin-top: 4px; }
+.feedback-done { display: none; background: var(--accent-cream); border-left: 3px solid var(--accent-warm); padding: 18px 22px; font-family: var(--serif); font-size: 14.5px; color: var(--accent-deep); line-height: 1.85; }
+.feedback-done.show { display: block; }
+.feedback-form.hide { display: none; }
+
+.site-footer { background: var(--paper-soft); padding: 48px 24px 28px; border-top: 1px solid var(--line); }
+.site-footer-inner { max-width: 1080px; margin: 0 auto; }
+.site-footer-cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 36px; padding-bottom: 32px; border-bottom: 1px solid var(--line); }
+.site-footer-col h4 { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 14px; }
+.site-footer-col p, .site-footer-col a { font-family: var(--serif); font-size: 13px; line-height: 1.95; color: var(--ink-soft); }
+.site-footer-col ul { list-style: none; }
+.site-footer-col li { margin-bottom: 8px; }
+.site-footer-bottom { padding-top: 22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; font-family: var(--sans); font-size: 11px; color: var(--ink-mute); }
+
+@media (max-width: 760px) {
+  .site-nav { gap: 14px; font-size: 11px; }
+  .site-brand-text small { display: none; }
+  .ep-hero { padding: 56px 22px 44px; }
+  .ep-hero-num { font-size: 48px; }
+  .ep-hero-title { font-size: 22px; }
+  .layer-section { padding: 40px 22px; }
+  .layer-section p { font-size: 15.5px; line-height: 2.05; }
+  .ep-nav-inner { grid-template-columns: 1fr; padding: 22px 22px; }
+  .ep-nav-link.next { text-align: left; }
+  .nl-row, .feedback-row { grid-template-columns: 1fr; }
+  .site-footer-cols { grid-template-columns: 1fr; gap: 28px; }
+}
+</style>
 </head>
 <body>
 
-<div class="read-progress" aria-hidden="true"><div class="read-progress-bar" id="readProgressBar"></div></div>
-
+<div class="site-header-strip"></div>
 <header class="site-header">
   <div class="site-header-inner">
     <a href="index.html" class="site-brand">
@@ -37,134 +238,91 @@
 </header>
 
 <section class="ep-hero">
+  <img class="ep-hero-mark" src="assets/miratuku-mark.png" alt="">
   <div class="ep-hero-inner">
     <div class="ep-hero-eyebrow">PART V — 第V部 第15章 可視化メディア（章まとめ／第V部全体閉じ）</div>
-    <div class="ep-hero-num">95.<span class="ep-hero-num-total">/ 100</span></div>
-    <h1 class="ep-hero-title">可視化メディアのかたち ― 第15章のまとめ</h1>
+    <div class="ep-hero-num">95.</div>
+    <h1 class="ep-hero-title">可視化メディアのかたち<br>― 第15章のまとめ</h1>
     <p class="ep-hero-en">Forms of Visualization Media: Closing the Fifteenth Chapter</p>
-    <p class="ep-hero-lead">第V部「開きのかたち」第15章「<strong>可視化メディア</strong>」を閉じます。</p>
     <div class="ep-hero-meta">
-      <span class="author-badge"><span class="author-badge-initial" aria-hidden="true">N</span><span class="ep-hero-author"><strong>西村 勇也</strong>（NPO法人ミラツク 代表理事）</span></span>
-      <span class="ep-hero-date">2026年5月8日</span>
-      <span class="read-time" id="readTime">推定読了 約—分</span>
-      <a class="pdf-btn" href="ep095-print.html" target="_blank" rel="noopener">PDF版で読む</a>
+      <span><strong>西村 勇也</strong>（NPO法人ミラツク 代表理事）</span>
+      <span>2026年5月8日</span>
     </div>
   </div>
 </section>
 
-<div class="ep-layout">
+<section class="layer-section layer-honbun">
+  <article class="layer-inner">
+    <p class="lead">第V部「開きのかたち」第15章「<strong>可視化メディア</strong>」を閉じます。本章では、スーザン・ソンタグの可視化倫理論（ep90）、ロバート・キャパに代表される報道写真の系譜（ep91）、ジョセフ・ピューリッツァーらに連なる近代ジャーナリズムの社会変容（ep92）、エドワード・タフテらが理論化したデータジャーナリズム（ep93）、マイケル・ムーアらに連なるアクティビスト映像（ep94）と、5話を通じて「<strong>見えなかったものを、見えるかたちに翻訳して社会に差し戻す仕組み</strong>」の系譜を辿りました。</p>
 
-  <aside class="toc-sidebar" aria-label="連載目次">
-    <div class="toc-label">FULL SERIES — 全100話</div>
-    <div class="toc-section">
-      <a class="toc-part" href="articles.html#prologue">PROLOGUE — 序 章</a>
-    </div>
-    <div class="toc-section">
-      <a class="toc-part" href="articles.html#part-i">PART I</a>
-      <a class="toc-part-title" href="articles.html#part-i">場のかたち ― 集まりが価値を生む</a>
-    </div>
-    <div class="toc-section">
-      <a class="toc-part" href="articles.html#part-ii">PART II</a>
-      <a class="toc-part-title" href="articles.html#part-ii">媒介のかたち ― つなぎ手が社会を変える</a>
-    </div>
-    <div class="toc-section">
-      <a class="toc-part" href="articles.html#part-iii">PART III</a>
-      <a class="toc-part-title" href="articles.html#part-iii">物語のかたち ― 価値はどこに宿るか</a>
-    </div>
-    <div class="toc-section">
-      <a class="toc-part" href="articles.html#part-iv">PART IV</a>
-      <a class="toc-part-title" href="articles.html#part-iv">支えのかたち ― 見えないものが社会を支える</a>
-    </div>
-    <div class="toc-section">
-      <a class="toc-part" href="articles.html#part-v">PART V</a>
-      <a class="toc-part-title" href="articles.html#part-v">開きのかたち ― 特権を多くの人に開く</a>
-      <span class="toc-current">第95話 ― 可視化メディアのかたち ― 第15章のまとめ</span>
-    </div>
-    <div class="toc-section">
-      <a class="toc-part" href="articles.html#final">FINAL — 終 章</a>
-    </div>
-  </aside>
+      <p class="lead">5話を貫く構造を整理すると、可視化メディアには<strong>3つの作法</strong>があります。</p>
 
-  <article class="ep-body" id="articleBody">
+      <p class="lead"><strong>第一の作法：事実を凝縮する</strong>。キャパの戦場写真、ナポーム弾を浴びた少女の一枚、地下鉄サリン事件の現場映像――一枚の写真、一本の映像が、千行の文章では届かない事実を伝えます。可視化メディアは、<strong>広がる出来事を、刺さる像に圧縮する</strong>作法を持ちます。同時にソンタグが『<strong>他者の苦痛へのまなざし</strong>』で問うたように、像は受け手の倫理を試します。何を写し、何を写さないかという編集判断は、可視化が孕む権力です。</p>
 
-    <p>第V部「開きのかたち」第15章「<strong>可視化メディア</strong>」を閉じます。本章では、スーザン・ソンタグの可視化倫理論（ep90）、ロバート・キャパに代表される報道写真の系譜（ep91）、ジョセフ・ピューリッツァーらに連なる近代ジャーナリズムの社会変容（ep92）、エドワード・タフテらが理論化したデータジャーナリズム（ep93）、マイケル・ムーアらに連なるアクティビスト映像（ep94）と、5話を通じて「<strong>見えなかったものを、見えるかたちに翻訳して社会に差し戻す仕組み</strong>」の系譜を辿りました。</p>
+      <p class="lead"><strong>第二の作法：構造を露わにする</strong>。タフテの『<strong>定量情報の視覚的表現</strong>』が示したのは、データを並べることではなく、データの<strong>関係</strong>を見せる図表設計です。ピューリッツァーの調査報道、ナイチンゲールの鶏頭図、ジョン・スノウのコレラ地図――いずれも、<strong>個別の事実の背後にある構造</strong>を一望させる作法でした。データジャーナリズムは、この系譜の現代的展開です。</p>
 
-    <p>5話を貫く構造を整理すると、可視化メディアには<strong>3つの作法</strong>があります。</p>
+      <p class="lead"><strong>第三の作法：行動を誘発する</strong>。ムーアの作品、ベトナム戦争報道、フォト・ジャーナリズムが社会を動かしたのは、像が<strong>観客を当事者に変えた</strong>からでした。アクティビスト映像は、見せて終わりではなく、見た人が次の行動を選ぶ余地を残す設計です。</p>
 
-    <p><strong>第一の作法：事実を凝縮する</strong>。キャパの戦場写真、ナポーム弾を浴びた少女の一枚、地下鉄サリン事件の現場映像――一枚の写真、一本の映像が、千行の文章では届かない事実を伝えます。可視化メディアは、<strong>広がる出来事を、刺さる像に圧縮する</strong>作法を持ちます。同時にソンタグが『<strong>他者の苦痛へのまなざし</strong>』で問うたように、像は受け手の倫理を試します。何を写し、何を写さないかという編集判断は、可視化が孕む権力です。</p>
+      <p class="lead">第V部全体（第13章複製・伝達、第14章大衆化技術、第15章可視化メディア）を振り返ると、「<strong>開き</strong>」には3階建ての構造がありました。第13章は<strong>複製で開く</strong>――同じ内容を紙・電子・デジタルで再生産する基盤の話。第14章は<strong>使い方を開く</strong>――フォード、ユニバーサルデザイン、シェアエコノミーと、誰もが触れられる仕組みの話。第15章は<strong>見えなかったものを見せて開く</strong>――写真、データ、映像で、隠れていた事実を社会の視野に引き上げる話です。基盤・利用・認識の3層が積み重なって、社会の「開き」は成立します。</p>
 
-    <p><strong>第二の作法：構造を露わにする</strong>。タフテの『<strong>定量情報の視覚的表現</strong>』が示したのは、データを並べることではなく、データの<strong>関係</strong>を見せる図表設計です。ピューリッツァーの調査報道、ナイチンゲールの鶏頭図、ジョン・スノウのコレラ地図――いずれも、<strong>個別の事実の背後にある構造</strong>を一望させる作法でした。データジャーナリズムは、この系譜の現代的展開です。</p>
+      <p class="lead">現代のグローバルな現場に、第15章を象徴する事例が3つあります。</p>
 
-    <p><strong>第三の作法：行動を誘発する</strong>。ムーアの作品、ベトナム戦争報道、フォト・ジャーナリズムが社会を動かしたのは、像が<strong>観客を当事者に変えた</strong>からでした。アクティビスト映像は、見せて終わりではなく、見た人が次の行動を選ぶ余地を残す設計です。</p>
+      <p class="lead">ひとつ目は、<strong>ProPublica</strong>（米国、2008年設立）です。広告と発行部数に依存しない非営利調査報道機関として出発し、ピューリッツァー賞を7回受賞するに至りました。寄付と財団助成で運営費を賄い、地方紙が縮小して空白化した深掘り報道の領域に資源を集中投入する運営モデルを確立しました。「見えなかった事実への投資」を組織形態として実装した代表例です。</p>
 
-    <p>第V部全体（第13章複製・伝達、第14章大衆化技術、第15章可視化メディア）を振り返ると、「<strong>開き</strong>」には3階建ての構造がありました。第13章は<strong>複製で開く</strong>――同じ内容を紙・電子・デジタルで再生産する基盤の話。第14章は<strong>使い方を開く</strong>――フォード、ユニバーサルデザイン、シェアエコノミーと、誰もが触れられる仕組みの話。第15章は<strong>見えなかったものを見せて開く</strong>――写真、データ、映像で、隠れていた事実を社会の視野に引き上げる話です。基盤・利用・認識の3層が積み重なって、社会の「開き」は成立します。</p>
+      <p class="lead">ふたつ目は、<strong>ICIJ</strong>（International Consortium of Investigative Journalists）です。Panama Papers（2016年）、Paradise Papers（2017年）、Pandora Papers（2021年）と続いた一連の国際協調報道では、世界100か国以上の数百名のジャーナリストが、漏洩した数千万件規模の文書を共同で精査しました。一国一社では到底扱えないオフショア金融の構造を、国境を越えた編集連合という形で可視化させた点が画期的です。タフテ的な構造提示が、国際的なジャーナリスト協働ネットワークへと拡張された姿です。</p>
 
-    <p>現代日本に、第15章を象徴する事例が3つあります。</p>
+      <p class="lead">3つ目は、<strong>Bellingcat</strong>（英国、2014年設立）です。衛星画像、SNSの公開投稿、地理位置特定、フライト追跡データ等の公開情報のみを組み合わせ、マレーシア航空機MH17撃墜事件、シリア化学兵器使用、ロシアの諜報活動等を独立検証してきました。記者でもジャーナリストでもない有志のオープンソース調査者が世界各地から協働する分散型モデルで、可視化メディアの担い手と方法論を再定義しました。</p>
 
-    <p>ひとつ目は、<strong>朝日新聞「ともに考える」プロジェクト</strong>。読者の問いから記事の起点を設計する参加型ジャーナリズムの試みで、編集権を読者と分有する方向の実装です。</p>
-
-    <p>ふたつ目は、<strong>NHKスペシャル「データで読む」シリーズ</strong>。経済・人口・気候を可視化で語る作法を放送公共財に組み込み、タフテ的な構造提示を一般家庭の居間に届けました。</p>
-
-    <p>3つ目は、<strong>Tansa</strong>（旧Waseda Chronicle、2017年設立）。アジア初の非営利調査報道メディアとして、広告と部数から独立した調査報道の運営モデルを提示しました。</p>
-
-    <p>3例に共通する底流が、本連載の3底流のうちの「<strong>見えない領域への投資</strong>」です。可視化メディアは、すぐには売上にも票数にもならない<strong>見えなかった事実への投資</strong>であり、その投資の蓄積が、社会の判断材料の総量を底上げします。次話ep96から、5つの「かたち」を編み直す統合的視座（終章）へと展開します。</p>
-
-    <blockquote class="ep-pullquote">3例に共通する底流が、本連載の3底流のうちの「<strong>見えない領域への投資</strong>」です。</blockquote>
-
-    <div class="section-divider" aria-hidden="true"><span class="section-divider-mark">◆ ◇ ◆</span></div>
-
-    <details class="reading-lens" id="lens-management">
-      <summary class="reading-lens-trigger">
-        <span class="reading-lens-label">FOR MANAGEMENT</span>
-        <span class="reading-lens-title">経営学的に読み解きたいあなたへ</span>
-        <span class="reading-lens-arrow">▾</span>
-      </summary>
-      <div class="reading-lens-body">
-        <p>第15章「可視化メディア」全体から、現代経営の3つの実践原則を取り出せます。</p>
-        <p><strong>第一原則：自社事業を可視化メディアとして再定義する</strong>。製品・サービスは、機能の束であると同時に、利用者の生活の何を見えるようにする装置でもあります。家計簿アプリは家計の構造を、健康アプリは身体の傾向を、業務SaaSは業務の流れを「見せる」ことで価値を生んでいます。可視化メディアの3作法（事実の凝縮・構造の提示・行動の誘発）を自社プロダクトに重ねると、機能追加ではない<strong>価値設計</strong>の余地が見えてきます。</p>
-        <p><strong>第二原則：データを物語に変換する組織能力を持つ</strong>。タフテ、ハンス・ロスリング、新聞各社のデータジャーナリズム部門――いずれも、<strong>数値→図→意味→行動</strong>の翻訳工程を組織化しています。経営報告、IR、社内KPIダッシュボード、顧客への定期レポート、行政との対話、採用広報――現代経営の主要な接面はすべて可視化を経由します。図表の品質は、判断の品質に直結し、誤読を生むグラフは誤った経営判断を生みます。データチームと編集チームの<strong>並走</strong>が、組織の意思決定速度を底上げします。</p>
-        <p><strong>第三原則：可視化に倫理レイヤーを置く</strong>。ソンタグが問うたように、見せ方には権力が宿ります。個人情報の写し方、貧困や病いの伝え方、AI生成画像の扱い、ステレオタイプの再生産、調査結果の切り取り――いずれも経営の倫理マターです。広報・マーケティング・データチームに<strong>可視化倫理のレビュー工程</strong>を組み込み、見せないという選択肢も等価に扱うことが、第三段階の経営の前提条件になります。</p>
-        <p>可視化メディアは、報道や芸術の専有物ではなく、現代経営の中心スキルになっています。</p>
-      </div>
-    </details>
-
-    <details class="reading-lens" id="lens-academic">
-      <summary class="reading-lens-trigger">
-        <span class="reading-lens-label">FOR ACADEMIA</span>
-        <span class="reading-lens-title">学術的に読み解きたいあなたへ</span>
-        <span class="reading-lens-arrow">▾</span>
-      </summary>
-      <div class="reading-lens-body">
-        <p>第15章「可視化メディア」全体の理論的枠組みは、4つの学問伝統の統合です。</p>
-        <p><strong>第一に、視覚文化・写真論</strong>：Susan Sontag "On Photography"（Farrar, Straus and Giroux, 1977、邦訳『写真論』近藤耕人訳、晶文社, 1979）、Susan Sontag "Regarding the Pain of Others"（Farrar, Straus and Giroux, 2003、邦訳『他者の苦痛へのまなざし』北條文緒訳、みすず書房, 2003）、Roland Barthes "La chambre claire"（Cahiers du cinéma/Gallimard/Seuil, 1980、邦訳『明るい部屋』花輪光訳、みすず書房, 1985）、John Berger "Ways of Seeing"（BBC/Penguin, 1972、邦訳『イメージ』伊藤俊治訳、PARCO出版, 1986）。</p>
-        <p><strong>第二に、報道写真・ジャーナリズム史</strong>：Robert Capa "Slightly Out of Focus"（Henry Holt, 1947、邦訳『ちょっとピンぼけ』川添浩史・井上清一訳、ダヴィッド社, 1956／文春文庫, 1979）、Michael S. Schudson "Discovering the News"（Basic Books, 1978）、James W. Carey "Communication as Culture"（Unwin Hyman, 1989、邦訳『文化としてのコミュニケーション』大畑裕嗣監訳、慶應義塾大学出版会, 2024）、Jay Rosen "What Are Journalists For?"（Yale UP, 1999）。</p>
-        <p><strong>第三に、データ可視化・情報設計</strong>：Edward R. Tufte "The Visual Display of Quantitative Information"（Graphics Press, 1983/2nd ed. 2001、邦訳『定量情報の視覚的表現』2版、阿部和好他訳、グラフィック社, 2024）、Tufte "Envisioning Information"（Graphics Press, 1990）、Tufte "Visual Explanations"（Graphics Press, 1997）、Alberto Cairo "The Functional Art"（New Riders, 2012、邦訳『データビジュアライゼーション』村山愛訳、ボーンデジタル, 2014）、Hans Rosling "Factfulness"（Sceptre, 2018、邦訳『FACTFULNESS』上杉周作・関美和訳、日経BP, 2019）。</p>
-        <p><strong>第四に、ドキュメンタリー・アクティビスト映像論</strong>：Bill Nichols "Introduction to Documentary"（Indiana UP, 2001/3rd ed. 2017）、Patricia Aufderheide "Documentary Film: A Very Short Introduction"（Oxford UP, 2007）、Michael Moore "Roger & Me"（Warner Bros., 1989）、Stella Bruzzi "New Documentary"（Routledge, 2000/2nd ed. 2006）、Thomas Waugh ed. "Show Us Life"（Scarecrow, 1984）。</p>
-        <p>日本研究では、多木浩二『<strong>眼の隠喩</strong>』（青土社, 1982／ちくま学芸文庫, 2008）、若桑みどり『<strong>戦争がつくる女性像</strong>』（筑摩書房, 1995／ちくま学芸文庫, 2000）、佐藤卓己『<strong>現代メディア史</strong>』（岩波書店, 1998／新版 岩波テキストブックス, 2018）、林香里『<strong>メディア不信</strong>』（岩波新書, 2017）が、関連系譜の日本語標準テキストです。</p>
-        <p>連載第V部は、本話で第15章および第V部全体を閉じ、ep96から終章「<strong>5つの「かたち」を編み直す ― 統合的視座</strong>」へと展開します。</p>
-      </div>
-    </details>
-
-    <section class="ep-question">
-      <div class="ep-question-label">QUESTION FOR NEXT — 次号への問い</div>
-      <p class="ep-question-q">次回は「第96話「5つの「かたち」を編み直す ― 統合的視座」（終章始まる）」を訪ねます。引き続きご一緒できれば嬉しく思います。</p>
-      <div class="ep-question-next">
-        <span class="ep-question-next-meta">NEXT EPISODE</span>
-        <span class="ep-question-next-title">第96話「5つの「かたち」を編み直す ― 統合的視座」（終章始まる）</span>
-        <a class="ep-question-next-link" href="ep096.html">第96話を読む →</a>
-      </div>
-    </section>
-
+      <p class="lead">3例に共通する底流が、本連載の3底流のうちの「<strong>見えない領域への投資</strong>」です。可視化メディアは、すぐには売上にも票数にもならない<strong>見えなかった事実への投資</strong>であり、その投資の蓄積が、社会の判断材料の総量を底上げします。次話ep96から、5つの「かたち」を編み直す統合的視座（終章）へと展開します。</p>
   </article>
-</div>
+</section>
 
-<section class="ep-actions" aria-label="読了後アクション">
-  <div class="ep-actions-inner">
-    <a class="ep-action-btn primary" href="#newsletter">メルマガで次話を受け取る</a>
-    <a class="ep-action-btn" href="ep095-print.html" target="_blank" rel="noopener">PDF版を読む</a>
-    <a class="ep-action-btn" href="articles.html">全100話の地図へ</a>
+<section class="layer-section layer-mgt">
+  <div class="layer-inner">
+    <span class="layer-label">FOR MANAGEMENT</span>
+    <h2 class="layer-title-jp">経営学的に読み解きたいあなたへ</h2>
+    <p class="layer-title-en">For readers approaching this through Management Studies</p>
+    <p class="lead">第15章「可視化メディア」全体から、現代経営の3つの実践原則を取り出せます。</p>
+
+      <p class="lead"><strong>第一原則：自社事業を可視化メディアとして再定義する</strong>。製品・サービスは、機能の束であると同時に、利用者の生活の何を見えるようにする装置でもあります。家計簿アプリは家計の構造を、健康アプリは身体の傾向を、業務SaaSは業務の流れを「見せる」ことで価値を生んでいます。可視化メディアの3作法（事実の凝縮・構造の提示・行動の誘発）を自社プロダクトに重ねると、機能追加ではない<strong>価値設計</strong>の余地が見えてきます。</p>
+
+      <p class="lead"><strong>第二原則：データを物語に変換する組織能力を持つ</strong>。タフテ、ハンス・ロスリング、新聞各社のデータジャーナリズム部門――いずれも、<strong>数値→図→意味→行動</strong>の翻訳工程を組織化しています。経営報告、IR、社内KPIダッシュボード、顧客への定期レポート、行政との対話、採用広報――現代経営の主要な接面はすべて可視化を経由します。図表の品質は、判断の品質に直結し、誤読を生むグラフは誤った経営判断を生みます。データチームと編集チームの<strong>並走</strong>が、組織の意思決定速度を底上げします。</p>
+
+      <p class="lead"><strong>第三原則：可視化に倫理レイヤーを置く</strong>。ソンタグが問うたように、見せ方には権力が宿ります。個人情報の写し方、貧困や病いの伝え方、AI生成画像の扱い、ステレオタイプの再生産、調査結果の切り取り――いずれも経営の倫理マターです。広報・マーケティング・データチームに<strong>可視化倫理のレビュー工程</strong>を組み込み、見せないという選択肢も等価に扱うことが、第三段階の経営の前提条件になります。</p>
+
+      <p class="lead">可視化メディアは、報道や芸術の専有物ではなく、現代経営の中心スキルになっています。</p>
   </div>
 </section>
+
+<section class="layer-section layer-aca">
+  <div class="layer-inner">
+    <span class="layer-label">FOR ACADEMIA</span>
+    <h2 class="layer-title-jp">学術的に読み解きたいあなたへ</h2>
+    <p class="layer-title-en">For readers approaching this through Academic study</p>
+    <p class="lead">第15章「可視化メディア」全体の理論的枠組みは、4つの学問伝統の統合です。</p>
+
+      <p class="lead"><strong>第一に、視覚文化・写真論</strong>：Susan Sontag "On Photography"（Farrar, Straus and Giroux, 1977、邦訳『写真論』近藤耕人訳、晶文社, 1979）、Susan Sontag "Regarding the Pain of Others"（Farrar, Straus and Giroux, 2003、邦訳『他者の苦痛へのまなざし』北條文緒訳、みすず書房, 2003）、Roland Barthes "La chambre claire"（Cahiers du cinéma/Gallimard/Seuil, 1980、邦訳『明るい部屋』花輪光訳、みすず書房, 1985）、John Berger "Ways of Seeing"（BBC/Penguin, 1972、邦訳『イメージ』伊藤俊治訳、PARCO出版, 1986）。</p>
+
+      <p class="lead"><strong>第二に、報道写真・ジャーナリズム史</strong>：Robert Capa "Slightly Out of Focus"（Henry Holt, 1947、邦訳『ちょっとピンぼけ』川添浩史・井上清一訳、ダヴィッド社, 1956／文春文庫, 1979）、Michael S. Schudson "Discovering the News"（Basic Books, 1978）、James W. Carey "Communication as Culture"（Unwin Hyman, 1989、邦訳『文化としてのコミュニケーション』大畑裕嗣監訳、慶應義塾大学出版会, 2024）、Jay Rosen "What Are Journalists For?"（Yale UP, 1999）。</p>
+
+      <p class="lead"><strong>第三に、データ可視化・情報設計</strong>：Edward R. Tufte "The Visual Display of Quantitative Information"（Graphics Press, 1983/2nd ed. 2001、邦訳『定量情報の視覚的表現』2版、阿部和好他訳、グラフィック社, 2024）、Tufte "Envisioning Information"（Graphics Press, 1990）、Tufte "Visual Explanations"（Graphics Press, 1997）、Alberto Cairo "The Functional Art"（New Riders, 2012、邦訳『データビジュアライゼーション』村山愛訳、ボーンデジタル, 2014）、Hans Rosling "Factfulness"（Sceptre, 2018、邦訳『FACTFULNESS』上杉周作・関美和訳、日経BP, 2019）。</p>
+
+      <p class="lead"><strong>第四に、ドキュメンタリー・アクティビスト映像論</strong>：Bill Nichols "Introduction to Documentary"（Indiana UP, 2001/3rd ed. 2017）、Patricia Aufderheide "Documentary Film: A Very Short Introduction"（Oxford UP, 2007）、Michael Moore "Roger & Me"（Warner Bros., 1989）、Stella Bruzzi "New Documentary"（Routledge, 2000/2nd ed. 2006）、Thomas Waugh ed. "Show Us Life"（Scarecrow, 1984）。</p>
+
+      <p class="lead">日本研究では、多木浩二『<strong>眼の隠喩</strong>』（青土社, 1982／ちくま学芸文庫, 2008）、若桑みどり『<strong>戦争がつくる女性像</strong>』（筑摩書房, 1995／ちくま学芸文庫, 2000）、佐藤卓己『<strong>現代メディア史</strong>』（岩波書店, 1998／新版 岩波テキストブックス, 2018）、林香里『<strong>メディア不信</strong>』（岩波新書, 2017）が、関連系譜の日本語標準テキストです。</p>
+
+      <p class="lead">連載第V部は、本話で第15章および第V部全体を閉じ、ep96から終章「<strong>5つの「かたち」を編み直す ― 統合的視座</strong>」へと展開します。</p>
+  </div>
+</section>
+
+<dl class="ep-meta-block">
+  <dt>今回つかったデータベース</dt>
+  <dd>SIDB v9 ／ 学術知識DB ／ 経営学概念DB ／ 文化構造DB</dd>
+  <dt>今回登場した思想家・概念</dt>
+  <dd>第15章5話の統合（可視化倫理 ソンタグ／報道写真 キャパ／近代ジャーナリズム ピューリッツァー／データジャーナリズム タフテ／アクティビスト映像 ムーア） ／ 可視化メディア3作法（事実の凝縮・構造の露呈・行動の誘発） ／ 第V部「開き」3階建て（複製で開く・使い方を開く・見えなかったものを見せて開く） ／ 現代グローバル3事例：ProPublica（米国2008年設立、非営利調査報道）・ICIJ（Panama Papers 2016／Pandora Papers 2021、国際協調報道）・Bellingcat（英国2014年設立、オープンソース調査報道） ／ 底流「見えない領域への投資」</dd>
+  <dt>次回</dt>
+  <dd>第96話「5つの「かたち」を編み直す ― 統合的視座」</dd>
+</dl>
 
 <nav class="ep-nav">
   <div class="ep-nav-inner">
@@ -174,10 +332,37 @@
     </a>
     <a class="ep-nav-link next" href="ep096.html">
       <span class="ep-nav-label">NEXT →</span>
-      <span class="ep-nav-title">第96話「5つの「かたち」を編み直す ― 統合的視座」（終章始まる）</span>
+      <span class="ep-nav-title">第96話「5つの「かたち」を編み直す ― 統合的視座」</span>
     </a>
   </div>
 </nav>
+
+<section class="feedback-section" id="comments">
+  <div class="feedback-inner">
+    <div class="feedback-label">COMMENTS ・ 感想・コメント</div>
+    <h2 class="feedback-title">この話に感想を送る</h2>
+    <p class="feedback-desc">読んで感じたこと、気になった一文、ご質問、関連する話題――どのようなものでも歓迎します。編集長（西村）に直接届きます。</p>
+
+    <form class="feedback-form" id="fbForm" onsubmit="return false;">
+      <div class="feedback-field">
+        <label for="fbSuggestion">コメント <span style="color:var(--accent-warm);">*</span></label>
+        <textarea id="fbSuggestion" placeholder="ご自由にお書きください" required></textarea>
+      </div>
+      <div class="feedback-row">
+        <div class="feedback-field">
+          <label for="fbName">お名前（任意）</label>
+          <input type="text" id="fbName" autocomplete="name" placeholder="匿名でも構いません">
+        </div>
+        <div class="feedback-field">
+          <label for="fbEmail">メール（任意）</label>
+          <input type="email" id="fbEmail" autocomplete="email" placeholder="返信不要なら空欄で">
+        </div>
+      </div>
+      <button type="button" class="feedback-submit" id="fbSubmit" onclick="submitFeedback()">送信する</button>
+    </form>
+    <div class="feedback-done" id="fbDone">ありがとうございました。コメントを受け取りました。</div>
+  </div>
+</section>
 
 <section class="newsletter" id="newsletter">
   <div class="newsletter-inner">
@@ -187,9 +372,7 @@
 
     <form class="nl-form" id="nlForm" onsubmit="return false;">
       <div class="nl-step active" id="nlStep1">
-        <div class="nl-field">
-          <input type="email" id="nlEmail" placeholder="メールアドレス" autocomplete="email">
-        </div>
+        <div class="nl-field"><input type="email" id="nlEmail" placeholder="メールアドレス" autocomplete="email"></div>
         <button type="button" class="nl-btn" onclick="nlNext()">次へ →</button>
         <div class="nl-trust">連載更新・実践事例・関連トピックをお届けします</div>
       </div>
@@ -202,10 +385,7 @@
         <button type="button" class="nl-btn" id="nlBtn" onclick="submitNl()">登録する</button>
       </div>
     </form>
-    <div class="nl-done" id="nlDone">
-      ようこそ。確認メールをお送りしました。<br>これから一緒に「変化のかたち」を読み解いていきましょう。
-    </div>
-    <div class="nl-error" id="nlError" role="alert" aria-live="polite"></div>
+    <div class="nl-done" id="nlDone">ようこそ。確認メールをお送りしました。<br>これから一緒に「変化のかたち」を読み解いていきましょう。</div>
   </div>
 </section>
 
@@ -222,6 +402,7 @@
         <ul>
           <li><a href="index.html">ホーム</a></li>
           <li><a href="articles.html">全100話 一覧</a></li>
+          <li><a href="ep001.html">第1話を読む</a></li>
           <li><a href="#newsletter">メルマガ登録</a></li>
         </ul>
       </div>
@@ -240,128 +421,58 @@
   </div>
 </footer>
 
-<button class="toc-fab" id="tocFab" onclick="toggleTocDrawer()" aria-label="目次を開く">目次</button>
-<div class="toc-overlay" id="tocOverlay" onclick="toggleTocDrawer()" aria-hidden="true"></div>
-<div class="toc-drawer" id="tocDrawer" role="dialog" aria-label="連載目次" aria-modal="true">
-  <button class="toc-drawer-close" onclick="toggleTocDrawer()" aria-label="閉じる">閉じる</button>
-  <div class="toc-label">FULL SERIES — 全100話</div>
-  <div class="toc-section">
-    <a class="toc-part" href="articles.html#prologue">PROLOGUE — 序 章</a>
-  </div>
-  <div class="toc-section">
-    <a class="toc-part" href="articles.html#part-i">PART I</a>
-    <a class="toc-part-title" href="articles.html#part-i">場のかたち ― 集まりが価値を生む</a>
-  </div>
-  <div class="toc-section">
-    <a class="toc-part" href="articles.html#part-ii">PART II</a>
-    <a class="toc-part-title" href="articles.html#part-ii">媒介のかたち ― つなぎ手が社会を変える</a>
-  </div>
-  <div class="toc-section">
-    <a class="toc-part" href="articles.html#part-iii">PART III</a>
-    <a class="toc-part-title" href="articles.html#part-iii">物語のかたち ― 価値はどこに宿るか</a>
-  </div>
-  <div class="toc-section">
-    <a class="toc-part" href="articles.html#part-iv">PART IV</a>
-    <a class="toc-part-title" href="articles.html#part-iv">支えのかたち ― 見えないものが社会を支える</a>
-  </div>
-  <div class="toc-section">
-    <a class="toc-part" href="articles.html#part-v">PART V</a>
-    <a class="toc-part-title" href="articles.html#part-v">開きのかたち ― 特権を多くの人に開く</a>
-    <span class="toc-current">第95話 ― 可視化メディアのかたち ― 第15章のまとめ</span>
-  </div>
-  <div class="toc-section">
-    <a class="toc-part" href="articles.html#final">FINAL — 終 章</a>
-  </div>
-</div>
-
 <script>
+const FEEDBACK_API = 'https://claude-code-manual-app.vercel.app/api/feedback';
 const NEWSLETTER_API = 'https://claude-code-manual-app.vercel.app/api/community';
-const EPISODE_ID = 'ep095';
+const EPISODE_ID = 'ep95';
 const EPISODE_TITLE = '第95話 ― 可視化メディアのかたち ― 第15章のまとめ';
 
-(function() {
-  const article = document.getElementById('articleBody');
-  const bar = document.getElementById('readProgressBar');
-  const readTimeEl = document.getElementById('readTime');
-  if (article && readTimeEl) {
-    const text = article.innerText || article.textContent || '';
-    const charCount = text.replace(/\s/g, '').length;
-    const minutes = Math.max(1, Math.round(charCount / 280));
-    readTimeEl.textContent = '推定読了 約' + minutes + '分';
-  }
-  if (article && bar) {
-    function updateProgress() {
-      const rect = article.getBoundingClientRect();
-      const total = article.offsetHeight - window.innerHeight;
-      const scrolled = -rect.top;
-      const pct = total > 0 ? Math.max(0, Math.min(100, (scrolled / total) * 100)) : 0;
-      bar.style.width = pct + '%';
-    }
-    window.addEventListener('scroll', updateProgress, { passive: true });
-    window.addEventListener('resize', updateProgress, { passive: true });
-    updateProgress();
-  }
-})();
-
-function toggleTocDrawer() {
-  const d = document.getElementById('tocDrawer');
-  if (!d) return;
-  const willOpen = !d.classList.contains('show');
-  d.classList.toggle('show');
-  document.body.style.overflow = willOpen ? 'hidden' : '';
-  document.getElementById('tocOverlay')?.classList.toggle('show', willOpen);
-  if (willOpen) {
-    d.querySelector('.toc-drawer-close')?.focus();
-    document.addEventListener('keydown', _tocEsc);
-  } else {
-    document.removeEventListener('keydown', _tocEsc);
-    document.getElementById('tocFab')?.focus();
-  }
+async function submitFeedback() {
+  const suggestion = document.getElementById('fbSuggestion').value.trim();
+  const name = document.getElementById('fbName').value.trim();
+  const email = document.getElementById('fbEmail').value.trim();
+  const btn = document.getElementById('fbSubmit');
+  if (!suggestion) { document.getElementById('fbSuggestion').focus(); return; }
+  btn.disabled = true; btn.textContent = '送信中…';
+  try {
+    const res = await fetch(FEEDBACK_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ source: 'henka-no-katachi', episode: EPISODE_ID + ' ' + EPISODE_TITLE, suggestion, name, email })
+    });
+    if (!res.ok) throw new Error('failed');
+    document.getElementById('fbForm').classList.add('hide');
+    document.getElementById('fbDone').classList.add('show');
+  } catch(e) { alert('送信に失敗しました'); btn.disabled = false; btn.textContent = '送信する'; }
 }
-function _tocEsc(e) { if (e.key === 'Escape') toggleTocDrawer(); }
 
 function nlNext() {
   const v = document.getElementById('nlEmail').value.trim();
-  if (!v || !v.includes('@')) {
-    document.getElementById('nlEmail').style.borderColor = 'var(--accent)';
-    document.getElementById('nlEmail').focus();
-    setTimeout(() => document.getElementById('nlEmail').style.borderColor = '', 2000);
-    return;
-  }
+  if (!v || !v.includes('@')) { document.getElementById('nlEmail').focus(); return; }
   document.getElementById('nlStep1').classList.remove('active');
   document.getElementById('nlStep2').classList.add('active');
   document.getElementById('nlName').focus();
 }
-function _nlShowError(msg) {
-  const e = document.getElementById('nlError');
-  if (e) { e.textContent = msg; e.classList.add('show'); }
-}
-function _nlClearError() { document.getElementById('nlError')?.classList.remove('show'); }
+
 async function submitNl() {
-  _nlClearError();
   const name = document.getElementById('nlName').value.trim();
   const org = document.getElementById('nlOrg').value.trim();
   const email = document.getElementById('nlEmail').value.trim();
   const consent = document.getElementById('nlConsent').checked;
   const btn = document.getElementById('nlBtn');
-  if (!name) { document.getElementById('nlName').focus(); _nlShowError('お名前を入力してください'); return; }
-  if (!consent) { _nlShowError('メールマガジン配信への同意が必要です'); return; }
-  btn.disabled = true;
-  btn.textContent = '登録中…';
+  if (!name) { document.getElementById('nlName').focus(); return; }
+  if (!consent) { alert('メルマガ配信への同意が必要です'); return; }
+  btn.disabled = true; btn.textContent = '登録中…';
   try {
     const res = await fetch(NEWSLETTER_API, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, org, email }),
+      body: JSON.stringify({ name, org, email })
     });
     if (!res.ok) throw new Error('failed');
     document.getElementById('nlForm').classList.add('hide');
     document.getElementById('nlDone').classList.add('show');
-  } catch (e) {
-    _nlShowError('登録に失敗しました。少し時間をおいて再度お試しください。');
-    btn.disabled = false;
-    btn.textContent = '登録する';
-  }
+  } catch(e) { alert('登録に失敗しました'); btn.disabled = false; btn.textContent = '登録する'; }
 }
 </script>
 
