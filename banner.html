@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>バナー素材 ― 変化のかたち</title>
+<meta name="description" content="連載『変化のかたち ― 未来をつくる100の型』の展開用バナー素材集。OGP・SNS・Web埋め込み用の各サイズを提供。">
+<meta name="robots" content="noindex">
+<link rel="icon" href="https://esse-sense.com/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@300;400;500;600;700;900&family=Judson:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:           #14110F;
+  --bg-soft:      #1E1B19;
+  --bg-tint:      #25221F;
+  --ink:          #FFFFFF;
+  --ink-soft:     #D8D5D1;
+  --ink-mute:     #A6A29D;
+  --accent:       #FF3644;
+  --line:         #2D2A27;
+  --serif:   "Noto Serif JP", "Hiragino Mincho ProN", Georgia, serif;
+  --sans:    "Noto Sans JP", "Hiragino Sans", -apple-system, sans-serif;
+  --display: "Judson", "Noto Serif JP", Georgia, serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--sans); background: #0A0807; color: var(--ink); padding: 60px 24px; }
+
+/* ─── PAGE LAYOUT ─── */
+.wrap { max-width: 1280px; margin: 0 auto; }
+.page-header { margin-bottom: 60px; padding-bottom: 32px; border-bottom: 1px solid var(--line); }
+.page-eyebrow { font-size: 11px; letter-spacing: 0.32em; color: var(--accent); font-weight: 700; margin-bottom: 14px; }
+.page-title { font-family: var(--serif); font-size: 36px; color: var(--ink); margin-bottom: 14px; line-height: 1.5; }
+.page-desc { font-family: var(--serif); font-size: 15px; line-height: 1.95; color: var(--ink-soft); max-width: 720px; }
+.page-desc a { color: var(--accent); }
+
+.section-title { font-family: var(--sans); font-size: 13px; font-weight: 700; letter-spacing: 0.28em; color: var(--accent); margin: 64px 0 8px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.section-meta { font-family: var(--sans); font-size: 12px; color: var(--ink-mute); margin-bottom: 28px; letter-spacing: 0.04em; }
+.section-meta code { background: var(--bg-soft); padding: 2px 8px; border-radius: 3px; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; color: var(--accent); }
+
+.banner-frame { background: var(--bg-soft); border: 1px solid var(--line); padding: 24px; display: inline-block; max-width: 100%; overflow: auto; }
+
+/* ─── 共通バナースタイル ─── */
+.banner * { box-sizing: border-box; }
+.banner {
+  background: #14110F;
+  color: #FFFFFF;
+  font-family: "Noto Serif JP", serif;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.02em;
+}
+.banner::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: #FF3644; }
+.b-eyebrow { font-family: "Noto Sans JP", sans-serif; font-weight: 700; color: #FF3644; letter-spacing: 0.32em; display: inline-flex; align-items: center; gap: 12px; }
+.b-eyebrow::before { content: ""; width: 28px; height: 2px; background: #FF3644; }
+.b-title { font-family: "Noto Serif JP", serif; font-weight: 700; color: #FFFFFF; letter-spacing: 0.02em; }
+.b-title .accent { color: #FF3644; }
+.b-en { font-family: "Judson", "Noto Serif JP", Georgia, serif; color: #A6A29D; }
+.b-tagline { font-family: "Noto Serif JP", serif; color: #D8D5D1; }
+.b-cta { font-family: "Noto Sans JP", sans-serif; font-weight: 700; letter-spacing: 0.16em; background: #FF3644; color: #FFFFFF; display: inline-block; }
+.b-host { font-family: "Noto Sans JP", sans-serif; font-weight: 700; letter-spacing: 0.16em; color: #A6A29D; }
+.b-mark { width: 38px; height: 38px; background: #FF3644; display: inline-block; position: relative; }
+.b-mark::after { content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 14px; height: 14px; background: #14110F; border-radius: 50%; }
+
+/* ─── B1: OGP / X / Facebook 1200x630 ─── */
+.b-ogp { width: 1200px; height: 630px; padding: 80px 80px; display: flex; flex-direction: column; justify-content: space-between; }
+.b-ogp .b-eyebrow { font-size: 16px; }
+.b-ogp .b-title { font-size: 88px; line-height: 1.25; margin-top: 32px; }
+.b-ogp .b-en { font-size: 24px; margin-top: 24px; }
+.b-ogp .b-tagline { font-size: 22px; line-height: 1.85; padding-left: 24px; border-left: 4px solid #FF3644; max-width: 800px; margin-top: 36px; }
+.b-ogp .b-bottom { display: flex; justify-content: space-between; align-items: center; }
+.b-ogp .b-cta { padding: 18px 40px; font-size: 14px; }
+.b-ogp .b-host { font-size: 14px; }
+
+/* ─── B2: 正方形 1080x1080 (Instagram, etc) ─── */
+.b-sq { width: 1080px; height: 1080px; padding: 80px; display: flex; flex-direction: column; justify-content: space-between; }
+.b-sq .b-eyebrow { font-size: 16px; }
+.b-sq .b-title { font-size: 110px; line-height: 1.2; margin-top: 40px; }
+.b-sq .b-en { font-size: 28px; margin-top: 32px; }
+.b-sq .b-tagline { font-size: 26px; line-height: 1.85; padding-left: 26px; border-left: 4px solid #FF3644; margin-top: 48px; }
+.b-sq .b-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
+.b-sq .b-bottom-left { font-family: "Noto Sans JP", sans-serif; font-size: 18px; color: #A6A29D; letter-spacing: 0.18em; }
+.b-sq .b-cta { padding: 22px 48px; font-size: 16px; }
+
+/* ─── B3: ストーリー縦 1080x1920 ─── */
+.b-st { width: 540px; height: 960px; padding: 56px 48px; display: flex; flex-direction: column; justify-content: space-between; }
+.b-st .b-eyebrow { font-size: 11px; }
+.b-st .b-title { font-size: 56px; line-height: 1.25; margin-top: 24px; }
+.b-st .b-en { font-size: 16px; margin-top: 20px; }
+.b-st .b-tagline { font-size: 16px; line-height: 1.85; padding-left: 16px; border-left: 3px solid #FF3644; margin-top: 28px; }
+.b-st .b-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 32px; }
+.b-st .b-stat { text-align: center; padding: 16px 8px; background: rgba(255,255,255,0.04); }
+.b-st .b-stat-num { font-family: "Judson", serif; font-size: 32px; color: #FF3644; line-height: 1; margin-bottom: 6px; font-weight: 700; }
+.b-st .b-stat-lbl { font-family: "Noto Sans JP", sans-serif; font-size: 9px; color: #D8D5D1; letter-spacing: 0.12em; }
+.b-st .b-bottom { text-align: center; margin-top: 28px; }
+.b-st .b-cta { padding: 14px 28px; font-size: 12px; }
+.b-st .b-host { font-size: 10px; margin-top: 14px; display: block; }
+
+/* ─── B4: リーダーボード 728x90 ─── */
+.b-lb { width: 728px; height: 90px; padding: 14px 24px; display: flex; align-items: center; gap: 22px; }
+.b-lb .b-mark { width: 26px; height: 26px; flex-shrink: 0; }
+.b-lb .b-mark::after { width: 10px; height: 10px; }
+.b-lb-text { flex: 1; min-width: 0; }
+.b-lb-title { font-family: "Noto Serif JP", serif; font-size: 19px; font-weight: 700; color: #FFFFFF; line-height: 1.2; margin-bottom: 4px; }
+.b-lb-title .accent { color: #FF3644; }
+.b-lb-sub { font-family: "Noto Sans JP", sans-serif; font-size: 11px; color: #A6A29D; letter-spacing: 0.04em; }
+.b-lb .b-cta { padding: 10px 18px; font-size: 11px; flex-shrink: 0; }
+
+/* ─── B5: 中サイズ矩形 600x300 ─── */
+.b-md { width: 600px; height: 300px; padding: 32px 36px; display: flex; flex-direction: column; justify-content: space-between; }
+.b-md .b-eyebrow { font-size: 10px; }
+.b-md .b-title { font-size: 36px; line-height: 1.3; margin-top: 14px; }
+.b-md .b-en { font-size: 13px; margin-top: 10px; }
+.b-md .b-bottom { display: flex; justify-content: space-between; align-items: center; }
+.b-md .b-cta { padding: 12px 22px; font-size: 11px; }
+.b-md .b-host { font-size: 10px; }
+
+/* ─── B6: 小バナー 320x240 ─── */
+.b-sm { width: 320px; height: 240px; padding: 22px 24px; display: flex; flex-direction: column; justify-content: space-between; }
+.b-sm .b-eyebrow { font-size: 9px; }
+.b-sm .b-title { font-size: 22px; line-height: 1.3; margin-top: 10px; }
+.b-sm .b-en { font-size: 11px; margin-top: 6px; color: #A6A29D; }
+.b-sm .b-bottom { display: flex; justify-content: space-between; align-items: center; }
+.b-sm .b-cta { padding: 8px 14px; font-size: 9px; }
+
+/* ─── HTML埋め込みコード表示 ─── */
+.embed-block { background: var(--bg-soft); border: 1px solid var(--line); padding: 20px; margin-top: 16px; max-width: 900px; }
+.embed-block-label { font-family: var(--sans); font-size: 10px; color: var(--ink-mute); letter-spacing: 0.18em; margin-bottom: 10px; font-weight: 700; }
+.embed-block code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; color: var(--ink-soft); white-space: pre-wrap; word-break: break-all; line-height: 1.7; }
+
+/* ─── プリント時 ─── */
+@media print {
+  body { background: #fff; padding: 0; }
+  .page-header, .section-title, .section-meta, .embed-block, footer { display: none; }
+  .banner-frame { background: none; border: none; padding: 0; page-break-after: always; }
+}
+
+footer { margin-top: 80px; padding-top: 32px; border-top: 1px solid var(--line); font-family: var(--sans); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.06em; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+footer a { color: var(--ink-soft); text-decoration: none; }
+footer a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="page-header">
+    <div class="page-eyebrow">BANNER ASSETS — 展開用バナー素材</div>
+    <h1 class="page-title">変化のかたち ― バナー素材集</h1>
+    <p class="page-desc">
+      連載『変化のかたち ― 未来をつくる100の型』の展開用HTMLバナーです。各バナーはCSS・Web Fontsで描画されており、スクリーンショット撮影でPNG化、または iframe / SVG 埋め込みで他サイトへ展開できます。<br>
+      ソース: <a href="https://yuyanishimura0312.github.io/henka-no-katachi/banner.html">banner.html</a>　／　LP: <a href="lp.html">lp.html</a>　／　全100話: <a href="articles.html">articles.html</a>
+    </p>
+  </header>
+
+  <!-- ─── B1: OGP ─── -->
+  <h2 class="section-title">B1. OGP / X / Facebook 共有</h2>
+  <p class="section-meta"><code>1200 × 630px</code>　Twitter Card / Facebook OGP / LINE / Slack のリンクプレビュー用標準サイズ</p>
+  <div class="banner-frame">
+    <div class="banner b-ogp">
+      <div>
+        <div class="b-eyebrow">A SERIES OF ONE HUNDRED — 全100話 完結</div>
+        <h2 class="b-title">変化の<span class="accent">かたち</span></h2>
+        <p class="b-en">Forms of Change — One Hundred Patterns Toward the Future</p>
+        <p class="b-tagline">社会が静かに変わるとき、そこには「かたち」がある。<br>事例ではなく「型」で読む、ソーシャルイノベーション論。</p>
+      </div>
+      <div class="b-bottom">
+        <div class="b-cta">FREE — READ ALL 100 EPISODES →</div>
+        <div class="b-host">NPO法人ミラツク ／ 西村勇也</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── B2: 正方形 ─── -->
+  <h2 class="section-title">B2. 正方形（Instagram / Notion / Slack）</h2>
+  <p class="section-meta"><code>1080 × 1080px</code>　Instagram フィード / Notion カバー / Slack ピン用</p>
+  <div class="banner-frame" style="overflow:auto;">
+    <div class="banner b-sq">
+      <div>
+        <div class="b-eyebrow">A SERIES OF ONE HUNDRED</div>
+        <h2 class="b-title">変化の<span class="accent">かたち</span><br>未来をつくる<br>100の型</h2>
+        <p class="b-en">Forms of Change</p>
+        <p class="b-tagline">社会が静かに変わるとき、<br>そこには「かたち」がある。</p>
+      </div>
+      <div class="b-bottom">
+        <div class="b-bottom-left">全100話・完結<br>NPO法人ミラツク／西村勇也</div>
+        <div class="b-cta">READ NOW →</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── B3: ストーリー縦 ─── -->
+  <h2 class="section-title">B3. ストーリー縦長（Instagram Stories / モバイル）</h2>
+  <p class="section-meta"><code>540 × 960px</code>（実展開時は2倍の1080×1920px）　Instagram Stories / TikTok / モバイル全画面用</p>
+  <div class="banner-frame">
+    <div class="banner b-st">
+      <div>
+        <div class="b-eyebrow">A SERIES OF ONE HUNDRED</div>
+        <h2 class="b-title">変化の<span class="accent">かたち</span></h2>
+        <p class="b-en">Forms of Change — One Hundred Patterns</p>
+        <p class="b-tagline">社会変容を「型で読む」全100話完結。</p>
+        <div class="b-stats">
+          <div class="b-stat"><div class="b-stat-num">100</div><div class="b-stat-lbl">話 完結</div></div>
+          <div class="b-stat"><div class="b-stat-num">5</div><div class="b-stat-lbl">メタ型</div></div>
+          <div class="b-stat"><div class="b-stat-num">28万</div><div class="b-stat-lbl">字</div></div>
+        </div>
+      </div>
+      <div class="b-bottom">
+        <div class="b-cta">SWIPE UP →</div>
+        <span class="b-host">henka-no-katachi.github.io</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── B4: リーダーボード ─── -->
+  <h2 class="section-title">B4. リーダーボード（Web 埋め込み用）</h2>
+  <p class="section-meta"><code>728 × 90px</code>　Web記事ヘッダー / メルマガ / ブログ埋め込み用標準サイズ</p>
+  <div class="banner-frame">
+    <div class="banner b-lb">
+      <div class="b-mark"></div>
+      <div class="b-lb-text">
+        <div class="b-lb-title">変化の<span class="accent">かたち</span> ― 未来をつくる100の型</div>
+        <div class="b-lb-sub">NPO法人ミラツク 西村勇也・全100話完結 ／ ソーシャルイノベーション連載</div>
+      </div>
+      <div class="b-cta">READ →</div>
+    </div>
+  </div>
+  <div class="embed-block">
+    <div class="embed-block-label">EMBED CODE</div>
+    <code>&lt;iframe src="https://yuyanishimura0312.github.io/henka-no-katachi/banner.html#b4" width="728" height="90" frameborder="0" scrolling="no" title="変化のかたち バナー"&gt;&lt;/iframe&gt;</code>
+  </div>
+
+  <!-- ─── B5: 中サイズ ─── -->
+  <h2 class="section-title">B5. 中サイズ矩形（記事カード / サイドバー）</h2>
+  <p class="section-meta"><code>600 × 300px</code>　記事内カード / サイドバー / メルマガヘッダー用</p>
+  <div class="banner-frame">
+    <div class="banner b-md">
+      <div>
+        <div class="b-eyebrow">A SERIES OF ONE HUNDRED — 全100話完結</div>
+        <h2 class="b-title">変化の<span class="accent">かたち</span></h2>
+        <p class="b-en">Forms of Change — One Hundred Patterns</p>
+      </div>
+      <div class="b-bottom">
+        <span class="b-host">NPO法人ミラツク／西村勇也</span>
+        <div class="b-cta">第1話を読む →</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── B6: 小バナー ─── -->
+  <h2 class="section-title">B6. 小バナー（サイドバー / プロフィール）</h2>
+  <p class="section-meta"><code>320 × 240px</code>　サイドバー広告枠 / プロフィール埋め込み用</p>
+  <div class="banner-frame">
+    <div class="banner b-sm">
+      <div>
+        <div class="b-eyebrow">100 EPISODES</div>
+        <h2 class="b-title">変化の<span class="accent">かたち</span></h2>
+        <p class="b-en">Forms of Change</p>
+      </div>
+      <div class="b-bottom">
+        <span style="font-family:'Noto Sans JP',sans-serif;font-size:9px;color:#A6A29D;letter-spacing:0.04em;">ミラツク／西村勇也</span>
+        <div class="b-cta">READ →</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── 利用方法 ─── -->
+  <h2 class="section-title">使い方</h2>
+  <div style="font-family:var(--serif);font-size:14px;line-height:2;color:var(--ink-soft);max-width:760px;">
+    <p style="margin-bottom:14px;"><strong style="color:var(--ink);">画像（PNG/JPEG）として使う場合：</strong>各バナーをスクリーンショット撮影してPNG化してください（macOS: Cmd+Shift+5、Windows: Snipping Tool）。Retina解像度推奨。</p>
+    <p style="margin-bottom:14px;"><strong style="color:var(--ink);">HTML埋め込みで使う場合：</strong>本ページのHTMLソースを表示（View Source）して、各<code style="background:var(--bg-soft);padding:2px 6px;border-radius:3px;font-size:12px;color:var(--accent);">.banner</code>要素をコピーし、自サイトに貼り付けてください。Google Fonts（Noto Serif JP / Noto Sans JP / Judson）が必要です。</p>
+    <p style="margin-bottom:14px;"><strong style="color:var(--ink);">iframe 埋め込み：</strong>リーダーボード等は上記のembedコードをそのまま使えます。</p>
+    <p><strong style="color:var(--ink);">CTA リンク先：</strong>すべてのバナーのCTAは <code style="background:var(--bg-soft);padding:2px 6px;border-radius:3px;font-size:12px;color:var(--accent);">https://yuyanishimura0312.github.io/henka-no-katachi/</code> を指すよう設計されています。</p>
+  </div>
+
+  <footer>
+    <span>© 2026 NPO法人ミラツク</span>
+    <span><a href="lp.html">LP</a> ／ <a href="articles.html">全100話</a> ／ <a href="index.html">ホーム</a></span>
+  </footer>
+
+</div>
+
+</body>
+</html>
